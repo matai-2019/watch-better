@@ -1,7 +1,9 @@
 {
-  "name": "comidas_gostosas",
+  "name": "watch_better",
   "version": "0.1.0",
-  "private": true,
+  "description": "A list of food",
+  "repository": "https://github.com/matai-2019/watch-better.git",
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.1.2",
     "@material-ui/icons": "^4.2.1",
@@ -13,8 +15,6 @@
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "react-scripts": "3.0.1",
-    "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
     "sqlite3": "^4.0.9",
     "superagent": "^5.1.0"
   },
@@ -25,11 +25,12 @@
     "test:server": "jest tests/server --watchAll",
     "eject": "react-scripts eject",
     "knex": "knex --knexfile server/db/knexfile.js",
-    "db-reset": "run-s db:*",
+    "db:reset": "run-s db:*",
     "db:delete": "rm -f server/db/dev.sqlite3",
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
     "server": "nodemon server | pino-colada",
+    "postinstall": "run-s build db:migrate db:seed",
     "dev": "run-p server start"
   },
   "eslintConfig": {
@@ -55,7 +56,14 @@
     "npm-run-all": "^4.1.5",
     "pino-colada": "^1.4.4",
     "react-router-dom": "^5.0.1",
-    "supertest": "^4.0.2"
+    "supertest": "^4.0.2",
+    "redux-mock-store": "^1.5.3",
+    "cheerio": "^1.0.0-rc.3",
+    "enzyme": "^3.10.0",
+    "jest": "^24.8.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
   },
   "proxy": "http://localhost:3001"
 }
