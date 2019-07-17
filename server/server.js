@@ -1,11 +1,10 @@
-const path = require('path')
 const express = require('express')
+const pino = require('express-pino-logger')();
 
-const redditRoutes = require('./reddit')
+
 const server = express()
 
-server.use(express.static(path.join(__dirname, '../public')))
-
-server.use('/api/v1/reddit', redditRoutes)
+server.use(express.json())
+server.use(pino)
 
 module.exports = server
