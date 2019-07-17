@@ -25,12 +25,12 @@
     "test:server": "jest tests/server --watchAll",
     "eject": "react-scripts eject",
     "knex": "knex --knexfile server/db/knexfile.js",
-    "db:reset": "run-s db:*",
+    "db-reset": "run-s db:*",
     "db:delete": "rm -f server/db/dev.sqlite3",
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
     "server": "nodemon server | pino-colada",
-    "postinstall": "run-s build db:migrate db:seed",
+    "postinstall": "run-s db:migrate db:seed",
     "dev": "run-p server start"
   },
   "eslintConfig": {
