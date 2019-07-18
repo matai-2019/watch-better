@@ -13,7 +13,7 @@ function getMovie (id, db = connection) {
       'movies.title',
       'movies.recommended',
       'movie_tests.test_type as testType',
-      'movie_tests.pass_or_fail as passOrFail'
+      'movie_tests.result'
     )
 }
 
