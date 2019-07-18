@@ -13,17 +13,6 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
-export const MovieDetailsStyles = makeStyles(theme => ({
-  poster: {
-    height: 400,
-    width: 300,
-    marginBottom: 50
-  },
-  icon: {
-    margin: 5
-  }
-}))
-
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
@@ -79,5 +68,16 @@ export const NavBarStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       width: 200
     }
+  }
+}))
+
+export const MovieDetailsStyles = makeStyles(theme => ({
+  poster: {
+    height: 400,
+    width: 300,
+    marginBottom: 50
+  },
+  icon: {
+    margin: 5
   }
 }))
