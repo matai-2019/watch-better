@@ -1,16 +1,24 @@
+const env = require('./test-environment')
 const db = require('../../../server/db/db')
 // const movies = require('../../../server/db/seeds/movies')
 
-const testDb = null
+let testDb = null
+
+beforeEach(() => {
+  testDb = env.getTestDb()
+  return env.initialise(testDb)
+})
+
+afterEach(() => env.cleanup(testDb))
 
 test('db.getMovie returns a specific movie', () => {
-  const movie = db.getMovie(1, testDb)
-  const expected = {
-    id: 1,
-    title: 'A Star is Born',
-    API_movie_id: 'null',
-    recommended: 'true'
-  }
-  return expect(movie).resolves.toEqual(expected)
-    .catch(err => expect(err).toBeNull())
+  db.getMovie(1, testDb).then(movie => {
+    const expected = {
+      id: 1,
+      title: 'A Star is Born',
+      API_movie_id: 'null',
+      recommended: 'true'
+    }
+    expect(movie).toEqual(expected)
+  })
 })
