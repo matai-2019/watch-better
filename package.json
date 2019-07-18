@@ -21,8 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "npm run test:server",
+    "test": "react-scripts test",
     "test:server": "jest tests/server --watchAll",
+    "test:src": "jest tests/src --watchAll",
     "eject": "react-scripts eject",
     "knex": "knex --knexfile server/db/knexfile.js",
     "db-reset": "run-s db:*",
@@ -60,7 +61,6 @@
     "redux-mock-store": "^1.5.3",
     "cheerio": "^1.0.0-rc.3",
     "enzyme": "^3.10.0",
-    "jest": "^24.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
