@@ -1,13 +1,10 @@
-const config = require('./knexfile').development
-const database = require('knex')(config)
+const connection = require('./connection')
 
-// const connection = require('./connection')
-
-const close = (db = database) => {
+const close = (db = connection) => {
   db.destroy()
 }
 
-function getMovie (id, db = database) {
+function getMovie (id, db = connection) {
   return db('movies')
     .where('movies.id', id)
     .first()

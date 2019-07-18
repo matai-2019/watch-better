@@ -1,8 +1,10 @@
 const db = require('../../../server/db/db')
-const moviesDb = require('../../../server/db/seeds/movies')
+// const movies = require('../../../server/db/seeds/movies')
+
+const testDb = null
 
 test('db.getMovie returns a specific movie', () => {
-  const movie = db.getMovie(1, moviesDb)
+  const movie = db.getMovie(1, testDb)
   const expected = {
     id: 1,
     title: 'A Star is Born',
