@@ -6,4 +6,4 @@ knex.schema.createTable('movies', table => {
   table.boolean('recommended')
 })
 
-exports.down = knex => knex.schema.dropTable('students')
+exports.down = knex => knex.schema.dropTable('movies')
