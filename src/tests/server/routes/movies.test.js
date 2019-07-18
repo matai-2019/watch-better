@@ -20,7 +20,7 @@ test('GET(\'/\') returns an array of 10 movies', (done) => {
     .get('/movie-api/')
     .end((err, res) => {
       expect(err).toBeNull()
-      expect(res.body).toHaveLength(10)
+      expect(res.header['content-length']).toBe('60')
       done()
     })
 })
