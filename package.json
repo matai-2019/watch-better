@@ -63,7 +63,7 @@
     "jest": "^24.8.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0",
+    "redux-thunk": "^2.3.0"
   },
   "proxy": "http://localhost:3001"
 }
