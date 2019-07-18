@@ -14,10 +14,9 @@ export const theme = createMuiTheme({
 })
 
 export const HeaderStyles = makeStyles(theme => ({
-  paper: {
-    padding: theme.spacing(1, 4, 4),
-    outline: 'none',
-    textAlign: "center"
+  headerContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6)
   }
 }))
 
