@@ -13,7 +13,7 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
-export const useStyles = makeStyles(theme => ({
+export const MovieListStyles = makeStyles(theme => ({
   example: {
     width: 200
   }
