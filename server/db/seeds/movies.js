@@ -3,53 +3,63 @@ exports.seed = (knex, Promise) => {
     .then(() => {
       return knex('movies').insert([
         {
+          'id': 1,
           'title': 'A star is born',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 2,
           'title': 'Black Panther',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 3,
           'title': 'Annihilation',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 4,
           'title': 'Dear White People',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 5,
           'title': 'The Pursuit of Happyness',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 6,
           'title': 'The Meg',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 7,
           'title': 'Roma',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 8,
           'title': 'Guardians of the Galaxy',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 9,
           'title': 'No country for Old Man',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         },
         {
+          'id': 10,
           'title': 'The Karate Kid',
-          'external_movie_key': 'null',
+          'API_movie_id': 'null',
           'recommended': 'true'
         }
       ])
