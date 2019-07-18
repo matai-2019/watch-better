@@ -1,13 +1,20 @@
 import React from 'react'
-import { Paper } from '@material-ui/core'
+import { Container, Typography } from '@material-ui/core'
 import { HeaderStyles } from '../style/muiStyles'
 
 const Header = (props) => {
   const classes = HeaderStyles(props)
   return (
-    <Paper className={classes.paper}>
-      <h1>Watch Better</h1>
-    </Paper>
+    <div className={classes.headerContent}>
+      <Container maxWidth="sm">
+        <Typography variant="h1" component="h2" align="center" gutterBottom>
+          Watch Better
+        </Typography>
+        <Typography variant="h4" component="p" align="center" color="textSecondary" >
+          A curated list of films, through a diversity lens
+        </Typography>
+      </Container>
+    </div>
   )
 }
 
