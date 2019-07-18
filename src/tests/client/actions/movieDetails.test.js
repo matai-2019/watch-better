@@ -5,7 +5,7 @@ import {
   getMovieDetailsPending,
   getMovieDetailsSuccess,
   getMovieDetailsError
-} from '../movieDetails'
+} from '../../../actions/movieDetails'
 
 describe('movieDetails actions', () => {
   it('GET_MOVIE_DETAILS_SUCCESS returns Movie Details', () => {

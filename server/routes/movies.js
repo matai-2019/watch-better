@@ -7,6 +7,20 @@ const router = express.Router()
 const apiUrl = 'https://api.themoviedb.org/3/movie/'
 const apiKey = require('./apiKey')
 
+router.get('/:id', (req, res) => {
+  const { id } = req.params
+  getMoviesFromAPI(id)
+    .then(movie => res.json(movie))
+    .catch(err => {
+      res.status(500).send('Consuming TMDB failed')
+      console.error(err)
+    })
+})
+
+router.get('/', (req, res) => {
+  res.send('return a list of movies')
+})
+
 const getMoviesFromAPI = (id) => {
   return request.get(`${apiUrl}${id}?api_key=${apiKey}&language=en-US`).then(({ body }) => {
     return {
