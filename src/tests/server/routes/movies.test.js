@@ -1,6 +1,5 @@
 const request = require('supertest')
 const server = require('../../../../server/server')
-//const getMoviesFromAPI = require('../../../server/routes/movies')
 
 test('tests work', () => {
   expect(true).toBeTruthy()
@@ -33,12 +32,5 @@ test('GET(\'/\':id) responds with status 200', (done) => {
       expect(err).toBeNull()
       expect(res.status).toBe(200)
       done()
-    })
-})
-
-test.skip('getSeasons returns all seasons', () => {
-  return getMoviesFromAPI(550)
-    .then((data) => {
-      expect(data.rating).toEqual(8.4)
     })
 })
