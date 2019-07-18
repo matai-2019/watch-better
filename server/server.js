@@ -1,6 +1,5 @@
 const express = require('express')
-const pino = require('express-pino-logger')();
-
+const pino = require('express-pino-logger')()
 
 const server = express()
 
