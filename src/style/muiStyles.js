@@ -13,6 +13,14 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
+export const HeaderStyles = makeStyles(theme => ({
+  paper: {
+    padding: theme.spacing(1, 4, 4),
+    outline: 'none',
+    textAlign: "center"
+  }
+}))
+
 export const useStyles = makeStyles(theme => ({
   example: {
     width: 200
