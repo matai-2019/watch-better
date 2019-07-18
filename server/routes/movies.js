@@ -9,7 +9,12 @@ const apiKey = require('./apiKey')
 
 router.get('/:id', (req, res) => {
   const { id } = req.params
-  res.send(`retun a movie id: ${id}`)
+  getMoviesFromAPI(id)
+    .then(movie => res.json(movie))
+    .catch(err => {
+      res.status(500).send('Consuming TMDB failed')
+      console.error(err)
+    })
 })
 
 router.get('/', (req, res) => {
