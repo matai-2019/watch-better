@@ -1,6 +1,5 @@
 const env = require('./test-environment')
-const db = require('../../../server/db/db')
-// const movies = require('../../../server/db/seeds/movies')
+const db = require('../../../../server/db/db')
 
 let testDb = null
 
