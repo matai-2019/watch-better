@@ -13,8 +13,8 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
-export const MovieListStyles = makeStyles(theme => ({
-  example: {
-    width: 200
+export const MovieListItemStyles = makeStyles(theme => ({
+  paper: {
+    height: '100px'
   }
 }))
