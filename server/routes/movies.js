@@ -1,8 +1,6 @@
 const express = require('express')
 const request = require('superagent')
 
-const db = require('../db/db')
-
 const router = express.Router()
 const apiUrl = 'https://api.themoviedb.org/3/movie/'
 const apiKey = require('./apiKey')
