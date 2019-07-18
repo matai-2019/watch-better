@@ -6,13 +6,14 @@ const close = (db = connection) => {
 
 function getMovie (id, db = connection) {
   return db('movies')
+    .join('movie_tests', 'movies.id', 'movie_tests.movie_id')
     .where('movies.id', id)
-    .first()
-    .select(
+    .first(
       'movies.id',
       'movies.title',
-      'movies.API_movie_id',
-      'movies.recommended'
+      'movies.recommended',
+      'movie_tests.test_type as testType',
+      'movie_tests.pass_or_fail as passOrFail'
     )
 }
 
