@@ -18,7 +18,8 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  res.send('return a list of movies')
+  db.getMovies()
+    .then(movies => res.status(200).json(movies))
 })
 
 const getMoviesFromAPI = (id) => {
