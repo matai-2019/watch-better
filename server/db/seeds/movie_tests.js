@@ -1,23 +1,20 @@
-
-exports.seed = function(knex, Promise) {
-  // Deletes ALL existing entries
+exports.seed = function (knex, Promise) {
   return knex('movie_tests').del()
     .then(function () {
-      // Inserts seed entries
       return knex('movie_tests').insert([
-        {id: 1, test_type: 'Bechdel Test', movie_id: 1, pass_or_fail: true },
-        {id: 2, test_type: 'Bechdel Test', movie_id: 2, pass_or_fail: true },
-        {id: 3, test_type: 'Bechdel Test', movie_id: 3, pass_or_fail: true },
-        {id: 4, test_type: 'Duvernay Test', movie_id: 4, pass_or_fail: true },
-        {id: 5, test_type: 'Duvernay Test', movie_id: 5, pass_or_fail: true },
-        {id: 6, test_type: 'Duvernay Test', movie_id: 6, pass_or_fail: true },
-        {id: 7, test_type: 'Bechdel Test', movie_id: 7, pass_or_fail: true },
-        {id: 8, test_type: 'Bechdel Test', movie_id: 8, pass_or_fail: true },
-        {id: 9, test_type: 'Bechdel Test', movie_id: 9, pass_or_fail: true },
-        {id: 10, test_type: 'Bechdel Test', movie_id: 10, pass_or_fail: true },
-      ]);
-    });
-};
+        { id: 1, test_type: 'Bechdel Test', movie_id: 1, pass_or_fail: true },
+        { id: 2, test_type: 'Bechdel Test', movie_id: 2, pass_or_fail: true },
+        { id: 3, test_type: 'Bechdel Test', movie_id: 3, pass_or_fail: true },
+        { id: 4, test_type: 'Duvernay Test', movie_id: 4, pass_or_fail: true },
+        { id: 5, test_type: 'Duvernay Test', movie_id: 5, pass_or_fail: true },
+        { id: 6, test_type: 'Duvernay Test', movie_id: 6, pass_or_fail: true },
+        { id: 7, test_type: 'Bechdel Test', movie_id: 7, pass_or_fail: true },
+        { id: 8, test_type: 'Bechdel Test', movie_id: 8, pass_or_fail: true },
+        { id: 9, test_type: 'Bechdel Test', movie_id: 9, pass_or_fail: true },
+        { id: 10, test_type: 'Bechdel Test', movie_id: 10, pass_or_fail: true },
+      ])
+    })
+}
 
 //     {id: 1, name: 'The Bechdel Test', description: 'The Bechdel Test, sometimes called the Mo Movie Measure or Bechdel Rule is a simple test which names the following three criteria: (1) it has to have at least two women in it, who (2) who talk to each other, about (3) something besides a man. \n Founded by Alison Bechdel.'},
 // {id: 2, name: 'The Duvernay Test', description: 'Coined as the Bechdel Test for race, to pass the DuVernay Test, an African American character — or a character of another minority — must have ‘fully realised’ lives, with their own desires, rather than serving as background characters (see: the black friend) for white plotlines. \n Founded by Manohla Dargis (named after Ava Duvernay).'},
