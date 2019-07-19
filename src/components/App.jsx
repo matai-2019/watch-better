@@ -7,6 +7,7 @@ import { theme } from '../style/muiStyles'
 
 import NotFound from './NotFound'
 import Header from './Header'
+import Home from './Home'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route component={NotFound} />
         </Switch>
       </Router>
+      <Home />
     </ThemeProvider>
   )
 }
