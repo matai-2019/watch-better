@@ -5,7 +5,7 @@ import {
   getMoviesPending,
   getMoviesSuccess,
   getMoviesError
-} from '../movies.js'
+} from '../../../actions/movies'
 
 describe('movies actions', () => {
   it('GET_MOVIES_SUCCESS returns Movies', () => {
