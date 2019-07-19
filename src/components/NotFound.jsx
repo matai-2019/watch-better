@@ -7,7 +7,7 @@ export default function NotFound () {
   const classes = NoMatch()
   return (
     <Container className={classes.text}>
-      🎥 Page not found 🎥
+      <span role="img" aria-label="camera">🎥</span> Page not found <span role="img" aria-label="camera">🎥</span>
     </Container>
   )
 }

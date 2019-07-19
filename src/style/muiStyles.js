@@ -71,6 +71,30 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   }
 }))
 
+export const WaitIndicatorStyles = makeStyles(theme => ({
+  loadingCamera: {
+    fill: 'purple',
+    fillOpacity: 0.95,
+    stroke: 'none',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    position: 'absolute'
+  },
+
+  Typography: {
+    fontFamily: 'Montserrat',
+    textAlign: 'center',
+    fontWeight: 'lighter 300',
+    color: 'purple',
+    top: '120%',
+    left: '60%',
+    transform: 'translate(-50%, -50%)',
+    position: 'absolute',
+    lineHeight: '2'
+  }
+}))
+
 export const NavBarStyles = makeStyles(theme => ({
   toolbar: {
     justifyContent: 'right'
