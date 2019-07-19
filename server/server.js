@@ -8,5 +8,6 @@ server.use(express.json())
 server.use(pino)
 
 server.use('/movie-api/', router)
+server.use(express.static('public'))
 
 module.exports = server

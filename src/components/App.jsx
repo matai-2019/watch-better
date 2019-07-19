@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { connect } from 'react-redux'
 import { theme } from '../style/muiStyles'
 
+import MovieList from './MovieList'
 import NotFound from './NotFound'
 import Header from './Header'
 
@@ -15,6 +16,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path='/' component={Header} />
+          <Route exact path="/movies/list" component={MovieList} />
           <Route component={NotFound} />
         </Switch>
       </Router>
