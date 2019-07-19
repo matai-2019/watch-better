@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
-// import HUE from '@material-ui/core/colors/HUE'
 
 export const theme = createMuiTheme({
   palette: {
@@ -32,27 +31,25 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 }))
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
-  cameraBody: {
-    fill: '#fff',
-    fillOpacity: 0.95,
-    stroke: 'none'
-  },
-
   loadingCamera: {
-    height: '100vh',
-    background: 'yellow',
-    fill: theme.palette.common.black,
-    display: 'flexbox',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center'
+    fill: 'purple',
+    fillOpacity: 0.95,
+    stroke: 'none',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    position: 'absolute'
   },
 
-  span: {
-    fontFamily: 'Open Sans, arial, sans-serif',
-    fontSize: '1.2em',
+  Typography: {
+    fontFamily: 'Montserrat',
+    textAlign: 'center',
     fontWeight: 'lighter 300',
-    fontColor: '#fff',
-    lineHeight: '2em'
+    color: 'purple',
+    top: '120%',
+    left: '60%',
+    transform: 'translate(-50%, -50%)',
+    position: 'absolute',
+    lineHeight: '2'
   }
 }))
