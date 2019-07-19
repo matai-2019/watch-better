@@ -26,12 +26,13 @@ const MovieListItem = (props) => {
           <Typography className={classes.summaryText} variant="p" component="p">
             <p>{props.movie.summary}</p>
           </Typography>
-          <ExpansionPanelActions className={classes.moreButton}>
+          
+        </ExpansionPanelDetails>
+        <ExpansionPanelActions className={classes.moreButton}>
             <Button size="medium" color="secondary">
               MORE
             </Button>
           </ExpansionPanelActions>
-        </ExpansionPanelDetails>
       </ExpansionPanel>
       <div className={classes.space}></div>
     </>

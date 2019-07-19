@@ -27,8 +27,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
     marginLeft: '15px'
   },
   moreButton: {
-    padding: '3px',
-    margin: '165px 10px 0px 230px'
+    margin: '-50px 10px 0px'
   },
   divider: {
     width: '100%'
