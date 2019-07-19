@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { getMoviesSuccess } from '../actions/movies'
 import PropTypes from 'prop-types'
+
 import MovieListItem from './MovieListItem'
 
 class MovieList extends React.Component {
