@@ -5,6 +5,8 @@ const router = express.Router()
 const apiUrl = 'https://api.themoviedb.org/3/movie/'
 const apiKey = require('./apiKey')
 
+const db = require('../db/db')
+
 router.get('/:id', (req, res) => {
   const { id } = req.params
   getMoviesFromAPI(id)
@@ -16,7 +18,9 @@ router.get('/:id', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-  res.send('return a list of movies')
+  db.getMovies()
+    .then(movies => res.status(200).send(movies))
+    .catch(err => res.send(err.message))
 })
 
 const getMoviesFromAPI = (id) => {
