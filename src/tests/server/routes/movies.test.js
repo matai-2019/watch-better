@@ -24,3 +24,13 @@ test('GET(\'/\':id)responds with status 200', (done) => {
       done()
     })
 })
+
+test('GET(\'/search/:query\':id)responds with status 200', (done) => {
+  request(server)
+    .get('/movie-api/search/fight+club')
+    .end((err, res) => {
+      expect(err).toBeNull()
+      expect(res.status).toBe(200)
+      done()
+    })
+})
