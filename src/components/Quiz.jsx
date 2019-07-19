@@ -5,7 +5,7 @@ class Quiz extends React.Component {
 
   state = {
     title: '',
-    isVisible: false
+    isVisible: true
   }
 
   handleName = e => {
@@ -14,9 +14,15 @@ class Quiz extends React.Component {
     })
   }
 
+  handleSubmit = () => {
+    this.setState({
+      isVisible:false
+    })
+  }
+
   render () {
-    return (
-      <div >
+    return this.state.isVisible ? 
+    <>
         <TextField
           id="standard-search"
           label="Movie Title"
@@ -25,10 +31,11 @@ class Quiz extends React.Component {
           margin="normal"
           onChange={this.handleName}
         />
-        <Button onClick={() => this.setState({ isVisible: true })}variant="outlined" color="primary">Start</Button>
+        <Button onClick={this.handleSubmit}variant="outlined" color="primary">Start</Button>
         <br />
         <br />
-        <FormControl component="fieldset">
+        </>
+        : <><FormControl component="fieldset">
           <FormLabel component="legend">Does {this.state.title} have two women, that at some point have a conversation with each other?</FormLabel>
           <RadioGroup
             aria-label="Bechdel"
@@ -266,11 +273,9 @@ class Quiz extends React.Component {
             <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
             <FormControlLabel value="No" control={<Radio />} label="No" />
           </RadioGroup>
-        </FormControl>
-      </div>
- 
-    )
+        </FormControl></>
   }
-}
+  }
+
 
 export default Quiz
