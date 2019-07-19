@@ -10,7 +10,12 @@ import {
   GET_MOVIES_ERROR
 } from '../actions/movies'
 
-export default function infoReducer (state = { pending: true }, action) {
+import { CLEAR_ERROR_MESSAGE } from '../actions/errorMessage'
+
+export default function infoReducer (
+  state = { pending: true, error: null },
+  action
+) {
   switch (action.type) {
     case GET_MOVIE_DETAILS_PENDING:
     case GET_MOVIES_PENDING:
@@ -30,6 +35,11 @@ export default function infoReducer (state = { pending: true }, action) {
         ...state,
         pending: false,
         error: action.message
+      }
+    case CLEAR_ERROR_MESSAGE:
+      return {
+        ...state,
+        error: null
       }
     default:
       return state

@@ -6,12 +6,16 @@ import { connect } from 'react-redux'
 import { theme } from '../style/muiStyles'
 import MovieList from './MovieList'
 
+import NotFound from './NotFound'
+import Header from './Header'
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={MovieList} />
+        <Route path='/' component={Header} />
+        <Route component={NotFound} />
       </Router>
     </ThemeProvider>
   )
