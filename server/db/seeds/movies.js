@@ -10,7 +10,7 @@ exports.seed = (knex, Promise) => {
         },
         {
           id: 2,
-          title: 'Hiden Figures',
+          title: 'Hidden Figures',
           API_movie_id: 381284,
           recommended: 'true'
         },

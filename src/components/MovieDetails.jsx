@@ -1,20 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Card, CardMedia, CardContent, Container, Grid, Typography, Icon, List, ListItem } from '@material-ui/core'
+import { connect } from 'react-redux'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
+import { getMovieDetails } from '../actions/movieDetails'
 
-export default function MovieDetails () {
+function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
 
-  const movieDetails = {
-    title: 'This is a movie title',
-    releaseDate: '11/11/1111',
-    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-    rating: 3.5,
-    genre: 'drama',
-    poster: 'http://place-puppy.com/400x300'
-  }
-  //  dummy data to be removed after passing props down to this component
+  useEffect(() => {
+    dispatch(getMovieDetails(match.params.id))
+  }, [dispatch, match.params.id])
+
+  // const movie_Details = {
+  //   title: 'This is a movie title',
+  //   releaseDate: '11/11/1111',
+  //   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+  //   rating: 3.5,
+  //   genre: 'drama',
+  //   poster: 'http://place-puppy.com/400x300'
+  // }
 
   return (
     <Container>
@@ -25,7 +30,7 @@ export default function MovieDetails () {
             <Grid item xs={4}>
               <CardMedia
                 className={classes.poster}
-                image={movieDetails.poster} />
+                image={`https://image.tmdb.org/t/p/w500${movieDetails.image}`} />
             </Grid>
             <Grid item xs={8}>
               <List>
@@ -56,3 +61,12 @@ export default function MovieDetails () {
     </Container>
   )
 }
+
+function mapStateToProps (state) {
+  return {
+    movieDetails: state.movieDetails,
+    info: state.info
+  }
+}
+
+export default connect(mapStateToProps)(MovieDetails)

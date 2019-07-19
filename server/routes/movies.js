@@ -7,12 +7,31 @@ const db = require('../db/db')
 
 router.get('/:id', (req, res) => {
   const { id } = req.params
-  getMoviesFromAPI(id)
-    .then(movie => res.json(movie))
-    .catch(err => {
-      res.status(500).send('Consuming TMDB failed')
-      console.error(err)
-    })
+  db.getMovieById(id).then(movieLocal => {
+    return getMoviesFromAPI(movieLocal.apiMovieId)
+      .then(movieApi => {
+        const joinedMovie = {
+          ...movieLocal,
+          ...movieApi,
+          cast: movieApi.cast.map(castMember => {
+            return {
+              name: castMember.name,
+              image: castMember.profile_path
+            }
+          })
+        }
+        res.send(joinedMovie)
+      })
+      .catch(err => {
+        res.status(500).send(`Consuming TMDB failed: ${err.message}`)
+      })
+  })
+})
+
+router.get('/', (req, res) => {
+  db.getAllMovies()
+    .then(movies => res.status(200).json(movies))
+    .catch(err => res.status(500).send(err.message))
 })
 
 router.get('/search/:query', (req, res) => {
@@ -23,12 +42,6 @@ router.get('/search/:query', (req, res) => {
       res.status(500).send('Consuming TMDB failed')
       console.error(err)
     })
-})
-
-router.get('/', (req, res) => {
-  db.getMovies()
-    .then(movies => res.status(200).send(movies))
-    .catch(err => res.send(err.message))
 })
 
 module.exports = router
