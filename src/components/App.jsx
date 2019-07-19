@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import { connect } from 'react-redux'
@@ -13,8 +13,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={Header} />
-        <Route component={NotFound} />
+        <Switch>
+          <Route exact path='/' component={Header} />
+          <Route component={NotFound} />
+        </Switch>
       </Router>
     </ThemeProvider>
   )
