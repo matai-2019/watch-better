@@ -8,7 +8,6 @@ import { MovieListItemStyles } from '../style/muiStyles'
 import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, ExpansionPanelActions, Button, Divider, Typography } from '@material-ui/core'
 
 const MovieListItem = (props) => {
-
   const classes = MovieListItemStyles(props)
   return (
     <>
@@ -26,13 +25,12 @@ const MovieListItem = (props) => {
           <Typography className={classes.summaryText} variant="p" component="p">
             <p>{props.movie.summary}</p>
           </Typography>
-          
         </ExpansionPanelDetails>
         <ExpansionPanelActions className={classes.moreButton}>
-            <Button size="medium" color="secondary">
-              MORE
-            </Button>
-          </ExpansionPanelActions>
+          <Button size="medium" color="secondary">
+            MORE
+          </Button>
+        </ExpansionPanelActions>
       </ExpansionPanel>
       <div className={classes.space}></div>
     </>
