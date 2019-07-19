@@ -4,6 +4,10 @@ const close = (db = connection) => {
   db.destroy()
 }
 
+function getMovies (db = connection) {
+  return db('movies')
+}
+
 function getMovie (id, db = connection) {
   return db('movies')
     .join('movie_tests', 'movies.id', 'movie_tests.movie_id')
@@ -19,5 +23,6 @@ function getMovie (id, db = connection) {
 
 module.exports = {
   close,
-  getMovie
+  getMovie,
+  getMovies
 }

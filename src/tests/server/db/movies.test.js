@@ -21,4 +21,20 @@ test('db.getMovie returns all data for a specific movie', () => {
   return db.getMovie(1, testDb).then(movie => {
     expect(movie[0]).toEqual(expected)
   })
+test.skip('db.getMovies returns an array of 10 movie objects', () => {
+  const movies = db.getMovies(testDb)
+  expect(movies).resolves.toHaveLength(10)
+})
+
+test.skip('db.getMovie returns a specific movie', () => {
+  db.getMovie(1, testDb)
+    .then(movie => {
+      const expected = {
+        id: 1,
+        title: 'A Star is Born',
+        API_movie_id: 'null',
+        recommended: 'true'
+      }
+      expect(movie).toStrictEqual(expected)
+    })
 })
