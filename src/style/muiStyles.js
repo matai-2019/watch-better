@@ -89,6 +89,17 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   }
 }))
 
+export const RecommendationsStyles = makeStyles({
+  card: {
+    width: 200,
+    height: 370,
+    margin: theme.spacing(2)
+  },
+  media: {
+    height: 290
+  }
+})
+
 export const NoMatch = makeStyles(theme => ({
   text: {
     marginTop: '5em',
