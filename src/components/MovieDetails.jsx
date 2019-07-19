@@ -40,7 +40,10 @@ export default function MovieDetails () {
                   <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="subtitle1" gutterBottom>{`genre: ${movieDetails.genre}, released on: ${movieDetails.releaseDate}`}</Typography>
+                  <Typography variant="subtitle1" gutterBottom>{`genre: ${movieDetails.genre}`}</Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>{`released on: ${movieDetails.releaseDate}`}</Typography>
                 </ListItem>
                 <ListItem>
                   <Typography variant="body1" gutterBottom>{movieDetails.description}</Typography>
