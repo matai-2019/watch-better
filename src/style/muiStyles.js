@@ -88,3 +88,11 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     margin: 5
   }
 }))
+
+export const NoMatch = makeStyles(theme => ({
+  text: {
+    marginTop: '5em',
+    textAlign: 'center',
+    fontSize: '5em'
+  }
+}))

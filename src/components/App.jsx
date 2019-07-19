@@ -5,6 +5,7 @@ import { ThemeProvider } from '@material-ui/styles'
 import { connect } from 'react-redux'
 import { theme } from '../style/muiStyles'
 
+import NotFound from './NotFound'
 import Header from './Header'
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
       <CssBaseline />
       <Router>
         <Route path='/' component={Header} />
+        <Route component={NotFound} />
       </Router>
     </ThemeProvider>
   )
