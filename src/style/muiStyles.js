@@ -77,3 +77,14 @@ export const NavBarStyles = makeStyles(theme => ({
     }
   }
 }))
+
+export const MovieDetailsStyles = makeStyles(theme => ({
+  poster: {
+    height: 400,
+    width: 300,
+    marginBottom: 50
+  },
+  icon: {
+    margin: 5
+  }
+}))
