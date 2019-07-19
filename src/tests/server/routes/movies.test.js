@@ -23,8 +23,6 @@ test("GET('/') returns an array of 10 movies", () => {
     .catch(err => expect(err).toBeNull())
 })
 
-// res.header['content-length']).toBe('560')
-
 test("GET('/':id) responds with status 200", () => {
   return request(server)
     .get('/movie-api/1')

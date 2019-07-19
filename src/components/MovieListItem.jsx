@@ -21,7 +21,7 @@ const MovieListItem = (props) => {
         </ExpansionPanelSummary>
         <Divider className={classes.divider} />
         <ExpansionPanelDetails className={classes.detailsPanel}>
-          <img className={classes.img} src={`/images/${props.movie.image}`}></img>
+          <img className={classes.img} src={`/images/${props.movie.image}`} alt=''></img>
           <Typography className={classes.summaryText} variant="p" component="p">
             <p>{props.movie.summary}</p>
           </Typography>
