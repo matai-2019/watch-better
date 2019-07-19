@@ -13,12 +13,6 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
-export const useStyles = makeStyles(theme => ({
-  example: {
-    width: 200
-  }
-}))
-
 export const HeaderStyles = makeStyles(theme => ({
   headerContent: {
     backgroundColor: theme.palette.background.paper,
