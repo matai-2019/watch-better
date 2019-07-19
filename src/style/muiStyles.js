@@ -13,6 +13,13 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
+export const HeaderStyles = makeStyles(theme => ({
+  headerContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 4)
+  }
+}))
+
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
