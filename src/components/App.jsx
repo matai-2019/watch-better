@@ -9,13 +9,14 @@ import MovieList from './MovieList'
 import NotFound from './NotFound'
 import Header from './Header'
 import Home from './Home'
+import Quiz from './Quiz'
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={Header} />
+        <Route path='/' component={Quiz} />
         <Switch>
           <Route path='/' component={Home} />
           <Route component={NotFound} />
