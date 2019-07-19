@@ -10,12 +10,12 @@ beforeEach(() => {
 
 afterEach(() => env.cleanup(testDb))
 
-test('db.getMovies returns an array of 10 movie objects', () => {
+test.skip('db.getMovies returns an array of 10 movie objects', () => {
   const movies = db.getMovies(testDb)
   expect(movies).resolves.toHaveLength(10)
 })
 
-test('db.getMovie returns a specific movie', () => {
+test.skip('db.getMovie returns a specific movie', () => {
   db.getMovie(1, testDb)
     .then(movie => {
       const expected = {
