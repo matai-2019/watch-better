@@ -13,6 +13,13 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
+export const HeaderStyles = makeStyles(theme => ({
+  headerContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 4)
+  }
+}))
+
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
@@ -68,5 +75,24 @@ export const NavBarStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       width: 200
     }
+  }
+}))
+
+export const MovieDetailsStyles = makeStyles(theme => ({
+  poster: {
+    height: 400,
+    width: 300,
+    marginBottom: 50
+  },
+  icon: {
+    margin: 5
+  }
+}))
+
+export const NoMatch = makeStyles(theme => ({
+  text: {
+    marginTop: '5em',
+    textAlign: 'center',
+    fontSize: '5em'
   }
 }))
