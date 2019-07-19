@@ -88,3 +88,14 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     margin: 5
   }
 }))
+
+export const RecommendationsStyles = makeStyles({
+  card: {
+    width: 200,
+    height: 370,
+    margin: theme.spacing(2)
+  },
+  media: {
+    height: 290
+  }
+})
