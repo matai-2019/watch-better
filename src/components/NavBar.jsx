@@ -3,8 +3,8 @@ import { AppBar, Toolbar, InputBase } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import { NavBarStyles } from '../style/muiStyles'
 
-export default function NavBar () {
-  const classes = NavBarStyles()
+export default function NavBar (props) {
+  const classes = NavBarStyles(props)
   return (
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
