@@ -14,12 +14,12 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
+        <Route path='/' component={Header} />
         <Switch>
-          <Route exact path='/' component={Header} />
+          <Route path='/' component={Home} />
           <Route component={NotFound} />
         </Switch>
       </Router>
-      <Home />
     </ThemeProvider>
   )
 }

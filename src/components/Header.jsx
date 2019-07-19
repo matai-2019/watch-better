@@ -2,9 +2,13 @@ import React from 'react'
 import { Container, Typography } from '@material-ui/core'
 import { HeaderStyles } from '../style/muiStyles'
 
+import NavBar from './NavBar'
+
 const Header = (props) => {
   const classes = HeaderStyles(props)
   return (
+    <>
+    <NavBar />
     <div className={classes.headerContent}>
       <Container maxWidth="sm">
         <Typography variant="h1" component="h2" align="center" gutterBottom>
@@ -15,6 +19,7 @@ const Header = (props) => {
         </Typography>
       </Container>
     </div>
+    </>
   )
 }
 
