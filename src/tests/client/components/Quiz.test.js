@@ -10,9 +10,7 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('Quiz component tests', () => {
   it('<Quiz /> displays a button on a initial render', () => {
-    const wrapper = mount(
-      <Quiz />
-    )
+    const wrapper = mount(<Quiz />)
     const actual = wrapper.find(Button)
     expect(actual).toHaveLength(1)
   })
