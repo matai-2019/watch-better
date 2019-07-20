@@ -1,5 +1,5 @@
 import React from 'react'
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, TextField, Button } from '@material-ui/core'
+import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, TextField, Button, Typography } from '@material-ui/core'
 
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
@@ -9,32 +9,28 @@ class Quiz extends React.Component {
   state = {
     title: '',
     isVisible: true,
-    answers: {
-      t1: [],
-      t2: []
-    }
+    displayAnswers: false
   }
+
+  test1 = []
+  test2 = []
+  test3 = []
+  test4 = []
+  test5 = []
 
   handleName = e => {
     this.setState({
       title: e.target.value
     })
   }
+
+  handleSubmit = () => {
+    this.setState({
+      isVisible:false
+    })
+  }
   
-  test1 = []
-  test2 = []
-  test3 = []
-  test4 = []
-  test5 = []
- 
-
   handleChange = (value, id) => {
-  console.log(`test1: ${this.test1}`)
-  console.log(`test2: ${this.test2}`)
-  console.log(`test3: ${this.test3}`)
-  console.log(`test4: ${this.test4}`)
-  console.log(`test5: ${this.test5}`)
-
     switch (id) {
       case '1':
       case '2':
@@ -72,16 +68,31 @@ class Quiz extends React.Component {
     }
   }
 
-  handleSubmit = () => {
-    this.setState({
-      isVisible:false
-    })
+  getResult = () => {
+    function result (array) {
+      return array.filter(value => value > 0).length
+    }
+
+    const result1 = () => {
+      if (result(this.test1) === 2) return true
+    } 
+    const result2 = () => {
+      if (result(this.test2) === 1) return true
+    } 
+    const result3 = () => {
+      if (result(this.test3) === 3) return true
+    } 
+    const result4 = () => {
+      if (result(this.test4) === 3) return true
+    } 
+    const result5 = () => {
+      if (result(this.test5) > 4) return true
+    } 
   }
 
-  render () {
-    return this.state.isVisible ? 
-      <>
-        <TextField
+  rendered = () => {
+    if (this.state.isVisible) {
+      let inputField =  <><TextField
           id="standard-search"
           label="Movie Title"
           type="search"
@@ -89,12 +100,23 @@ class Quiz extends React.Component {
           margin="normal"
           onChange={this.handleName}
         />
-        <Button onClick={this.handleSubmit}variant="outlined" color="primary">Start</Button>
+
+        <Button onClick={this.handleSubmit} variant="outlined" color="primary">Start</Button>
+
         <br />
-        <br />
-      </>
-        : data.map(el => <QuizQuestion key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />)
+        <br /></>
+    } else if (!this.state.isVisible) {
+      let questions = data.map(el => <QuizQuestion key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />)
+    } else if (this.state.displayAnswers) {
+      let answer = <Typography variant="p"><p>{`${this.state.title} passes ALL THE TESTS!!!`}</p></Typography >
+    }
   }
+
+  render () {
+    return(
+      {rendered}
+    )
+}
 }
 
 
