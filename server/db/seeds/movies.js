@@ -54,7 +54,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 7,
           title: 'Arrival',
-          API_movie_id: 329864,
+          API_movie_id: 329865,
           recommended: false,
           rating: 6.5
         },
@@ -84,7 +84,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 11,
           title: 'Sing',
-          API_movie_id: 38575,
+          API_movie_id: 335797,
           recommended: false,
           rating: 6.3
         },
@@ -106,14 +106,14 @@ exports.seed = (knex, Promise) => {
         {
           id: 14,
           title: 'Boo! A Madea Halloween',
-          API_movie_id: 376659,
+          API_movie_id: 380124,
           recommended: false,
           rating: 6.5
         },
         {
           id: 15,
           title: 'Alice Through the Looking Glass',
-          API_movie_id: 381284,
+          API_movie_id: 241259,
           recommended: false,
           rating: 8
         },
@@ -128,14 +128,14 @@ exports.seed = (knex, Promise) => {
         {
           id: 17,
           title: 'La La Land',
-          API_movie_id: 114750,
+          API_movie_id: 313369,
           recommended: false,
           rating: 6.1
         },
         {
           id: 18,
           title: 'Now You See Me 2',
-          API_movie_id: 88583,
+          API_movie_id: 291805,
           recommended: false,
           rating: 5.5
         },
@@ -163,203 +163,203 @@ exports.seed = (knex, Promise) => {
         {
           id: 22,
           title: 'Suicide Squad',
-          API_movie_id: 6977,
+          API_movie_id: 297761,
           recommended: false,
           rating: 6.5
         },
         {
           id: 23,
-          title: 'Sing',
-          API_movie_id: 38575,
+          title: 'Sausage Party',
+          API_movie_id: 223702,
           recommended: false,
           rating: 6.5
         },
         {
           id: 24,
           title: 'The Conjuring 2',
-          API_movie_id: 38575,
+          API_movie_id: 259693,
           recommended: false,
           rating: 6.5
         },
         {
           id: 25,
           title: 'The Purge: Election Year',
-          API_movie_id: 38575,
+          API_movie_id: 316727,
           recommended: false,
           rating: 6.5
         },
         {
           id: 26,
           title: 'X-Men: Apocalypse',
-          API_movie_id: 38575,
+          API_movie_id: 246655,
           recommended: false,
           rating: 6.5
         },
         {
           id: 27,
           title: '10 Cloverfield Lane',
-          API_movie_id: 376659,
+          API_movie_id: 333371,
           recommended: false,
           rating: 6.5
         },
         {
           id: 28,
           title: 'Batman v Superman: Dawn of Justice',
-          API_movie_id: 381284,
+          API_movie_id: 209112,
           recommended: false,
           rating: 6.5
         },
         {
           id: 29,
           title: 'Captain America: Civil War',
-          API_movie_id: 300668,
+          API_movie_id: 271110,
           recommended: false,
           rating: 6.5
         },
         {
           id: 30,
           title: 'Central Intelligence',
-          API_movie_id: 114750,
+          API_movie_id: 302699,
           recommended: false,
           rating: 6.5
         },
         {
           id: 31,
           title: "Don't Breathe",
-          API_movie_id: 88583,
+          API_movie_id: 300669,
           recommended: false,
           rating: 6.5
         },
         {
           id: 32,
           title: 'Hacksaw Ridge',
-          API_movie_id: 345940,
+          API_movie_id: 324786,
           recommended: false,
           rating: 6.5
         },
         {
           id: 33,
           title: 'Lights Out',
-          API_movie_id: 426426,
+          API_movie_id: 345911,
           recommended: false,
           rating: 6.5
         },
         {
           id: 34,
           title: 'Moana',
-          API_movie_id: 118340,
+          API_movie_id: 277834,
           recommended: false,
           rating: 6.5
         },
         {
           id: 35,
           title: 'Ride Along 2',
-          API_movie_id: 6977,
+          API_movie_id: 323675,
           recommended: false,
           rating: 6.5
         },
         {
           id: 36,
           title: 'Star Trek Beyond',
-          API_movie_id: 38575,
+          API_movie_id: 188927,
           recommended: false,
           rating: 6.5
         },
         {
           id: 37,
           title: 'Sully',
-          API_movie_id: 38575,
+          API_movie_id: 363676,
           recommended: false,
           rating: 6.5
         },
         {
           id: 38,
           title: 'Teenage Mutant Ninja Turtles: Out of the Shadows',
-          API_movie_id: 38575,
+          API_movie_id: 308531,
           recommended: false,
           rating: 6.5
         },
         {
           id: 39,
           title: 'The Angry Birds Movie',
-          API_movie_id: 38575,
+          API_movie_id: 153518,
           recommended: false,
           rating: 6.5
         },
         {
           id: 40,
           title: 'The Magnificent Seven',
-          API_movie_id: 376659,
+          API_movie_id: 333484,
           recommended: false,
           rating: 6.5
         },
         {
           id: 41,
           title: 'Trolls',
-          API_movie_id: 381284,
+          API_movie_id: 136799,
           recommended: false,
           rating: 6.5
         },
         {
           id: 42,
           title: 'Zootopia',
-          API_movie_id: 300668,
+          API_movie_id: 269149,
           recommended: false,
           rating: 6.5
         },
         {
           id: 43,
           title: 'Jason Bourne',
-          API_movie_id: 114750,
+          API_movie_id: 324668,
           recommended: false,
           rating: 6.5
         },
         {
           id: 44,
-          title: 'Rogue One',
-          API_movie_id: 88583,
+          title: 'Rogue One: A Star Wars Story',
+          API_movie_id: 330459,
           recommended: false,
           rating: 6.5
         },
         {
           id: 45,
           title: 'The Accountant',
-          API_movie_id: 345940,
+          API_movie_id: 302946,
           recommended: false,
           rating: 6.5
         },
         {
           id: 46,
           title: 'The Jungle Book',
-          API_movie_id: 426426,
+          API_movie_id: 278927,
           recommended: false,
           rating: 6.5
         },
         {
           id: 47,
           title: 'The Legend of Tarzan',
-          API_movie_id: 118340,
+          API_movie_id: 258489,
           recommended: false,
           rating: 6.5
         },
         {
           id: 48,
           title: 'Deadpool',
-          API_movie_id: 6977,
+          API_movie_id: 293660,
           recommended: false,
           rating: 6.5
         },
         {
           id: 49,
           title: 'Doctor Strange',
-          API_movie_id: 38575,
+          API_movie_id: 284052,
           recommended: false,
           rating: 6.5
         },
         {
           id: 50,
           title: 'The Secret Life of Pets',
-          API_movie_id: 38575,
+          API_movie_id: 328111,
           recommended: false,
           rating: 6.5
         }
