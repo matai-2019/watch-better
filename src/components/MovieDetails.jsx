@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Card, CardMedia, CardContent, Container, Grid, Typography, Icon, List, ListItem } from '@material-ui/core'
+import { Card, CardMedia, CardContent, Grid, Typography, Icon, List, ListItem, Container } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
@@ -7,6 +7,20 @@ import { getMovieDetails } from '../actions/movieDetails'
 
 function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
+
+  const styles = {
+    cardContainer: {
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '50% 50%',
+      backgroundImage: `url(https://image.tmdb.org/t/p/w1400_and_h450_face${movieDetails.poster})`,
+      backgroundColor: '#333'
+    },
+    customFilter: {
+      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 0.9) 0%, rgba(25.49%, 19.22%, 14.12%, 0.8) 100%)'
+    }
+  }
+
   useEffect(() => {
     dispatch(getMovieDetails(match.params.id))
   }, [dispatch, match.params.id])
@@ -20,10 +34,10 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   }
 
   return !info.pending &&
-    <Container>
-      <Card>
-        <Typography variant="h1">{movieDetails.title}</Typography>
-        <CardContent>
+  <div style={styles.cardContainer}>
+    <div style={styles.customFilter}>
+      <Container maxWidth='lg'>
+        <CardContent >
           <Grid container spacing={3}>
             <Grid item xs={4}>
               <CardMedia
@@ -31,6 +45,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                 image={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
             </Grid>
             <Grid item xs={8}>
+              <Typography variant="h2" component="h1">{movieDetails.title}</Typography>
               <List>
                 <ListItem>
                   <Icon className={classes.icon} color="primary">theaters</Icon>
@@ -57,8 +72,9 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
             </Grid>
           </Grid>
         </CardContent>
-      </Card>
-    </Container>
+      </Container>
+    </div>
+  </div>
 }
 
 function mapStateToProps (state) {
