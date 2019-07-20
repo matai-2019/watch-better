@@ -1,6 +1,7 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import {
   Paper,
   Typography,
@@ -19,28 +20,37 @@ import { getMovies } from '../actions/movies'
 const Recommendations = ({ movies, info, dispatch }, ...props) => {
   const classes = RecommendationsStyles(props)
 
+  const [redirect, setRedirect] = useState()
+
   useEffect(() => {
     dispatch(getMovies())
-  }, [dispatch]
-  )
+  }, [dispatch])
 
-  console.log(movies)
+  const handleClick = id => () => {
+    setRedirect(id)
+  }
 
-  return !info.pending &&
-    <Paper>
-      <Typography variant="h6" component="h2" gutterBottom>
-        Here are our Recommended Movies
-      </Typography>
-      <Divider />
-      <Grid container direction="row" justify="center" alignItems="center">
-        {movies.filter(movie => movie.recommended)
-          .map(movie => (
-            <Link
-              key={movie.id}
-              to={`/movie/${movie.id}`}
-              style={{ textDecoration: 'none' }}
-            >
-              <Card className={classes.card}>
+  const renderRedirect = () => {
+    return <Redirect push to={`/movie/${redirect}`} />
+  }
+
+  return (
+    !info.pending && (
+      <Paper>
+        {redirect && renderRedirect()}
+        <Typography variant="h6" component="h2" gutterBottom>
+          Here are our Recommended Movies
+        </Typography>
+        <Divider />
+        <Grid container direction="row" justify="center" alignItems="center">
+          {movies
+            .filter(movie => movie.recommended)
+            .map(movie => (
+              <Card
+                onClick={handleClick(movie.id)}
+                key={movie.id}
+                className={classes.card}
+              >
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
@@ -54,10 +64,11 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </Link>
-          ))}
-      </Grid>
-    </Paper>
+            ))}
+        </Grid>
+      </Paper>
+    )
+  )
 }
 
 function mapStateToProps ({ movies, info }) {
@@ -68,3 +79,9 @@ function mapStateToProps ({ movies, info }) {
 }
 
 export default connect(mapStateToProps)(Recommendations)
+
+Recommendations.propTypes = {
+  dispatch: PropTypes.func,
+  movies: PropTypes.array,
+  info: PropTypes.object
+}

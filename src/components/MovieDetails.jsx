@@ -7,18 +7,18 @@ import { getMovieDetails } from '../actions/movieDetails'
 
 function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
-
+  
   useEffect(() => {
     dispatch(getMovieDetails(match.params.id))
-  }, [dispatch, match.params.id])
+  }, [])
 
-  function extractGenres (arr) {
-    const genres = []
-    arr.forEach(x => {
-      genres.push(x.name)
-    })
-    return genres.join(', ')
-  }
+  // function extractGenres (arr) {
+  //   const genres = []
+  //   arr.forEach(x => {
+  //     genres.push(x.name)
+  //   })
+  //   return genres.join(', ')
+  // }
 
   return !info.pending &&
     <Container>
@@ -42,12 +42,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                   <Typography variant="body1" component="h3" gutterBottom>test three</Typography>
                   <Icon className={classes.icon} color="primary">theaters</Icon>
                   <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
+                  <Icon className={classes.icon} color="primary">theaters</Icon>
+                  <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="subtitle1" gutterBottom>{extractGenres(movieDetails.genres)}</Typography>
+                  <Typography variant="subtitle1" gutterBottom>{`Genres: ${movieDetails.genres[0].name}`}</Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography>{`released on: ${movieDetails.releaseDate}`}</Typography>
+                  <Typography>{`Released on: ${movieDetails.releaseDate}`}</Typography>
                 </ListItem>
                 <ListItem>
                   <Typography variant="body1" gutterBottom>{movieDetails.description}</Typography>
