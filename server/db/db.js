@@ -18,7 +18,8 @@ const getAllMovies = (db = connection) => {
               recommended: movie.recommended,
               apiMovieId: movie.API_movie_id,
               movieTests: tests,
-              image: movie.image
+              image: movie.image,
+              rating: movie.rating
             }
           })
       })
