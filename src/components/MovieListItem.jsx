@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom'
-// import MovieDetails from './MovieDetails'
-// ^^ button 'MORE' in the Expansion Panel Summary should be a link to the MovieDetails component
+import { Redirect } from 'react-router-dom'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { MovieListItemStyles } from '../style/muiStyles'
-import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, ExpansionPanelActions, Button, Divider, Typography } from '@material-ui/core'
+import {
+  ExpansionPanel,
+  ExpansionPanelSummary,
+  ExpansionPanelDetails,
+  ExpansionPanelActions,
+  Button, Divider,
+  Typography
+} from '@material-ui/core'
 
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
+
+  const [redirect, setRedirect] = useState()
+
+  const handleClick = () => {
+    setRedirect(props.movie.id)
+  }
+
+  const renderRedirect = () => {
+    if (redirect) { return <Redirect push to={`/movie/${redirect}`} /> }
+  }
+
   return (
     <>
+        {renderRedirect()}
       <ExpansionPanel spacing={2} className={classes.panel}>
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon className={classes.arrowIcon} />}
@@ -27,7 +44,7 @@ const MovieListItem = (props) => {
           </Typography>
         </ExpansionPanelDetails>
         <ExpansionPanelActions className={classes.moreButton}>
-          <Button size="medium" color="secondary">
+          <Button size="medium" color="secondary" onClick={handleClick}>
             MORE
           </Button>
         </ExpansionPanelActions>
