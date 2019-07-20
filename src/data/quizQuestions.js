@@ -81,7 +81,7 @@ export default [
   },
   {
     id: '17',
-    question: 'Is there a female character that initiates or reciprocates sexual',
+    question: 'Is there a female character that initiates or reciprocates sexual advances?',
     test: 'Feldman'
   }
 ]
