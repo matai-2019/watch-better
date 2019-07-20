@@ -18,15 +18,21 @@ class Quiz extends React.Component {
   test4 = []
   test5 = []
 
-  handleName = e => {
+  handleTitle = e => {
     this.setState({
       title: e.target.value
     })
   }
 
-  handleSubmit = () => {
+  onSubmit = () => {
     this.setState({
       isVisible:false
+    })
+  }
+
+  handleResult = () => {
+    this.setState({
+      displayAnswers: true
     })
   }
   
@@ -68,45 +74,39 @@ class Quiz extends React.Component {
     }
   }
 
-    result = (array) => {
-      return array.filter(value => value > 0).length
-    }
-
-    bechdel = () => {
-      if (this.result(this.test1) === 2) {
-        return 'Passed the Bechdel Test' 
-      } else return 'Failed the Bechdel Test'
-    } 
-    
-    reesDavies = () => {
-      if (this.result(this.test2) === 1) {
-        return 'Passed the Rees-Davies Test'
-       } else return 'Failed the Rees-Davies Test'
-    } 
-
-    ko = () => {
-      if (this.result(this.test3) === 3) {
-        return 'Passed the Ko Test' 
-      } else return 'Failed the Ko Test'
-    } 
-
-    landau = () => {
-      if (this.result(this.test4) === 3) {
-        return 'Passed the Landau Test'
-       } else return 'Failed the Landau Test'
-    } 
-
-    feldman = () => {
-      if (this.result(this.test5) > 4) { 
-        return 'Passed the Feldman Test' 
-      } else return 'Failed the Feldman Test'
-    } 
-
-  handleResult = () => {
-    this.setState({
-      displayAnswers: true
-    })
+  result = (array) => {
+    return array.filter(value => value > 0).length
   }
+
+  bechdel = () => {
+    if (this.result(this.test1) === 2) {
+      return 'Passed the Bechdel Test' 
+    } else return 'Failed the Bechdel Test'
+  } 
+    
+  reesDavies = () => {
+    if (this.result(this.test2) === 1) {
+      return 'Passed the Rees-Davies Test'
+    } else return 'Failed the Rees-Davies Test'
+  } 
+
+  ko = () => {
+    if (this.result(this.test3) === 3) {
+      return 'Passed the Ko Test' 
+    } else return 'Failed the Ko Test'
+  } 
+
+  landau = () => {
+    if (this.result(this.test4) === 3) {
+      return 'Passed the Landau Test'
+    } else return 'Failed the Landau Test'
+  } 
+
+  feldman = () => {
+    if (this.result(this.test5) > 4) { 
+      return 'Passed the Feldman Test' 
+    } else return 'Failed the Feldman Test'
+  } 
 
   render () {
     if (this.state.displayAnswers) {
@@ -140,11 +140,10 @@ class Quiz extends React.Component {
           id="standard-search"
           label="Movie Title"
           type="search"
-          // className={classes.textField}
           margin="normal"
-          onChange={this.handleName}
+          onChange={this.handleTitle}
         />
-        <Button onClick={this.handleSubmit} variant="outlined" color="primary">Start</Button>
+        <Button onClick={this.onSubmit} variant="outlined" color="primary">Start</Button>
 
         <br />
         <br />

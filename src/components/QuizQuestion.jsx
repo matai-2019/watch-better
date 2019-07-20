@@ -18,7 +18,7 @@ const QuizQuestion = ({ id, question, test, handleChange, handleResult }) => {
         </RadioGroup>
       </FormControl>
       <br/>
-      {id === '17' && <Button onClick={handleResult}>Submit</Button> } 
+      {id === '17' && <Button onClick={handleResult}>Submit</Button> }
     </>
   )
 }
