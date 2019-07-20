@@ -10,7 +10,8 @@ import {
   CardActionArea,
   CardMedia,
   CardContent,
-  Grid
+  Grid,
+  Button
 } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
@@ -30,8 +31,16 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
     setRedirect(id)
   }
 
+  const handleSeeAll = () => {
+    setRedirect('see')
+  }
+
   const renderRedirect = () => {
-    return <Redirect push to={`/movie/${redirect}`} />
+    if (redirect === 'see') {
+      return <Redirect push to={'/movies/list'} />
+    } else if (redirect) {
+      return <Redirect push to={`/movie/${redirect}`} />
+    }
   }
 
   return (
@@ -66,6 +75,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
               </Card>
             ))}
         </Grid>
+        <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>
       </Paper>
     )
   )
