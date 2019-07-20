@@ -167,11 +167,13 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     color: '#fff'
   },
   poster: {
-    height: 400,
-    marginBottom: 50
+    height: 400
   },
   icon: {
     margin: 5
+  },
+  description: {
+    fontWeight: '300'
   }
 }))
 
