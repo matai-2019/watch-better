@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import {
   Paper,
   Typography,
@@ -14,66 +15,46 @@ import {
 
 import { RecommendationsStyles } from '../style/muiStyles'
 
-const tempData = [
-  {
-    id: 1,
-    title: 'A Star is Born',
-    image:
-      'https://image.tmdb.org/t/p/w600_and_h900_bestv2/wrFpXMNBRj2PBiN4Z5kix51XaIZ.jpg',
-    recommended: 'true'
-  },
-  {
-    id: 2,
-    title: 'Black Panther',
-    image:
-      'https://image.tmdb.org/t/p/w600_and_h900_bestv2/uxzzxijgPIY7slzFvMotPv8wjKA.jpg',
-    recommended: 'true'
-  },
-  {
-    id: 3,
-    title: 'Annihilation',
-    image:
-      'https://image.tmdb.org/t/p/w600_and_h900_bestv2/d3qcpfNwbAMCNqWDHzPQsUYiUgS.jpg',
-    recommended: 'true'
-  },
-  {
-    id: 4,
-    title: 'Dear White People',
-    image:
-      'https://image.tmdb.org/t/p/w600_and_h900_bestv2/yxQYvWjh4wjwjrr6hhNpruVCFDG.jpg',
-    recommended: 'true'
-  },
-  {
-    id: 5,
-    title: 'The Pursuit of Happiness',
-    image:
-      'https://image.tmdb.org/t/p/w600_and_h900_bestv2/iMNp6gTeDBXbzjKRNYtorxZ76G2.jpg',
-    recommended: 'true'
-  }
-]
+import { getMovies } from '../actions/movies'
 
-const Recommendations = props => {
+const Recommendations = ({ movies, info, dispatch }, ...props) => {
   const classes = RecommendationsStyles(props)
+
+  const [redirect, setRedirect] = useState()
+
+  useEffect(() => {
+    dispatch(getMovies())
+  }, [dispatch])
+
+  const handleClick = id => () => {
+    setRedirect(id)
+  }
+
+  const renderRedirect = () => {
+    return <Redirect push to={`/movie/${redirect}`} />
+  }
+
   return (
-    <Paper>
-      <Typography variant="h6" component="h2" gutterBottom>
-        Here are our Recommended Movies
-      </Typography>
-      <Divider />
-      <Grid container direction="row" justify="center" alignItems="center">
-        {tempData
-          .filter(movie => movie.recommended)
-          .map(movie => (
-            <Link
-              key={movie.id}
-              to={`/movie/${movie.id}`}
-              style={{ textDecoration: 'none' }}
-            >
-              <Card className={classes.card}>
+    !info.pending && (
+      <Paper>
+        {redirect && renderRedirect()}
+        <Typography variant="h6" component="h2" gutterBottom>
+          OUR TOP PICKS
+        </Typography>
+        <Divider />
+        <Grid container direction="row" justify="center" alignItems="center">
+          {movies
+            .filter(movie => movie.recommended)
+            .map(movie => (
+              <Card
+                onClick={handleClick(movie.id)}
+                key={movie.id}
+                className={classes.card}
+              >
                 <CardActionArea>
                   <CardMedia
                     className={classes.media}
-                    image={movie.image}
+                    image={`https://image.tmdb.org/t/p/w200${movie.image}`}
                     title={movie.title}
                   />
                   <CardContent>
@@ -83,11 +64,24 @@ const Recommendations = props => {
                   </CardContent>
                 </CardActionArea>
               </Card>
-            </Link>
-          ))}
-      </Grid>
-    </Paper>
+            ))}
+        </Grid>
+      </Paper>
+    )
   )
 }
 
-export default connect()(Recommendations)
+function mapStateToProps ({ movies, info }) {
+  return {
+    movies,
+    info
+  }
+}
+
+export default connect(mapStateToProps)(Recommendations)
+
+Recommendations.propTypes = {
+  dispatch: PropTypes.func,
+  movies: PropTypes.array,
+  info: PropTypes.object
+}

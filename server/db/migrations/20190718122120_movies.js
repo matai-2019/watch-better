@@ -4,6 +4,7 @@ exports.up = knex =>
     table.string('title')
     table.integer('API_movie_id')
     table.boolean('recommended')
+    table.string('image')
   })
 
 exports.down = knex => knex.schema.dropTable('movies')
