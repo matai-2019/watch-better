@@ -50,9 +50,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
           <Grid item xs={9} className={classes.container}>
-            <Typography variant="h3" component="h1">
-              {movieDetails.title}
-            </Typography>
+            <div>
+              <Typography className={classes.title} variant="h3" component="h1">
+                {movieDetails.title}
+              </Typography>
+              <Typography className={classes.year} component="span">
+                {`(${extractYear(movieDetails.releaseDate)})`}
+              </Typography>
+            </div>
             <Box display="flex" flexDirection="row">
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
@@ -76,19 +81,11 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Box>
             </Box>
             <p>
-              <Typography component={'span'} gutterBottom>
+              <Typography component="span" gutterBottom>
                 {`Genres: `}
               </Typography>
-              <Typography className= {classes.description}component={'span'} gutterBottom>
+              <Typography className= {classes.description}component="span" gutterBottom>
                 {movieDetails.genres && extractGenres(movieDetails.genres)}
-              </Typography>
-            </p>
-            <p>
-              <Typography component={'span'}>
-                {`Released on: `}
-              </Typography>
-              <Typography className={classes.description} component={'span'}>
-                {extractYear(movieDetails.releaseDate)}
               </Typography>
             </p>
             <Typography className={classes.description} gutterBottom>

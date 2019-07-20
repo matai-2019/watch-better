@@ -10,7 +10,8 @@ export const theme = createMuiTheme({
       main: '#71a4a1'
     }
   },
-  spacing: 8
+  spacing: 8,
+  fontSize: 16
 })
 
 export const MovieListItemStyles = makeStyles(theme => ({
@@ -50,7 +51,6 @@ export const MovieListItemStyles = makeStyles(theme => ({
 export const HeaderStyles = makeStyles(theme => ({
   headerContent: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 4)
   }
 }))
 
@@ -174,6 +174,15 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   },
   description: {
     fontWeight: '300'
+  },
+  title: {
+    display: 'inline',
+    fontSize: '2.5rem'
+  },
+  year: {
+    marginLeft: theme.spacing(),
+    fontSize: '1.5rem',
+    color: '#ccc'
   }
 }))
 
