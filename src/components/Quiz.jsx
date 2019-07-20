@@ -1,5 +1,5 @@
 import React from 'react'
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, TextField, Button, Typography } from '@material-ui/core'
+import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, TextField, Button, Typography, List, ListItem, ListItemText } from '@material-ui/core'
 
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
@@ -73,26 +73,64 @@ class Quiz extends React.Component {
       return array.filter(value => value > 0).length
     }
 
-    const result1 = () => {
-      if (result(this.test1) === 2) return true
+    const bechdel = () => {
+      if (result(this.test1) === 2) {
+        return 'Passed the Bechdel Test' 
+      } else return 'Failed the Bechdel Test'
     } 
-    const result2 = () => {
-      if (result(this.test2) === 1) return true
+    const reesDavies = () => {
+      if (result(this.test2) === 1) {
+        return 'Passed the Rees-Davies Test'
+       } else return 'Failed the Rees-Davies Test'
     } 
-    const result3 = () => {
-      if (result(this.test3) === 3) return true
+    const ko = () => {
+      if (result(this.test3) === 3) {
+        return 'Passed the Ko Test' 
+      } else return 'Failed the Ko Test'
     } 
-    const result4 = () => {
-      if (result(this.test4) === 3) return true
+    const landau = () => {
+      if (result(this.test4) === 3) {
+        return 'Passed the Landau Test'
+       } else return 'Failed the Landau Test'
     } 
-    const result5 = () => {
-      if (result(this.test5) > 4) return true
+    const feldman = () => {
+      if (result(this.test5) > 4) { 
+        return 'Passed the Feldman Test' 
+      } else return 'Failed the Feldman Test'
     } 
   }
 
-  rendered = () => {
-    if (this.state.isVisible) {
-      let inputField =  <><TextField
+  handleResult = () => {
+    this.setState({
+      displayAnswers: true
+    })
+  }
+
+  render () {
+    if (this.state.displayAnswers) {
+      return (
+    <List >
+      <ListItem>
+        <ListItemText primary={this.getResult(bechdel(this.test1))} />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+      </ListItem>
+      <ListItem>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+            <ListItem>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+            <ListItem>
+        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+      </ListItem>
+    </List>
+
+  )} else if (this.state.isVisible) {
+      return(
+        <>
+        <TextField
           id="standard-search"
           label="Movie Title"
           type="search"
@@ -104,18 +142,14 @@ class Quiz extends React.Component {
         <Button onClick={this.handleSubmit} variant="outlined" color="primary">Start</Button>
 
         <br />
-        <br /></>
+        <br />
+        </>
+      )
     } else if (!this.state.isVisible) {
-      let questions = data.map(el => <QuizQuestion key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />)
-    } else if (this.state.displayAnswers) {
-      let answer = <Typography variant="p"><p>{`${this.state.title} passes ALL THE TESTS!!!`}</p></Typography >
-    }
-  }
-
-  render () {
-    return(
-      {rendered}
-    )
+      return (
+        data.map(el => <QuizQuestion handleResult={this.handleResult} key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />
+      ))
+}
 }
 }
 
