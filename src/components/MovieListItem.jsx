@@ -17,11 +17,11 @@ const MovieListItem = (props) => {
           aria-controls="panel1a-content"
           id="panel1a-header"
           className={classes.summary}>
-          <Typography variant="h5" component="h5" className={classes.text}><p>{props.movie.name}</p></Typography>
+          <Typography variant="h5" component="h5" className={classes.text}><p>{props.movie.title}</p></Typography>
         </ExpansionPanelSummary>
         <Divider className={classes.divider} />
         <ExpansionPanelDetails className={classes.detailsPanel}>
-          <img className={classes.img} src={`/images/${props.movie.image}`}></img>
+          <img className={classes.img} src={`https://image.tmdb.org/t/p/w200${props.movie.image}`} alt=''></img>
           <Typography className={classes.summaryText} variant="p" component="p">
             <p>{props.movie.summary}</p>
           </Typography>
