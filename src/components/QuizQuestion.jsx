@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Button } from '@material-ui/core'
 
 const QuizQuestion = ({ id, question, test, handleChange, handleResult }) => {
-  return id === '17' ? <>
-
+  return (
+    <>
       <FormControl component="fieldset">
         <FormLabel component="legend">{question}</FormLabel>
         <RadioGroup
@@ -18,23 +18,9 @@ const QuizQuestion = ({ id, question, test, handleChange, handleResult }) => {
         </RadioGroup>
       </FormControl>
       <br/>
-      <Button onClick={handleResult}>Submit</Button>
+      {id === '17' && <Button onClick={handleResult}>Submit</Button> } 
     </>
-    : <>
-      <FormControl component="fieldset">
-        <FormLabel component="legend">{question}</FormLabel>
-        <RadioGroup
-          aria-label={test}
-          onChange={(e) => handleChange(e.target.value, id)}
-          name={id}
-        >
-          <FormControlLabel value="1" control={<Radio />} label="Yes" />
-          <FormControlLabel value="0" control={<Radio />} label="No" />
-          <FormControlLabel value="-1" control={<Radio />} label="Unknown" />
-        </RadioGroup>
-      </FormControl>
-      <br/>
-    </>
+  )
 }
 
 QuizQuestion.propTypes = {
