@@ -90,9 +90,11 @@ class Quiz extends React.Component {
     } 
   }
 
-  rendered = () => {
+  render () {
     if (this.state.isVisible) {
-      let inputField =  <><TextField
+      return(
+      <>
+        <TextField
           id="standard-search"
           label="Movie Title"
           type="search"
@@ -100,23 +102,21 @@ class Quiz extends React.Component {
           margin="normal"
           onChange={this.handleName}
         />
-
         <Button onClick={this.handleSubmit} variant="outlined" color="primary">Start</Button>
-
-        <br />
-        <br /></>
+        <br/>
+        <br/>
+      </>
+      )
     } else if (!this.state.isVisible) {
-      let questions = data.map(el => <QuizQuestion key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />)
+      return (
+        data.map(el => <QuizQuestion key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />)
+      )
     } else if (this.state.displayAnswers) {
-      let answer = <Typography variant="p"><p>{`${this.state.title} passes ALL THE TESTS!!!`}</p></Typography >
+      return (
+        <Typography variant="p"><p>{`${this.state.title} passes ALL THE TESTS!!!`}</p></Typography >
+      )
     }
   }
-
-  render () {
-    return(
-      {rendered}
-    )
-}
 }
 
 
