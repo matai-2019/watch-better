@@ -8,7 +8,7 @@ import NavBar from './NavBar'
 const Header = (props) => {
   const classes = HeaderStyles(props)
   return (
-    <Link to='/'>
+    <Link to="/">
       <NavBar />
       <div className={classes.headerContent}>
         <Container maxWidth="sm">
