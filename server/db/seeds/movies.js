@@ -48,7 +48,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 7,
           title: 'Arrival',
-          API_movie_id: 329864,
+          API_movie_id: 329865,
           recommended: false
         },
         {
