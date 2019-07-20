@@ -50,7 +50,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
           <Grid item xs={9} className={classes.container}>
-            <div>
+            <div className={classes.titleContainer}>
               <Typography className={classes.title} variant="h3" component="h1">
                 {movieDetails.title}
               </Typography>
@@ -88,9 +88,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                 {movieDetails.genres && extractGenres(movieDetails.genres)}
               </Typography>
             </p>
-            <Typography className={classes.description} gutterBottom>
-              {movieDetails.description}
-            </Typography>
+            <div>
+              <Typography>
+                Overview
+              </Typography>
+              <Typography className={classes.description} gutterBottom>
+                {movieDetails.description}
+              </Typography>
+            </div>
           </Grid>
         </Grid>
       </Container>

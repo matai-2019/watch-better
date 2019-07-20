@@ -175,6 +175,9 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   description: {
     fontWeight: '300'
   },
+  titleContainer: {
+    padding: theme.spacing(3, 0, 4, 0)
+  },
   title: {
     display: 'inline',
     fontSize: '2.5rem'
