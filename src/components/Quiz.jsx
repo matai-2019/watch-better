@@ -144,7 +144,6 @@ class Quiz extends React.Component {
           margin="normal"
           onChange={this.handleName}
         />
-
         <Button onClick={this.handleSubmit} variant="outlined" color="primary">Start</Button>
 
         <br />
