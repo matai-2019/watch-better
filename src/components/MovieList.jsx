@@ -21,7 +21,7 @@ MovieList.propTypes = {
   info: PropTypes.object
 }
 
-const mapStateToProps = ({movies, info}) => {
+const mapStateToProps = ({ movies, info }) => {
   return {
     movies,
     info
