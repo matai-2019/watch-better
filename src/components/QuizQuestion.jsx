@@ -14,7 +14,7 @@ const QuizQuestion = ({ id, question, test, handleChange, handleResult }) => {
         >
           <FormControlLabel value="1" control={<Radio />} label="Yes" />
           <FormControlLabel value="0" control={<Radio />} label="No" />
-          <FormControlLabel value="0" control={<Radio />} label="Unknown" />
+          <FormControlLabel value="-1" control={<Radio />} label="Unknown" />
         </RadioGroup>
       </FormControl>
       <br/>
@@ -30,7 +30,7 @@ const QuizQuestion = ({ id, question, test, handleChange, handleResult }) => {
         >
           <FormControlLabel value="1" control={<Radio />} label="Yes" />
           <FormControlLabel value="0" control={<Radio />} label="No" />
-          <FormControlLabel value="0" control={<Radio />} label="Unknown" />
+          <FormControlLabel value="-1" control={<Radio />} label="Unknown" />
         </RadioGroup>
       </FormControl>
       <br/>
