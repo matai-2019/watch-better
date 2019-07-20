@@ -11,8 +11,8 @@ import {
   sortLowToHigh
 } from '../utilities/sort'
 import {
-  SORT_RAITING_HIGH_LOW,
-  SORT_RAITING_LOW_HIGH,
+  SORT_RATING_HIGH_LOW,
+  SORT_RATING_LOW_HIGH,
   SORT_ALPHABETICAL_ASCENDING
 } from '../actions/sort'
 
@@ -48,13 +48,13 @@ const mapStateToProps = ({ movies, info, sortType }) => {
         info,
         sortType
       }
-    case SORT_RAITING_HIGH_LOW:
+    case SORT_RATING_HIGH_LOW:
       return {
         movies: sortHighToLow(movies),
         info,
         sortType
       }
-    case SORT_RAITING_LOW_HIGH:
+    case SORT_RATING_LOW_HIGH:
       return {
         movies: sortLowToHigh(movies),
         info,
