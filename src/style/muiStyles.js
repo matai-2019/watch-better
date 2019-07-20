@@ -205,3 +205,13 @@ export const NoMatch = makeStyles(theme => ({
     fontSize: '5em'
   }
 }))
+
+export const QuizStyle = makeStyles(theme => ({
+  question: {
+    fontSize: '1.5em',
+    color: 'black'
+  },
+  content: {
+    padding: '2em'
+  }
+}))
