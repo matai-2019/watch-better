@@ -86,7 +86,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 13,
           title: 'The Girl on the Train',
-          API_movie_id: 38575,
+          API_movie_id: 346685,
           recommended: true,
           image: '/AhTO2QWG0tug7yDoh0XoaMhPt3J.jpg'
         },
@@ -105,7 +105,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 16,
           title: 'Fantastic Beasts and Where to Find Them',
-          API_movie_id: 300668,
+          API_movie_id: 259316,
           recommended: true,
           image: '/1M91Bt3oGspda75H9eLqYZkJzgO.jpg'
         },
