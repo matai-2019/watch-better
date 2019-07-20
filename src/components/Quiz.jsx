@@ -111,6 +111,10 @@ class Quiz extends React.Component {
   render () {
     if (this.state.displayAnswers) {
       return (
+        <>
+    <Typography variant="h4" component="h4">
+    {`${this.state.title} has:`}
+    </Typography>
     <List >
       <ListItem>
         <ListItemText primary={this.bechdel()} />
@@ -128,7 +132,7 @@ class Quiz extends React.Component {
         <ListItemText primary={this.feldman()} />
       </ListItem>
     </List>
-
+    </>
   )} else if (this.state.isVisible) {
       return(
         <>
