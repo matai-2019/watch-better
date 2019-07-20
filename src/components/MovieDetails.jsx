@@ -32,7 +32,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     arr.forEach(x => {
       genres.push(x.name)
     })
-    return genres.join(', ')
+    return genres.join(' | ')
   }
 
   function extractYear (date) {
@@ -81,9 +81,6 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Box>
             </Box>
             <p>
-              <Typography component="span" gutterBottom>
-                {`Genres: `}
-              </Typography>
               <Typography className= {classes.description}component="span" gutterBottom>
                 {movieDetails.genres && extractGenres(movieDetails.genres)}
               </Typography>
