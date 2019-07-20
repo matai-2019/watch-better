@@ -19,6 +19,7 @@ const App = () => {
         <Route path='/' component={Quiz} />
         <Switch>
           <Route path='/' component={Home} />
+          <Route path='/quiz' component={Quiz} />
           <Route component={NotFound} />
         </Switch>
       </Router>
