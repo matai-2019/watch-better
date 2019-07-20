@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/styles'
 import { fade, createMuiTheme } from '@material-ui/core/styles'
+import { flexbox } from '@material-ui/system'
 
 export const theme = createMuiTheme({
   palette: {
@@ -54,6 +55,32 @@ export const HeaderStyles = makeStyles(theme => ({
   }
 }))
 
+export const FooterStyles = makeStyles(theme => ({
+  footerContent: {
+    backgroundColor: '#333',
+    padding: theme.spacing(6, 0, 4),
+    color: 'white',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+
+  socialButtons: {
+    marginBottom: 10,
+    color: '#FFDF59'
+  },
+
+  edaText: {
+    padding: '1',
+    fontSize: '0.8em',
+    fontWeight: '300'
+  },
+
+  footerText: {
+    marginTop: 10
+  }
+}))
+
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
@@ -83,7 +110,7 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
   },
 
   Typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Roboto',
     textAlign: 'center',
     fontWeight: 'lighter 300',
     color: 'purple',
