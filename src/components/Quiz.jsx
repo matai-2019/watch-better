@@ -112,49 +112,38 @@ class Quiz extends React.Component {
     if (this.state.displayAnswers) {
       return (
         <>
-    <Typography variant="h4" component="h4">
-    {`${this.state.title} has:`}
-    </Typography>
-    <List >
-      <ListItem>
-        <ListItemText primary={this.bechdel()} />
-      </ListItem>
-      <ListItem>
-        <ListItemText primary={this.reesDavies()}/>
-      </ListItem>
-      <ListItem>
-        <ListItemText primary={this.ko()} />
-      </ListItem>
-            <ListItem>
-        <ListItemText primary={this.landau()} />
-      </ListItem>
-            <ListItem>
-        <ListItemText primary={this.feldman()} />
-      </ListItem>
-    </List>
-    </>
-  )} else if (this.state.isVisible) {
+          <Typography variant="h4" component="h4">
+            {`${this.state.title} has:`}
+          </Typography>
+          <List >
+            <ListItem><ListItemText primary={this.bechdel()}/></ListItem>
+            <ListItem><ListItemText primary={this.reesDavies()}/></ListItem>
+            <ListItem><ListItemText primary={this.ko()}/></ListItem>
+            <ListItem><ListItemText primary={this.landau()}/></ListItem>
+            <ListItem><ListItemText primary={this.feldman()}/></ListItem>
+          </List>
+        </>
+    )} else if (this.state.isVisible) {
       return(
         <>
-        <TextField
-          id="standard-search"
-          label="Movie Title"
-          type="search"
-          margin="normal"
-          onChange={this.handleTitle}
-        />
-        <Button onClick={this.onSubmit} variant="outlined" color="primary">Start</Button>
-
-        <br />
-        <br />
+          <TextField
+            id="standard-search"
+            label="Movie Title"
+            type="search"
+            margin="normal"
+            onChange={this.handleTitle}
+          />
+          <Button onClick={this.onSubmit} variant="outlined" color="primary">Start</Button>
+          <br />
+          <br />
         </>
       )
     } else if (!this.state.isVisible) {
       return (
         data.map(el => <QuizQuestion handleResult={this.handleResult} key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />
       ))
-}
-}
+    }
+  }
 }
 
 
