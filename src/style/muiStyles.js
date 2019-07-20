@@ -77,18 +77,15 @@ export const FooterStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center'
   },
-
   socialButtons: {
     marginBottom: 10,
     color: '#FFDF59'
   },
-
   edaText: {
     padding: '1',
     fontSize: '0.8em',
     fontWeight: '300'
   },
-
   footerText: {
     marginTop: 10
   }
@@ -108,6 +105,11 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     width: 210,
     textAlign: 'center',
     margin: theme.spacing(2)
+  },
+  grid: {
+    direction: 'row',
+    justify: 'center',
+    alignItems: 'center'
   }
 }))
 
