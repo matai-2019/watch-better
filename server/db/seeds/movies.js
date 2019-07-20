@@ -8,7 +8,7 @@ exports.seed = (knex, Promise) => {
           title: 'Bad Moms',
           API_movie_id: 376659,
           recommended: true,
-          image: '/lbfuba6LomsBy52bYyKsH2exmQY.jpg'
+          image: '/9PaIkUnfOcU1wi5cFbamnmAkjEs.jpg'
         },
         {
           id: 2,

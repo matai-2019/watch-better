@@ -39,7 +39,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
       <Paper>
         {redirect && renderRedirect()}
         <Typography variant="h6" component="h2" gutterBottom>
-          Here are our Recommended Movies
+          OUR TOP PICKS
         </Typography>
         <Divider />
         <Grid container direction="row" justify="center" alignItems="center">
