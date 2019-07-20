@@ -9,8 +9,11 @@ import {
   ExpansionPanelDetails,
   ExpansionPanelActions,
   Button, Divider,
-  Typography
+  Typography,
+  Grid
 } from '@material-ui/core'
+
+import Avatars from './Avatars'
 
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
@@ -33,15 +36,24 @@ const MovieListItem = (props) => {
           expandIcon={<ExpandMoreIcon className={classes.arrowIcon} />}
           aria-controls="panel1a-content"
           id="panel1a-header"
-          className={classes.summary}>
-          <Typography variant="h5" component="h5" className={classes.text}><p>{props.movie.title}</p></Typography>
+          className={classes.summary} >
+          <Grid container alignItems="center">
+            <Grid item xs={9}>
+              <Typography variant="h5" component="h5" className={classes.text}><p>{props.movie.title}</p></Typography>
+            </Grid>
+            {props.movie.movieTests.map(x => {
+              if (x.result) return <Avatars key={x.testType} test={x} />
+              else return null
+            })
+            }
+          </Grid>
         </ExpansionPanelSummary>
         <Divider className={classes.divider} />
         <ExpansionPanelDetails className={classes.detailsPanel}>
-          <img className={classes.img} src={`https://image.tmdb.org/t/p/w200${props.movie.image}`} alt=''></img>
-          <Typography className={classes.summaryText} variant="p" component="p">
+          <img className={classes.img} src={`https://image.tmdb.org/t/p/w200${props.movie.image}`} alt='poster thumbnail'></img>
+          {/* <Typography className={classes.summaryText} variant="p" component="p">
             <p>{props.movie.summary}</p>
-          </Typography>
+          </Typography> */}
         </ExpansionPanelDetails>
         <ExpansionPanelActions className={classes.moreButton}>
           <Button size="medium" color="secondary" onClick={handleClick}>

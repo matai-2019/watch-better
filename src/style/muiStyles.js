@@ -58,6 +58,46 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   detailsPanel: {
     padding: '20px'
+  },
+  greenAvatar: {
+    color: '#fff',
+    backgroundColor: 'green',
+    margin: 0,
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  orangeAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'orange',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  purpleAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'purple',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  blueAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'blue',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  redAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'red',
+    width: 30,
+    height: 30,
+    fontSize: 15
   }
 }))
 
