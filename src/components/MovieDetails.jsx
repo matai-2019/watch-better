@@ -12,13 +12,13 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     dispatch(getMovieDetails(match.params.id))
   }, [])
 
-  // function extractGenres (arr) {
-  //   const genres = []
-  //   arr.forEach(x => {
-  //     genres.push(x.name)
-  //   })
-  //   return genres.join(', ')
-  // }
+  function extractGenres (arr) {
+    const genres = []
+    arr.forEach(x => {
+      genres.push(x.name)
+    })
+    return genres.join(', ')
+  }
 
   return !info.pending &&
     <Container>
@@ -46,7 +46,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                   <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography variant="subtitle1" gutterBottom>{`Genres: ${movieDetails.genres[0].name}`}</Typography>
+                  <Typography variant="subtitle1" gutterBottom>{movieDetails.genres && `Genres: ${extractGenres(movieDetails.genres)}`}</Typography>
                 </ListItem>
                 <ListItem>
                   <Typography>{`Released on: ${movieDetails.releaseDate}`}</Typography>
