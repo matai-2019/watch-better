@@ -36,7 +36,8 @@ const MovieList = ({ dispatch, movies, info, sortType }) => {
 MovieList.propTypes = {
   movies: PropTypes.array,
   dispatch: PropTypes.func,
-  info: PropTypes.object
+  info: PropTypes.object,
+  sortType: PropTypes.string
 }
 
 const mapStateToProps = ({ movies, info, sortType }) => {
