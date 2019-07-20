@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Card, CardMedia, CardContent, Grid, Typography, Icon, List, ListItem, Container } from '@material-ui/core'
+import { Grid, Typography, Icon, Container, Box } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
@@ -37,41 +37,50 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   <div style={styles.cardContainer}>
     <div style={styles.customFilter}>
       <Container maxWidth='lg'>
-        <CardContent >
-          <Grid container spacing={3}>
-            <Grid item xs={4}>
-              <CardMedia
-                className={classes.poster}
-                image={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
-            </Grid>
-            <Grid item xs={8}>
-              <Typography variant="h2" component="h1">{movieDetails.title}</Typography>
-              <List>
-                <ListItem>
-                  <Icon className={classes.icon} color="primary">theaters</Icon>
-                  <Typography variant="body1" component="h2" gutterBottom>test one </Typography>
-                  <Icon className={classes.icon} color="primary">theaters</Icon>
-                  <Typography variant="body1" component="h3" gutterBottom>test two</Typography>
-                  <Icon className={classes.icon} color="primary">theaters</Icon>
-                  <Typography variant="body1" component="h3" gutterBottom>test three</Typography>
-                  <Icon className={classes.icon} color="primary">theaters</Icon>
-                  <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
-                  <Icon className={classes.icon} color="primary">theaters</Icon>
-                  <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="subtitle1" gutterBottom>{movieDetails.genres && `Genres: ${extractGenres(movieDetails.genres)}`}</Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography>{`Released on: ${movieDetails.releaseDate}`}</Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography variant="body1" gutterBottom>{movieDetails.description}</Typography>
-                </ListItem>
-              </List>
-            </Grid>
+        <Grid container spacing={3}>
+          <Grid item xs={4}>
+            <img
+              className={classes.poster}
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
-        </CardContent>
+          <Grid item xs={8} className={classes.container}>
+            <Typography variant="h2" component="h1">
+              {movieDetails.title}
+            </Typography>
+            <Box display="flex" flexDirection="row">
+              <Box>
+                <Icon className={classes.icon} color="primary">theaters</Icon>
+                <Typography variant="body1" component="h2" gutterBottom>test one </Typography>
+              </Box>
+              <Box>
+                <Icon className={classes.icon} color="primary">theaters</Icon>
+                <Typography variant="body1" component="h3" gutterBottom>test two</Typography>
+              </Box>
+              <Box>
+                <Icon className={classes.icon} color="primary">theaters</Icon>
+                <Typography variant="body1" component="h3" gutterBottom>test three</Typography>
+              </Box>
+              <Box>
+                <Icon className={classes.icon} color="primary">theaters</Icon>
+                <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
+              </Box>
+              <Box>
+                <Icon className={classes.icon} color="primary">theaters</Icon>
+                <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
+              </Box>
+
+            </Box>
+            <Typography variant="subtitle1" gutterBottom>
+              {movieDetails.genres && `Genres: ${extractGenres(movieDetails.genres)}`}
+            </Typography>
+            <Typography>
+              {`Released on: ${movieDetails.releaseDate}`}
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+              {movieDetails.description}
+            </Typography>
+          </Grid>
+        </Grid>
       </Container>
     </div>
   </div>
