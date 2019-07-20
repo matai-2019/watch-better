@@ -164,6 +164,9 @@ export const NavBarStyles = makeStyles(theme => ({
 
 export const MovieDetailsStyles = makeStyles(theme => ({
   container: {
+    padding: 0
+  },
+  detailsContainer: {
     color: '#fff'
   },
   poster: {
@@ -184,10 +187,14 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     fontSize: '1.5rem',
     color: '#ccc'
   },
-  overviewTitle: {
-    
+  genres: {
+    fontWeight: '300',
+    padding: theme.spacing(1, 0)
   },
   overview: {
+    paddingTop: theme.spacing()
+  },
+  overviewText: {
     fontWeight: '300'
   }
 }))

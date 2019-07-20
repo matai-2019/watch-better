@@ -17,7 +17,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
       backgroundColor: '#333'
     },
     customFilter: {
-      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 0.9) 0%, rgba(25.49%, 19.22%, 14.12%, 0.8) 100%)',
+      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 1) 0%, rgba(68.6%, 55.7%, 0%, 0.8) 100%)',
       paddingTop: 50,
       paddingBottom: 50
     }
@@ -42,14 +42,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   return !info.pending &&
   <div style={styles.cardContainer}>
     <div style={styles.customFilter}>
-      <Container maxWidth="lg">
-        <Grid container>
-          <Grid item xs={3}>
+      <Container maxWidth="md" className={classes.container}>
+        <Grid container >
+          <Grid item xs={4}>
             <img
               className={classes.poster}
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
-          <Grid item xs={9} className={classes.container}>
+          <Grid item xs={8} className={classes.detailsContainer}>
             <div className={classes.titleContainer}>
               <Typography className={classes.title} variant="h3" component="h1">
                 {movieDetails.title}
@@ -80,16 +80,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                 <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
               </Box>
             </Box>
-            <p>
-              <Typography className= {classes.description}component="span" gutterBottom>
-                {movieDetails.genres && extractGenres(movieDetails.genres)}
-              </Typography>
-            </p>
-            <div>
+            <Typography className= {classes.genres}component="span" gutterBottom>
+              {movieDetails.genres && extractGenres(movieDetails.genres)}
+            </Typography>
+            <div className={classes.overview}>
               <Typography variant="h6" gutterBottom>
                 Overview
               </Typography>
-              <Typography className={classes.overview} gutterBottom>
+              <Typography className={classes.overviewText} gutterBottom>
                 {movieDetails.description}
               </Typography>
             </div>
