@@ -1,11 +1,10 @@
 import React from 'react'
-import { Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, TextField, Button, Typography, List, ListItem, ListItemText } from '@material-ui/core'
+import { Container, TextField, Button, Typography, List, ListItem, ListItemText } from '@material-ui/core'
 
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
 
 class Quiz extends React.Component {
-
   state = {
     title: '',
     isVisible: true,
@@ -42,10 +41,6 @@ class Quiz extends React.Component {
       case '2':
         this.test1.push(value)
         return this.test1
-      break
-        this.test1.push(value)
-        return this.test1
-      break
       case '3':
         this.test2.push(value)
         return this.test2 
@@ -111,21 +106,21 @@ class Quiz extends React.Component {
   render () {
     if (this.state.displayAnswers) {
       return (
-        <>
+        <Container>
           <Typography variant="h4" component="h4">
             {`${this.state.title} has:`}
           </Typography>
           <List >
-            <ListItem><ListItemText primary={this.bechdel()}/></ListItem>
-            <ListItem><ListItemText primary={this.reesDavies()}/></ListItem>
-            <ListItem><ListItemText primary={this.ko()}/></ListItem>
-            <ListItem><ListItemText primary={this.landau()}/></ListItem>
-            <ListItem><ListItemText primary={this.feldman()}/></ListItem>
+            <ListItem><Typography variant="h5" gutterBottom>{this.bechdel()}</Typography></ListItem>
+            <ListItem><Typography variant="h5" gutterBottom>{this.reesDavies()}</Typography></ListItem>
+            <ListItem><Typography variant="h5" gutterBottom>{this.ko()}</Typography></ListItem>
+            <ListItem><Typography variant="h5" gutterBottom>{this.landau()}</Typography></ListItem>
+            <ListItem><Typography variant="h5" gutterBottom>{this.feldman()}</Typography></ListItem>
           </List>
-        </>
+        </Container>
     )} else if (this.state.isVisible) {
       return(
-        <>
+        <Container>
           <TextField
             id="standard-search"
             label="Movie Title"
@@ -136,11 +131,11 @@ class Quiz extends React.Component {
           <Button onClick={this.onSubmit} variant="outlined" color="primary">Start</Button>
           <br />
           <br />
-        </>
+        </Container>
       )
     } else if (!this.state.isVisible) {
       return (
-        data.map(el => <QuizQuestion handleResult={this.handleResult} key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} />
+        data.map(el => <QuizQuestion handleResult={this.handleResult} key={el.id} handleChange={this.handleChange} question={el.question} id={el.id} test={el.test} title={this.state.title}/>
       ))
     }
   }

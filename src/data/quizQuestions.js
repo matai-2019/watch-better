@@ -1,7 +1,7 @@
 export default [
   {
     id: '1',
-    question: 'Does [name of movie] have two women, that at some point have a conversation with each other?',
+    question: 'Does the movie have two women, that at some point have a conversation with each other?',
     test: 'Bechdel'
   },
   {
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: '3',
-    question: 'Does [name of movie] have at least two women in each department of movie production?',
+    question: 'Does the movie have at least two women in each department of movie production?',
     test: 'Rees Davies'
   },
   {
@@ -46,7 +46,7 @@ export default [
   },
   {
     id: '10',
-    question: 'Is the director of [name of movie] female?',
+    question: 'Is the director of the movie female?',
     test: 'Feldman'
   },
   {
