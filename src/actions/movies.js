@@ -1,3 +1,5 @@
+import request from 'superagent'
+
 export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS'
 export const GET_MOVIES_PENDING = 'GET_MOVIES_PENDING'
 export const GET_MOVIES_ERROR = 'GET_MOVIES_ERROR'
@@ -19,5 +21,18 @@ export function getMoviesError (message) {
   return {
     type: GET_MOVIES_ERROR,
     message
+  }
+}
+
+export const getMovies = () => {
+  return dispatch => {
+    dispatch(getMoviesPending())
+    return request.get(`/movie-api/`)
+      .then(movies => {
+        dispatch(getMoviesSuccess(movies.body))
+      })
+      .catch(error => {
+        dispatch(getMoviesError(error.message))
+      })
   }
 }
