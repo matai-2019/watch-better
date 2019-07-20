@@ -68,37 +68,39 @@ class Quiz extends React.Component {
     }
   }
 
-  getResult = () => {
-    function result (array) {
+    result = (array) => {
       return array.filter(value => value > 0).length
     }
 
-    const bechdel = () => {
-      if (result(this.test1) === 2) {
+    bechdel = () => {
+      if (this.result(this.test1) === 2) {
         return 'Passed the Bechdel Test' 
       } else return 'Failed the Bechdel Test'
     } 
-    const reesDavies = () => {
-      if (result(this.test2) === 1) {
+    
+    reesDavies = () => {
+      if (this.result(this.test2) === 1) {
         return 'Passed the Rees-Davies Test'
        } else return 'Failed the Rees-Davies Test'
     } 
-    const ko = () => {
-      if (result(this.test3) === 3) {
+
+    ko = () => {
+      if (this.result(this.test3) === 3) {
         return 'Passed the Ko Test' 
       } else return 'Failed the Ko Test'
     } 
-    const landau = () => {
-      if (result(this.test4) === 3) {
+
+    landau = () => {
+      if (this.result(this.test4) === 3) {
         return 'Passed the Landau Test'
        } else return 'Failed the Landau Test'
     } 
-    const feldman = () => {
-      if (result(this.test5) > 4) { 
+
+    feldman = () => {
+      if (this.result(this.test5) > 4) { 
         return 'Passed the Feldman Test' 
       } else return 'Failed the Feldman Test'
     } 
-  }
 
   handleResult = () => {
     this.setState({
@@ -111,19 +113,19 @@ class Quiz extends React.Component {
       return (
     <List >
       <ListItem>
-        <ListItemText primary={this.getResult(bechdel(this.test1))} />
+        <ListItemText primary={this.bechdel()} />
       </ListItem>
       <ListItem>
-        <ListItemText primary="Work" secondary="Jan 7, 2014" />
+        <ListItemText primary={this.reesDavies()}/>
       </ListItem>
       <ListItem>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary={this.ko()} />
       </ListItem>
             <ListItem>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary={this.landau()} />
       </ListItem>
             <ListItem>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary={this.feldman()} />
       </ListItem>
     </List>
 
