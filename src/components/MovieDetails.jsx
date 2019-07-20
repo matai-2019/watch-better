@@ -17,7 +17,9 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
       backgroundColor: '#333'
     },
     customFilter: {
-      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 0.9) 0%, rgba(25.49%, 19.22%, 14.12%, 0.8) 100%)'
+      backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 0.9) 0%, rgba(25.49%, 19.22%, 14.12%, 0.8) 100%)',
+      paddingTop: 50,
+      paddingBottom: 50
     }
   }
 
@@ -36,14 +38,14 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   return !info.pending &&
   <div style={styles.cardContainer}>
     <div style={styles.customFilter}>
-      <Container maxWidth='lg'>
-        <Grid container spacing={3}>
-          <Grid item xs={4}>
+      <Container maxWidth="lg">
+        <Grid container>
+          <Grid item xs={3}>
             <img
               className={classes.poster}
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
-          <Grid item xs={8} className={classes.container}>
+          <Grid item xs={9} className={classes.container}>
             <Typography variant="h2" component="h1">
               {movieDetails.title}
             </Typography>
@@ -70,13 +72,23 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Box>
 
             </Box>
-            <Typography variant="subtitle1" gutterBottom>
-              {movieDetails.genres && `Genres: ${extractGenres(movieDetails.genres)}`}
-            </Typography>
-            <Typography>
-              {`Released on: ${movieDetails.releaseDate}`}
-            </Typography>
-            <Typography variant="body1" gutterBottom>
+            <p>
+              <Typography component={'span'} gutterBottom>
+                {`Genres: `}
+              </Typography>
+              <Typography className= {classes.description}component={'span'} gutterBottom>
+                {movieDetails.genres && extractGenres(movieDetails.genres)}
+              </Typography>
+            </p>
+            <p>
+              <Typography component={'span'}>
+                {`Released on: `}
+              </Typography>
+              <Typography className={classes.description} component={'span'}>
+                {movieDetails.releaseDate}
+              </Typography>
+            </p>
+            <Typography className={classes.description} gutterBottom>
               {movieDetails.description}
             </Typography>
           </Grid>
