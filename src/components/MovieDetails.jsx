@@ -35,6 +35,10 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     return genres.join(', ')
   }
 
+  function extractYear (date) {
+    return (new Date(date)).getFullYear()
+  }
+
   return !info.pending &&
   <div style={styles.cardContainer}>
     <div style={styles.customFilter}>
@@ -46,7 +50,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
           </Grid>
           <Grid item xs={9} className={classes.container}>
-            <Typography variant="h2" component="h1">
+            <Typography variant="h3" component="h1">
               {movieDetails.title}
             </Typography>
             <Box display="flex" flexDirection="row">
@@ -70,7 +74,6 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                 <Icon className={classes.icon} color="primary">theaters</Icon>
                 <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
               </Box>
-
             </Box>
             <p>
               <Typography component={'span'} gutterBottom>
@@ -85,7 +88,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
                 {`Released on: `}
               </Typography>
               <Typography className={classes.description} component={'span'}>
-                {movieDetails.releaseDate}
+                {extractYear(movieDetails.releaseDate)}
               </Typography>
             </p>
             <Typography className={classes.description} gutterBottom>
