@@ -9,7 +9,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
   useEffect(() => {
     dispatch(getMovieDetails(match.params.id))
-  }, [])
+  }, [dispatch, match.params.id])
 
   function extractGenres (arr) {
     const genres = []

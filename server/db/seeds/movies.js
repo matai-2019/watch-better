@@ -8,7 +8,7 @@ exports.seed = (knex, Promise) => {
           title: 'Bad Moms',
           API_movie_id: 376659,
           recommended: true,
-          image: '/lbfuba6LomsBy52bYyKsH2exmQY.jpg',
+          image: '/9PaIkUnfOcU1wi5cFbamnmAkjEs.jpg',
           rating: 6.5
         },
         {
@@ -120,7 +120,7 @@ exports.seed = (knex, Promise) => {
         {
           id: 16,
           title: 'Fantastic Beasts and Where to Find Them',
-          API_movie_id: 300668,
+          API_movie_id: 259316,
           recommended: true,
           image: '/1M91Bt3oGspda75H9eLqYZkJzgO.jpg',
           rating: 6.3
