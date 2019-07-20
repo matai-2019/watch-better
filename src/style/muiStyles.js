@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
 import { fade, createMuiTheme } from '@material-ui/core/styles'
-import { flexbox } from '@material-ui/system'
 
 export const theme = createMuiTheme({
   palette: {
@@ -164,9 +163,11 @@ export const NavBarStyles = makeStyles(theme => ({
 }))
 
 export const MovieDetailsStyles = makeStyles(theme => ({
+  container: {
+    color: '#fff'
+  },
   poster: {
     height: 400,
-    width: 300,
     marginBottom: 50
   },
   icon: {
