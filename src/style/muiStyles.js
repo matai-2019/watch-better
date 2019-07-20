@@ -14,6 +14,20 @@ export const theme = createMuiTheme({
   spacing: 8
 })
 
+export const SorterStyle = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 200
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  }
+}))
+
 export const MovieListItemStyles = makeStyles(theme => ({
   summary: {
     lineHeight: 4,
