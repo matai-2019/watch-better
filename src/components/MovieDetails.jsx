@@ -86,10 +86,10 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
             </p>
             <div>
-              <Typography>
+              <Typography variant="h6" gutterBottom>
                 Overview
               </Typography>
-              <Typography className={classes.description} gutterBottom>
+              <Typography className={classes.overview} gutterBottom>
                 {movieDetails.description}
               </Typography>
             </div>

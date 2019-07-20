@@ -172,9 +172,6 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   icon: {
     margin: 5
   },
-  description: {
-    fontWeight: '300'
-  },
   titleContainer: {
     padding: theme.spacing(3, 0, 4, 0)
   },
@@ -186,6 +183,12 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(),
     fontSize: '1.5rem',
     color: '#ccc'
+  },
+  overviewTitle: {
+    
+  },
+  overview: {
+    fontWeight: '300'
   }
 }))
 
