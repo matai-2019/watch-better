@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
 import { fade, createMuiTheme } from '@material-ui/core/styles'
-import { flexbox } from '@material-ui/system'
 
 export const theme = createMuiTheme({
   palette: {
@@ -13,6 +12,20 @@ export const theme = createMuiTheme({
   },
   spacing: 8
 })
+
+export const SorterStyle = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 200
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  }
+}))
 
 export const MovieListItemStyles = makeStyles(theme => ({
   summary: {
