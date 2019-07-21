@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { AppBar, Toolbar, Typography, TextField, Grid, Button } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+
 import { NavBarStyles } from '../style/muiStyles'
 
 export default function NavBar (props) {
