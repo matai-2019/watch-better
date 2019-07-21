@@ -123,6 +123,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     margin: theme.spacing(2)
   },
   cardContainer: {
+    marginTop: theme.spacing(8),
     color: 'white',
     backgroundColor: '#333',
     display: 'flex',
