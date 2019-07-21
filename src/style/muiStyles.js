@@ -110,16 +110,26 @@ export const FooterStyles = makeStyles(theme => ({
     alignItems: 'center'
   },
   socialButtons: {
-    marginBottom: 10,
+    marginBottom: 7,
     color: '#FFDF59'
   },
   edaText: {
     padding: '1',
-    fontSize: '0.8em',
+    fontSize: '12px',
     fontWeight: '300'
   },
   footerText: {
     marginTop: 10
+  },
+  githubIcon: {
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
+  enspiralIcon: {
+    '&:hover': {
+      backgroundColor: '#555'
+    }
   }
 }))
 
@@ -217,6 +227,10 @@ export const NavBarStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: '#555'
     }
+  },
+  link: {
+    textDecoration: 'none',
+    color: '#FFDF59'
   }
 }))
 
@@ -305,3 +319,14 @@ export const QuizStyle = makeStyles(theme => ({
     padding: '2em'
   }
 }))
+
+export const CastMemberStyles = makeStyles({
+  card: {
+    width: 185,
+    height: 370,
+    margin: theme.spacing(2)
+  },
+  media: {
+    height: 250
+  }
+})

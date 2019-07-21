@@ -1,13 +1,14 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, TextField, Grid, Button, Link } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import { AppBar, Toolbar, Typography, TextField, Grid, Button } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+
 import { NavBarStyles } from '../style/muiStyles'
 
 export default function NavBar (props) {
-
   const classes = NavBarStyles(props)
   return (
-    <>
+    <Link to="/">
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar className={classes.toolbar}>
@@ -17,7 +18,7 @@ export default function NavBar (props) {
             <Typography className={classes.tagline}>
               CURATION THROUGH A LENS OF DIVERSITY
             </Typography>
-            <Button className={classes.navButton}><Link to="/quiz" style={{ textDecoration: 'none' }}>Test A Movie</Link></Button>
+            <Button className={classes.navButton}><Link to="/quiz" className={classes.link}>Test A Movie</Link></Button>
             <div className={classes.search}>
               <Grid container spacing={1} alignItems="flex-end">
                 <Grid item>
@@ -31,6 +32,6 @@ export default function NavBar (props) {
           </Toolbar>
         </AppBar>
       </div>
-    </>
+    </Link>
   )
 }
