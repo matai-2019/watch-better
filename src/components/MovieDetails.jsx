@@ -1,13 +1,20 @@
 import React, { useEffect } from 'react'
-import { Grid, Typography, Icon, Container, Box, Avatar } from '@material-ui/core'
+import { Grid, Typography, Icon, Container, Box, withStyles, Avatar } from '@material-ui/core'
 import { connect } from 'react-redux'
+import Rating from '@material-ui/lab/Rating'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
 import Avatars from './Avatars'
 import PropTypes from 'prop-types'
 
-function MovieDetails ({ dispatch, movieDetails, info, match, props, movie }) {
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#EBBC00'
+  }
+})(Rating)
+
+function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
 
   const styles = {
@@ -97,6 +104,11 @@ function MovieDetails ({ dispatch, movieDetails, info, match, props, movie }) {
               </Typography>
               <Typography className={classes.overviewText} gutterBottom>
                 {movieDetails.description}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="body2" style={{ marginTop: 30 }} gutterBottom>
+                <StyledRating name="half-rating" value={movieDetails.rating / 2} readOnly precision={0.1}/>
               </Typography>
             </div>
           </Grid>
