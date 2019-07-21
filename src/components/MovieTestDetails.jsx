@@ -9,7 +9,6 @@ import {
   Card,
   CardContent
 } from '@material-ui/core'
-
 import { MovieTestDetailsStyles } from '../style/muiStyles'
 import testInfo from '../data/diversityTestInfo'
 
@@ -30,18 +29,18 @@ const MovieTestDetails = props => {
   }
 
   return (
-    <Container className={classes.bar}>
+    <div className={classes.cardContainer}>
       {testInfo.map((test, i) => (
         <Card key={test.id} className={classes.card}>
           <CardContent>
-            <img src={test.icon} alt='test-passes' />
+            <img src="https://img.icons8.com/cute-clipart/64/000000/test-passed.png" alt='test-passes'/>
             <Typography variant="h6" component="h2" gutterBottom>
               {test.name}
             </Typography>
           </CardContent>
           <CardActions>
             <Button onClick={handleOpen(i)} size="small">
-              Learn More
+          Learn More
             </Button>
           </CardActions>
           <Modal
@@ -59,7 +58,7 @@ const MovieTestDetails = props => {
           </Modal>
         </Card>
       ))}
-    </Container>
+    </div>
   )
 }
 
