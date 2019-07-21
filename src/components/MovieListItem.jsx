@@ -8,11 +8,18 @@ import {
   Grid,
   Paper,
   ButtonBase,
-  Button
+  Button,
+  withStyles
 } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
+
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#EBBC00'
+  }
+})(Rating)
 
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
@@ -46,7 +53,7 @@ const MovieListItem = (props) => {
                     {props.movie.title}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    <Rating name="half-rating" value={props.movie.rating} precision={0.1} max={10}/>
+                    <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
                   </Typography>
                 </Grid>
                 <Grid item>

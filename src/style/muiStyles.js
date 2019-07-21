@@ -1,13 +1,16 @@
 import { makeStyles } from '@material-ui/styles'
-import { fade, createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#4b6d97'
+      main: '#FFDF59'
     },
     secondary: {
       main: '#71a4a1'
+    },
+    background: {
+      main: '#2a2e36'
     }
   },
   spacing: 8,
@@ -43,50 +46,23 @@ export const MovieListItemStyles = makeStyles(theme => ({
   text: {
     fontSize: '28px'
   },
-  greenAvatar: {
-    color: '#fff',
-    backgroundColor: 'green',
-    margin: 0,
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
     width: 30,
     height: 30,
-    fontSize: 15
-  },
-  orangeAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'orange',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  purpleAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'purple',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  blueAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'blue',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  redAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'red',
-    width: 30,
-    height: 30,
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 2
   },
   list: {
     margin: '2vw',
     marginLeft: '4vw',
     width: '70vw'
+  },
+  star: {
+    iconFilled: 'pink'
   }
 }))
 
@@ -105,20 +81,27 @@ export const FooterStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center'
   },
-
   socialButtons: {
-    marginBottom: 10,
+    marginBottom: 7,
     color: '#FFDF59'
   },
-
   edaText: {
     padding: '1',
-    fontSize: '0.8em',
+    fontSize: '12px',
     fontWeight: '300'
   },
-
   footerText: {
     marginTop: 10
+  },
+  githubIcon: {
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
+  enspiralIcon: {
+    '&:hover': {
+      backgroundColor: '#555'
+    }
   }
 }))
 
@@ -169,17 +152,15 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
 }))
 
 export const NavBarStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
   toolbar: {
-    justifyContent: 'right'
+    backgroundColor: '#333'
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -187,25 +168,41 @@ export const NavBarStyles = makeStyles(theme => ({
       width: 'auto'
     }
   },
-  searchIcon: {
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  inputRoot: {
-    color: 'inherit'
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200
+  logo: {
+    flexGrow: 2,
+    display: 'none',
+    fontSize: '35px',
+    fontWeight: '800',
+    color: '#F5C400',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
     }
+  },
+  tagline: {
+    flexGrow: 25,
+    display: 'none',
+    fontSize: '15px',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
+  searchIcon: {
+    color: '#FFDF59'
+  },
+  multilineColor: {
+    color: 'white'
+  },
+  navButton: {
+    color: '#FFDF59',
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
+  link: {
+    textDecoration: 'none',
+    color: '#FFDF59'
   }
 }))
 
@@ -254,6 +251,16 @@ export const RecommendationsStyles = makeStyles({
   },
   media: {
     height: 290
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
   }
 })
 
@@ -306,3 +313,14 @@ export const IconStyles = makeStyles(theme => ({
     }
   }
 }))
+
+export const CastMemberStyles = makeStyles({
+  card: {
+    width: 185,
+    height: 370,
+    margin: theme.spacing(2)
+  },
+  media: {
+    height: 250
+  }
+})
