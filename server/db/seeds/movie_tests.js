@@ -284,12 +284,6 @@ exports.seed = function (knex, Promise) {
         { id: 234, test_type: 'Landau Test', movie_id: 47, result: false },
         { id: 235, test_type: 'Feldman Test', movie_id: 47, result: false },
 
-        { id: 236, test_type: 'Bechdel Test', movie_id: 48, result: false },
-        { id: 237, test_type: 'Rees Davies Test', movie_id: 48, result: false },
-        { id: 238, test_type: 'Ko Test', movie_id: 48, result: false },
-        { id: 239, test_type: 'Landau Test', movie_id: 48, result: false },
-        { id: 240, test_type: 'Feldman Test', movie_id: 48, result: false },
-
         { id: 241, test_type: 'Bechdel Test', movie_id: 49, result: false },
         { id: 242, test_type: 'Rees Davies Test', movie_id: 49, result: true },
         { id: 243, test_type: 'Ko Test', movie_id: 49, result: false },

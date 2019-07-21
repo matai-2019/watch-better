@@ -380,14 +380,6 @@ exports.seed = (knex, Promise) => {
           rating: 6.5
         },
         {
-          id: 48,
-          title: 'Deadpool',
-          API_movie_id: 293660,
-          recommended: false,
-          image: '/inVq3FRqcYIRl2la8iZikYYxFNR.jpg',
-          rating: 6.5
-        },
-        {
           id: 49,
           title: 'Doctor Strange',
           API_movie_id: 284052,
