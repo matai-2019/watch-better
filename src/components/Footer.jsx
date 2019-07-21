@@ -5,22 +5,28 @@ import { FooterStyles } from '../style/muiStyles'
 
 const Footer = (props) => {
   const classes = FooterStyles(props)
+
+  const text = 'A project created at Enspiral Dev Academy by\:
+  Anisha Dhana, David Brown, Raaya Pathare, Joanna Klimas, Jared Tasker & amp; Jennie Watson.'
+
   return (
     <>
-        <Container maxWidth="xl" className={classes.footerContent}>
-          <div className={classes.socialButtons}>
-            <Icon>star</Icon>
-            <Icon>copyright</Icon>
-          </div>
-          <Typography className={classes.edaText} component="p" align="center" gutterBottom>
-            An Enspiral Dev Academy project created by Anisha, DavidB, Jared, Jennie, Joanna &amp; Raaya
+      <Container maxWidth="xl" className={classes.footerContent}>
+        <div className={classes.socialButtons}>
+          <Icon>star</Icon>
+          <Icon>copyright</Icon>
+        </div>
+        <Typography className={classes.edaText} component="p" align="center" gutterBottom>
+          A project created at Enspiral Dev Academy by:
+            <span style={{ whiteSpace: 'pre-line' }}></span>
+          Anisha Dhana, David Brown, Raaya Pathare, Joanna Klimas, Jared Tasker &amp; Jennie Watson.
           </Typography>
-          <Typography className={classes.footerText}>
-            Watch Better ©
+        <Typography className={classes.footerText}>
+          WATCH BETTER ©
           </Typography>
-        </Container>
+      </Container>
     </>
   )
 }
-
+// &amp;
 export default Footer
