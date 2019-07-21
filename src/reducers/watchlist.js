@@ -13,7 +13,6 @@ const initialState = [{
     { testType: 'Feldman Test', result: 1 }],
   image: '/6cbIDZLfwUTmttXTmNi8Mp3Rnmg.jpg',
   rating: 8
-
 }]
 
 const watchlist = (state = initialState, action) => {

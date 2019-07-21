@@ -10,7 +10,8 @@ import {
   Paper,
   ButtonBase,
   Button,
-  withStyles
+  withStyles,
+  Box
 } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
@@ -88,19 +89,25 @@ const MovieListItem = (props) => {
                 </Grid>
                 <Grid item>
                   <Button size="small" className={classes.button} onClick={handleClick}>SEE MORE</Button>
+                </Grid>
+              </Grid>
+              <Grid>
+                <Box display="flex" justifyContent="flex-end" m={0} p={0} bgcolor="background.paper">
+                  {props.movie.movieTests.map(x => {
+                    if (x.result) return <Avatars key={x.testType} test={x} />
+                    else return null
+                  })
+                  }
+                </Box>
+                <div className={classes.topMargin}>
                   <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#a9da71' : '#FFDF59' }}onClick={handleSeen}>
                     <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>&nbsp;SEEN
                   </Button>
                   <Button size="small" className={classes.watchButton} style={{ backgroundColor: watchColor ? '#a9da71' : '#FFDF59' }} onClick={handleWatch}>
                     <i className={classes.icon}>{ isAdded ? 'check_box' : 'add_to_queue'}</i>&nbsp;WATCHLIST
                   </Button>
-                </Grid>
+                </div>
               </Grid>
-              {props.movie.movieTests.map(x => {
-                if (x.result) return <Avatars key={x.testType} test={x} />
-                else return null
-              })
-              }
             </Grid>
           </Grid>
         </Paper>
