@@ -10,7 +10,7 @@ import { theme } from '../../../style/muiStyles'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('Header component tests', () => {
-  it('<Header /> contains a Title and subtitle', () => {
+  it.skip('<Header /> contains a Title and subtitle', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
         <Header />
