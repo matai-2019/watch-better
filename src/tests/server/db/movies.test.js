@@ -10,7 +10,7 @@ beforeEach(() => {
 
 afterEach(() => env.cleanup(testDb))
 
-test.skip('db.getMovieById returns all data for a specific movie', () => {
+test('db.getMovieById returns all data for a specific movie', () => {
   const expected = {
     id: 1,
     title: 'Bad Moms',
