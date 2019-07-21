@@ -123,6 +123,11 @@ export const FooterStyles = makeStyles(theme => ({
 }))
 
 export const MovieTestDetailsStyles = makeStyles(theme => ({
+  bar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   paper: {
     position: 'absolute',
     width: 400,

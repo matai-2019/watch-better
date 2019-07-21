@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {
   Modal,
+  Container,
   Paper,
   Typography,
   CardActions,
@@ -14,7 +15,7 @@ import testInfo from '../data/diversityTestInfo'
 
 const MovieTestDetails = props => {
   const classes = MovieTestDetailsStyles(props)
-  const [open, setOpen] = useState([false, false, false, false])
+  const [open, setOpen] = useState([false, false, false, false, false])
 
   const handleOpen = index => () => {
     const changeToOpen = [...open]
@@ -28,34 +29,38 @@ const MovieTestDetails = props => {
     setOpen(changeToClosed)
   }
 
-  return testInfo.map((test, i) => (
-    <Card key={test.id} className={classes.card}>
-      <CardContent>
-        <img src={test.icon} alt='test-passes'/>
-        <Typography variant="h6" component="h2" gutterBottom>
-          {test.name}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button onClick={handleOpen(i)} size="small">
-          Learn More
-        </Button>
-      </CardActions>
-      <Modal
-        aria-labelledby={test.name}
-        aria-describedby={`Description of the ${test.name} test`}
-        open={open[i]}
-        onClose={handleClose(i)}
-      >
-        <Paper className={classes.paper}>
-          <Typography variant="h5" component="h2" gutterBottom>
-            {test.name}
-          </Typography>
-          <Typography component="p">{test.description}</Typography>
-        </Paper>
-      </Modal>
-    </Card>
-  ))
+  return (
+    <Container className={classes.bar}>
+      {testInfo.map((test, i) => (
+        <Card key={test.id} className={classes.card}>
+          <CardContent>
+            <img src={test.icon} alt='test-passes' />
+            <Typography variant="h6" component="h2" gutterBottom>
+              {test.name}
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button onClick={handleOpen(i)} size="small">
+              Learn More
+            </Button>
+          </CardActions>
+          <Modal
+            aria-labelledby={test.name}
+            aria-describedby={`Description of the ${test.name} test`}
+            open={open[i]}
+            onClose={handleClose(i)}
+          >
+            <Paper className={classes.paper}>
+              <Typography variant="h5" component="h2" gutterBottom>
+                {test.name}
+              </Typography>
+              <Typography component="p">{test.description}</Typography>
+            </Paper>
+          </Modal>
+        </Card>
+      ))}
+    </Container>
+  )
 }
 
 export default MovieTestDetails
