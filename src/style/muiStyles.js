@@ -302,3 +302,35 @@ export const QuizStyle = makeStyles(theme => ({
     padding: '2em'
   }
 }))
+
+export const SearchStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    height: 250
+  },
+  container: {
+    flexGrow: 1,
+    position: 'relative',
+  },
+  paper: {
+    position: 'absolute',
+    zIndex: 1,
+    marginTop: theme.spacing(1),
+    left: 0,
+    right: 0
+  },
+  inputRoot: {
+    flexWrap: 'wrap'
+  },
+  inputInput: {
+    width: 'auto',
+    flexGrow: 1,
+    color: theme.palette.primary.main
+  },
+  divider: {
+    height: theme.spacing(2)
+  },
+  label: {
+    color: theme.palette.primary.main
+  }
+}))

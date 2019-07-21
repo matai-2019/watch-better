@@ -1,10 +1,10 @@
 import React from 'react'
-import { AppBar, Toolbar, Typography, TextField, Grid, Button, Link } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Grid, Button, Link } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
 import { NavBarStyles } from '../style/muiStyles'
+import Search from './Search';
 
 export default function NavBar (props) {
-
   const classes = NavBarStyles(props)
   return (
     <>
@@ -24,7 +24,7 @@ export default function NavBar (props) {
                   <SearchIcon className={classes.searchIcon}/>
                 </Grid>
                 <Grid item>
-                  <TextField id="input-with-icon-grid" label="Search" style={{ width: '260px' }} InputProps={{ className: classes.multilineColor }} />
+                  <Search />
                 </Grid>
               </Grid>
             </div>
