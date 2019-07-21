@@ -289,3 +289,15 @@ export const QuizStyle = makeStyles(theme => ({
     padding: '2em'
   }
 }))
+
+export const IconStyles = makeStyles(theme => ({
+  icon: {
+    margin: theme.spacing(2)
+  },
+  iconHover: {
+    margin: theme.spacing(2),
+    '&:hover': {
+      color: 'red'
+    }
+  }
+}))
