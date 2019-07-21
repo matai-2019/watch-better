@@ -5,7 +5,6 @@ import { CastMemberStyles } from '../style/muiStyles'
 
 export default function CastMember ({ castMember }) {
   const classes = CastMemberStyles()
-  console.log(castMember.image)
   return (
     <Card key={castMember.name} className={classes.card}>
       <CardMedia
