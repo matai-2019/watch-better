@@ -313,3 +313,14 @@ export const QuizStyle = makeStyles(theme => ({
     padding: '2em'
   }
 }))
+
+export const CastMemberStyles = makeStyles({
+  card: {
+    width: 185,
+    height: 370,
+    margin: theme.spacing(2)
+  },
+  media: {
+    height: 250
+  }
+})
