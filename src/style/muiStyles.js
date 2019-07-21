@@ -108,18 +108,15 @@ export const FooterStyles = makeStyles(theme => ({
     flexDirection: 'column',
     alignItems: 'center'
   },
-
   socialButtons: {
     marginBottom: 7,
     color: '#FFDF59'
   },
-
   edaText: {
     padding: '1',
     fontSize: '12px',
     fontWeight: '300'
   },
-
   footerText: {
     marginTop: 10
   },
