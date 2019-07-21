@@ -326,7 +326,7 @@ export const CastMemberStyles = makeStyles({
 })
 
 export const CastStyles = makeStyles({
-  container: {
-    height: 400
+  grid: {
+    minHeight: 400
   }
 })
