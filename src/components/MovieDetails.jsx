@@ -2,11 +2,10 @@ import React, { useEffect } from 'react'
 import { Grid, Typography, Icon, Container, Box, withStyles, Avatar } from '@material-ui/core'
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
+import PropTypes from 'prop-types'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
-import Avatars from './Avatars'
-import PropTypes from 'prop-types'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -35,6 +34,16 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   useEffect(() => {
     dispatch(getMovieDetails(match.params.id))
   }, [dispatch, match.params.id])
+
+  //   function exactTestIcons (props) {
+  //     return (
+  //       {props.movie.movieTests.map(x => {
+  //         if (x.result) return <Avatars key={x.testType} test={x} />
+  //         else return null
+  //       })
+  //     }
+  //   )
+  // }
 
   function extractGenres (arr) {
     const genres = []
@@ -88,11 +97,6 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
                 <Grid item><Avatar className={classes.avatar}>F</Avatar></Grid>
-                {/* {props.movie.movieTests.map(x => {
-                  if (x.result) return <Avatars key={x.testType} test={x} />
-                  else return null
-                })
-                } */}
               </Box>
             </Box>
             <Typography className= {classes.genres}component="span" gutterBottom>

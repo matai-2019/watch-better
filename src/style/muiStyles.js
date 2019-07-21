@@ -274,6 +274,16 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   },
   overviewText: {
     fontWeight: '300'
+  },
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
+    width: 30,
+    height: 30,
+    fontSize: 15,
+    paddingTop: 2
   }
 }))
 
