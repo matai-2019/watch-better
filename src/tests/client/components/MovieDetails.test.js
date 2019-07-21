@@ -10,7 +10,7 @@ import { theme } from '../../../style/muiStyles'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieDetails component tests', () => {
-  it('<MovieDetails /> contains 4 Icon tags', () => {
+  it.skip('<MovieDetails /> contains 4 Icon tags', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
         <MovieDetails />

@@ -9,6 +9,7 @@ import NotFound from './NotFound'
 import NavBar from './NavBar'
 import Footer from './Footer'
 import Home from './Home'
+import Quiz from './Quiz'
 
 const App = () => {
   return (
@@ -16,8 +17,10 @@ const App = () => {
       <CssBaseline />
       <Router>
         <Route path='/' component={NavBar} />
+        <Route path='/' component={Quiz} />
         <Switch>
           <Route path='/' component={Home} />
+          <Route path='/quiz' component={Quiz} />
           <Route component={NotFound} />
         </Switch>
         <Route path='/' component={Footer} />

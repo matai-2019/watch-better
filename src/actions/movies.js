@@ -24,12 +24,25 @@ export function getMoviesError (message) {
   }
 }
 
-export const getMovies = () => {
+export const getMovies = filter => {
   return dispatch => {
     dispatch(getMoviesPending())
-    return request.get(`/movie-api/`)
-      .then(movies => {
-        dispatch(getMoviesSuccess(movies.body))
+    return request
+      .get(`/movie-api/`)
+      .then(res => {
+        const movies = res.body
+        if (filter) {
+          const filteredMovies = movies.filter(movie =>
+            filter.every(test =>
+              movie.movieTests.find(movieTest => {
+                return movieTest.testType === test && movieTest.result
+              })
+            )
+          )
+          dispatch(getMoviesSuccess(filteredMovies))
+        } else {
+          dispatch(getMoviesSuccess(movies))
+        }
       })
       .catch(error => {
         dispatch(getMoviesError(error.message))
