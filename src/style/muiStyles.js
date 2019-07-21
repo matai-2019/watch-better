@@ -214,6 +214,10 @@ export const NavBarStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: '#555'
     }
+  },
+  link: {
+    textDecoration: 'none',
+    color: '#FFDF59'
   }
 }))
 
