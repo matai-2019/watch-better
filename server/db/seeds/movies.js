@@ -56,6 +56,7 @@ exports.seed = (knex, Promise) => {
           title: 'Arrival',
           API_movie_id: 329865,
           recommended: false,
+          image: '/xGgg2UI20qtEh7mura3RRwP8d3I.jpg',
           rating: 6.5
         },
         {
@@ -63,6 +64,7 @@ exports.seed = (knex, Promise) => {
           title: 'Ice Age: Collision Course',
           API_movie_id: 278154,
           recommended: false,
+          image: '/gRi7lTBBiRBhn9aJID5MdldcJEJ.jpg',
           rating: 5.9
         },
         {
@@ -86,6 +88,7 @@ exports.seed = (knex, Promise) => {
           title: 'Sing',
           API_movie_id: 335797,
           recommended: false,
+          image: '/eSVtBB2PVFbQiFWC7CQi3EjIZnn.jpg',
           rating: 6.3
         },
         {
@@ -93,6 +96,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Boss',
           API_movie_id: 323676,
           recommended: false,
+          image: '/w8smnnIVlEeFwD4Z0pKPC3RN2xT.jpg',
           rating: 5.8
         },
         {
@@ -108,6 +112,7 @@ exports.seed = (knex, Promise) => {
           title: 'Boo! A Madea Halloween',
           API_movie_id: 380124,
           recommended: false,
+          image: '/dpSWKKBtXOu8hDNJRCIAYfcRtdD.jpg',
           rating: 6.5
         },
         {
@@ -115,6 +120,7 @@ exports.seed = (knex, Promise) => {
           title: 'Alice Through the Looking Glass',
           API_movie_id: 241259,
           recommended: false,
+          image: '/hrweIZ34Z3MCPNfRT4tGC2CXyrH.jpg',
           rating: 8
         },
         {
@@ -130,6 +136,7 @@ exports.seed = (knex, Promise) => {
           title: 'La La Land',
           API_movie_id: 313369,
           recommended: false,
+          image: '/ylXCdC106IKiarftHkcacasaAcb.jpg',
           rating: 6.1
         },
         {
@@ -137,6 +144,7 @@ exports.seed = (knex, Promise) => {
           title: 'Now You See Me 2',
           API_movie_id: 291805,
           recommended: false,
+          image: '/hU0E130tsGdsYa4K9lc3Xrn5Wyt.jpg',
           rating: 5.5
         },
         {
@@ -144,6 +152,7 @@ exports.seed = (knex, Promise) => {
           title: 'Passengers',
           API_movie_id: 274870,
           recommended: false,
+          image: '/5gJkVIVU7FDp7AfRAbPSvvdbre2.jpg',
           rating: 6.9
         },
         {
@@ -151,6 +160,7 @@ exports.seed = (knex, Promise) => {
           title: "Pete's Dragon",
           API_movie_id: 294272,
           recommended: false,
+          image: '/vxi7yxz41OUQH7ECEfQjYyLR6J1.jpg',
           rating: 6.3
         },
         {
@@ -158,6 +168,7 @@ exports.seed = (knex, Promise) => {
           title: 'Storks',
           API_movie_id: 332210,
           recommended: false,
+          image: '/5qVD5TD1CiALR5vUsMzh2BschVU.jpg',
           rating: 6.5
         },
         {
@@ -165,6 +176,7 @@ exports.seed = (knex, Promise) => {
           title: 'Suicide Squad',
           API_movie_id: 297761,
           recommended: false,
+          image: '/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg',
           rating: 6.5
         },
         {
@@ -172,6 +184,7 @@ exports.seed = (knex, Promise) => {
           title: 'Sausage Party',
           API_movie_id: 223702,
           recommended: false,
+          image: '/w90cORtNWQAd2k93aFlIBbpQYTC.jpg',
           rating: 6.5
         },
         {
@@ -179,6 +192,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Conjuring 2',
           API_movie_id: 259693,
           recommended: false,
+          image: '/pUwdglql8cbztEink0JCgG1TY28.jpg',
           rating: 6.5
         },
         {
@@ -186,6 +200,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Purge: Election Year',
           API_movie_id: 316727,
           recommended: false,
+          image: '/sm7p6NvWOBSDywdIPhmiX3SLSH8.jpg',
           rating: 6.5
         },
         {
@@ -193,6 +208,7 @@ exports.seed = (knex, Promise) => {
           title: 'X-Men: Apocalypse',
           API_movie_id: 246655,
           recommended: false,
+          image: '/zSouWWrySXshPCT4t3UKCQGayyo.jpg',
           rating: 6.5
         },
         {
@@ -200,6 +216,7 @@ exports.seed = (knex, Promise) => {
           title: '10 Cloverfield Lane',
           API_movie_id: 333371,
           recommended: false,
+          image: '/84Dhwz93vCin6T1PX6ctSvWEuNE.jpg',
           rating: 6.5
         },
         {
@@ -207,6 +224,7 @@ exports.seed = (knex, Promise) => {
           title: 'Batman v Superman: Dawn of Justice',
           API_movie_id: 209112,
           recommended: false,
+          image: '/cGOPbv9wA5gEejkUN892JrveARt.jpg',
           rating: 6.5
         },
         {
@@ -214,6 +232,7 @@ exports.seed = (knex, Promise) => {
           title: 'Captain America: Civil War',
           API_movie_id: 271110,
           recommended: false,
+          image: '/kSBXou5Ac7vEqKd97wotJumyJvU.jpg',
           rating: 6.5
         },
         {
@@ -221,6 +240,7 @@ exports.seed = (knex, Promise) => {
           title: 'Central Intelligence',
           API_movie_id: 302699,
           recommended: false,
+          image: '/9M5ibpQUjoVFjjnP2AdLcof4hAk.jpg',
           rating: 6.5
         },
         {
@@ -228,6 +248,7 @@ exports.seed = (knex, Promise) => {
           title: "Don't Breathe",
           API_movie_id: 300669,
           recommended: false,
+          image: '/lw0IqOSMsQcy1QnVIEIDppLmNwk.jpg',
           rating: 6.5
         },
         {
@@ -235,6 +256,7 @@ exports.seed = (knex, Promise) => {
           title: 'Hacksaw Ridge',
           API_movie_id: 324786,
           recommended: false,
+          image: '/bndiUFfJxNd2fYx8XO610L9a07m.jpg',
           rating: 6.5
         },
         {
@@ -242,6 +264,7 @@ exports.seed = (knex, Promise) => {
           title: 'Lights Out',
           API_movie_id: 345911,
           recommended: false,
+          image: '/sXqrTXcBf9TdIv5rfgeFNu9Iwu7.jpg',
           rating: 6.5
         },
         {
@@ -249,6 +272,7 @@ exports.seed = (knex, Promise) => {
           title: 'Moana',
           API_movie_id: 277834,
           recommended: false,
+          image: '/z4x0Bp48ar3Mda8KiPD1vwSY3D8.jpg',
           rating: 6.5
         },
         {
@@ -256,6 +280,7 @@ exports.seed = (knex, Promise) => {
           title: 'Ride Along 2',
           API_movie_id: 323675,
           recommended: false,
+          image: '/A739odgY2FjoLvYLYdypUc6GpaY.jpg',
           rating: 6.5
         },
         {
@@ -263,6 +288,7 @@ exports.seed = (knex, Promise) => {
           title: 'Star Trek Beyond',
           API_movie_id: 188927,
           recommended: false,
+          image: '/mLrQMqyZgLeP8FrT5LCobKAiqmK.jpg',
           rating: 6.5
         },
         {
@@ -270,6 +296,7 @@ exports.seed = (knex, Promise) => {
           title: 'Sully',
           API_movie_id: 363676,
           recommended: false,
+          image: '/h6O5OE3ueRVdCc7V7cwTiQocI7D.jpg',
           rating: 6.5
         },
         {
@@ -277,6 +304,7 @@ exports.seed = (knex, Promise) => {
           title: 'Teenage Mutant Ninja Turtles: Out of the Shadows',
           API_movie_id: 308531,
           recommended: false,
+          image: '/u3M0HzkQR1pYNaadJWuxe84B34r.jpg',
           rating: 6.5
         },
         {
@@ -284,6 +312,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Angry Birds Movie',
           API_movie_id: 153518,
           recommended: false,
+          image: '/t2mZzQXjpQxmqtJOPpe8Dr2YpMl.jpg',
           rating: 6.5
         },
         {
@@ -291,6 +320,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Magnificent Seven',
           API_movie_id: 333484,
           recommended: false,
+          image: '/cparcxTFuHdlSOP3MJOpN7Ec9NB.jpg',
           rating: 6.5
         },
         {
@@ -298,6 +328,7 @@ exports.seed = (knex, Promise) => {
           title: 'Trolls',
           API_movie_id: 136799,
           recommended: false,
+          image: '/zKu5MNy9QW1a5ZHgv7iAp3kRZpE.jpg',
           rating: 6.5
         },
         {
@@ -305,6 +336,7 @@ exports.seed = (knex, Promise) => {
           title: 'Zootopia',
           API_movie_id: 269149,
           recommended: false,
+          image: '/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg',
           rating: 6.5
         },
         {
@@ -312,6 +344,7 @@ exports.seed = (knex, Promise) => {
           title: 'Jason Bourne',
           API_movie_id: 324668,
           recommended: false,
+          image: '/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg',
           rating: 6.5
         },
         {
@@ -319,6 +352,7 @@ exports.seed = (knex, Promise) => {
           title: 'Rogue One: A Star Wars Story',
           API_movie_id: 330459,
           recommended: false,
+          image: '/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg',
           rating: 6.5
         },
         {
@@ -326,6 +360,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Accountant',
           API_movie_id: 302946,
           recommended: false,
+          image: '/afhAUuWVB7k7PjJUd4lwO3rzhSq.jpg',
           rating: 6.5
         },
         {
@@ -333,6 +368,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Jungle Book',
           API_movie_id: 278927,
           recommended: false,
+          image: '/vOipe2myi26UDwP978hsYOrnUWC.jpg',
           rating: 6.5
         },
         {
@@ -340,13 +376,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Legend of Tarzan',
           API_movie_id: 258489,
           recommended: false,
-          rating: 6.5
-        },
-        {
-          id: 48,
-          title: 'Deadpool',
-          API_movie_id: 293660,
-          recommended: false,
+          image: '/6FxOPJ9Ysilpq0IgkrMJ7PubFhq.jpg',
           rating: 6.5
         },
         {
@@ -354,6 +384,7 @@ exports.seed = (knex, Promise) => {
           title: 'Doctor Strange',
           API_movie_id: 284052,
           recommended: false,
+          image: '/4PiiNGXj1KENTmCBHeN6Mskj2Fq.jpg',
           rating: 6.5
         },
         {
@@ -361,6 +392,7 @@ exports.seed = (knex, Promise) => {
           title: 'The Secret Life of Pets',
           API_movie_id: 328111,
           recommended: false,
+          image: '/WLQN5aiQG8wc9SeKwixW7pAR8K.jpg',
           rating: 6.5
         }
       ])
