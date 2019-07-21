@@ -325,8 +325,8 @@ export const CastMemberStyles = makeStyles({
   }
 })
 
-export const CastStyles = makeStyles({
-  grid: {
-    minHeight: 400
+export const CastStyles = makeStyles(theme => ({
+  title: {
+    marginTop: theme.spacing()
   }
-})
+}))

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import CastMember from './CastMember'
-import { Grid, Container } from '@material-ui/core'
+import { Grid, Container, Typography } from '@material-ui/core'
 import { CastStyles } from '../style/muiStyles'
 
 export default function Cast ({ cast }) {
@@ -18,7 +18,10 @@ export default function Cast ({ cast }) {
 
   return (
     <Container>
-      <Grid container justify="center" className={classes.grid}>
+      <Typography variant="h6" component="h2" className={classes.title}>
+        Top billed cast
+      </Typography>
+      <Grid container justify="center">
         {extractCastmember(cast)}
       </Grid>
     </Container>
