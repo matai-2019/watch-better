@@ -41,7 +41,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
   }
 
   return (
-    !info.pending && (
+    movies && (
       <Paper>
         {redirect && renderRedirect()}
         <Typography variant="h6" component="h2" gutterBottom>
