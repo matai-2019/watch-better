@@ -114,13 +114,16 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     outline: 'none',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: '#333',
+    color: 'white'
   },
   card: {
     width: 200,
     height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    padding: theme.spacing(2.5)
   },
   cardContainer: {
     marginTop: theme.spacing(8),
