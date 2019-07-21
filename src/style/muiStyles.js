@@ -245,7 +245,14 @@ export const RecommendationsStyles = makeStyles({
     margin: theme.spacing(2)
   },
   media: {
-    height: 290
+    height: 290,
+    alignContent: 'center',
+    display: 'flex'
+  },
+  testIcons: {
+    marginTop: '250px',
+    marginLeft: '10px',
+    display: 'inline-flex'
   }
 })
 
