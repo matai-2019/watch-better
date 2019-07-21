@@ -1,10 +1,10 @@
 import React from 'react'
 import { AppBar, Toolbar, Typography, TextField, Grid, Button, Link } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+
 import { NavBarStyles } from '../style/muiStyles'
 
 export default function NavBar (props) {
-
   const classes = NavBarStyles(props)
   return (
     <>
