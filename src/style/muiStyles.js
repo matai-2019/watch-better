@@ -46,50 +46,57 @@ export const MovieListItemStyles = makeStyles(theme => ({
   text: {
     fontSize: '28px'
   },
-  greenAvatar: {
-    color: '#fff',
-    backgroundColor: 'green',
-    margin: 0,
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
     width: 30,
     height: 30,
-    fontSize: 15
-  },
-  orangeAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'orange',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  purpleAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'purple',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  blueAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'blue',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  redAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'red',
-    width: 30,
-    height: 30,
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 2
   },
   list: {
     margin: '2vw',
     marginLeft: '4vw',
     width: '70vw'
+  },
+  star: {
+    iconFilled: 'pink'
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
+  },
+  icon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr'
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: '15vw'
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: 5,
+    marginRight: 0
   }
 }))
 
@@ -146,6 +153,11 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     width: 210,
     textAlign: 'center',
     margin: theme.spacing(2)
+  },
+  cardContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }))
 
@@ -195,7 +207,7 @@ export const NavBarStyles = makeStyles(theme => ({
     display: 'none',
     fontSize: '35px',
     fontWeight: '800',
-    color: '#FFDF59',
+    color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
     }
@@ -272,7 +284,25 @@ export const RecommendationsStyles = makeStyles({
     margin: theme.spacing(2)
   },
   media: {
+    height: 290,
+    alignContent: 'center',
+    display: 'flex'
+  },
+  testIcons: {
+    marginTop: '250px',
+    marginLeft: '10px',
+    display: 'inline-flex',
     height: 290
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
   }
 })
 
