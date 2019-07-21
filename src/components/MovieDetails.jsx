@@ -87,7 +87,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               {movieDetails.genres && extractGenres(movieDetails.genres)}
             </Typography>
             <div className={classes.overview}>
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h6" component="h2" gutterBottom>
                 Overview
               </Typography>
               <Typography className={classes.overviewText} gutterBottom>
