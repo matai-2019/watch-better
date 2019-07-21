@@ -9,7 +9,8 @@ import {
   Grid,
   Paper,
   Button,
-  withStyles
+  withStyles,
+  Box
 } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
@@ -62,12 +63,18 @@ const MovieListItem = (props) => {
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
-                  <Typography gutterBottom className={classes.text} onClick={handleClick}>
-                    {props.movie.title}
-                  </Typography>
-                  <Typography variant="body2" gutterBottom>
-                    <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
-                  </Typography>
+                  <Box display="flex" justifyContent="flex-start" m={0} p={0} bgcolor="background.paper">
+                    <Box>
+                      <Typography gutterBottom className={classes.text} onClick={handleClick}>
+                        {props.movie.title}
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <Typography variant="body2" gutterBottom>
+                        <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
+                      </Typography>
+                    </Box>
+                  </Box>
                 </Grid>
               </Grid>
               <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#a9da71' : '#FFDF59' }}onClick={handleSeen}>
