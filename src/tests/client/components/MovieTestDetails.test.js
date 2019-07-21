@@ -10,13 +10,13 @@ import { theme } from '../../../style/muiStyles'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieTestDetails component tests', () => {
-  it('<MovieTestDetails /> contains 4 Modal tags', () => {
+  it('<MovieTestDetails /> contains 5 Modal tags', () => {
     const wrapper = mount(
       <ThemeProvider theme={theme}>
         <MovieTestDetails />
       </ThemeProvider>
     )
     const actual = wrapper.find(Modal)
-    expect(actual).toHaveLength(4)
+    expect(actual).toHaveLength(5)
   })
 })

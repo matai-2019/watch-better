@@ -194,17 +194,38 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     outline: 'none',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: '#333',
+    color: 'white'
   },
   card: {
-    width: 210,
+    width: 200,
+    height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    padding: theme.spacing(2.5)
   },
   cardContainer: {
+    marginTop: theme.spacing(8),
+    color: 'white',
+    backgroundColor: '#333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  icon: {
+    height: 40,
+    width: 40,
+    '&:hover': {
+      height: 50,
+      width: 50,
+      backgroundColor: '#AF8E00',
+      borderRadius: '50%'
+    },
+    header: {
+      padding: 0,
+      margin: 0
+    }
   }
 }))
 
@@ -388,6 +409,38 @@ export const QuizStyle = makeStyles(theme => ({
   },
   content: {
     padding: '2em'
+  }
+}))
+
+export const SearchStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    height: 250
+  },
+  container: {
+    flexGrow: 1,
+    position: 'relative'
+  },
+  paper: {
+    position: 'absolute',
+    zIndex: 1,
+    marginTop: theme.spacing(1),
+    left: 0,
+    right: 0
+  },
+  inputRoot: {
+    flexWrap: 'wrap'
+  },
+  inputInput: {
+    width: 'auto',
+    flexGrow: 1,
+    color: theme.palette.primary.main
+  },
+  divider: {
+    height: theme.spacing(2)
+  },
+  label: {
+    color: theme.palette.primary.main
   }
 }))
 
