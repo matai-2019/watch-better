@@ -9,7 +9,7 @@ import MovieList from '../../../components/MovieList'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-test('MovieList component test', () => {
+test.skip('MovieList component test', () => {
   const mockStore = configureStore()({
     movies: [{ name: 'Harry Potter' }]
   })
