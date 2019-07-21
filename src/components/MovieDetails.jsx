@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
-import { Grid, Typography, Icon, Container, Box } from '@material-ui/core'
+import { Grid, Typography, Icon, Container, Box, Avatar } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
+import Avatars from './Avatars'
+import PropTypes from 'prop-types'
 
-function MovieDetails ({ dispatch, movieDetails, info, match }) {
+function MovieDetails ({ dispatch, movieDetails, info, match, props, movie }) {
   const classes = MovieDetailsStyles()
 
   const styles = {
@@ -47,7 +49,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
           <Grid item xs={4}>
             <img
               className={classes.poster}
-              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} 
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`}
               alt='movie poster'/>
           </Grid>
           <Grid item xs={8} className={classes.detailsContainer}>
@@ -62,23 +64,28 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
             <Box display="flex" flexDirection="row">
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h2" gutterBottom>test one </Typography>
+                <Grid item><Avatar className={classes.avatar}>B</Avatar></Grid>
               </Box>
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test two</Typography>
+                <Grid item><Avatar className={classes.avatar}>R</Avatar></Grid>
               </Box>
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test three</Typography>
+                <Grid item><Avatar className={classes.avatar}>K</Avatar></Grid>
               </Box>
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
+                <Grid item><Avatar className={classes.avatar}>L</Avatar></Grid>
               </Box>
               <Box>
                 <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
+                <Grid item><Avatar className={classes.avatar}>F</Avatar></Grid>
+                {/* {props.movie.movieTests.map(x => {
+                  if (x.result) return <Avatars key={x.testType} test={x} />
+                  else return null
+                })
+                } */}
               </Box>
             </Box>
             <Typography className= {classes.genres}component="span" gutterBottom>
@@ -104,6 +111,10 @@ function mapStateToProps (state) {
     movieDetails: state.movieDetails,
     info: state.info
   }
+}
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object
 }
 
 export default connect(mapStateToProps)(MovieDetails)
