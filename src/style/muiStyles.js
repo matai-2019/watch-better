@@ -85,12 +85,15 @@ export const FooterStyles = makeStyles(theme => ({
 
   edaText: {
     padding: '1',
-    fontSize: '0.8em',
+    fontSize: '12px',
     fontWeight: '300'
   },
 
   footerText: {
     marginTop: 10
+  },
+  githubIcon: {
+    
   }
 }))
 
