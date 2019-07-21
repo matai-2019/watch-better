@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
+// import Grid from '@material-ui/core/Grid'
 
 export const theme = createMuiTheme({
   palette: {
@@ -153,6 +154,11 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     width: 210,
     textAlign: 'center',
     margin: theme.spacing(2)
+  },
+  cardContainer: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 }))
 
@@ -279,6 +285,14 @@ export const RecommendationsStyles = makeStyles({
     margin: theme.spacing(2)
   },
   media: {
+    height: 290,
+    alignContent: 'center',
+    display: 'flex'
+  },
+  testIcons: {
+    marginTop: '250px',
+    marginLeft: '10px',
+    display: 'inline-flex',
     height: 290
   },
   button: {
