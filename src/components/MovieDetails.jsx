@@ -1,9 +1,16 @@
 import React, { useEffect } from 'react'
-import { Grid, Typography, Icon, Container, Box } from '@material-ui/core'
+import { Grid, Typography, Icon, Container, Box, withStyles } from '@material-ui/core'
 import { connect } from 'react-redux'
+import Rating from '@material-ui/lab/Rating'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
+
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#EBBC00'
+  }
+})(Rating)
 
 function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
@@ -47,7 +54,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
           <Grid item xs={4}>
             <img
               className={classes.poster}
-              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} 
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`}
               alt='movie poster'/>
           </Grid>
           <Grid item xs={8} className={classes.detailsContainer}>
@@ -90,6 +97,11 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
               <Typography className={classes.overviewText} gutterBottom>
                 {movieDetails.description}
+              </Typography>
+            </div>
+            <div>
+              <Typography variant="body2" style={{ marginTop: 30 }} gutterBottom>
+                <StyledRating name="half-rating" value={movieDetails.rating / 2} readOnly precision={0.1}/>
               </Typography>
             </div>
           </Grid>
