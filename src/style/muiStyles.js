@@ -107,11 +107,6 @@ export const FooterStyles = makeStyles(theme => ({
 }))
 
 export const MovieTestDetailsStyles = makeStyles(theme => ({
-  bar: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
   paper: {
     position: 'absolute',
     width: 400,
@@ -122,14 +117,31 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)'
   },
   card: {
-    width: 210,
+    width: 200,
+    height: 100,
     textAlign: 'center',
     margin: theme.spacing(2)
   },
   cardContainer: {
+    color: 'white',
+    backgroundColor: '#333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  icon: {
+    height: 40,
+    width: 40,
+    '&:hover': {
+      height: 50,
+      width: 50,
+      backgroundColor: '#AF8E00',
+      borderRadius: '50%'
+    },
+    header: {
+      padding: 0,
+      margin: 0
+    }
   }
 }))
 
@@ -305,18 +317,6 @@ export const QuizStyle = makeStyles(theme => ({
   },
   content: {
     padding: '2em'
-  }
-}))
-
-export const IconStyles = makeStyles(theme => ({
-  icon: {
-    margin: theme.spacing(2)
-  },
-  iconHover: {
-    margin: theme.spacing(2),
-    '&:hover': {
-      color: 'red'
-    }
   }
 }))
 

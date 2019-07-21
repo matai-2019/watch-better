@@ -4,10 +4,7 @@ import {
   Container,
   Paper,
   Typography,
-  CardActions,
-  Button,
-  Card,
-  CardContent
+  Box
 } from '@material-ui/core'
 import { MovieTestDetailsStyles } from '../style/muiStyles'
 import testInfo from '../data/diversityTestInfo'
@@ -31,18 +28,13 @@ const MovieTestDetails = props => {
   return (
     <div className={classes.cardContainer}>
       {testInfo.map((test, i) => (
-        <Card key={test.id} className={classes.card}>
-          <CardContent>
-            <img src="https://img.icons8.com/cute-clipart/64/000000/test-passed.png" alt='test-passes'/>
-            <Typography variant="h6" component="h2" gutterBottom>
-              {test.name}
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button onClick={handleOpen(i)} size="small">
-          Learn More
-            </Button>
-          </CardActions>
+        <Box boxShadow={0} key={test.id} className={classes.card}>
+          <div>
+            <img onClick={handleOpen(i)} className={classes.icon} src={test.icon} alt='test-passes'/>
+          </div>
+          <Typography variant="body1" component="h2" gutterBottom>
+            {test.name}
+          </Typography>
           <Modal
             aria-labelledby={test.name}
             aria-describedby={`Description of the ${test.name} test`}
@@ -56,7 +48,7 @@ const MovieTestDetails = props => {
               <Typography component="p">{test.description}</Typography>
             </Paper>
           </Modal>
-        </Card>
+        </Box>
       ))}
     </div>
   )
