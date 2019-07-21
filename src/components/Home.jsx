@@ -9,12 +9,12 @@ import MovieList from './MovieList'
 export default function Home () {
   return (
     <>
-      <Route path="/" component={MovieTestDetails} />
-      <Route path="/" exact component={Recommendations} />
       <Switch>
+        <Route path="/" exact component={MovieTestDetails} />
         <Route path="/movie/:id" component={MovieDetails} />
         <Route path="/movies/list" component={MovieList} />
       </Switch>
+      <Route path="/" exact component={Recommendations} />
     </>
   )
 }
