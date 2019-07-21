@@ -9,15 +9,17 @@ import NotFound from './NotFound'
 import Header from './Header'
 import Footer from './Footer'
 import Home from './Home'
+import Quiz from './Quiz'
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={Header} />
+        <Route path='/' component={Quiz} />
         <Switch>
           <Route path='/' component={Home} />
+          <Route path='/quiz' component={Quiz} />
           <Route component={NotFound} />
         </Switch>
         <Route path='/' component={Footer} />

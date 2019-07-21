@@ -14,6 +14,20 @@ export const theme = createMuiTheme({
   fontSize: 16
 })
 
+export const SorterStyle = makeStyles(theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 200
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
+  }
+}))
+
 export const MovieListItemStyles = makeStyles(theme => ({
   summary: {
     lineHeight: 4,
@@ -215,5 +229,15 @@ export const NoMatch = makeStyles(theme => ({
     marginTop: '5em',
     textAlign: 'center',
     fontSize: '5em'
+  }
+}))
+
+export const QuizStyle = makeStyles(theme => ({
+  question: {
+    fontSize: '1.5em',
+    color: 'black'
+  },
+  content: {
+    padding: '2em'
   }
 }))
