@@ -46,7 +46,7 @@ const MovieListItem = (props) => {
                     {props.movie.title}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    <Rating name="half-rating" value={props.movie.rating} readOnly precision={0.1} max={10}/>
+                    <Rating name="half-rating" value={props.movie.rating/2} readOnly precision={0.1}/>
                   </Typography>
                 </Grid>
                 <Grid item>
