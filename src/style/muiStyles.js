@@ -110,7 +110,7 @@ export const FooterStyles = makeStyles(theme => ({
   },
 
   socialButtons: {
-    marginBottom: 10,
+    marginBottom: 7,
     color: '#FFDF59'
   },
 
@@ -124,7 +124,14 @@ export const FooterStyles = makeStyles(theme => ({
     marginTop: 10
   },
   githubIcon: {
-    
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
+  enspiralIcon: {
+    '&:hover': {
+      backgroundColor: '#555'
+    }
   }
 }))
 
