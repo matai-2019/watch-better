@@ -57,7 +57,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 329865,
           recommended: false,
           image: '/xGgg2UI20qtEh7mura3RRwP8d3I.jpg',
-          rating: 6.5
+          rating: 7.4
         },
         {
           id: 8,
@@ -89,7 +89,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 335797,
           recommended: false,
           image: '/eSVtBB2PVFbQiFWC7CQi3EjIZnn.jpg',
-          rating: 6.3
+          rating: 6.9
         },
         {
           id: 12,
@@ -113,7 +113,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 380124,
           recommended: false,
           image: '/dpSWKKBtXOu8hDNJRCIAYfcRtdD.jpg',
-          rating: 6.5
+          rating: 5.4
         },
         {
           id: 15,
@@ -121,7 +121,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 241259,
           recommended: false,
           image: '/hrweIZ34Z3MCPNfRT4tGC2CXyrH.jpg',
-          rating: 8
+          rating: 6.5
         },
         {
           id: 16,
@@ -129,7 +129,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 259316,
           recommended: true,
           image: '/1M91Bt3oGspda75H9eLqYZkJzgO.jpg',
-          rating: 6.3
+          rating: 7.4
         },
         {
           id: 17,
@@ -137,7 +137,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 313369,
           recommended: false,
           image: '/ylXCdC106IKiarftHkcacasaAcb.jpg',
-          rating: 6.1
+          rating: 7.9
         },
         {
           id: 18,
@@ -145,7 +145,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 291805,
           recommended: false,
           image: '/hU0E130tsGdsYa4K9lc3Xrn5Wyt.jpg',
-          rating: 5.5
+          rating: 6.8
         },
         {
           id: 19,
@@ -169,7 +169,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 332210,
           recommended: false,
           image: '/5qVD5TD1CiALR5vUsMzh2BschVU.jpg',
-          rating: 6.5
+          rating: 6.6
         },
         {
           id: 22,
@@ -177,7 +177,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 297761,
           recommended: false,
           image: '/e1mjopzAS2KNsvpbpahQ1a6SkSn.jpg',
-          rating: 6.5
+          rating: 5.9
         },
         {
           id: 23,
@@ -185,7 +185,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 223702,
           recommended: false,
           image: '/w90cORtNWQAd2k93aFlIBbpQYTC.jpg',
-          rating: 6.5
+          rating: 5.6
         },
         {
           id: 24,
@@ -193,7 +193,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 259693,
           recommended: false,
           image: '/pUwdglql8cbztEink0JCgG1TY28.jpg',
-          rating: 6.5
+          rating: 7.2
         },
         {
           id: 25,
@@ -201,7 +201,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 316727,
           recommended: false,
           image: '/sm7p6NvWOBSDywdIPhmiX3SLSH8.jpg',
-          rating: 6.5
+          rating: 6.3
         },
         {
           id: 26,
@@ -217,7 +217,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 333371,
           recommended: false,
           image: '/84Dhwz93vCin6T1PX6ctSvWEuNE.jpg',
-          rating: 6.5
+          rating: 6.9
         },
         {
           id: 28,
@@ -225,7 +225,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 209112,
           recommended: false,
           image: '/cGOPbv9wA5gEejkUN892JrveARt.jpg',
-          rating: 6.5
+          rating: 5.8
         },
         {
           id: 29,
@@ -233,7 +233,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 271110,
           recommended: false,
           image: '/kSBXou5Ac7vEqKd97wotJumyJvU.jpg',
-          rating: 6.5
+          rating: 7.4
         },
         {
           id: 30,
@@ -241,7 +241,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 302699,
           recommended: false,
           image: '/9M5ibpQUjoVFjjnP2AdLcof4hAk.jpg',
-          rating: 6.5
+          rating: 6.3
         },
         {
           id: 31,
@@ -249,7 +249,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 300669,
           recommended: false,
           image: '/lw0IqOSMsQcy1QnVIEIDppLmNwk.jpg',
-          rating: 6.5
+          rating: 6.9
         },
         {
           id: 32,
@@ -257,7 +257,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 324786,
           recommended: false,
           image: '/bndiUFfJxNd2fYx8XO610L9a07m.jpg',
-          rating: 6.5
+          rating: 8.1
         },
         {
           id: 33,
@@ -265,7 +265,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 345911,
           recommended: false,
           image: '/sXqrTXcBf9TdIv5rfgeFNu9Iwu7.jpg',
-          rating: 6.5
+          rating: 6.3
         },
         {
           id: 34,
@@ -273,7 +273,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 277834,
           recommended: false,
           image: '/z4x0Bp48ar3Mda8KiPD1vwSY3D8.jpg',
-          rating: 6.5
+          rating: 7.5
         },
         {
           id: 35,
@@ -281,7 +281,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 323675,
           recommended: false,
           image: '/A739odgY2FjoLvYLYdypUc6GpaY.jpg',
-          rating: 6.5
+          rating: 6.2
         },
         {
           id: 36,
@@ -289,7 +289,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 188927,
           recommended: false,
           image: '/mLrQMqyZgLeP8FrT5LCobKAiqmK.jpg',
-          rating: 6.5
+          rating: 6.7
         },
         {
           id: 37,
@@ -297,7 +297,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 363676,
           recommended: false,
           image: '/h6O5OE3ueRVdCc7V7cwTiQocI7D.jpg',
-          rating: 6.5
+          rating: 7.1
         },
         {
           id: 38,
@@ -305,7 +305,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 308531,
           recommended: false,
           image: '/u3M0HzkQR1pYNaadJWuxe84B34r.jpg',
-          rating: 6.5
+          rating: 5.9
         },
         {
           id: 39,
@@ -313,7 +313,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 153518,
           recommended: false,
           image: '/t2mZzQXjpQxmqtJOPpe8Dr2YpMl.jpg',
-          rating: 6.5
+          rating: 6.0
         },
         {
           id: 40,
@@ -321,7 +321,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 333484,
           recommended: false,
           image: '/cparcxTFuHdlSOP3MJOpN7Ec9NB.jpg',
-          rating: 6.5
+          rating: 6.2
         },
         {
           id: 41,
@@ -329,7 +329,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 136799,
           recommended: false,
           image: '/zKu5MNy9QW1a5ZHgv7iAp3kRZpE.jpg',
-          rating: 6.5
+          rating: 6.6
         },
         {
           id: 42,
@@ -337,7 +337,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 269149,
           recommended: false,
           image: '/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg',
-          rating: 6.5
+          rating: 7.7
         },
         {
           id: 43,
@@ -345,7 +345,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 324668,
           recommended: false,
           image: '/lFSSLTlFozwpaGlO31OoUeirBgQ.jpg',
-          rating: 6.5
+          rating: 6.1
         },
         {
           id: 44,
@@ -353,7 +353,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 330459,
           recommended: false,
           image: '/qjiskwlV1qQzRCjpV0cL9pEMF9a.jpg',
-          rating: 6.5
+          rating: 7.5
         },
         {
           id: 45,
@@ -361,7 +361,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 302946,
           recommended: false,
           image: '/afhAUuWVB7k7PjJUd4lwO3rzhSq.jpg',
-          rating: 6.5
+          rating: 6.9
         },
         {
           id: 46,
@@ -369,7 +369,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 278927,
           recommended: false,
           image: '/vOipe2myi26UDwP978hsYOrnUWC.jpg',
-          rating: 6.5
+          rating: 6.8
         },
         {
           id: 47,
@@ -377,7 +377,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 258489,
           recommended: false,
           image: '/6FxOPJ9Ysilpq0IgkrMJ7PubFhq.jpg',
-          rating: 6.5
+          rating: 5.8
         },
         {
           id: 49,
@@ -385,7 +385,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 284052,
           recommended: false,
           image: '/4PiiNGXj1KENTmCBHeN6Mskj2Fq.jpg',
-          rating: 6.5
+          rating: 7.4
         },
         {
           id: 50,
@@ -393,7 +393,7 @@ exports.seed = (knex, Promise) => {
           API_movie_id: 328111,
           recommended: false,
           image: '/WLQN5aiQG8wc9SeKwixW7pAR8K.jpg',
-          rating: 6.5
+          rating: 6.1
         }
       ])
     })
