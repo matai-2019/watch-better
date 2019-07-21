@@ -116,8 +116,7 @@ const Search = ({ movies }, ...props) => {
         selectedItem
       }) => {
         const { onBlur, onChange, onFocus, ...inputProps } = getInputProps({
-          onFocus: openMenu,
-          placeholder: 'Search for a movie...'
+          onFocus: openMenu
         })
 
         return (
@@ -126,7 +125,7 @@ const Search = ({ movies }, ...props) => {
               {renderInput({
                 fullWidth: true,
                 classes,
-                label: 'Movies',
+                label: 'Search for a movie...',
                 InputLabelProps: getLabelProps({ className: classes.label }),
                 InputProps: { onBlur, onChange, onFocus },
                 inputProps

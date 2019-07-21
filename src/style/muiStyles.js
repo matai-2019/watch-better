@@ -310,7 +310,7 @@ export const SearchStyles = makeStyles(theme => ({
   },
   container: {
     flexGrow: 1,
-    position: 'relative',
+    position: 'relative'
   },
   paper: {
     position: 'absolute',
