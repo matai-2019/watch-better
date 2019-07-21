@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
 import { MovieListItemStyles } from '../style/muiStyles'
@@ -14,6 +15,7 @@ import {
 import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
+import { addToWatchlist, removeFromWatchlist } from '../actions/watchlist'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -44,6 +46,16 @@ const MovieListItem = (props) => {
   const handleWatch = () => {
     const icon = isAdded
     const color = watchColor
+    if (isAdded) {
+      setWatchColor(!color)
+      setIsAdded(!icon)
+      props.dispatch(removeFromWatchlist(props.movie.id))
+    } else {
+      setWatchColor(!color)
+      setIsAdded(!icon)
+      props.dispatch(addToWatchlist(props.movie.id))
+    }
+
     setWatchColor(!color)
     setIsAdded(!icon)
   }
@@ -99,7 +111,8 @@ const MovieListItem = (props) => {
 }
 
 MovieListItem.propTypes = {
-  movie: PropTypes.object
+  movie: PropTypes.object,
+  dispatch: PropTypes.func
 }
 
-export default MovieListItem
+export default connect()(MovieListItem)
