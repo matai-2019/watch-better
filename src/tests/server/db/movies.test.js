@@ -44,8 +44,8 @@ test('db.getMovieById returns all data for a specific movie', () => {
   })
 })
 
-test('db.getMovies returns an array of 10 movie objects', () => {
+test('db.getMovies returns an array of 49 movie objects', () => {
   return db.getAllMovies(testDb).then(movies => {
-    expect(movies).toHaveLength(50)
+    expect(movies).toHaveLength(49)
   })
 })
