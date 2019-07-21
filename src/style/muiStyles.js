@@ -138,12 +138,10 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     textAlign: 'center',
     margin: theme.spacing(2)
   },
-  grid: {
-    display: 'inline-block',
-    flexGrow: 3,
-    justifyContent: 'center',
+  cardContainer: {
+    display: 'flex',
     alignItems: 'center',
-    direction: 'row'
+    justifyContent: 'center'
   }
 }))
 
