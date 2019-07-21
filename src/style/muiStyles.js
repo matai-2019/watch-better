@@ -225,3 +225,13 @@ export const FilterStyles = makeStyles(theme => ({
     fill: '#000'
   }
 }))
+
+export const QuizStyle = makeStyles(theme => ({
+  question: {
+    fontSize: '1.5em',
+    color: 'black'
+  },
+  content: {
+    padding: '2em'
+  }
+}))
