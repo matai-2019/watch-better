@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
-// import Grid from '@material-ui/core/Grid'
 
 export const theme = createMuiTheme({
   palette: {
@@ -64,6 +63,40 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   star: {
     iconFilled: 'pink'
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
+  },
+  icon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr'
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: '15vw'
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: 5,
+    marginRight: 0
   }
 }))
 
