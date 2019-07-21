@@ -16,8 +16,7 @@ const getMoviesFromAPI = (id) => {
         description: body.overview,
         rating: body.vote_average,
         genres: body.genres,
-        poster: body.poster_path,
-        backdrop: body.backdrop_path
+        poster: body.poster_path
       }
     }).then(movie => {
       return request.get(`${apiUrl}${id}/credits?api_key=${apiKey}`)
