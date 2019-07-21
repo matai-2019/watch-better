@@ -31,7 +31,7 @@ const MovieTestDetails = props => {
   return testInfo.map((test, i) => (
     <Card key={test.id} className={classes.card}>
       <CardContent>
-        <img src="https://img.icons8.com/cute-clipart/64/000000/test-passed.png" alt='test-passes'/>
+        <img src={test.icon} alt='test-passes'/>
         <Typography variant="h6" component="h2" gutterBottom>
           {test.name}
         </Typography>
