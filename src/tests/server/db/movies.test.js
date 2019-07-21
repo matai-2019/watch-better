@@ -14,7 +14,7 @@ test('db.getMovieById returns all data for a specific movie', () => {
   const expected = {
     id: 1,
     title: 'Bad Moms',
-    recommended: 'true',
+    recommended: 1,
     apiMovieId: 376659,
     movieTests: [
       {
