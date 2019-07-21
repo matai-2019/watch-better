@@ -28,36 +28,64 @@ export const SorterStyle = makeStyles(theme => ({
 }))
 
 export const MovieListItemStyles = makeStyles(theme => ({
-  summary: {
-    lineHeight: 4,
-    height: '60px'
+  root: {
+    flexGrow: '1'
   },
-  text: {
-    fontSize: '18px'
-  },
-  summaryText: {
-    display: 'inline-block',
-    float: 'left',
-    marginLeft: '15px'
-  },
-  moreButton: {
-    margin: '-50px 10px 0px'
-  },
-  divider: {
-    width: '100%'
+  paper: {
+    padding: theme.spacing(2)
   },
   img: {
-    height: '200px',
-    width: '140px'
+    display: 'block',
+    maxWidth: '50%',
+    borderRadius: '0.3vw'
   },
-  panel: {
-    maxWidth: '80%'
+  text: {
+    fontSize: '28px'
   },
-  space: {
-    height: '5px'
+  greenAvatar: {
+    color: '#fff',
+    backgroundColor: 'green',
+    margin: 0,
+    width: 30,
+    height: 30,
+    fontSize: 15
   },
-  detailsPanel: {
-    padding: '20px'
+  orangeAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'orange',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  purpleAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'purple',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  blueAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'blue',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  redAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'red',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  list: {
+    margin: '2vw',
+    marginLeft: '4vw',
+    width: '70vw'
   }
 }))
 
