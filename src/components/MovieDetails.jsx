@@ -7,7 +7,6 @@ import { getMovieDetails } from '../actions/movieDetails'
 
 function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
-  console.log(movieDetails)
 
   const styles = {
     cardContainer: {
