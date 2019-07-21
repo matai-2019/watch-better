@@ -1,13 +1,16 @@
 import { makeStyles } from '@material-ui/styles'
-import { fade, createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#4b6d97'
+      main: '#FFDF59'
     },
     secondary: {
       main: '#71a4a1'
+    },
+    background: {
+      main: '#2a2e36'
     }
   },
   spacing: 8,
@@ -164,17 +167,15 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
 }))
 
 export const NavBarStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
   toolbar: {
-    justifyContent: 'right'
+    backgroundColor: '#333'
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -182,24 +183,36 @@ export const NavBarStyles = makeStyles(theme => ({
       width: 'auto'
     }
   },
+  logo: {
+    flexGrow: 2,
+    display: 'none',
+    fontSize: '35px',
+    fontWeight: '800',
+    color: '#FFDF59',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
+  tagline: {
+    flexGrow: 25,
+    display: 'none',
+    fontSize: '15px',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
   searchIcon: {
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    color: '#FFDF59'
   },
-  inputRoot: {
-    color: 'inherit'
+  multilineColor: {
+    color: 'white'
   },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200
+  navButton: {
+    color: '#FFDF59',
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
     }
   }
 }))
