@@ -47,7 +47,8 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
           <Grid item xs={4}>
             <img
               className={classes.poster}
-              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} />
+              src={`https://image.tmdb.org/t/p/w500${movieDetails.poster}`} 
+              alt='movie poster'/>
           </Grid>
           <Grid item xs={8} className={classes.detailsContainer}>
             <div className={classes.titleContainer}>
