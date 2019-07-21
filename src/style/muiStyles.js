@@ -324,3 +324,9 @@ export const CastMemberStyles = makeStyles({
     height: 250
   }
 })
+
+export const CastStyles = makeStyles({
+  container: {
+    height: 400
+  }
+})
