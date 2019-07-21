@@ -53,7 +53,7 @@ const MovieListItem = (props) => {
     } else {
       setWatchColor(!color)
       setIsAdded(!icon)
-      props.dispatch(addToWatchlist(props.movie.id))
+      props.dispatch(addToWatchlist(props.movie))
     }
 
     setWatchColor(!color)
