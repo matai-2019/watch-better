@@ -246,6 +246,16 @@ export const RecommendationsStyles = makeStyles({
   },
   media: {
     height: 290
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
   }
 })
 
