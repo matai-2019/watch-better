@@ -64,7 +64,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
 
 export const HeaderStyles = makeStyles(theme => ({
   headerContent: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.background.paper
   }
 }))
 
