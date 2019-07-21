@@ -29,7 +29,7 @@ const MovieTestDetails = props => {
   }
 
   return testInfo.map((test, i) => (
-    <Grid key={test.card} className={classes.grid}>
+    <Grid key={test.card} className={classes.grid} style={{ 'white-space': 'nowrap' }}>
       <Card key={test.id} className={classes.card}>
         <CardContent>
           <img src="https://img.icons8.com/cute-clipart/64/000000/test-passed.png" alt='test-passes'/>

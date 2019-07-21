@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
+// import Grid from '@material-ui/core/Grid'
 
 export const theme = createMuiTheme({
   palette: {
@@ -138,9 +139,11 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     margin: theme.spacing(2)
   },
   grid: {
-    direction: 'row',
-    justify: 'center',
-    alignItems: 'center'
+    display: 'inline-block',
+    flexGrow: 3,
+    justifyContent: 'center',
+    alignItems: 'center',
+    direction: 'row'
   }
 }))
 
