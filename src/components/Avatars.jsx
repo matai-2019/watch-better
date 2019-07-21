@@ -9,15 +9,15 @@ function Avatars ({ test }) {
 
   switch (test.testType) {
     case 'Bechdel Test':
-      return <Grid item><Avatar className={classes.greenAvatar}>B</Avatar></Grid>
+      return <Grid item><Avatar className={classes.avatar}>B</Avatar></Grid>
     case 'Rees Davies Test':
-      return <Grid item><Avatar className={classes.orangeAvatar}>RD</Avatar></Grid>
+      return <Grid item><Avatar className={classes.avatar}>R</Avatar></Grid>
     case 'Ko Test':
-      return <Grid item><Avatar className={classes.purpleAvatar}>K</Avatar></Grid>
+      return <Grid item><Avatar className={classes.avatar}>K</Avatar></Grid>
     case 'Landau Test':
-      return <Grid item><Avatar className={classes.blueAvatar}>L</Avatar></Grid>
+      return <Grid item><Avatar className={classes.avatar}>L</Avatar></Grid>
     case 'Feldman Test':
-      return <Grid item><Avatar className={classes.redAvatar}>F</Avatar></Grid>
+      return <Grid item><Avatar className={classes.avatar}>F</Avatar></Grid>
     default:
       return null
   }

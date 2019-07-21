@@ -46,50 +46,23 @@ export const MovieListItemStyles = makeStyles(theme => ({
   text: {
     fontSize: '28px'
   },
-  greenAvatar: {
-    color: '#fff',
-    backgroundColor: 'green',
-    margin: 0,
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
     width: 30,
     height: 30,
-    fontSize: 15
-  },
-  orangeAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'orange',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  purpleAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'purple',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  blueAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'blue',
-    width: 30,
-    height: 30,
-    fontSize: 15
-  },
-  redAvatar: {
-    margin: 0,
-    color: '#fff',
-    backgroundColor: 'red',
-    width: 30,
-    height: 30,
-    fontSize: 15
+    fontSize: 15,
+    paddingTop: 2
   },
   list: {
     margin: '2vw',
     marginLeft: '4vw',
     width: '70vw'
+  },
+  star: {
+    iconFilled: 'pink'
   }
 }))
 
@@ -188,7 +161,7 @@ export const NavBarStyles = makeStyles(theme => ({
     display: 'none',
     fontSize: '35px',
     fontWeight: '800',
-    color: '#FFDF59',
+    color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
     }
