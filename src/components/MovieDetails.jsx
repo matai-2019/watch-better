@@ -3,6 +3,7 @@ import { Grid, Typography, Icon, Container, Box, withStyles, Avatar } from '@mat
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
 import PropTypes from 'prop-types'
+import Avatars from './Avatars'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
@@ -34,16 +35,6 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   useEffect(() => {
     dispatch(getMovieDetails(match.params.id))
   }, [dispatch, match.params.id])
-
-  //   function exactTestIcons (props) {
-  //     return (
-  //       {props.movie.movieTests.map(x => {
-  //         if (x.result) return <Avatars key={x.testType} test={x} />
-  //         else return null
-  //       })
-  //     }
-  //   )
-  // }
 
   function extractGenres (arr) {
     const genres = []
@@ -78,26 +69,11 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
             </div>
             <Box display="flex" flexDirection="row">
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Grid item><Avatar className={classes.avatar}>B</Avatar></Grid>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Grid item><Avatar className={classes.avatar}>R</Avatar></Grid>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Grid item><Avatar className={classes.avatar}>K</Avatar></Grid>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Grid item><Avatar className={classes.avatar}>L</Avatar></Grid>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Grid item><Avatar className={classes.avatar}>F</Avatar></Grid>
-              </Box>
+              {movieDetails.movieTests && movieDetails.movieTests.map(x => {
+                if (x.result) return <Avatars key={x.testType} test={x} />
+                else return null
+              })
+              }
             </Box>
             <Typography className= {classes.genres}component="span" gutterBottom>
               {movieDetails.genres && extractGenres(movieDetails.genres)}
