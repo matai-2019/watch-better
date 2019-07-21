@@ -8,6 +8,7 @@ export default function Cast ({ cast }) {
   const classes = CastStyles()
 
   const extractCastmember = (cast) => {
+    cast = cast.splice(0, 5)
     return cast.map(castMember => (
       <Grid key={castMember.name}>
         <CastMember key={castMember.name} castMember={castMember} />
