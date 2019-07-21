@@ -30,7 +30,7 @@ test("GET('/':id) responds with status 200", () => {
     .catch(err => expect(err).toBeNull())
 })
 
-test.skip("GET('/search/:query':id)responds with status 200", () => {
+test("GET('/search/:query':id)responds with status 200", () => {
   return request(server)
     .get('/movie-api/search/fight+club')
     .end((err, res) => {

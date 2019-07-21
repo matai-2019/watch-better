@@ -15,6 +15,7 @@ import {
   SORT_RATING_LOW_HIGH,
   SORT_ALPHABETICAL_ASCENDING
 } from '../actions/sort'
+import Filter from './Filter'
 
 const MovieList = ({ dispatch, movies, info, sortType }) => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const MovieList = ({ dispatch, movies, info, sortType }) => {
   return (
     <>
       <Sorter />
+      <Filter />
       {!info.pending &&
         movies &&
         movies.map(movie => {

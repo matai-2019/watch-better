@@ -1,16 +1,20 @@
 import { makeStyles } from '@material-ui/styles'
-import { fade, createMuiTheme } from '@material-ui/core/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 export const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#4b6d97'
+      main: '#FFDF59'
     },
     secondary: {
       main: '#71a4a1'
+    },
+    background: {
+      main: '#2a2e36'
     }
   },
-  spacing: 8
+  spacing: 8,
+  fontSize: 16
 })
 
 export const SorterStyle = makeStyles(theme => ({
@@ -28,43 +32,70 @@ export const SorterStyle = makeStyles(theme => ({
 }))
 
 export const MovieListItemStyles = makeStyles(theme => ({
-  summary: {
-    lineHeight: 4,
-    height: '60px'
+  root: {
+    flexGrow: '1'
   },
-  text: {
-    fontSize: '18px'
-  },
-  summaryText: {
-    display: 'inline-block',
-    float: 'left',
-    marginLeft: '15px'
-  },
-  moreButton: {
-    margin: '-50px 10px 0px'
-  },
-  divider: {
-    width: '100%'
+  paper: {
+    padding: theme.spacing(2)
   },
   img: {
-    height: '200px',
-    width: '140px'
+    display: 'block',
+    maxWidth: '50%',
+    borderRadius: '0.3vw'
   },
-  panel: {
-    maxWidth: '80%'
+  text: {
+    fontSize: '28px'
   },
-  space: {
-    height: '5px'
+  greenAvatar: {
+    color: '#fff',
+    backgroundColor: 'green',
+    margin: 0,
+    width: 30,
+    height: 30,
+    fontSize: 15
   },
-  detailsPanel: {
-    padding: '20px'
+  orangeAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'orange',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  purpleAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'purple',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  blueAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'blue',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  redAvatar: {
+    margin: 0,
+    color: '#fff',
+    backgroundColor: 'red',
+    width: 30,
+    height: 30,
+    fontSize: 15
+  },
+  list: {
+    margin: '2vw',
+    marginLeft: '4vw',
+    width: '70vw'
   }
 }))
 
 export const HeaderStyles = makeStyles(theme => ({
   headerContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 4)
+    backgroundColor: theme.palette.background.paper
   }
 }))
 
@@ -139,17 +170,15 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
 }))
 
 export const NavBarStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
   toolbar: {
-    justifyContent: 'right'
+    backgroundColor: '#333'
   },
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    '&:hover': {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
-    },
-    marginRight: theme.spacing(2),
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -157,36 +186,74 @@ export const NavBarStyles = makeStyles(theme => ({
       width: 'auto'
     }
   },
+  logo: {
+    flexGrow: 2,
+    display: 'none',
+    fontSize: '35px',
+    fontWeight: '800',
+    color: '#FFDF59',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
+  tagline: {
+    flexGrow: 25,
+    display: 'none',
+    fontSize: '15px',
+    color: 'white',
+    [theme.breakpoints.up('sm')]: {
+      display: 'block'
+    }
+  },
   searchIcon: {
-    width: theme.spacing(7),
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
+    color: '#FFDF59'
   },
-  inputRoot: {
-    color: 'inherit'
+  multilineColor: {
+    color: 'white'
   },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: 200
+  navButton: {
+    color: '#FFDF59',
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
     }
   }
 }))
 
 export const MovieDetailsStyles = makeStyles(theme => ({
+  container: {
+    padding: 0
+  },
+  detailsContainer: {
+    color: '#fff'
+  },
   poster: {
-    height: 400,
-    width: 300,
-    marginBottom: 50
+    height: 400
   },
   icon: {
     margin: 5
+  },
+  titleContainer: {
+    padding: theme.spacing(3, 0, 4, 0)
+  },
+  title: {
+    display: 'inline',
+    fontSize: '2.5rem'
+  },
+  year: {
+    marginLeft: theme.spacing(),
+    fontSize: '1.5rem',
+    color: '#ccc'
+  },
+  genres: {
+    fontWeight: '300',
+    padding: theme.spacing(1, 0)
+  },
+  overview: {
+    paddingTop: theme.spacing()
+  },
+  overviewText: {
+    fontWeight: '300'
   }
 }))
 
@@ -206,5 +273,35 @@ export const NoMatch = makeStyles(theme => ({
     marginTop: '5em',
     textAlign: 'center',
     fontSize: '5em'
+  }
+}))
+
+export const FilterStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    width: 200,
+    display: 'flex',
+    wrap: 'nowrap'
+  },
+  select: {
+    '&:before': {
+      borderColor: '#000'
+    },
+    '&:after': {
+      borderColor: '#000'
+    }
+  },
+  icon: {
+    fill: '#000'
+  }
+}))
+
+export const QuizStyle = makeStyles(theme => ({
+  question: {
+    fontSize: '1.5em',
+    color: 'black'
+  },
+  content: {
+    padding: '2em'
   }
 }))
