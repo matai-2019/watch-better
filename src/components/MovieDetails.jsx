@@ -7,13 +7,14 @@ import { getMovieDetails } from '../actions/movieDetails'
 
 function MovieDetails ({ dispatch, movieDetails, info, match }) {
   const classes = MovieDetailsStyles()
+  console.log(movieDetails)
 
   const styles = {
     cardContainer: {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '50% 50%',
-      backgroundImage: `url(https://image.tmdb.org/t/p/w1400_and_h450_face${movieDetails.poster})`,
+      backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop})`,
       backgroundColor: '#333'
     },
     customFilter: {
