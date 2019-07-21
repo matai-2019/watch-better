@@ -147,17 +147,38 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     outline: 'none',
     top: '50%',
     left: '50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    backgroundColor: '#333',
+    color: 'white'
   },
   card: {
-    width: 210,
+    width: 200,
+    height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2)
+    margin: theme.spacing(2),
+    padding: theme.spacing(2.5)
   },
   cardContainer: {
+    marginTop: theme.spacing(8),
+    color: 'white',
+    backgroundColor: '#333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  icon: {
+    height: 40,
+    width: 40,
+    '&:hover': {
+      height: 50,
+      width: 50,
+      backgroundColor: '#AF8E00',
+      borderRadius: '50%'
+    },
+    header: {
+      padding: 0,
+      margin: 0
+    }
   }
 }))
 

@@ -17,7 +17,6 @@ const App = () => {
       <CssBaseline />
       <Router>
         <Route path='/' component={NavBar} />
-        <Route path='/' component={Quiz} />
         <Switch>
           <Route path='/' component={Home} />
           <Route path='/quiz' component={Quiz} />
