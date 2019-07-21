@@ -41,9 +41,7 @@ const MovieTestDetails = props => {
             onClose={handleClose(i)}
           >
             <Paper className={classes.paper}>
-              <Typography variant="h5" component="h2" gutterBottom>
-                {test.name}
-              </Typography>
+              <Typography variant="h5" component="h2" gutterBottom>{test.name}</Typography>
               <Typography component="p">{test.description}</Typography>
             </Paper>
           </Modal>
