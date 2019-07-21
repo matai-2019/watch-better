@@ -1,6 +1,5 @@
 import { makeStyles } from '@material-ui/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
-// import Grid from '@material-ui/core/Grid'
 
 export const theme = createMuiTheme({
   palette: {
