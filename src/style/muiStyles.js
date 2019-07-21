@@ -206,6 +206,26 @@ export const NoMatch = makeStyles(theme => ({
   }
 }))
 
+export const FilterStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    width: 200,
+    display: 'flex',
+    wrap: 'nowrap'
+  },
+  select: {
+    '&:before': {
+      borderColor: '#000'
+    },
+    '&:after': {
+      borderColor: '#000'
+    }
+  },
+  icon: {
+    fill: '#000'
+  }
+}))
+
 export const QuizStyle = makeStyles(theme => ({
   question: {
     fontSize: '1.5em',
