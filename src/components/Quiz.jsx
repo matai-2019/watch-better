@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, TextField, Button, Typography, List, ListItem, ListItemText } from '@material-ui/core'
+import { Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
