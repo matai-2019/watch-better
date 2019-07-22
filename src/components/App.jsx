@@ -10,13 +10,17 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import Home from './Home'
 import Quiz from './Quiz'
+import ErrorMessage from './ErrorMessage'
+import WaitIndicator from './WaitIndicator'
 
-const App = () => {
+const App = ({ error, pending }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
         <Route path='/' component={NavBar} />
+        {error && <ErrorMessage />}
+        {pending && <WaitIndicator />}
         <Switch>
           <Route path='/' component={Home} />
           <Route path='/quiz' component={Quiz} />
@@ -28,4 +32,11 @@ const App = () => {
   )
 }
 
-export default connect()(App)
+const mapStateToProps = ({ info: { error, pending } }) => {
+  return {
+    error,
+    pending
+  }
+}
+
+export default connect(mapStateToProps)(App)
