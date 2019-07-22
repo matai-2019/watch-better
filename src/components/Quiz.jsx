@@ -3,6 +3,7 @@ import { Container, TextField, Button, Typography, List, ListItem } from '@mater
 
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
+import { QuizStyle } from '../style/muiStyles'
 
 class Quiz extends React.Component {
   state = {
@@ -16,6 +17,10 @@ class Quiz extends React.Component {
   test3 = []
   test4 = []
   test5 = []
+
+  classes= () => {
+    QuizStyle()
+  }
 
   handleTitle = e => {
     this.setState({
