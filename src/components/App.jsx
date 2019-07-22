@@ -10,6 +10,7 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import Home from './Home'
 import Quiz from './Quiz'
+import Register from './Register'
 
 const App = () => {
   return (
@@ -20,6 +21,8 @@ const App = () => {
         <Switch>
           <Route path='/' component={Home} />
           <Route path='/quiz' component={Quiz} />
+          <Route path='/register' component={Register} />
+          {/* <Route path='/login' component={Login} /> */}
           <Route component={NotFound} />
         </Switch>
         <Route path='/' component={Footer} />
