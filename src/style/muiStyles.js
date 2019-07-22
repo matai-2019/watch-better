@@ -61,15 +61,12 @@ export const MovieListItemStyles = makeStyles(theme => ({
     marginLeft: '4vw',
     width: '70vw'
   },
-  star: {
-    iconFilled: 'pink'
-  },
   button: {
     border: 'solid 2px #333',
     color: '#333',
     backgroundColor: '#FFDF59',
     '&:hover': {
-      backgroundColor: '#FFDF59',
+      backgroundColor: '#00000014',
       border: 'solid 2px #333',
       color: '#333'
     }
@@ -85,18 +82,68 @@ export const MovieListItemStyles = makeStyles(theme => ({
     letterSpacing: 'normal',
     wordWrap: 'normal',
     whiteSpace: 'nowrap',
-    direction: 'ltr'
+    direction: 'ltr',
+    height: 20
   },
   seenButton: {
     border: 'solid 2px #333',
     color: '#333',
-    marginLeft: '15vw'
+    height: 30
   },
   watchButton: {
     border: 'solid 2px #333',
     color: '#333',
     marginLeft: 5,
-    marginRight: 0
+    marginRight: 0,
+    height: 30
+  },
+  topMargin: {
+    marginTop: '7vw'
+  }
+}))
+
+export const WatchlistItemStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: '1'
+  },
+  paper: {
+    padding: theme.spacing(2)
+  },
+  text: {
+    fontSize: '28px',
+    cursor: 'pointer'
+  },
+  list: {
+    margin: '10vw',
+    width: '80vw'
+  },
+  icon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr',
+    cursor: 'pointer',
+    height: 20
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    height: 30
+  },
+  removeButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: 5,
+    marginRight: 0,
+    height: 30,
+    backgroundColor: '#FF6C6C'
   }
 }))
 
@@ -407,3 +454,9 @@ export const CastMemberStyles = makeStyles({
     height: 250
   }
 })
+
+export const CastStyles = makeStyles(theme => ({
+  title: {
+    marginTop: theme.spacing()
+  }
+}))

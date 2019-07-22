@@ -20,7 +20,7 @@ import Filter from './Filter'
 const MovieList = ({ dispatch, movies, info, sortType }) => {
   useEffect(() => {
     dispatch(getMovies())
-  }, [])
+  }, [dispatch])
 
   return (
     <>
