@@ -122,11 +122,13 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     flexGrow: '1'
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    backgroundColor: '#FFDF59'
   },
   text: {
     fontSize: '28px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: '#333'
   },
   list: {
     margin: '1vw',
