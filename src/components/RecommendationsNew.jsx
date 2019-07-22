@@ -1,31 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import AliceCarousel from 'react-alice-carousel'
+import 'react-alice-carousel/lib/alice-carousel.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import {
-  Paper,
-  Typography,
-  Divider,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Grid,
-  Button
-} from '@material-ui/core'
-import SwipeableViews from 'react-swipeable-views'
-import { autoPlay } from 'react-swipeable-views-utils'
+import Button from '@material-ui/core/Button'
 
-import { RecommendationStyles, theme } from '../style/muiStyles'
+import { RecommendationsStyles, theme } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
-
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews)
-
+import RecommendationDetail from './RecommendationDetail'
 
 const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
-  const classes = RecommendationStyles(props)
+  const classes = RecommendationsStyles(props)
   const [redirect, setRedirect] = useState()
-  const [activeStep, setActiveStep] = React.useState(0)
+  const handleOnDragStart = e => e.preventDefault()
 
   useEffect(() => {
     dispatch(getMovies())
@@ -39,16 +27,16 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
     setRedirect('see')
   }
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1)
-  }
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1)
-  }
-
-  const handleStepChange = step => {
-    setActiveStep(step)
+  const responsive = {
+    1024: {
+      items: 3
+    },
+    464: {
+      items: 2
+    },
+    0: {
+      items: 1
+    }
   }
 
   const renderRedirect = () => {
@@ -61,15 +49,45 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
 
   return (
     !info.pending && (
-      <AutoPlaySwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={activeStep}
-        onChangeIndex={handleStepChange}
-        enableMouseEvents>
-  
-      </AutoPlaySwipeableViews>
+      <>
+        {redirect && renderRedirect()}
+        <AliceCarousel
+          responsive={responsive}
+          autoPlayInterval={3000}
+          autoPlayDirection="ltr"
+          autoPlay={true}
+          fadeOutAnimation={true}
+          mouseDragEnabled={true}>
+          {movies
+            .filter(movie => movie.recommended)
+            .map(movie => (
+              <RecommendationDetail
+                onDragStart={handleOnDragStart}
+                movie={movie}
+                id={movie.id}
+                key={movie.id}
+                onClick={handleClick}
+                image={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                title={movie.title} />
+            ))}
+        </AliceCarousel>
+        <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>
+      </>
     )
   )
 }
 
-export default RecommendationsNew
+function mapStateToProps ({ movies, info }) {
+  return {
+    movies,
+    info
+  }
+}
+
+RecommendationsNew.propTypes = {
+  dispatch: PropTypes.func,
+  movies: PropTypes.array,
+  info: PropTypes.object
+}
+
+export default connect(mapStateToProps)(RecommendationsNew)
