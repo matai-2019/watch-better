@@ -27,15 +27,28 @@ const StyledRating = withStyles({
 
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
+  const { watchlist, movie, dispatch } = props
+
+  const status = () => {
+    const element = watchlist.find(item => {
+      return item.id === movie.id
+    })
+
+    if (element) {
+      return true
+    } else {
+      return false
+    }
+  }
 
   const [redirect, setRedirect] = useState()
-  const [watchColor, setWatchColor] = useState(false)
-  const [isAdded, setIsAdded] = useState(false)
+  const [watchColor, setWatchColor] = useState(status)
+  const [isAdded, setIsAdded] = useState(status)
   const [isSeen, setIsSeen] = useState(false)
   const [seenColor, setSeenColor] = useState(false)
 
   const handleClick = () => {
-    setRedirect(props.movie.id)
+    setRedirect(movie.id)
   }
 
   const handleSeen = () => {
@@ -51,11 +64,11 @@ const MovieListItem = (props) => {
     if (isAdded) {
       setWatchColor(!color)
       setIsAdded(!icon)
-      props.dispatch(removeFromWatchlist(props.movie.id))
+      dispatch(removeFromWatchlist(movie.id))
     } else {
       setWatchColor(!color)
       setIsAdded(!icon)
-      props.dispatch(addToWatchlist(props.movie))
+      dispatch(addToWatchlist(movie))
     }
 
     setWatchColor(!color)
@@ -75,17 +88,17 @@ const MovieListItem = (props) => {
           <Grid container spacing={2}>
             <Grid item>
               <ButtonBase className={classes.image}>
-                <img className={classes.img} alt="complex" src={`https://image.tmdb.org/t/p/w200${props.movie.image}`} />
+                <img className={classes.img} alt="complex" src={`https://image.tmdb.org/t/p/w200${movie.image}`} />
               </ButtonBase>
             </Grid>
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
                   <Typography gutterBottom className={classes.text} onClick={handleClick}>
-                    {props.movie.title}
+                    {movie.title}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
+                    <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1}/>
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -94,7 +107,7 @@ const MovieListItem = (props) => {
               </Grid>
               <Grid>
                 <Box display="flex" justifyContent="flex-end" m={0} p={0}>
-                  {props.movie.movieTests.map(x => {
+                  {movie.movieTests.map(x => {
                     if (x.result) return <Avatars key={x.testType} test={x} />
                     else return null
                   })
@@ -120,7 +133,14 @@ const MovieListItem = (props) => {
 
 MovieListItem.propTypes = {
   movie: PropTypes.object,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  watchlist: PropTypes.object
 }
 
-export default connect()(MovieListItem)
+const mapStateToProps = ({ watchlist }) => {
+  return {
+    watchlist
+  }
+}
+
+export default connect(mapStateToProps)(MovieListItem)
