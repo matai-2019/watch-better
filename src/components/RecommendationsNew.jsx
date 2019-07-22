@@ -4,7 +4,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import Button from '@material-ui/core/Button'
+import { Button, Typography } from '@material-ui/core/'
 
 import { RecommendationsStyles, theme } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
@@ -46,37 +46,38 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
       return <Redirect push to={`/movie/${redirect}`} />
     }
   }
-
+  console.log(movies)
   return (
     !info.pending && (
       <>
-      <div classes={classes.carousel}>
-        {redirect && renderRedirect()}
-        <AliceCarousel
-          responsive={responsive}
-          autoPlayInterval={3300}
-          duration={500}
-          autoPlayDirection="ltr"
-          autoPlay={true}
-          fadeOutAnimation={true}
-          mouseDragEnabled={true}
-          dotsDisabled={true}
-          buttonsDisabled={true}>
-          {movies
-            .filter(movie => movie.recommended)
-            .map(movie => (
-              <RecommendationDetail
-                onDragStart={handleOnDragStart}
-                movie={movie}
-                id={movie.id}
-                key={movie.id}
-                onClick={handleClick}
-                image={`https://image.tmdb.org/t/p/w500${movie.image}`}
-                title={movie.title} />
-            ))}
-        </AliceCarousel>
-        <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>
-      </div>
+        <div classes={classes.carousel}>
+          {redirect && renderRedirect()}
+          <AliceCarousel
+            responsive={responsive}
+            autoPlayInterval={3300}
+            duration={500}
+            autoPlayDirection="ltr"
+            autoPlay={true}
+            fadeOutAnimation={false}
+            mouseDragEnabled={true}
+            dotsDisabled={true}
+            buttonsDisabled={true}>
+            {movies
+              .filter(movie => movie.recommended)
+              .map(movie => (
+                <RecommendationDetail
+                  onDragStart={handleOnDragStart}
+                  movieTests={movie.movieTests}
+                  id={movie.id}
+                  key={movie.id}
+                  onClick={handleClick}
+                  image={`https://image.tmdb.org/t/p/w500${movie.image}`}
+                  title={movie.title}
+                  year={movie.releaseDate} />
+              ))}
+          </AliceCarousel>
+          <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>
+        </div>
       </>
     )
   )

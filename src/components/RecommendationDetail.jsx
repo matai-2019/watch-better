@@ -19,17 +19,14 @@ const RecommendationDetail = (props) => {
             className={classes.media}
             image={props.image}
             title={props.title}>
-            <div className={classes.testIcons}>
-              {props.movie.movieTests.map(x => {
-                if (x.result) return <Avatars key={x.testType} test={x} />
-                else return null
-              })
-              }
-              <Typography className={classes.title} variant="body1" component="h3">
-                {props.title}
-              </Typography>
-            </div>
           </CardMedia>
+          <div className={classes.testIcons}>
+            {props.movieTests.map(x => {
+              if (x.result) return <Avatars key={x.testType} test={x} />
+              else return null
+            })
+            }
+          </div>
         </CardActionArea>
       </Card >
     </Link>
@@ -37,7 +34,7 @@ const RecommendationDetail = (props) => {
 }
 
 RecommendationDetail.propTypes = {
-  movie: PropTypes.object,
+  movieTests: PropTypes.array,
   key: PropTypes.number,
   image: PropTypes.string,
   title: PropTypes.string,

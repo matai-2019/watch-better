@@ -353,32 +353,42 @@ export const RecommendationsStyles = makeStyles({
   },
   card: {
     flexGrow: 1,
-    borderRadius: 0
+    borderRadius: 0,
+    backgroundColor: 'black',
+    height: '725px'
+  },
+  ourTopPicks: {
+    marginBottom: '-60px',
+    display: 'inline-flex',
+    padding: '0'
   },
   media: {
-    height: '700px',
-    alignContent: 'center',
-    opacity: '90%',
+    height: '725px',
+    alignItems: 'center',
     display: 'flex',
-    transition: 'all 0.7s',
+    transition: 'all 1s',
     '&:hover': {
-      transform: 'scale(1.06)'
+      transform: 'scale(1.06)',
+      opacity: 0.6
     }
   },
   title: {
-    color: 'white'
+    color: 'white',
+    fontSize: '25px',
+    fontWeight: 600
   },
   testIcons: {
-    marginTop: '250px',
-    marginLeft: '10px',
-    display: 'inline-flex',
-    height: 290
+    display: 'Flex',
+    marginTop: '-90px',
+    marginLeft: '40%'
   },
   button: {
     border: 'solid 2.5px #FFDF59',
-    marginTop: '-110px',
-    width: '200px',
-    marginLeft: '43%',
+    marginTop: '-1360px',
+    bottom: '500%',
+    width: '270px',
+    height: '55px',
+    marginLeft: '41%',
     backgroundColor: '#FFDF5930',
     color: '#FFDF59',
     '&:hover': {
