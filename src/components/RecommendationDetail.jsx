@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core'
+import { Card, CardActionArea, CardMedia, Typography } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
 import Avatars from './Avatars'
@@ -25,14 +25,11 @@ const RecommendationDetail = (props) => {
                 else return null
               })
               }
+              <Typography className={classes.title} variant="body1" component="h3">
+                {props.title}
+              </Typography>
             </div>
           </CardMedia>
-          <CardContent>
-            <Typography variant="body1" component="h3">
-              {props.title}
-            </Typography>
-
-          </CardContent>
         </CardActionArea>
       </Card >
     </Link>

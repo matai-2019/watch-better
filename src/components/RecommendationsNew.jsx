@@ -50,14 +50,18 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
   return (
     !info.pending && (
       <>
+      <div classes={classes.carousel}>
         {redirect && renderRedirect()}
         <AliceCarousel
           responsive={responsive}
-          autoPlayInterval={3000}
+          autoPlayInterval={3300}
+          duration={500}
           autoPlayDirection="ltr"
           autoPlay={true}
           fadeOutAnimation={true}
-          mouseDragEnabled={true}>
+          mouseDragEnabled={true}
+          dotsDisabled={true}
+          buttonsDisabled={true}>
           {movies
             .filter(movie => movie.recommended)
             .map(movie => (
@@ -67,17 +71,18 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
                 id={movie.id}
                 key={movie.id}
                 onClick={handleClick}
-                image={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                image={`https://image.tmdb.org/t/p/w500${movie.image}`}
                 title={movie.title} />
             ))}
         </AliceCarousel>
         <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>
+      </div>
       </>
     )
   )
 }
 
-function mapStateToProps ({ movies, info }) {
+function mapStateToProps({ movies, info }) {
   return {
     movies,
     info

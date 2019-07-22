@@ -346,15 +346,27 @@ export const MovieDetailsStyles = makeStyles(theme => ({
 }))
 
 export const RecommendationsStyles = makeStyles({
+  carousel: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#333333'
+  },
   card: {
-    width: 200,
-    height: 370,
-    margin: theme.spacing(2)
+    flexGrow: 1,
+    borderRadius: 0
   },
   media: {
-    height: 290,
+    height: '700px',
     alignContent: 'center',
-    display: 'flex'
+    opacity: '90%',
+    display: 'flex',
+    transition: 'all 0.7s',
+    '&:hover': {
+      transform: 'scale(1.06)'
+    }
+  },
+  title: {
+    color: 'white'
   },
   testIcons: {
     marginTop: '250px',
@@ -363,9 +375,12 @@ export const RecommendationsStyles = makeStyles({
     height: 290
   },
   button: {
-    border: 'solid 2px #333',
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    border: 'solid 2.5px #FFDF59',
+    marginTop: '-110px',
+    width: '200px',
+    marginLeft: '43%',
+    backgroundColor: '#FFDF5930',
+    color: '#FFDF59',
     '&:hover': {
       backgroundColor: '#FFDF59',
       border: 'solid 2px #333',
