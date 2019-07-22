@@ -454,3 +454,9 @@ export const CastMemberStyles = makeStyles({
     height: 250
   }
 })
+
+export const CastStyles = makeStyles(theme => ({
+  title: {
+    marginTop: theme.spacing()
+  }
+}))
