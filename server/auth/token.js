@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 const verifyJwt = require('express-jwt')
 
-const testSecret = require('../testing/testSecret')
+// const testSecret = require('../../authenticare/testing/testSecret')
 
 module.exports = {
   decode,
@@ -38,10 +38,10 @@ function createToken (user, secret) {
 }
 
 function getSecret (req, payload, done) {
-  const secret = process.env.JWT_SECRET || testSecret
-  if (secret === testSecret) {
-    // eslint-disable-next-line no-console
-    // console.warn('ATTENTION: Using the JWT Test secret')
-  }
+  const secret = process.env.JWT_SECRET
+  // if (secret === testSecret) {
+  //   // eslint-disable-next-line no-console
+  //   // console.warn('ATTENTION: Using the JWT Test secret')
+  // }
   done(null, secret)
 }

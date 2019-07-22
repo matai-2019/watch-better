@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { isAuthenticated } from 'authenticare/client'
+import { isAuthenticated } from '../auth'
 
 export function IfAuthenticated ({ children }) {
   return isAuthenticated()

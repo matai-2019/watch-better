@@ -1,7 +1,7 @@
 const request = require('superagent')
 
 const { saveAuthToken } = require('./auth')
-const endpoints = require('../endpoints')
+const endpoints = require('./endpoints')
 
 module.exports = function (endpoint, data) {
   const headers = {

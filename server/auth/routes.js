@@ -2,7 +2,7 @@ const express = require('express')
 
 const hash = require('./hash')
 const token = require('./token')
-const { registerUrl, signInUrl } = require('../endpoints')
+const { registerUrl, signInUrl } = require('./endpoints')
 
 const DATABASE_ERROR = 'DATABASE_ERROR'
 const INVALID_CREDENTIALS = 'INVALID_CREDENTIALS'

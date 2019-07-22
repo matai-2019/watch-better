@@ -1,11 +1,12 @@
 const request = require('./request')
-const { signInUrl, registerUrl } = require('../endpoints')
+const { signInUrl, registerUrl } = require('./endpoints')
 
 const {
   isAuthenticated,
   getDecodedToken,
   getEncodedToken,
-  logOff } = require('./auth')
+  logOff
+} = require('./auth')
 
 module.exports = {
   signIn,
@@ -31,6 +32,6 @@ function signIn (user, options) {
 
 function getAuthorizationHeader () {
   return {
-    "Authorization": `Bearer ${getEncodedToken()}`
+    Authorization: `Bearer ${getEncodedToken()}`
   }
 }

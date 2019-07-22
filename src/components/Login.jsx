@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
 import { RegisterStyles } from '../style/muiStyles'
-import { isAuthenticated, signIn } from 'authenticare/client'
+import { isAuthenticated, signIn } from '../auth'
 
 export default function Login (props) {
   const classes = RegisterStyles()
