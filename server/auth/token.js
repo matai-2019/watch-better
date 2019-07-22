@@ -13,7 +13,7 @@ function getIssuer (getUserByName) {
   return function (req, res) {
     getUserByName(req.body.email)
       .then(user => {
-        const token = createToken(user, process.env.JWT_SECRET)
+        const token = createToken(user, process.env.REACT_APP_JWT_SECRET)
         res.json({
           message: 'Authentication successful.',
           token
@@ -38,7 +38,7 @@ function createToken (user, secret) {
 }
 
 function getSecret (req, payload, done) {
-  const secret = process.env.JWT_SECRET
+  const secret = process.env.REACT_APP_JWT_SECRET
   // if (secret === testSecret) {
   //   // eslint-disable-next-line no-console
   //   // console.warn('ATTENTION: Using the JWT Test secret')

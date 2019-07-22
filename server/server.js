@@ -8,8 +8,8 @@ const server = express()
 server.use(express.json())
 server.use(pino)
 
-server.use('/movie-api/', router)
-server.use('/auth/', authRoutes)
 server.use(express.static('public'))
+server.use('/movie-api/', router)
+server.use('/', authRoutes)
 
 module.exports = server

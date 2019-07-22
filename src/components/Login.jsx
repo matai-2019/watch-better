@@ -12,7 +12,7 @@ import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
 import { RegisterStyles } from '../style/muiStyles'
-import { isAuthenticated, signIn } from '../auth'
+import { isAuthenticated, signIn, logOff } from '../auth'
 
 export default function Login (props) {
   const classes = RegisterStyles()
@@ -35,7 +35,7 @@ export default function Login (props) {
       email: form.email,
       password: form.password
     }, {
-      baseUrl: process.env.BASE_API_URL // see .env and webpack.config.js
+      baseUrl: process.env.REACT_APP_BASE_API_URL // see .env and webpack.config.js
     })
       .then((token) => {
         if (isAuthenticated()) {
@@ -44,14 +44,12 @@ export default function Login (props) {
       })
   }
 
-  console.log(isAuthenticated())
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
+          {isAuthenticated() && <LockOutlinedIcon />}
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign in
@@ -107,6 +105,7 @@ export default function Login (props) {
               <Link href="#" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
+              <Button onClick={logOff}> LogOff</Button>
             </Grid>
           </Grid>
         </form>
