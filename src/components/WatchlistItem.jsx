@@ -24,7 +24,7 @@ const StyledRating = withStyles({
   }
 })(Rating)
 
-const MovieListItem = (props) => {
+const WatchlistItem = (props) => {
   const classes = WatchlistItemStyles(props)
 
   const [redirect, setRedirect] = useState()
@@ -94,9 +94,9 @@ const MovieListItem = (props) => {
   )
 }
 
-MovieListItem.propTypes = {
+WatchlistItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func
 }
 
-export default connect()(MovieListItem)
+export default connect()(WatchlistItem)
