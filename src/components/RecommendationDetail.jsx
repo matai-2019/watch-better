@@ -11,8 +11,8 @@ const RecommendationDetail = (props) => {
   return (
     <Link to={`/movie/${props.id}`} style={{ textDecoration: 'none' }}>
       <Card
-        onClick={props.onClick((props.key))}
-        key={props.key}
+        onClick={props.onClick((props.id))}
+        key={props.id}
         className={classes.card}>
         <CardActionArea>
           <CardMedia
@@ -41,7 +41,6 @@ const RecommendationDetail = (props) => {
 
 RecommendationDetail.propTypes = {
   movie: PropTypes.object,
-  key: PropTypes.number,
   image: PropTypes.string,
   title: PropTypes.string,
   onClick: PropTypes.func,
