@@ -79,7 +79,7 @@ const MovieListItem = (props) => {
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#C1BFB7' }}onClick={handleSeen}>
+              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
                 <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>
               </Button>
               <Button size="small" className={classes.removeButton} onClick={handleRemove}>

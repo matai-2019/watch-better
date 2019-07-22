@@ -36,7 +36,8 @@ export const MovieListItemStyles = makeStyles(theme => ({
     flexGrow: '1'
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    backgroundColor: '#FFDF59'
   },
   img: {
     display: 'block',
@@ -44,7 +45,8 @@ export const MovieListItemStyles = makeStyles(theme => ({
     borderRadius: '0.3vw'
   },
   text: {
-    fontSize: '28px'
+    fontSize: '28px',
+    cursor: 'pointer'
   },
   avatar: {
     color: '#333',
@@ -57,14 +59,13 @@ export const MovieListItemStyles = makeStyles(theme => ({
     paddingTop: 2
   },
   list: {
-    margin: '2vw',
-    marginLeft: '4vw',
-    width: '70vw'
+    width: '80vw',
+    marginTop: '2vw'
   },
   button: {
     border: 'solid 2px #333',
     color: '#333',
-    backgroundColor: '#FFDF59',
+    backgroundColor: '#DADADA',
     '&:hover': {
       backgroundColor: '#00000014',
       border: 'solid 2px #333',

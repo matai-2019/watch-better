@@ -20,7 +20,8 @@ import { addToWatchlist, removeFromWatchlist } from '../actions/watchlist'
 
 const StyledRating = withStyles({
   iconFilled: {
-    color: '#EBBC00'
+    color: '#333',
+    marginRight: 2.5
   }
 })(Rating)
 
@@ -80,7 +81,7 @@ const MovieListItem = (props) => {
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
-                  <Typography gutterBottom className={classes.text}>
+                  <Typography gutterBottom className={classes.text} onClick={handleClick}>
                     {props.movie.title}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
@@ -92,7 +93,7 @@ const MovieListItem = (props) => {
                 </Grid>
               </Grid>
               <Grid>
-                <Box display="flex" justifyContent="flex-end" m={0} p={0} bgcolor="background.paper">
+                <Box display="flex" justifyContent="flex-end" m={0} p={0}>
                   {props.movie.movieTests.map(x => {
                     if (x.result) return <Avatars key={x.testType} test={x} />
                     else return null
@@ -100,10 +101,10 @@ const MovieListItem = (props) => {
                   }
                 </Box>
                 <div className={classes.topMargin}>
-                  <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#a9da71' : '#FFDF59' }}onClick={handleSeen}>
+                  <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
                     <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>&nbsp;SEEN
                   </Button>
-                  <Button size="small" className={classes.watchButton} style={{ backgroundColor: watchColor ? '#a9da71' : '#FFDF59' }} onClick={handleWatch}>
+                  <Button size="small" className={classes.watchButton} style={{ backgroundColor: watchColor ? '#A9DA71' : '#DADADA' }} onClick={handleWatch}>
                     <i className={classes.icon}>{ isAdded ? 'check_box' : 'add_to_queue'}</i>&nbsp;WATCHLIST
                   </Button>
                 </div>
