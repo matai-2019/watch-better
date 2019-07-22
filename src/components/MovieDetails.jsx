@@ -5,7 +5,7 @@ import Rating from '@material-ui/lab/Rating'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
-import Cast from './Cast';
+import Cast from './Cast'
 
 const StyledRating = withStyles({
   iconFilled: {
