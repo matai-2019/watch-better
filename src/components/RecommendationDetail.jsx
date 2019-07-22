@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Card, CardActionArea, CardMedia, Typography } from '@material-ui/core'
+import { Card, CardActionArea, CardMedia } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
 import Avatars from './Avatars'
@@ -11,8 +11,8 @@ const RecommendationDetail = (props) => {
   return (
     <Link to={`/movie/${props.id}`} style={{ textDecoration: 'none' }}>
       <Card
-        onClick={props.onClick((props.key))}
-        key={props.key}
+        onClick={props.onClick((props.id))}
+        key={props.id}
         className={classes.card}>
         <CardActionArea>
           <CardMedia
@@ -35,7 +35,7 @@ const RecommendationDetail = (props) => {
 
 RecommendationDetail.propTypes = {
   movieTests: PropTypes.array,
-  key: PropTypes.number,
+  movie: PropTypes.object,
   image: PropTypes.string,
   title: PropTypes.string,
   onClick: PropTypes.func,

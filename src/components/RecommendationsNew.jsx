@@ -4,9 +4,9 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Button, Typography } from '@material-ui/core/'
+import { Button } from '@material-ui/core/'
 
-import { RecommendationsStyles, theme } from '../style/muiStyles'
+import { RecommendationsStyles } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
 import RecommendationDetail from './RecommendationDetail'
 
@@ -46,7 +46,7 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
       return <Redirect push to={`/movie/${redirect}`} />
     }
   }
-  console.log(movies)
+
   return (
     !info.pending && (
       <>
@@ -83,7 +83,7 @@ const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
   )
 }
 
-function mapStateToProps({ movies, info }) {
+function mapStateToProps ({ movies, info }) {
   return {
     movies,
     info
