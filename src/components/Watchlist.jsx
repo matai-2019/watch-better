@@ -2,10 +2,37 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { WatchlistStyles } from '../style/muiStyles'
 import PropTypes from 'prop-types'
+import {
+  AppBar,
+  Typography,
+  CssBaseline,
+  useScrollTrigger,
+  Box,
+  Container,
+  Toolbar
+} from '@material-ui/core'
 
 import WatchlistItem from './WatchlistItem'
 import { removeFromWatchlist } from '../actions/watchlist'
 import Sorter from './Sorter'
+
+const ElevationScroll = props => {
+  const { children, window } = props
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined
+  })
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0
+  })
+}
+
+ElevationScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  window: PropTypes.func
+}
 
 const Watchlist = (props) => {
   const { watchlist, dispatch } = props
@@ -20,14 +47,31 @@ const Watchlist = (props) => {
   }
 
   return (
-    <div className={classes.top}>
-      <Sorter />
-      {watchlist.map((movie, id) => {
-        return (
-          <WatchlistItem key={id} movie={movie} removeMovie={removeMovie}/>
-        )
-      })}
-    </div>
+    <>
+      <CssBaseline />
+      <ElevationScroll {...props}>
+        <AppBar className={classes.app}>
+          <Toolbar>
+            <Typography className={classes.watchlist} variant="h6">WATCHLIST</Typography>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
+      <Toolbar />
+      <Container>
+        <div className={classes.top}>
+          <Box my={2}>
+            {[...new Array(1)]
+              .map(
+                () => watchlist.map((movie, id) => {
+                  return (
+                    <WatchlistItem key={id} movie={movie} removeMovie={removeMovie}/>
+                  )
+                })
+              )}
+          </Box>
+        </div>
+      </Container>
+    </>
   )
 }
 

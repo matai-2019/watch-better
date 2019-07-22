@@ -103,8 +103,17 @@ export const MovieListItemStyles = makeStyles(theme => ({
 }))
 
 export const WatchlistStyles = makeStyles(theme => ({
+  app: {
+    height: '8vw',
+    justifyContent: 'center',
+    marginTop: '4.4vw'
+  },
   top: {
-    marginTop: '20vw'
+    marginTop: '10vw'
+  },
+  watchlist: {
+    fontSize: 40,
+    color: '#333'
   }
 }))
 
