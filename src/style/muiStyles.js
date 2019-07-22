@@ -36,7 +36,8 @@ export const MovieListItemStyles = makeStyles(theme => ({
     flexGrow: '1'
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    backgroundColor: '#FFDF59'
   },
   img: {
     display: 'block',
@@ -44,7 +45,8 @@ export const MovieListItemStyles = makeStyles(theme => ({
     borderRadius: '0.3vw'
   },
   text: {
-    fontSize: '28px'
+    fontSize: '28px',
+    cursor: 'pointer'
   },
   avatar: {
     color: '#333',
@@ -57,14 +59,13 @@ export const MovieListItemStyles = makeStyles(theme => ({
     paddingTop: 2
   },
   list: {
-    margin: '2vw',
-    marginLeft: '4vw',
-    width: '70vw'
+    width: '80vw',
+    marginTop: '2vw'
   },
   button: {
     border: 'solid 2px #333',
     color: '#333',
-    backgroundColor: '#FFDF59',
+    backgroundColor: '#DADADA',
     '&:hover': {
       backgroundColor: '#00000014',
       border: 'solid 2px #333',
@@ -102,19 +103,36 @@ export const MovieListItemStyles = makeStyles(theme => ({
   }
 }))
 
+export const WatchlistStyles = makeStyles(theme => ({
+  app: {
+    height: '8vw',
+    justifyContent: 'center',
+    marginTop: '4.4vw'
+  },
+  top: {
+    marginTop: '10vw'
+  },
+  watchlist: {
+    fontSize: 40,
+    color: '#333'
+  }
+}))
+
 export const WatchlistItemStyles = makeStyles(theme => ({
   root: {
     flexGrow: '1'
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    backgroundColor: '#FFDF59'
   },
   text: {
     fontSize: '28px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: '#333'
   },
   list: {
-    margin: '10vw',
+    margin: '1vw',
     width: '80vw'
   },
   icon: {
@@ -263,6 +281,7 @@ export const NavBarStyles = makeStyles(theme => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     marginLeft: 0,
+    marginBottom: 15,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
@@ -301,9 +320,94 @@ export const NavBarStyles = makeStyles(theme => ({
       backgroundColor: '#555'
     }
   },
+  watchButton: {
+    color: '#FFDF59',
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
   link: {
     textDecoration: 'none',
     color: '#FFDF59'
+  },
+  divide: {
+    marginRight: '2vw'
+  }
+}))
+
+export const MovieDetailAvatarStyles = makeStyles(theme => ({
+  popover: {
+    pointerEvents: 'none'
+  },
+  root: {
+    flexGrow: '1'
+  },
+  paper: {
+    padding: theme.spacing(2),
+    color: '#FFDF59',
+    backgroundColor: '#333',
+    fontFamily: 'Roboto'
+  },
+  img: {
+    display: 'block',
+    maxWidth: '50%',
+    borderRadius: '0.3vw'
+  },
+  text: {
+    fontSize: '28px'
+  },
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
+    width: 30,
+    height: 30,
+    fontSize: 15,
+    paddingTop: 2
+  },
+  list: {
+    margin: '2vw',
+    marginLeft: '4vw',
+    width: '70vw'
+  },
+  star: {
+    iconFilled: 'pink'
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
+  },
+  icon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr'
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: '15vw'
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: 5,
+    marginRight: 0
   }
 }))
 
@@ -341,6 +445,16 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   },
   overviewText: {
     fontWeight: '300'
+  },
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
+    width: 30,
+    height: 30,
+    fontSize: 15,
+    paddingTop: 2
   }
 }))
 

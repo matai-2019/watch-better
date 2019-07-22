@@ -14,9 +14,10 @@ import { theme } from '../../../style/muiStyles'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('NavBar component tests', () => {
-  it('<NavBar /> contains an InputBase tag', () => {
+  it('<NavBar /> contains an Toolbar tag', () => {
     const mockStore = configureStore([thunk])({
-      movies: [{ id: 1, title: 'Bad Moms' }]
+      movies: [{ id: 1, title: 'Bad Moms' }],
+      watchlist: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }]
     })
     const wrapper = mount(
       <Router>
