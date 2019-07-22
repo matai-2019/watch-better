@@ -2,10 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Typography, Container, Paper, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Button } from '@material-ui/core'
 
-import { QuizStyle } from '../style/muiStyles'
+import { QuizStyles } from '../style/muiStyles'
 
 const QuizQuestion = ({ id, question, test, handleChange, handleResult, title }, ...props) => {
-  const classes = QuizStyle(props)
+  const classes = QuizStyles(props)
 
   return (
     <Container>

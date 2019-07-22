@@ -355,7 +355,7 @@ export const FilterStyles = makeStyles(theme => ({
   }
 }))
 
-export const QuizStyle = makeStyles(theme => ({
+export const QuizStyles = makeStyles(theme => ({
   question: {
     fontSize: '1.5em',
     color: 'black'

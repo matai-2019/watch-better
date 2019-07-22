@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
+import { QuizStyles } from '../style/muiStyles'
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
 
@@ -16,6 +17,10 @@ class Quiz extends React.Component {
   test3 = []
   test4 = []
   test5 = []
+
+  // classes = (props) => {
+  //   QuizStyles(props)
+  // }
 
   handleTitle = e => {
     this.setState({
