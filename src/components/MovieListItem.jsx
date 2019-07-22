@@ -17,6 +17,7 @@ import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
 import { addToWatchlist, removeFromWatchlist } from '../actions/watchlist'
+import { seen, unseen } from '../actions/seenList'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -29,7 +30,7 @@ const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
   const { watchlist, movie, dispatch } = props
 
-  const status = () => {
+  const watchStatus = () => {
     const element = watchlist.find(item => {
       return item.id === movie.id
     })
@@ -41,11 +42,22 @@ const MovieListItem = (props) => {
     }
   }
 
+  const seenStatus = () => {
+    const element = props.seenList.find(item => {
+      return item.id === props.movie.id
+    })
+    if (element) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const [redirect, setRedirect] = useState()
-  const [watchColor, setWatchColor] = useState(status)
-  const [isAdded, setIsAdded] = useState(status)
-  const [isSeen, setIsSeen] = useState(false)
-  const [seenColor, setSeenColor] = useState(false)
+  const [watchColor, setWatchColor] = useState(watchStatus)
+  const [isAdded, setIsAdded] = useState(watchStatus)
+  const [isSeen, setIsSeen] = useState(seenStatus)
+  const [seenColor, setSeenColor] = useState(seenStatus)
 
   const handleClick = () => {
     setRedirect(movie.id)
@@ -54,8 +66,16 @@ const MovieListItem = (props) => {
   const handleSeen = () => {
     const icon = isSeen
     const color = seenColor
-    setIsSeen(!icon)
-    setSeenColor(!color)
+
+    if (isSeen) {
+      setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(unseen(props.movie.id))
+    } else {
+      setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(seen(props.movie.id))
+    }
   }
 
   const handleWatch = () => {
@@ -134,13 +154,16 @@ const MovieListItem = (props) => {
 MovieListItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func,
-  watchlist: PropTypes.object
+  watchlist: PropTypes.object,
+  seenList: PropTypes.object
 }
 
 const mapStateToProps = ({ watchlist }) => {
   return {
-    watchlist
+    watchlist,
+    seenList
   }
+
 }
 
 export default connect(mapStateToProps)(MovieListItem)

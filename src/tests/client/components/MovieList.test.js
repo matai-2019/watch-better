@@ -48,7 +48,8 @@ test('MovieList component test', () => {
     ],
     watchlist: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }],
     info: { error: null, pending: false },
-    selectedTests: []
+    selectedTests: [],
+    seenList: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }]
   })
   const wrapper = mount(
     <Provider store={mockStore}>
