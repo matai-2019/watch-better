@@ -18,11 +18,13 @@ import { removeFromWatchlist } from '../actions/watchlist'
 
 const StyledRating = withStyles({
   iconFilled: {
-    color: '#EBBC00'
+    color: '#333',
+    marginLeft: 2.5,
+    marginRight: 2.5
   }
 })(Rating)
 
-const MovieListItem = (props) => {
+const WatchlistItem = (props) => {
   const classes = WatchlistItemStyles(props)
 
   const [redirect, setRedirect] = useState()
@@ -63,7 +65,7 @@ const MovieListItem = (props) => {
             <Grid item xs={12} sm container>
               <Grid item xs container direction="column" spacing={2}>
                 <Grid item xs>
-                  <Box display="flex" justifyContent="flex-start" m={0} p={0} bgcolor="background.paper">
+                  <Box display="flex" justifyContent="flex-start" m={0} p={0}>
                     <Box>
                       <Typography gutterBottom className={classes.text} onClick={handleClick}>
                         {props.movie.title}
@@ -77,7 +79,7 @@ const MovieListItem = (props) => {
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#a9da71' : '#FFDF59' }}onClick={handleSeen}>
+              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
                 <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>
               </Button>
               <Button size="small" className={classes.removeButton} onClick={handleRemove}>
@@ -92,9 +94,9 @@ const MovieListItem = (props) => {
   )
 }
 
-MovieListItem.propTypes = {
+WatchlistItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func
 }
 
-export default connect()(MovieListItem)
+export default connect()(WatchlistItem)

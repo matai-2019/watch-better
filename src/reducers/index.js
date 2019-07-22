@@ -6,6 +6,7 @@ import info from './info'
 import sortType from './sort'
 import selectedTests from './filter'
 import watchlist from './watchlist'
+import seenList from './seenList'
 
 export default combineReducers({
   movies,
@@ -13,5 +14,6 @@ export default combineReducers({
   info,
   sortType,
   selectedTests,
-  watchlist
+  watchlist,
+  seenList
 })
