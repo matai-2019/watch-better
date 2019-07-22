@@ -16,7 +16,7 @@ export default function Cast ({ cast }) {
         {cast &&
           cast.slice(0, 6)
             .map(castMember => (
-              <Grid item key={castMember.name} xs="12" sm="2">
+              <Grid item key={castMember.name} xs={12} sm={2}>
                 <CastMember key={castMember.name} castMember={castMember} />
               </Grid>
             ))
