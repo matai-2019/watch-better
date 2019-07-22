@@ -102,6 +102,12 @@ export const MovieListItemStyles = makeStyles(theme => ({
   }
 }))
 
+export const WatchlistStyles = makeStyles(theme => ({
+  top: {
+    marginTop: '20vw'
+  }
+}))
+
 export const WatchlistItemStyles = makeStyles(theme => ({
   root: {
     flexGrow: '1'
@@ -114,7 +120,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     cursor: 'pointer'
   },
   list: {
-    margin: '10vw',
+    margin: '1vw',
     width: '80vw'
   },
   icon: {
@@ -264,6 +270,7 @@ export const NavBarStyles = makeStyles(theme => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     marginLeft: 0,
+    marginBottom: 15,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
@@ -302,9 +309,19 @@ export const NavBarStyles = makeStyles(theme => ({
       backgroundColor: '#555'
     }
   },
+  watchButton: {
+    color: '#FFDF59',
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
+    }
+  },
   link: {
     textDecoration: 'none',
     color: '#FFDF59'
+  },
+  divide: {
+    marginRight: '2vw'
   }
 }))
 

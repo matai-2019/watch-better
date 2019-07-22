@@ -1,33 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { WatchlistStyles } from '../style/muiStyles'
+import PropTypes from 'prop-types'
 
 import WatchlistItem from './WatchlistItem'
-import { removeFromWatchlist } from '../actions/watchlist';
+import { removeFromWatchlist } from '../actions/watchlist'
+import Sorter from './Sorter'
 
-class Watchlist extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      watchlist: props.watchlist
-    }
-  }
-  
-  removeMovie = id => {
-    const list = this.state.watchlist.filter(movie => movie.id !== id)
-    this.setState({ list })
-    this.props.dispatch(removeFromWatchlist(id))
+const Watchlist = (props) => {
+  const { watchlist, dispatch } = props
+  const classes = WatchlistStyles(props)
+
+  const [list, setList] = useState(watchlist)
+
+  const removeMovie = id => {
+    const newList = list.filter(movie => movie.id !== id)
+    setList(newList)
+    dispatch(removeFromWatchlist(id))
   }
 
-  render () {
-    const {watchlist} = this.props
-    return (
-      watchlist.map((movie, id) => {
+  return (
+    <div className={classes.top}>
+      <Sorter />
+      {watchlist.map((movie, id) => {
         return (
-          <WatchlistItem key={id} movie={movie} removeMovie={this.removeMovie}/>
+          <WatchlistItem key={id} movie={movie} removeMovie={removeMovie}/>
         )
-      })
-    )
-  }
+      })}
+    </div>
+  )
 }
 
 const mapStateToProps = state => {
@@ -37,3 +38,8 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Watchlist)
+
+Watchlist.propTypes = {
+  watchlist: PropTypes.object,
+  dispatch: PropTypes.func
+}
