@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { AppBar, Toolbar, Typography, Grid, Button, Badge, Box } from '@material-ui/core'
+import { AppBar, Toolbar, Typography, Grid, Button, Badge } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
 
@@ -19,8 +19,8 @@ function NavBar (props) {
     <div className={classes.root}>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
-          <Link container to="/" className={`${classes.link} ${classes.logo}`}>WB</Link>
-          <Link container to="/" className={`${classes.link} ${classes.tagline}`}>
+          <Link to="/" className={`${classes.link} ${classes.logo}`}>WB</Link>
+          <Link to="/" className={`${classes.link} ${classes.tagline}`}>
             <Typography className={classes.tagline}>
               CURATION THROUGH A LENS OF DIVERSITY
             </Typography>
