@@ -6,7 +6,7 @@ import { Container, Box, Radio, RadioGroup, FormControlLabel, FormControl, FormL
 import { QuizQuestionStyles } from '../style/muiStyles'
 import { setAnswer } from '../actions/quizAnswer'
 
-const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) => {
+const QuizQuestion = ({ question, id, test, handleResult, dispatch, isActive }, ...props) => {
   const classes = QuizQuestionStyles()
 
   const handleAnswer = (id, answer) => {
@@ -27,9 +27,9 @@ const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) 
             onChange={(e) => handleAnswer(id, e.target.value)}
             name={id}
           >
-            <FormControlLabel className={classes.question} value="yes" control={<Radio color="primary" />} label="Yes" />
-            <FormControlLabel className={classes.question} value="no" control={<Radio color="primary"/>} label="No" />
-            <FormControlLabel className={classes.question} value="unknown" control={<Radio color="primary"/>} label="Unknown" />
+            <FormControlLabel disabled={isActive} className={classes.question} value="yes" control={<Radio color="primary" />} label="Yes" />
+            <FormControlLabel disabled={isActive} className={classes.question} value="no" control={<Radio color="primary"/>} label="No" />
+            <FormControlLabel disabled={isActive} className={classes.question} value="unknown" control={<Radio color="primary"/>} label="Unknown" />
           </RadioGroup>
         </FormControl>
       </Box>
@@ -47,7 +47,8 @@ QuizQuestion.propTypes = {
   handleChange: PropTypes.func,
   handleResult: PropTypes.func,
   title: PropTypes.string,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  isActive: PropTypes.bool
 }
 
 const mapStateToProps = state => {

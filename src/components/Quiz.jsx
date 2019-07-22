@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Box, Container, TextField, Button, Typography, List, ListItem, FormControl } from '@material-ui/core'
+import { Box, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
 import MovieTestDetails from './MovieTestDetails'
 import { QuizStyles } from '../style/muiStyles'
@@ -12,19 +12,19 @@ const Quiz = (props) => {
   const classes = QuizStyles(props)
 
   const [title, setTitle] = useState('')
-  const [isVisible, setVisible] = useState(true)
   const [displayAnswer, setDisplayAnswer] = useState(false)
+  const [disable, setActive] = useState(true)
 
   const handleTitle = e => {
     setTitle(e.target.value)
   }
 
-  const onSubmit = () => {
-    setVisible(false)
-  }
-
   const handleResult = () => {
     setDisplayAnswer(true)
+  }
+
+  const handleActive = () => {
+    setActive(false)
   }
 
   const bechdel = () => {
@@ -71,31 +71,25 @@ const Quiz = (props) => {
         </Box>
       </>
     )
-  } else if (isVisible) {
-    return (
-      <Container className={classes.title}>
-        <TextField required={true} 
-          id="standard-search"
-          label="Movie Title"
-          type="search"
-          margin="normal"
-          onChange={handleTitle}
-          InputProps={{ className: classes.titleText }}
-        />
-        <br/>
-        <Button onClick={onSubmit} fullWidth={true} variant="contained" color="primary">Start</Button>
-        <br />
-        <br />
-      </Container>
-    )
-  } else if (!isVisible) {
+  } else {
     return (
       <>
         <MovieTestDetails />
         <Container className={classes.content}>
-          {data.map(el => <QuizQuestion title={title} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
+          <TextField required={true}
+            id="standard-search"
+            label="Movie Title"
+            type="search"
+            margin="normal"
+            onChange={handleTitle}
+          />
+          <br/>
+          <Button onClick={handleActive} variant="contained" color="primary">Start</Button>
+          <br />
+          <br />
+          {data.map(el => <QuizQuestion title={title} isActive={disable} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
         </Container>
-      </>
+        </>
     )
   }
 }

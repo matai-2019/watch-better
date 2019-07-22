@@ -522,18 +522,10 @@ export const QuizStyles = makeStyles(theme => ({
     color: 'white'
   },
   content: {
-    marginTop: '8em',
+    marginTop: '2em',
     paddingTop: '3em',
     width: '70%',
     backgroundColor: 'white'
-  },
-  title: {
-    width: '20em',
-    marginTop: '10em',
-    height: '62vh'
-  },
-  titleText: {
-    color: 'white'
   },
   result: {
     color: 'white',
