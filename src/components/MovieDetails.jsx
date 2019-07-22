@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
-import { Grid, Typography, Icon, Container, Box, withStyles } from '@material-ui/core'
+import { Grid, Typography, Container, Box, withStyles } from '@material-ui/core'
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
+import PropTypes from 'prop-types'
+import MovieDetailAvatars from './MovieDetailAvatars'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
@@ -69,26 +71,11 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
             </div>
             <Box display="flex" flexDirection="row">
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h2" gutterBottom>test one </Typography>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test two</Typography>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test three</Typography>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test four</Typography>
-              </Box>
-              <Box>
-                <Icon className={classes.icon} color="primary">theaters</Icon>
-                <Typography variant="body1" component="h3" gutterBottom>test five</Typography>
-              </Box>
+              {movieDetails.movieTests && movieDetails.movieTests.map(x => {
+                if (x.result) return <MovieDetailAvatars key={x.testType} test={x} />
+                else return null
+              })
+              }
             </Box>
             <Typography className= {classes.genres}component="span" gutterBottom>
               {movieDetails.genres && extractGenres(movieDetails.genres)}
@@ -120,6 +107,10 @@ function mapStateToProps (state) {
     movieDetails: state.movieDetails,
     info: state.info
   }
+}
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object
 }
 
 export default connect(mapStateToProps)(MovieDetails)
