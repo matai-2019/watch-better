@@ -7,6 +7,7 @@ import MovieDetailAvatars from './MovieDetailAvatars'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
+import Cast from './Cast'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -80,7 +81,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               {movieDetails.genres && extractGenres(movieDetails.genres)}
             </Typography>
             <div className={classes.overview}>
-              <Typography variant="h6" gutterBottom>
+              <Typography variant="h6" component="h2" gutterBottom>
                 Overview
               </Typography>
               <Typography className={classes.overviewText} gutterBottom>
@@ -97,7 +98,8 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
       </Container>
     </div>
   </div>
-</>
+  <Cast cast={movieDetails.cast}/>
+  </>
 }
 
 function mapStateToProps (state) {
