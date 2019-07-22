@@ -9,15 +9,13 @@ import configureStore from 'redux-mock-store'
 
 import MovieDetails from '../../../components/MovieDetails'
 import { theme } from '../../../style/muiStyles'
+import testStore from './stores/MovieDetailsTestStore'
 
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieDetails component tests', () => {
   it('<MovieDetails /> contains 4 Icon tags', () => {
-    const mockStore = configureStore([thunk])({
-      movieDetails: [],
-      info: { error: null, pending: false }
-    })
+    const mockStore = configureStore([thunk])(testStore)
     const wrapper = mount(
       <Provider store={mockStore}>
         <ThemeProvider theme={theme}>
