@@ -5,11 +5,13 @@ import movieDetails from './movieDetails'
 import info from './info'
 import sortType from './sort'
 import selectedTests from './filter'
+import watchlist from './watchlist'
 
 export default combineReducers({
   movies,
   movieDetails,
   info,
   sortType,
-  selectedTests
+  selectedTests,
+  watchlist
 })

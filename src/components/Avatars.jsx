@@ -2,22 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { MovieListItemStyles } from '../style/muiStyles'
 
-import { Avatar, Grid } from '@material-ui/core'
+import { Avatar, Box } from '@material-ui/core'
 
 function Avatars ({ test }) {
   const classes = MovieListItemStyles()
 
   switch (test.testType) {
     case 'Bechdel Test':
-      return <Grid item><Avatar className={classes.avatar}>B</Avatar></Grid>
+      return <Box><Avatar className={classes.avatar}>B</Avatar></Box>
     case 'Rees Davies Test':
-      return <Grid item><Avatar className={classes.avatar}>R</Avatar></Grid>
+      return <Box><Avatar className={classes.avatar}>R</Avatar></Box>
     case 'Ko Test':
-      return <Grid item><Avatar className={classes.avatar}>K</Avatar></Grid>
+      return <Box><Avatar className={classes.avatar}>K</Avatar></Box>
     case 'Landau Test':
-      return <Grid item><Avatar className={classes.avatar}>L</Avatar></Grid>
+      return <Box><Avatar className={classes.avatar}>L</Avatar></Box>
     case 'Feldman Test':
-      return <Grid item><Avatar className={classes.avatar}>F</Avatar></Grid>
+      return <Box><Avatar className={classes.avatar}>F</Avatar></Box>
     default:
       return null
   }
