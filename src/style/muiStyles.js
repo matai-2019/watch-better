@@ -407,7 +407,8 @@ export const QuizStyles = makeStyles(theme => ({
     color: '#333'
   },
   content: {
-    marginTop: '8em'
+    marginTop: '8em',
+    width: '70%'
   },
   title: {
     width: '20em',
@@ -417,11 +418,18 @@ export const QuizStyles = makeStyles(theme => ({
   result: {
     color: '#333',
     marginTop: '8em',
+    marginLeft: '40%',
+    marginBottom: '5em',
     height: '65vh'
   },
   icon: {
     height: '1.5em',
-    margin: '1em'
+    margin: '1em',
+    backgroundColor: '#333',
+    borderRadius: '50%'
+  },
+  button: {
+    padding: '5em'
   }
 }))
 

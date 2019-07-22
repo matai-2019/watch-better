@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
-import { Paper, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
+import { connect } from 'react-redux'
+import { Box, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
 import { QuizStyles } from '../style/muiStyles'
 import QuizQuestion from './QuizQuestion'
@@ -12,12 +13,6 @@ const Quiz = (props) => {
   const [title, setTitle] = useState('')
   const [isVisible, setVisible] = useState(true)
   const [displayAnswer, setDisplayAnswer] = useState(false)
-
-  const test1 = []
-  const test2 = []
-  const test3 = []
-  const test4 = []
-  const test5 = []
 
   const handleTitle = e => {
     setTitle(e.target.value)
@@ -31,80 +26,37 @@ const Quiz = (props) => {
     setDisplayAnswer(true)
   }
 
-  const handleChange = (value, id) => {
-    switch (id) {
-      case '1':
-      case '2':
-        test1.push(value)
-        return test1
-      case '3':
-        test2.push(value)
-        return test2
-      case '4':
-      case '5':
-      case '6':
-        test3.push(value)
-        return test3
-      case '7':
-      case '8':
-      case '9':
-        test4.push(value)
-        return test4
-      case '10':
-      case '11':
-      case '12':
-      case '13':
-      case '14':
-      case '15':
-      case '16':
-      case '17':
-        test5.push(value)
-        return test5
-      default:
-        console.log('whoops')
-    }
-  }
-
-  const result = (array) => {
-    return array.filter(value => value > 0).length
-  }
-
   const bechdel = () => {
-    if (result(test1) === 2) {
-      return 'Passed the Bechdel Test'
-    } else return 'Failed the Bechdel Test'
+    if (props.questions[0].answer === 'yes' && props.questions[1].answer === 'yes') return 'Passed the Bechdel Test'
+    else return 'Failed the Bechdel Test'
   }
 
   const reesDavies = () => {
-    if (result(test2) === 1) {
-      return 'Passed the Rees-Davies Test'
-    } else return 'Failed the Rees-Davies Test'
+    if (props.questions[2].answer === 'yes') return 'Passed the Rees-Davies Test'
+    else return 'Failed the Rees-Davies Test'
   }
 
   const ko = () => {
-    if (result(test3) === 3) {
-      return 'Passed the Ko Test' 
-    } else return 'Failed the Ko Test'
+    if (props.questions[3].answer === 'yes' && props.questions[4].answer === 'yes' && props.questions[5].answer === 'yes') return 'Passed the Ko Test' 
+    else return 'Failed the Ko Test'
   }
 
   const landau = () => {
-    if (result(test4) === 3) {
-      return 'Passed the Landau Test'
-    } else return 'Failed the Landau Test'
+    if (props.questions[6].answer === 'yes' && props.questions[7].answer === 'no' && props.questions[8].answer === 'no') return 'Passed the Landau Test'
+    else return 'Failed the Landau Test'
   }
 
   const feldman = () => {
-    if (result(test5) > 4) { 
-      return 'Passed the Feldman Test'
-    } else return 'Failed the Feldman Test'
+    const result = props.questions.slice(8).filter(el => el.answer === 'yes')
+    if (result.length > 4) return 'Passed the Feldman Test'
+    else return 'Failed the Feldman Test'
   }
 
   if (displayAnswer) {
-    console.log(title)
     return (
-      <Paper className={classes.result}>
-        <Typography variant="body1" component="h4">
-          {`${title} has:`}
+      <Box className={classes.result}>
+        <Typography variant="h5" component="h4">
+          {`${title.toUpperCase()} HAS:`}
         </Typography>
         <List>
           <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
@@ -113,7 +65,7 @@ const Quiz = (props) => {
           <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
           <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
         </List>
-      </Paper>
+      </Box>
     )
   } else if (isVisible) {
     return (
@@ -126,7 +78,7 @@ const Quiz = (props) => {
           onChange={handleTitle}
         />
         <br/>
-        <Button onClick={onSubmit} fullWidth="true" variant="outlined" color="primary">Start</Button>
+        <Button onClick={onSubmit} fullWidth={true} variant="contained" color="primary">Start</Button>
         <br />
         <br />
       </Container>
@@ -134,11 +86,26 @@ const Quiz = (props) => {
   } else if (!isVisible) {
     return (
       <Container className={classes.content}>
-        {data.map(el => <QuizQuestion classes={classes.question} handleResult={handleResult} key={el.id} handleChange={handleChange} question={el.question} id={el.id} test={el.test} title={title}/>
-        )}
+        {data.map(el => <QuizQuestion title={title} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
       </Container>
     )
   }
 }
 
-export default Quiz
+// Quiz.propTypes = {
+//   // id: PropTypes.string,
+//   // question: PropTypes.string,
+//   // test: PropTypes.string,
+//   // handleChange: PropTypes.func,
+//   // handleResult: PropTypes.func,
+//   // title: PropTypes.string,
+//   // dispatch: PropTypes.func
+// }
+
+const mapStateToProps = state => {
+  return {
+    questions: state.quizAnswer
+  }
+}
+
+export default connect(mapStateToProps)(Quiz)
