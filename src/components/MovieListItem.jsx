@@ -154,8 +154,8 @@ const MovieListItem = (props) => {
 MovieListItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func,
-  watchlist: PropTypes.object,
-  seenList: PropTypes.object
+  watchlist: PropTypes.array,
+  seenList: PropTypes.array
 }
 
 const mapStateToProps = ({ watchlist, seenList }) => {
