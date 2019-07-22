@@ -1,6 +1,6 @@
 const request = require('superagent')
 const apiUrl = 'https://api.themoviedb.org/3/movie/'
-const apiKey = require('./apiKey')
+const apiKey = process.env.API_KEY
 
 const findMovieFromAPI = (query) => {
   return request
