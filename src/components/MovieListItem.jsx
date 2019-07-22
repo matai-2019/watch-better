@@ -27,11 +27,22 @@ const StyledRating = withStyles({
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
 
+  const seen = () => {
+    const element = props.seenList.find(item => {
+      return item.id === props.movie.id
+    })
+    if (element) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const [redirect, setRedirect] = useState()
   const [watchColor, setWatchColor] = useState(false)
   const [isAdded, setIsAdded] = useState(false)
-  const [isSeen, setIsSeen] = useState(false)
-  const [seenColor, setSeenColor] = useState(false)
+  const [isSeen, setIsSeen] = useState(seen)
+  const [seenColor, setSeenColor] = useState(seen)
 
   const handleClick = () => {
     setRedirect(props.movie.id)
@@ -119,7 +130,14 @@ const MovieListItem = (props) => {
 
 MovieListItem.propTypes = {
   movie: PropTypes.object,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  seenList: PropTypes.object
 }
 
-export default connect()(MovieListItem)
+const mapStateToProps = ({ seenList }) => {
+  return {
+    seenList
+  }
+}
+
+export default connect(mapStateToProps)(MovieListItem)
