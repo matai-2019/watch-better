@@ -1,15 +1,10 @@
 import React from 'react'
-import * as yup from 'yup'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Container, Box, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Button } from '@material-ui/core'
 
 import { QuizQuestionStyles } from '../style/muiStyles'
 import { setAnswer } from '../actions/quizAnswer'
-
-// const validationSchema = yup.object().shape({
-//   value: yup.string().required()
-// })
 
 const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) => {
   const classes = QuizQuestionStyles()
