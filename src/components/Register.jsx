@@ -1,20 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import Button from '@material-ui/core/Button'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import TextField from '@material-ui/core/TextField'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Checkbox from '@material-ui/core/Checkbox'
 import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
+import { register, isAuthenticated } from 'authenticare/client'
+
 import { RegisterStyles } from '../style/muiStyles'
 
-export default function Register () {
+export default function Register (props) {
   const classes = RegisterStyles()
+
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: ''
+  })
+
+  const handleChange = e => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log(process.env.REACT_APP_BASE_API_URL)
+    register({
+      firstName: form.firstName,
+      lastName: form.lastName,
+      email: form.email,
+      password: form.password
+    }, {
+      baseUrl: process.env.REACT_APP_BASE_API_URL // see .env and webpack.config.js
+    })
+      .then((token) => {
+        if (isAuthenticated()) {
+          props.history.push('/')
+        }
+      })
+  }
 
   return (
     <Container component="main" maxWidth="xs">
@@ -38,6 +70,8 @@ export default function Register () {
                 id="firstName"
                 label="First Name"
                 autoFocus
+                onChange={handleChange}
+                value={form.firstName}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -49,6 +83,8 @@ export default function Register () {
                 label="Last Name"
                 name="lastName"
                 autoComplete="lname"
+                onChange={handleChange}
+                value={form.lastName}
               />
             </Grid>
             <Grid item xs={12}>
@@ -60,6 +96,8 @@ export default function Register () {
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={handleChange}
+                value={form.email}
               />
             </Grid>
             <Grid item xs={12}>
@@ -72,12 +110,8 @@ export default function Register () {
                 type="password"
                 id="password"
                 autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <FormControlLabel
-                control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I want to receive inspiration, marketing promotions and updates via email."
+                onChange={handleChange}
+                value={form.password}
               />
             </Grid>
           </Grid>
@@ -87,6 +121,7 @@ export default function Register () {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick={handleClick}
           >
             Sign Up
           </Button>

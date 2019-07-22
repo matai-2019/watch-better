@@ -1,8 +1,9 @@
 const connection = require('./connection')
-const { generateHash } = require('authenticare/server')
+const { generateHash } = require('../../authenticare/server')
 
-function createUser (username, password, db = connection) {
-  return userExists(username, db)
+function createUser ({ firstName, lastName, email, password }, db = connection) {
+
+  return userExists(email, db)
     .then(exists => {
       if (exists) {
         return Promise.reject(new Error('User exists'))
@@ -10,23 +11,29 @@ function createUser (username, password, db = connection) {
     })
     .then(() => generateHash(password))
     .then(passwordHash => {
-      return db('users').insert({ username, hash: passwordHash })
+      return db('users').insert({
+        firstName,
+        lastName,
+        email,
+        hash: passwordHash
+      })
     })
 }
 
-function userExists (username, db = connection) {
+function userExists (email, db = connection) {
+  console.log(email)
   return db('users')
     .count('id as n')
-    .where('username', username)
+    .where('email', email)
     .then(count => {
       return count[0].n > 0
     })
 }
 
-function getUserByName (username, db = connection) {
+function getUserByName (email, db = connection) {
   return db('users')
     .select()
-    .where('username', username)
+    .where('email', email)
     .first()
 }
 
