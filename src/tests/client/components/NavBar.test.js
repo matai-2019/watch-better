@@ -1,7 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Toolbar } from '@material-ui/core'
+import { Provider } from 'react-redux'
 import { ThemeProvider } from '@material-ui/styles'
+import configureStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
 import Enzyme, { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
@@ -12,11 +15,16 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('NavBar component tests', () => {
   it('<NavBar /> contains an InputBase tag', () => {
+    const mockStore = configureStore([thunk])({
+      movies: [{ id: 1, title: 'Bad Moms' }]
+    })
     const wrapper = mount(
       <Router>
-        <ThemeProvider theme={theme}>
-          <Navbar />
-        </ThemeProvider>
+        <Provider store={mockStore}>
+          <ThemeProvider theme={theme}>
+            <Navbar />
+          </ThemeProvider>
+        </Provider>
       </Router>
     )
     const actual = wrapper.find(Toolbar)
