@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Box, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
@@ -7,6 +7,7 @@ import MovieTestDetails from './MovieTestDetails'
 import { QuizStyles } from '../style/muiStyles'
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
+import { clearAnswers } from '../actions/quizAnswer'
 
 const Quiz = (props) => {
   const classes = QuizStyles(props)
@@ -14,6 +15,12 @@ const Quiz = (props) => {
   const [title, setTitle] = useState('')
   const [displayAnswer, setDisplayAnswer] = useState(false)
   const [disable, setActive] = useState(true)
+
+  const resetResults = () => {
+    props.dispatch(clearAnswers())
+    setDisplayAnswer(false)
+    setActive(true)
+  }
 
   const handleTitle = e => {
     setTitle(e.target.value)
@@ -68,6 +75,7 @@ const Quiz = (props) => {
             <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
             <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
           </List>
+          <Button onClick={resetResults} variant="contained" color="primary">Try again</Button>
         </Box>
       </>
     )
@@ -94,15 +102,15 @@ const Quiz = (props) => {
   }
 }
 
-// Quiz.propTypes = {
-//   // id: PropTypes.string,
-//   // question: PropTypes.string,
-//   // test: PropTypes.string,
-//   // handleChange: PropTypes.func,
-//   // handleResult: PropTypes.func,
-//   // title: PropTypes.string,
-//   // dispatch: PropTypes.func
-// }
+Quiz.propTypes = {
+  id: PropTypes.string,
+  question: PropTypes.string,
+  test: PropTypes.string,
+  handleChange: PropTypes.func,
+  handleResult: PropTypes.func,
+  title: PropTypes.string,
+  dispatch: PropTypes.func
+}
 
 const mapStateToProps = state => {
   return {

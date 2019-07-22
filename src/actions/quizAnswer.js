@@ -1,4 +1,5 @@
 export const QUIZ_ANSWER = 'QUIZ_ANSWER'
+export const CLEAR_ANSWERS = 'CLEAR_ANSWERS'
 
 export const setAnswer = obj => {
   return {
@@ -7,5 +8,11 @@ export const setAnswer = obj => {
       id: obj.id,
       answer: obj.answer
     }
+  }
+}
+
+export const clearAnswers = () => {
+  return {
+    type: CLEAR_ANSWERS
   }
 }
