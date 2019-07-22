@@ -7,9 +7,9 @@ import { Container, Box, Radio, RadioGroup, FormControlLabel, FormControl, FormL
 import { QuizQuestionStyles } from '../style/muiStyles'
 import { setAnswer } from '../actions/quizAnswer'
 
-const validationSchema = yup.object().shape({
-  value: yup.string().required()
-})
+// const validationSchema = yup.object().shape({
+//   value: yup.string().required()
+// })
 
 const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) => {
   const classes = QuizQuestionStyles()
@@ -26,7 +26,7 @@ const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) 
     <Container>
       <Box boxShadow={0} elevation={0}>
         <FormControl required={true} component="fieldset">
-          <FormLabel validationSchema={validationSchema} component="legend" className={classes.question}>{question}</FormLabel>
+          <FormLabel component="legend" className={classes.question}>{question}</FormLabel>
           <RadioGroup
             aria-label={test}
             onChange={(e) => handleAnswer(id, e.target.value)}
@@ -40,7 +40,7 @@ const QuizQuestion = ({ question, id, test, handleResult, dispatch }, ...props) 
       </Box>
       <hr/>
       <br/>
-      {id === '17' && <Button fullWidth="true" variant="contained" color="primary" onClick={handleResult}>Submit</Button> }
+      {id === '17' && <Button className={classes.button} variant="contained" color="primary" onClick={handleResult}>Submit</Button> }
     </Container>
   )
 }

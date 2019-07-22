@@ -523,7 +523,9 @@ export const QuizStyles = makeStyles(theme => ({
   },
   content: {
     marginTop: '8em',
-    width: '70%'
+    paddingTop: '3em',
+    width: '70%',
+    backgroundColor: 'white'
   },
   title: {
     width: '20em',
@@ -552,10 +554,13 @@ export const QuizStyles = makeStyles(theme => ({
 export const QuizQuestionStyles = makeStyles(theme => ({
   question: {
     fontSize: '1em',
-    color: 'white'
+    color: '#333'
   },
   intro: {
     color: 'white'
+  },
+  button: {
+    margin: '2em'
   }
 }))
 

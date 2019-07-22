@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { Box, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
+import { Box, Container, TextField, Button, Typography, List, ListItem, FormControl } from '@material-ui/core'
 
 import MovieTestDetails from './MovieTestDetails'
 import { QuizStyles } from '../style/muiStyles'
@@ -90,9 +90,12 @@ const Quiz = (props) => {
     )
   } else if (!isVisible) {
     return (
-      <Container className={classes.content}>
-        {data.map(el => <QuizQuestion title={title} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
-      </Container>
+      <>
+        <MovieTestDetails />
+        <Container className={classes.content}>
+          {data.map(el => <QuizQuestion title={title} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
+        </Container>
+      </>
     )
   }
 }
