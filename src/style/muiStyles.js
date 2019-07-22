@@ -316,7 +316,10 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     flexGrow: '1'
   },
   paper: {
-    padding: theme.spacing(2)
+    padding: theme.spacing(2),
+    color: '#FFDF59',
+    backgroundColor: '#333',
+    fontFamily: 'Roboto'
   },
   img: {
     display: 'block',
