@@ -17,6 +17,7 @@ import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
 import { addToWatchlist, removeFromWatchlist } from '../actions/watchlist'
+import { seen, unseen } from '../actions/seenList'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -27,7 +28,7 @@ const StyledRating = withStyles({
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
 
-  const seen = () => {
+  const seenStatus = () => {
     const element = props.seenList.find(item => {
       return item.id === props.movie.id
     })
@@ -41,8 +42,8 @@ const MovieListItem = (props) => {
   const [redirect, setRedirect] = useState()
   const [watchColor, setWatchColor] = useState(false)
   const [isAdded, setIsAdded] = useState(false)
-  const [isSeen, setIsSeen] = useState(seen)
-  const [seenColor, setSeenColor] = useState(seen)
+  const [isSeen, setIsSeen] = useState(seenStatus)
+  const [seenColor, setSeenColor] = useState(seenStatus)
 
   const handleClick = () => {
     setRedirect(props.movie.id)
@@ -51,8 +52,16 @@ const MovieListItem = (props) => {
   const handleSeen = () => {
     const icon = isSeen
     const color = seenColor
-    setIsSeen(!icon)
-    setSeenColor(!color)
+
+    if (isSeen) {
+      setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(unseen(props.movie.id))
+    } else {
+      setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(seen(props.movie.id))
+    }
   }
 
   const handleWatch = () => {

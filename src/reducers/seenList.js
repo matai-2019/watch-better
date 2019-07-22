@@ -23,7 +23,7 @@ function getNewSeenList (list, id) {
   if (exists) {
     return newList
   } else {
-    newList.push(id)
+    newList.push({ id })
     return newList
   }
 }
