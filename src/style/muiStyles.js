@@ -261,6 +261,78 @@ export const NavBarStyles = makeStyles(theme => ({
   }
 }))
 
+export const MovieDetailAvatarStyles = makeStyles(theme => ({
+  popover: {
+    pointerEvents: 'none'
+  },
+  root: {
+    flexGrow: '1'
+  },
+  paper: {
+    padding: theme.spacing(2)
+  },
+  img: {
+    display: 'block',
+    maxWidth: '50%',
+    borderRadius: '0.3vw'
+  },
+  text: {
+    fontSize: '28px'
+  },
+  avatar: {
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    border: '2px solid #333',
+    margin: 1.2,
+    width: 30,
+    height: 30,
+    fontSize: 15,
+    paddingTop: 2
+  },
+  list: {
+    margin: '2vw',
+    marginLeft: '4vw',
+    width: '70vw'
+  },
+  star: {
+    iconFilled: 'pink'
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: '#333',
+    backgroundColor: '#FFDF59',
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      border: 'solid 2px #333',
+      color: '#333'
+    }
+  },
+  icon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr'
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: '15vw'
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    marginLeft: 5,
+    marginRight: 0
+  }
+}))
+
 export const MovieDetailsStyles = makeStyles(theme => ({
   container: {
     padding: 0

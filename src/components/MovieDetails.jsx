@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react'
-import { Grid, Typography, Icon, Container, Box, withStyles, Avatar } from '@material-ui/core'
+import { Grid, Typography, Container, Box, withStyles } from '@material-ui/core'
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
 import PropTypes from 'prop-types'
-import Avatars from './Avatars'
+import MovieDetailAvatars from './MovieDetailAvatars'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
@@ -49,6 +49,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
   }
 
   return !info.pending &&
+  <>
   <div style={styles.cardContainer}>
     <div style={styles.customFilter}>
       <Container maxWidth="md" className={classes.container}>
@@ -70,7 +71,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
             </div>
             <Box display="flex" flexDirection="row">
               {movieDetails.movieTests && movieDetails.movieTests.map(x => {
-                if (x.result) return <Avatars key={x.testType} test={x} />
+                if (x.result) return <MovieDetailAvatars key={x.testType} test={x} />
                 else return null
               })
               }
@@ -96,6 +97,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
       </Container>
     </div>
   </div>
+</>
 }
 
 function mapStateToProps (state) {
