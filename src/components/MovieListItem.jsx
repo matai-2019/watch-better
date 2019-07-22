@@ -8,19 +8,44 @@ import {
   Grid,
   Paper,
   ButtonBase,
-  Button
+  Button,
+  withStyles
 } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
 
+const StyledRating = withStyles({
+  iconFilled: {
+    color: '#EBBC00'
+  }
+})(Rating)
+
 const MovieListItem = (props) => {
   const classes = MovieListItemStyles(props)
 
   const [redirect, setRedirect] = useState()
+  const [watchColor, setWatchColor] = useState(false)
+  const [isAdded, setIsAdded] = useState(false)
+  const [isSeen, setIsSeen] = useState(false)
+  const [seenColor, setSeenColor] = useState(false)
 
   const handleClick = () => {
     setRedirect(props.movie.id)
+  }
+
+  const handleSeen = () => {
+    const icon = isSeen
+    const color = seenColor
+    setIsSeen(!icon)
+    setSeenColor(!color)
+  }
+
+  const handleWatch = () => {
+    const icon = isAdded
+    const color = watchColor
+    setWatchColor(!color)
+    setIsAdded(!icon)
   }
 
   const renderRedirect = () => {
@@ -46,11 +71,17 @@ const MovieListItem = (props) => {
                     {props.movie.title}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
-                    <Rating name="half-rating" value={props.movie.rating} precision={0.1} max={10}/>
+                    <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <Button size="medium" color="secondary" onClick={handleClick}>SEE MORE</Button>
+                  <Button size="small" className={classes.button} onClick={handleClick}>SEE MORE</Button>
+                  <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#a9da71' : '#FFDF59' }}onClick={handleSeen}>
+                    <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>&nbsp;SEEN
+                  </Button>
+                  <Button size="small" className={classes.watchButton} style={{ backgroundColor: watchColor ? '#a9da71' : '#FFDF59' }} onClick={handleWatch}>
+                    <i className={classes.icon}>{ isAdded ? 'check_box' : 'add_to_queue'}</i>&nbsp;WATCHLIST
+                  </Button>
                 </Grid>
               </Grid>
               {props.movie.movieTests.map(x => {

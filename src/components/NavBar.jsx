@@ -1,27 +1,38 @@
 import React from 'react'
-import { AppBar, Toolbar, InputBase } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import { AppBar, Toolbar, Typography, Grid, Button } from '@material-ui/core'
 import SearchIcon from '@material-ui/icons/Search'
+
 import { NavBarStyles } from '../style/muiStyles'
+import Search from './Search';
 
 export default function NavBar (props) {
   const classes = NavBarStyles(props)
   return (
-    <AppBar position="static">
-      <Toolbar className={classes.toolbar}>
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput
-            }}
-            inputProps={{ 'aria-label': 'Search' }}
-          />
-        </div>
-      </Toolbar>
-    </AppBar>
+    <Link to="/">
+      <div className={classes.root}>
+        <AppBar position="fixed">
+          <Toolbar className={classes.toolbar}>
+            <Typography className={classes.logo}>
+              WB
+            </Typography>
+            <Typography className={classes.tagline}>
+              CURATION THROUGH A LENS OF DIVERSITY
+            </Typography>
+            <Button className={classes.navButton}><Link to="/quiz" className={classes.link}>Test A Movie</Link></Button>
+            <div className={classes.search}>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item>
+                  <SearchIcon className={classes.searchIcon}/>
+                </Grid>
+                <Grid item>
+                  <Search />
+                </Grid>
+              </Grid>
+            </div>
+          </Toolbar>
+        </AppBar>
+      </div>
+    </Link>
   )
 }

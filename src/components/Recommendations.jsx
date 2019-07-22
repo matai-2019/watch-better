@@ -6,15 +6,12 @@ import {
   Paper,
   Typography,
   Divider,
-  Card,
-  CardActionArea,
-  CardMedia,
-  CardContent,
   Grid,
   Button
 } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
+import RecommendationDetail from './RecommendationDetail'
 
 import { getMovies } from '../actions/movies'
 
@@ -44,7 +41,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
   }
 
   return (
-    !info.pending && (
+    movies && (
       <Paper>
         {redirect && renderRedirect()}
         <Typography variant="h6" component="h2" gutterBottom>
@@ -55,24 +52,13 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
           {movies
             .filter(movie => movie.recommended)
             .map(movie => (
-              <Card
-                onClick={handleClick(movie.id)}
+              <RecommendationDetail
+                movie={movie}
+                id={movie.id}
                 key={movie.id}
-                className={classes.card}
-              >
-                <CardActionArea>
-                  <CardMedia
-                    className={classes.media}
-                    image={`https://image.tmdb.org/t/p/w200${movie.image}`}
-                    title={movie.title}
-                  />
-                  <CardContent>
-                    <Typography variant="body1" component="h3">
-                      {movie.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+                onClick={handleClick}
+                image={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                title={movie.title} />
             ))}
         </Grid>
         <Button variant="outlined" color="primary" className={classes.button} onClick={handleSeeAll}>SEE ALL MOVIES</Button>

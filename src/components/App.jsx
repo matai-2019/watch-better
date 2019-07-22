@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import { theme } from '../style/muiStyles'
 
 import NotFound from './NotFound'
+import NavBar from './NavBar'
 import Footer from './Footer'
 import Home from './Home'
 import Quiz from './Quiz'
@@ -15,7 +16,7 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={Quiz} />
+        <Route path='/' component={NavBar} />
         <Switch>
           <Route path='/' component={Home} />
           <Route path='/quiz' component={Quiz} />

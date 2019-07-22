@@ -20,14 +20,13 @@ import Filter from './Filter'
 const MovieList = ({ dispatch, movies, info, sortType }) => {
   useEffect(() => {
     dispatch(getMovies())
-  }, [dispatch, sortType])
+  }, [])
 
   return (
     <>
       <Sorter />
       <Filter />
-      {!info.pending &&
-        movies &&
+      {movies &&
         movies.map(movie => {
           return <MovieListItem key={movie.id} movie={movie} />
         })}
