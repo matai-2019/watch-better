@@ -83,6 +83,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(Watchlist)
 
 Watchlist.propTypes = {
-  watchlist: PropTypes.object,
+  watchlist: PropTypes.array,
   dispatch: PropTypes.func
 }
