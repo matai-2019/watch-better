@@ -7,8 +7,8 @@ import { CastStyles } from '../style/muiStyles'
 export default function Cast ({ cast }) {
   const classes = CastStyles()
 
-  const extractCastmember = (cast) => {
-    cast = cast.splice(0, 6)
+  const extractCastmember = (arr) => {
+    const cast = arr.splice(0, 6)
     return cast.map(castMember => (
       <Grid item key={castMember.name} xs="12" sm="2">
         <CastMember key={castMember.name} castMember={castMember} />
