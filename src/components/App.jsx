@@ -18,8 +18,8 @@ const App = () => {
       <Router>
         <Route path='/' component={NavBar} />
         <Switch>
-          <Route path='/' component={Home} />
           <Route path='/quiz' component={Quiz} />
+          <Route path='/' component={Home} />
           <Route component={NotFound} />
         </Switch>
         <Route path='/' component={Footer} />
