@@ -24,7 +24,6 @@
     "react-redux": "^7.1.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "pino-colada": "^1.4.4",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "sqlite3": "^4.0.9",
@@ -33,7 +32,8 @@
   "scripts": {
     "start": "run-p server client",
     "client": "react-scripts start",
-    "dev": "run-p server start",
+    "server": "node server",
+    "dev": "run-p dev:server start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose=true --silent",
     "eject": "react-scripts eject",
@@ -42,7 +42,7 @@
     "db:delete": "rm -f server/db/dev.sqlite3",
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
-    "server": "nodemon server | pino-colada",
+    "dev:server": "nodemon server | pino-colada",
     "postinstall": "run-s db:migrate db:seed"
   },
   "eslintConfig": {
@@ -75,6 +75,7 @@
     "react-router-dom": "^5.0.1",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
+    "pino-colada": "^1.4.4",
     "supertest": "^4.0.2"
   },
   "proxy": "http://localhost:3001"
