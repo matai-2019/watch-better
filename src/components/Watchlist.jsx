@@ -14,7 +14,6 @@ import {
 
 import WatchlistItem from './WatchlistItem'
 import { removeFromWatchlist } from '../actions/watchlist'
-import Sorter from './Sorter'
 
 const ElevationScroll = props => {
   const { children, window } = props
