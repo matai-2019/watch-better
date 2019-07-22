@@ -355,8 +355,9 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     maxWidth: '50%',
     borderRadius: '0.3vw'
   },
-  text: {
-    fontSize: '28px'
+  movieTestText: {
+    fontSize: '1.10rem',
+    fontWeight: '500'
   },
   avatar: {
     color: '#333',

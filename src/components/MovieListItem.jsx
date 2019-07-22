@@ -117,9 +117,9 @@ const MovieListItem = (props) => {
                   <Typography gutterBottom className={classes.text} onClick={handleClick}>
                     {movie.title}
                   </Typography>
-                  <Typography variant="body2" gutterBottom>
+                  <Box>
                     <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1}/>
-                  </Typography>
+                  </Box>
                 </Grid>
                 <Grid item>
                   <Button size="small" className={classes.button} onClick={handleClick}>SEE MORE</Button>
@@ -154,8 +154,8 @@ const MovieListItem = (props) => {
 MovieListItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func,
-  watchlist: PropTypes.object,
-  seenList: PropTypes.object
+  watchlist: PropTypes.array,
+  seenList: PropTypes.array
 }
 
 const mapStateToProps = ({ watchlist, seenList }) => {
