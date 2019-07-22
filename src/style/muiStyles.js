@@ -192,7 +192,6 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)',
     position: 'absolute'
   },
-
   Typography: {
     fontFamily: 'Roboto',
     textAlign: 'center',
@@ -357,11 +356,26 @@ export const FilterStyles = makeStyles(theme => ({
 
 export const QuizStyles = makeStyles(theme => ({
   question: {
-    fontSize: '1.5em',
-    color: 'black'
+    fontSize: '2em',
+    color: '#333'
   },
   content: {
+    marginTop: '8em',
     padding: '2em'
+  },
+  title: {
+    marginTop: '10em',
+    height: '55vh'
+  }
+}))
+
+export const QuizQuestionStyles = makeStyles(theme => ({
+  question: {
+    fontSize: '1.5em',
+    color: '#333'
+  },
+  intro: {
+    color: '#333'
   }
 }))
 
