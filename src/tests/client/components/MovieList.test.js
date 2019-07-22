@@ -46,6 +46,7 @@ test('MovieList component test', () => {
         rating: 6.5
       }
     ],
+    watchlist: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }],
     info: { error: null, pending: false },
     selectedTests: [],
     seenList: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }]
