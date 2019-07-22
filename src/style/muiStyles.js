@@ -420,7 +420,7 @@ export const QuizStyles = makeStyles(theme => ({
     height: '65vh'
   },
   icon: {
-    height: '2em',
+    height: '1.5em',
     margin: '1em'
   }
 }))

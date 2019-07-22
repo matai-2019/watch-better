@@ -95,7 +95,7 @@ const Quiz = (props) => {
 
   const feldman = () => {
     if (result(test5) > 4) { 
-      return 'Passed the Feldman Test' 
+      return 'Passed the Feldman Test'
     } else return 'Failed the Feldman Test'
   }
 
@@ -107,11 +107,11 @@ const Quiz = (props) => {
           {`${title} has:`}
         </Typography>
         <List>
-          <ListItem><Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
-          <ListItem><Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
-          <ListItem><Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
-          <ListItem><Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
-          <ListItem><Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
+          <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
+          <ListItem>{reesDavies().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
+          <ListItem>{ko().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
+          <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
+          <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
         </List>
       </Paper>
     )
