@@ -158,12 +158,11 @@ MovieListItem.propTypes = {
   seenList: PropTypes.object
 }
 
-const mapStateToProps = ({ watchlist }) => {
+const mapStateToProps = ({ watchlist, seenList }) => {
   return {
     watchlist,
     seenList
   }
-
 }
 
 export default connect(mapStateToProps)(MovieListItem)
