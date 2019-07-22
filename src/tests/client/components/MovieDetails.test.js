@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import Enzyme, { mount } from 'enzyme'
 import { Provider } from 'react-redux'
@@ -14,7 +14,7 @@ import testStore from './stores/MovieDetailsTestStore'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieDetails component tests', () => {
-  it('<MovieDetails /> contains 4 Icon tags', () => {
+  it('<MovieDetails /> contains 13 Typography tags', () => {
     const mockStore = configureStore([thunk])(testStore)
     const wrapper = mount(
       <Provider store={mockStore}>
@@ -23,7 +23,7 @@ describe('MovieDetails component tests', () => {
         </ThemeProvider>
       </Provider>
     )
-    const actual = wrapper.find(Icon)
-    expect(actual).toHaveLength(5)
+    const actual = wrapper.find(Typography)
+    expect(actual).toHaveLength(13)
   })
 })

@@ -90,9 +90,9 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
             </div>
             <div>
-              <Box style={{ marginTop: 30 }} >
+              <Typography variant="body2" style={{ marginTop: 30 }} gutterBottom>
                 <StyledRating name="half-rating" value={movieDetails.rating / 2} readOnly precision={0.1}/>
-              </Box>
+              </Typography>
             </div>
           </Grid>
         </Grid>
