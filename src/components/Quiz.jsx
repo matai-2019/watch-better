@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 // import PropTypes from 'prop-types'
-import { Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
+import { Paper, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
 import { QuizStyles } from '../style/muiStyles'
 import QuizQuestion from './QuizQuestion'
@@ -102,18 +102,18 @@ const Quiz = (props) => {
   if (displayAnswer) {
     console.log(title)
     return (
-      <Container className={classes.content}>
-        <Typography variant="h4" component="h4">
+      <Paper className={classes.result}>
+        <Typography variant="body1" component="h4">
           {`${title} has:`}
         </Typography>
         <List>
-          <ListItem><Typography variant="h5" gutterBottom>{bechdel()}</Typography></ListItem>
-          <ListItem><Typography variant="h5" gutterBottom>{reesDavies()}</Typography></ListItem>
-          <ListItem><Typography variant="h5" gutterBottom>{ko()}</Typography></ListItem>
-          <ListItem><Typography variant="h5" gutterBottom>{landau()}</Typography></ListItem>
-          <ListItem><Typography variant="h5" gutterBottom>{feldman()}</Typography></ListItem>
+          <ListItem><Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
+          <ListItem><Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
+          <ListItem><Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
+          <ListItem><Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
+          <ListItem><Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
         </List>
-      </Container>
+      </Paper>
     )
   } else if (isVisible) {
     return (
@@ -125,7 +125,8 @@ const Quiz = (props) => {
           margin="normal"
           onChange={handleTitle}
         />
-        <Button onClick={onSubmit} variant="outlined" color="primary">Start</Button>
+        <br/>
+        <Button onClick={onSubmit} fullWidth="true" variant="outlined" color="primary">Start</Button>
         <br />
         <br />
       </Container>
@@ -136,7 +137,7 @@ const Quiz = (props) => {
         {data.map(el => <QuizQuestion classes={classes.question} handleResult={handleResult} key={el.id} handleChange={handleChange} question={el.question} id={el.id} test={el.test} title={title}/>
         )}
       </Container>
-    )  
+    )
   }
 }
 
