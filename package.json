@@ -31,11 +31,11 @@
     "superagent": "^5.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "run-p server client",
+    "client": "react-scripts start",
+    "dev": "run-p server start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose=true --silent",
-    "test:server": "jest tests/server --watchAll",
-    "test:src": "jest tests/src --watchAll",
     "eject": "react-scripts eject",
     "knex": "knex --knexfile server/db/knexfile.js",
     "db-reset": "run-s db:*",
@@ -43,8 +43,7 @@
     "db:migrate": "npm run knex migrate:latest",
     "db:seed": "npm run knex seed:run",
     "server": "nodemon server | pino-colada",
-    "postinstall": "run-s db:migrate db:seed",
-    "dev": "run-p server start"
+    "postinstall": "run-s db:migrate db:seed"
   },
   "eslintConfig": {
     "extends": "react-app"
