@@ -58,5 +58,5 @@ const mapStateToProps = ({ watchlist }) => {
 export default connect(mapStateToProps)(NavBar)
 
 NavBar.propTypes = {
-  watchlist: PropTypes.object
+  watchlist: PropTypes.array
 }
