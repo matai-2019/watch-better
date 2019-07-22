@@ -20,6 +20,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
 
   const styles = {
     cardContainer: {
+      marginTop: 64,
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '50% 50%',
