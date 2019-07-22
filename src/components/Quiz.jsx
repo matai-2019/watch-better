@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { Box, Container, TextField, Button, Typography, List, ListItem } from '@material-ui/core'
 
+import MovieTestDetails from './MovieTestDetails'
 import { QuizStyles } from '../style/muiStyles'
 import QuizQuestion from './QuizQuestion'
 import data from '../data/quizQuestions.js'
@@ -54,28 +55,32 @@ const Quiz = (props) => {
 
   if (displayAnswer) {
     return (
-      <Box className={classes.result}>
-        <Typography variant="h5" component="h4">
-          {`${title.toUpperCase()} HAS:`}
-        </Typography>
-        <List>
-          <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
-          <ListItem>{reesDavies().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
-          <ListItem>{ko().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
-          <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
-          <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
-        </List>
-      </Box>
+      <>
+      <MovieTestDetails />
+        <Box className={classes.result}>
+          <Typography variant="h2">
+            {`${title.toUpperCase()} HAS:`}
+          </Typography>
+          <List>
+            <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
+            <ListItem>{reesDavies().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
+            <ListItem>{ko().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
+            <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
+            <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
+          </List>
+        </Box>
+      </>
     )
   } else if (isVisible) {
     return (
       <Container className={classes.title}>
-        <TextField
+        <TextField required={true} 
           id="standard-search"
           label="Movie Title"
           type="search"
           margin="normal"
           onChange={handleTitle}
+          InputProps={{ className: classes.titleText }}
         />
         <br/>
         <Button onClick={onSubmit} fullWidth={true} variant="contained" color="primary">Start</Button>

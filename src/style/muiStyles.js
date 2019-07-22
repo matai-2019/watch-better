@@ -429,7 +429,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 0, 4, 0)
   },
   title: {
-    display: 'inline',
+    display: 'line',
     fontSize: '2.5rem'
   },
   year: {
@@ -519,7 +519,7 @@ export const FilterStyles = makeStyles(theme => ({
 export const QuizStyles = makeStyles(theme => ({
   question: {
     fontSize: '2em',
-    color: '#333'
+    color: 'white'
   },
   content: {
     marginTop: '8em',
@@ -530,18 +530,19 @@ export const QuizStyles = makeStyles(theme => ({
     marginTop: '10em',
     height: '62vh'
   },
+  titleText: {
+    color: 'white'
+  },
   result: {
-    color: '#333',
+    color: 'white',
     marginTop: '8em',
-    marginLeft: '40%',
+    marginLeft: '20%',
     marginBottom: '5em',
     height: '65vh'
   },
   icon: {
     height: '1.5em',
-    margin: '1em',
-    backgroundColor: '#333',
-    borderRadius: '50%'
+    margin: '1em'
   },
   button: {
     padding: '5em'
@@ -551,10 +552,10 @@ export const QuizStyles = makeStyles(theme => ({
 export const QuizQuestionStyles = makeStyles(theme => ({
   question: {
     fontSize: '1em',
-    color: '#333'
+    color: 'white'
   },
   intro: {
-    color: '#333'
+    color: 'white'
   }
 }))
 
