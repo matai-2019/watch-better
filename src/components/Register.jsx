@@ -5,10 +5,10 @@ import {
   Button,
   TextField,
   Grid,
-  LockOutlinedIcon,
   Typography,
   Container
 } from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { register, isAuthenticated } from '../auth'
 

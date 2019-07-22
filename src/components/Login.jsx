@@ -7,10 +7,10 @@ import {
   FormControlLabel,
   Checkbox,
   Grid,
-  LockOutlinedIcon,
   Typography,
   Container
 } from '@material-ui/core'
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { RegisterStyles } from '../style/muiStyles'
 import { isAuthenticated, signIn, logOff } from '../auth'
