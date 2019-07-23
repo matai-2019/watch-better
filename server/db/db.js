@@ -65,7 +65,7 @@ const delMovieFromWatchList = (watchListId, db = connection) => {
     .where('id', watchListId)
 }
 
-const getSeenStatusByMovieId = (userId, db = connection) => {
+const getSeenListByUserId = (userId, db = connection) => {
   return db('seenlist')
     .join('users', 'users.id', 'seenlist.user_id')
     .join('movies', 'movies.id', 'seenlist.movie_id')
@@ -90,7 +90,7 @@ module.exports = {
   getWatchListByUserId,
   insertMovieToWatchList,
   delMovieFromWatchList,
-  getSeenStatusByMovieId,
+  getSeenListByUserId,
   delMovieFromSeenList,
   insertMovieToSeenListByUserId
 }
