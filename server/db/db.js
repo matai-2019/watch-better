@@ -54,6 +54,11 @@ const getComments = (movieId, db = connection) => {
     .select('comment', 'user_rating', 'created', 'users.firstname', 'users.lastname')
 }
 
+const addComment = (comment, db = connection) => {
+  return db('comments')
+    .insert(comment)
+}
+
 const delComment = (commentId, db = connection) => {
   return db('comments')
     .where('id', commentId)
@@ -65,5 +70,6 @@ module.exports = {
   getMovieById,
   getAllMovies,
   getComments,
+  addComment,
   delComment
 }
