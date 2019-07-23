@@ -18,11 +18,13 @@ import {
 } from '../actions/sort'
 import Filter from './Filter'
 import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
 
 const MovieList = ({ dispatch, movies }) => {
   useEffect(() => {
     dispatch(getMovies())
     dispatch(getWatchList())
+    dispatch(getSeenList())
   }, [])
 
   return (

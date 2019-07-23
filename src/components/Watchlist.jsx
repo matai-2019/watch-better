@@ -15,7 +15,7 @@ import {
 
 import WatchlistItem from './WatchlistItem'
 import { getWatchList } from '../actions/watchlist'
-import { removeMovieFromWatchList } from '../utilities/api'
+import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
 
 const ElevationScroll = props => {
@@ -42,6 +42,7 @@ const Watchlist = (props) => {
 
   useEffect(() => {
     dispatch(getWatchList())
+    dispatch(getSeenList())
   }, [])
 
   return (
@@ -59,7 +60,7 @@ const Watchlist = (props) => {
       <Container>
         <div className={classes.top}>
           <Box my={2}>
-            {[...new Array(1)]
+            {watchlist && [...new Array(1)]
               .map(
                 () => watchlist.map((movie, id) => {
                   return (

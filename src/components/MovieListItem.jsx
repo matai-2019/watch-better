@@ -17,8 +17,9 @@ import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
 import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
 import { setErrorMessage } from '../actions/errorMessage'
-import { addMovieToWatchList, removeMovieFromWatchList } from '../utilities/api'
+import { addMovieToWatchList, removeMovieFromWatchList, addMovieToSeenList, removeMovieFromSeenList } from '../utilities/api'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -29,8 +30,12 @@ const StyledRating = withStyles({
 
 const MovieListItem = props => {
   const classes = MovieListItemStyles(props)
-  const { watchlist, movie, dispatch } = props
+  const { watchlist, movie, dispatch, seenList } = props
   const watchListEntry = watchlist.filter(item => {
+    return item.movieId === movie.id
+  })[0]
+
+  const seenListEntry = seenList.filter(item => {
     return item.movieId === movie.id
   })[0]
 
@@ -53,6 +58,26 @@ const MovieListItem = props => {
       removeMovieFromWatchList(watchListEntry.id)
         .then(() => {
           dispatch(getWatchList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
+    }
+  }
+
+  const handleSeen = () => {
+    if (!seenListEntry) {
+      addMovieToSeenList(movie.id)
+        .then(() => {
+          dispatch(getSeenList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
+    } else {
+      removeMovieFromSeenList(seenListEntry.id)
+        .then(() => {
+          dispatch(getSeenList())
         })
         .catch(err => {
           dispatch(setErrorMessage(err))
@@ -119,19 +144,19 @@ const MovieListItem = props => {
                     })}
                   </Box>
                   <div className={classes.topMargin}>
-                    {/* <Button
+                    <Button
                       size="small"
                       className={classes.seenButton}
                       style={{
-                        backgroundColor: seenColor ? '#A9DA71' : '#DADADA'
+                        backgroundColor: seenListEntry ? '#A9DA71' : '#DADADA'
                       }}
                       onClick={handleSeen}
                     >
                       <i className={classes.icon}>
-                        {isSeen ? 'visibility' : 'visibility_off'}
+                        {seenListEntry ? 'visibility' : 'visibility_off'}
                       </i>
                       &nbsp;SEEN
-                    </Button> */}
+                    </Button>
                     <Button
                       size="small"
                       className={classes.watchButton}
