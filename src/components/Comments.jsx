@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Container, Paper } from '@material-ui/core'
+import { Container, Paper, Grid } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
@@ -27,13 +27,19 @@ const Comments = ({ movieId }) => {
 
   return (
     <Paper classes={classes.commentsContainer}>
-      <CommentForm userid={comments.userId} thing={setDummy}/>
-      <Container >
-        {
-          comments && comments.map(comment => {
-            return (<Comment key={comment.id} comment={comment} />)
-          })
-        }
+      <Container>
+        <Grid container justify="center" >
+          <Grid item xs={6}>
+            {
+              comments && comments.map(comment => {
+                return (<Comment key={comment.id} comment={comment} />)
+              })
+            }
+          </Grid>
+          <Grid item xs={6}>
+            <CommentForm userid={comments.userId} thing={setDummy}/>
+          </Grid>
+        </Grid>
       </Container>
     </Paper>)
 }
