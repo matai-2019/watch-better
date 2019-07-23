@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from '@material-ui/styles'
-import { Button, ListItem } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import Enzyme, { mount } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import configureStore from 'redux-mock-store'
