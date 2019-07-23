@@ -661,7 +661,13 @@ export const CommentFormStyles = makeStyles(theme => ({
   text: {
     color: theme.palette.primary
   },
+  paper: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em'
+  },
   comment: {
-    width: '40vw'
+    width: '90%',
+    margin: '1em'
   }
 }))
