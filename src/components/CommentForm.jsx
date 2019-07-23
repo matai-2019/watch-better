@@ -4,6 +4,7 @@ import { Rating } from '@material-ui/lab'
 import { Paper, TextField, Box, Typography, Button, withStyles } from '@material-ui/core'
 
 import { CommentFormStyles } from '../style/muiStyles'
+import { addComment } from '../utilities/api'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -18,13 +19,21 @@ const CommentForm = ({ movieId }) => {
   const [rating, setRating] = useState(null)
 
   const handleSubmit = () => {
-    //call the function to write to database
     const userInput = {
       rating,
       comment,
       movieId
     }
-    console.log(userInput)
+
+    return addComment(userInput)
+      .then(() => {
+        setComment('')
+        setRating(null)
+      })
+      .catch(err => { 
+        console.error(err)
+      //  dispatch error message when connected to the store (dispatch(error?(err.message))
+      })
   }
 
   return (
@@ -44,6 +53,7 @@ const CommentForm = ({ movieId }) => {
         label="Leave a comment"
         multiline
         rowsMax="10"
+        value={comment}
         onChange={(e) => {
           setComment(e.target.value)
         }}
