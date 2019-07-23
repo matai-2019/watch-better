@@ -12,8 +12,7 @@ export default function Home () {
   return (
     <>
       <Route path="/" component={MovieTestDetails} />
-      {/* <Route path="/" exact component={Recommendations} /> */}
-      <Route path="/" exact component={RecommendationsNew} />
+      <Route path="/" exact component={Recommendations} />
       <Switch>
         <Route path="/movie/:id" component={MovieDetails} />
         <Route path="/movies/list" component={MovieList} />
