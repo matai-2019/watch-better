@@ -5,22 +5,22 @@ import Rating from '@material-ui/lab/Rating'
 
 import { CommentsStyles } from '../style/muiStyles'
 
-const Comment = (props) => {
+const Comment = ({ comment: { userRating, firstName, comment, created } }) => {
   const classes = CommentsStyles()
   return (
     <>
       <br />
       <Card classes={classes.comment}>
-        <Rating value={props.user_rating} readOnly />
+        <Rating value={userRating} readOnly />
         <Typography variant="h6">
-          {props.name}
+          {firstName}
         </Typography>
         <Typography variant="p">
-          {props.comment}
+          {comment}
         </Typography>
         <br />
         <Typography variant="p">
-          {props.created}
+          {created}
         </Typography>
       </Card>
     </>
@@ -28,13 +28,7 @@ const Comment = (props) => {
 }
 
 Comment.propTypes = {
-  user_id: PropTypes.number,
-  movie_id: PropTypes.number,
-  name: PropTypes.string,
-  key: PropTypes.number,
-  comment: PropTypes.string,
-  user_rating: PropTypes.number,
-  created: PropTypes.string
+  comment: PropTypes.object
 }
 
 export default Comment
