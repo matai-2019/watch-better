@@ -16,6 +16,7 @@ import {
 import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
+import { isAuthenticated } from '../auth'
 import { getWatchList } from '../actions/watchlist'
 import { getSeenList } from '../actions/seenList'
 import { setErrorMessage } from '../actions/errorMessage'
@@ -143,7 +144,7 @@ const MovieListItem = props => {
                       else return null
                     })}
                   </Box>
-                  <div className={classes.topMargin}>
+                  {isAuthenticated() && <div className={classes.topMargin}>
                     <Button
                       size="small"
                       className={classes.seenButton}
@@ -170,7 +171,7 @@ const MovieListItem = props => {
                       </i>
                       &nbsp;WATCHLIST
                     </Button>
-                  </div>
+                  </div>}
                 </Grid>
               </Grid>
             </Grid>

@@ -4,7 +4,6 @@ import { getMovies } from '../actions/movies'
 import PropTypes from 'prop-types'
 
 import MovieListItem from './MovieListItem'
-import { isAuthenticated } from '../auth'
 import Sorter from './Sorter'
 import {
   sortAlphabeticalAscending,
@@ -19,13 +18,14 @@ import {
 import Filter from './Filter'
 import { getWatchList } from '../actions/watchlist'
 import { getSeenList } from '../actions/seenList'
+import { isAuthenticated } from '../auth'
 
 const MovieList = ({ dispatch, movies }) => {
   useEffect(() => {
     dispatch(getMovies())
-    dispatch(getWatchList())
-    dispatch(getSeenList())
-  }, [])
+    isAuthenticated() && dispatch(getWatchList())
+    isAuthenticated() && dispatch(getSeenList())
+  }, [dispatch])
 
   return (
     <>

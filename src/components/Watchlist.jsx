@@ -43,7 +43,7 @@ const Watchlist = (props) => {
   useEffect(() => {
     dispatch(getWatchList())
     dispatch(getSeenList())
-  }, [])
+  }, [dispatch])
 
   return (
     isAuthenticated()
