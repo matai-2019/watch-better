@@ -28,18 +28,7 @@ const getMoviesFromAPI = (id) => {
     })
 }
 
-const addCommentAPI = (comment) => {
-  return request.post('/movie-api/comment')
-    .send(comment)
-}
-
-const getCommentAPI = (movieId) => {
-  return request.get(`/movie-api/comments/${movieId}`)
-}
-
 module.exports = {
   findMovieFromAPI,
-  getMoviesFromAPI,
-  addCommentAPI,
-  getCommentAPI
+  getMoviesFromAPI
 }
