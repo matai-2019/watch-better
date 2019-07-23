@@ -26,7 +26,7 @@ const Comments = ({ movieId }) => {
 
   return (
     <Paper classes={classes.commentsContainer}>
-      <CommentForm />
+      <CommentForm userid={comments.userId}/>
       <Container >
         {
           comments && comments.map(comment => {
