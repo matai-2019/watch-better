@@ -58,10 +58,17 @@ const addComment = (comment, db = connection) => {
     .insert(comment)
 }
 
+const delComment = (commentId, db = connection) => {
+  return db('comments')
+    .where('id', commentId)
+    .del()
+}
+
 module.exports = {
   close,
   getMovieById,
   getAllMovies,
   getComments,
-  addComment
+  addComment,
+  delComment
 }

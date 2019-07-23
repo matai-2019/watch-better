@@ -22,7 +22,17 @@ router.post('/comment', (req, res) => {
 
 router.get('/comments/:id', (req, res) => {
   db.getComments(Number(req.params.id))
+})
+  
+router.get('/comments/:movieId', (req, res) => {
+  db.getComments(Number(req.params.movieId))
     .then(comments => res.status(200).json(comments))
+    .catch(err => res.status(500).send(err.message))
+})
+
+router.delete('/comment/:id', (req, res) => {
+  db.delComment(Number(req.params.id))
+    .then(msg => res.status(200).send(`Deleted ${msg} comment`))
     .catch(err => res.status(500).send(err.message))
 })
 
