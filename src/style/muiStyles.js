@@ -595,3 +595,12 @@ export const RegisterStyles = makeStyles(theme => ({
     margin: theme.spacing(3, 0, 2)
   }
 }))
+
+export const CommentFormStyles = makeStyles(theme => ({
+  text: {
+    color: theme.palette.primary
+  },
+  comment: {
+    width: '40vw'
+  }
+}))
