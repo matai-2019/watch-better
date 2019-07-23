@@ -15,7 +15,8 @@ Enzyme.configure({ adapter: new Adapter() })
 
 test('<WatchlistItem /> displays 2 Buttons', () => {
   const mockStore = configureStore([thunk])({
-    watchlist: [{ id: 1, title: 'Bad Moms' }]
+    watchlist: [{ id: 1, title: 'Bad Moms' }],
+    seenList: []
   })
   const mockMovie = { id: 1, title: 'Bad Moms' }
   const wrapper = mount(

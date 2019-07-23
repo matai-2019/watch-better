@@ -32,7 +32,6 @@ export default function Register (props) {
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log(process.env.REACT_APP_BASE_API_URL)
     register({
       firstName: form.firstName,
       lastName: form.lastName,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { WatchlistStyles } from '../style/muiStyles'
@@ -14,7 +14,8 @@ import {
 } from '@material-ui/core'
 
 import WatchlistItem from './WatchlistItem'
-import { removeFromWatchlist } from '../actions/watchlist'
+import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
 
 const ElevationScroll = props => {
@@ -39,13 +40,10 @@ const Watchlist = (props) => {
   const { watchlist, dispatch } = props
   const classes = WatchlistStyles(props)
 
-  const [list, setList] = useState(watchlist)
-
-  const removeMovie = id => {
-    const newList = list.filter(movie => movie.id !== id)
-    setList(newList)
-    dispatch(removeFromWatchlist(id))
-  }
+  useEffect(() => {
+    dispatch(getWatchList())
+    dispatch(getSeenList())
+  }, [dispatch])
 
   return (
     isAuthenticated()
@@ -62,11 +60,11 @@ const Watchlist = (props) => {
       <Container>
         <div className={classes.top}>
           <Box my={2}>
-            {[...new Array(1)]
+            {watchlist && [...new Array(1)]
               .map(
                 () => watchlist.map((movie, id) => {
                   return (
-                    <WatchlistItem key={id} movie={movie} removeMovie={removeMovie}/>
+                    <WatchlistItem key={id} movie={movie}/>
                   )
                 })
               )}
