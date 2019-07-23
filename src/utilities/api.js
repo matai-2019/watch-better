@@ -5,8 +5,8 @@ const addCommentAPI = (comment) => {
     .send(comment)
 }
 
-const getCommentAPI = (movieId) => {
-  return request.get(`/movie-api/comments/2`)
+const getCommentAPI = movieId => {
+  return request.get(`/movie-api/comments/${movieId}`)
     .then(res => {
       console.log(res)
       return res.body

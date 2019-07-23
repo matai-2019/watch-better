@@ -50,10 +50,6 @@ const Comments = () => {
         console.log(comments)
         return comments
       })
-      .catch(err => {
-        console.error(err)
-      //  dispatch error message when connected to the store (dispatch(error?(err.message))
-      })
   }
 
   console.log(getComments(2))
@@ -61,18 +57,18 @@ const Comments = () => {
     <Paper classes={classes.commentsContainer}>
       <CommentForm />
       <Container >
-        {/* {getComments()
-        // .map(comment => {
-        //   return <Comment
-        //     key={comment.id}
-        //     movie_id={comment.movie_id}
-        //     name={comment.name}
-        //     user_id={comment.user_id}
-        //     comment={comment.comment}
-        //     user_rating={comment.user_rating}
-        //     created={comment.created} />
-        // })
-        } */}
+        {getComments()
+          .map(comment => {
+            return <Comment
+              key={comment.id}
+              movie_id={comment.movie_id}
+              name={comment.name}
+              user_id={comment.user_id}
+              comment={comment.comment}
+              user_rating={comment.user_rating}
+              created={comment.created} />
+          })
+        }
       </Container>
     </Paper>
   )
