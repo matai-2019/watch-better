@@ -10,7 +10,7 @@ export default function Cast ({ cast }) {
   return (
     <Container>
       <Typography variant="h6" component="h2" className={classes.title}>
-        Top billed cast
+        Top Billed Cast
       </Typography>
       <Grid container justify="center">
         {cast &&
