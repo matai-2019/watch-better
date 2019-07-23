@@ -18,8 +18,9 @@ import MovieDetails from './MovieDetails'
 import MovieList from './MovieList'
 import Watchlist from './Watchlist'
 import ErrorMessage from './ErrorMessage'
+import WaitIndicator from './WaitIndicator'
 
-const App = ({error, pending}) => {
+const App = ({ error, pending }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -27,6 +28,7 @@ const App = ({error, pending}) => {
         <Route path='/' component={NavBar} />
         <Route path="/" exact component={Recommendations} />
         {error && <ErrorMessage />}
+        {pending && <WaitIndicator/>}
         <Switch>
           <Route path="/" exact component={MovieTestDetails} />
           <Route path="/movie/:id" component={MovieDetails} />
