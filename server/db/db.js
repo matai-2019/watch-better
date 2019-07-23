@@ -87,7 +87,7 @@ const getComments = (movieId, db = connection) => {
   return db('comments')
     .where('movie_id', movieId)
     .join('users', 'users.id', 'comments.user_id')
-    .select('comment', 'user_rating', 'created', 'users.firstname', 'users.lastname')
+    .select('comment', 'user_rating as userRating', 'created', 'users.firstname as firstName', 'comments.id as id')
 }
 
 const addComment = (comment, db = connection) => {

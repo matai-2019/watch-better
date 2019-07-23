@@ -8,6 +8,7 @@ import MovieDetailAvatars from './MovieDetailAvatars'
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
 import Cast from './Cast'
+import Comments from './Comments'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -100,6 +101,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     </div>
   </div>
   <Cast cast={movieDetails.cast}/>
+  <Comments movieId={movieDetails.id} />
   </>
 }
 

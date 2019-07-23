@@ -1,5 +1,4 @@
 import request from 'superagent'
-
 import { getAuthorizationHeader } from '../auth'
 
 export const addMovieToWatchList = movieId => {
@@ -22,4 +21,5 @@ export const removeMovieFromSeenList = movieId => {
 export const addCommentAPI = (comment) => {
   return request.post('/movie-api/comment')
     .send(comment)
+    .set(getAuthorizationHeader())
 }

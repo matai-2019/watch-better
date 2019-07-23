@@ -689,22 +689,37 @@ export const RegisterStyles = makeStyles(theme => ({
   }
 }))
 
+export const CommentsStyles = makeStyles(theme => ({
+  commentsContainer: {
+    display: 'flex',
+    padding: '3em',
+    height: '400px'
+  },
+  comment: {
+    flexGrow: 2,
+    maxWidth: '500px',
+    float: 'right'
+  }
+}))
+
 export const CommentFormStyles = makeStyles(theme => ({
   text: {
     color: theme.palette.primary
   },
   paper: {
-    width: '35%',
-    margin: '2em',
-    padding: '1em'
+    width: '30%',
+    margin: '20px',
+    padding: '1em',
+    flexGrow: 1,
+    float: 'left'
   },
   comment: {
     width: '90%',
     margin: '1em'
   },
   filter: {
-    width: '35%',
-    margin: '2em',
+    width: '30%',
+    margin: '20px',
     padding: '1em',
     backgroundColor: 'gray',
     opacity: 0.8
