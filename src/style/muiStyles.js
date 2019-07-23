@@ -461,26 +461,51 @@ export const MovieDetailsStyles = makeStyles(theme => ({
 }))
 
 export const RecommendationsStyles = makeStyles({
+  carousel: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#333333'
+  },
   card: {
-    width: 200,
-    height: 370,
-    margin: theme.spacing(2)
+    flexGrow: 1,
+    borderRadius: 0,
+    backgroundColor: 'black',
+    height: '725px'
+  },
+  ourTopPicks: {
+    marginBottom: '-60px',
+    display: 'inline-flex',
+    padding: '0'
   },
   media: {
-    height: 290,
-    alignContent: 'center',
-    display: 'flex'
+    height: '725px',
+    alignItems: 'center',
+    display: 'flex',
+    transition: 'all 1s',
+    '&:hover': {
+      transform: 'scale(1.06)',
+      opacity: 0.6
+    }
+  },
+  title: {
+    color: 'white',
+    fontSize: '25px',
+    fontWeight: 600
   },
   testIcons: {
-    marginTop: '250px',
-    marginLeft: '10px',
-    display: 'inline-flex',
-    height: 290
+    display: 'Flex',
+    marginTop: '-90px',
+    marginLeft: '40%'
   },
   button: {
-    border: 'solid 2px #333',
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    border: 'solid 2.5px #FFDF59',
+    marginTop: '-1360px',
+    bottom: '500%',
+    width: '270px',
+    height: '55px',
+    marginLeft: '41%',
+    backgroundColor: '#FFDF5930',
+    color: '#FFDF59',
     '&:hover': {
       backgroundColor: '#FFDF59',
       border: 'solid 2px #333',
