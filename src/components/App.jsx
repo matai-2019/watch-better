@@ -26,11 +26,11 @@ const App = ({ error, pending }) => {
       <CssBaseline />
       <Router>
         <Route path='/' component={NavBar} />
-        <Route path="/" exact component={Recommendations} />
+        <Route path="/" exact component={MovieTestDetails} />
         {error && <ErrorMessage />}
         {pending && <WaitIndicator/>}
         <Switch>
-          <Route path="/" exact component={MovieTestDetails} />
+          <Route path="/" exact component={Recommendations} />
           <Route path="/movie/:id" component={MovieDetails} />
           <Route path="/movies/list" component={MovieList} />
           <Route path="/movies/watchlist" component={Watchlist} />
