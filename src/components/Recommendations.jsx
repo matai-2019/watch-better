@@ -4,9 +4,9 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Button } from '@material-ui/core/'
+import { Button, Typography } from '@material-ui/core/'
 
-import { RecommendationsStyles } from '../style/muiStyles'
+import { RecommendationsStyles, theme } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
 import RecommendationDetail from './RecommendationDetail'
 
@@ -52,6 +52,9 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
       <>
         <div classes={classes.carousel}>
           {redirect && renderRedirect()}
+          <Typography className={classes.title}>
+              Our Recommendations
+          </Typography>
           <AliceCarousel
             responsive={responsive}
             autoPlayInterval={3300}

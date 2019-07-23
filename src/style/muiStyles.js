@@ -471,7 +471,7 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '725px',
+    height: '720px',
     marginTop: 64
   },
   ourTopPicks: {
@@ -490,13 +490,18 @@ export const RecommendationsStyles = makeStyles({
     }
   },
   title: {
-    color: 'white',
-    fontSize: '25px',
-    fontWeight: 600
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(1.6),
+    color: '#FFDF59',
+    fontSize: '1.25rem',
+    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+    fontWeight: '500',
+    lineHeight: '1.6',
+    letterSpacing: '0.0075em'
   },
   testIcons: {
-    marginLeft: '.3%',
-    marginBottom: '.3%',
+    marginLeft: '.5%',
+    marginBottom: '.5%',
     position: 'fixed',
     bottom: '0',
     padding: '1'
