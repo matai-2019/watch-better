@@ -101,7 +101,6 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     </div>
   </div>
   <Cast cast={movieDetails.cast}/>
-  <CommentForm movieId={movieDetails.id}/>
   </>
 }
 

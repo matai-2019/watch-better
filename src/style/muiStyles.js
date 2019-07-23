@@ -249,7 +249,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
   loadingCamera: {
-    fill: 'purple',
+    fill: 'white',
     fillOpacity: 0.95,
     stroke: 'none',
     top: '50%',
@@ -261,7 +261,7 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     fontFamily: 'Roboto',
     textAlign: 'center',
     fontWeight: 'lighter 300',
-    color: 'purple',
+    color: 'white',
     top: '120%',
     left: '60%',
     transform: 'translate(-50%, -50%)',
@@ -686,5 +686,12 @@ export const CommentFormStyles = makeStyles(theme => ({
   comment: {
     width: '90%',
     margin: '1em'
+  },
+  filter: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em',
+    backgroundColor: 'gray',
+    opacity: '.8'
   }
 }))

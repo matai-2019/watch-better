@@ -19,3 +19,8 @@ export const removeMovieFromSeenList = movieId => {
   return request.put('/movie-api/seenlist').send({
     movieId }).set(getAuthorizationHeader())
 }
+
+export const addCommentAPI = (comment) => {
+  return request.post('/movie-api/comment')
+    .send(comment)
+}
