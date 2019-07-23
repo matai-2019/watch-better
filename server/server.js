@@ -14,6 +14,7 @@ server.use(express.static('public'))
 server.use('/movie-api/watchlist', watchlist)
 server.use('/movie-api/seenlist', seenlist)
 server.use('/movie-api/', router)
+
 server.use('/', authRoutes)
 
 module.exports = server

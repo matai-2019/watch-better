@@ -81,6 +81,17 @@ const delMovieFromSeenList = (seenListId, db = connection) => {
   return db('seenlist')
     .del()
     .where('id', seenListId)
+    
+const getComments = (movieId, db = connection) => {
+  return db('comments')
+    .where('movie_id', movieId)
+    .select('comment', 'user_rating', 'created')
+}
+
+const delComment = (commentId, db = connection) => {
+  return db('comments')
+    .where('id', commentId)
+    .del()
 }
 
 module.exports = {
@@ -92,5 +103,7 @@ module.exports = {
   delMovieFromWatchList,
   getSeenListByUserId,
   delMovieFromSeenList,
-  insertMovieToSeenListByUserId
+  insertMovieToSeenListByUserId,
+  getComments,
+  delComment
 }
