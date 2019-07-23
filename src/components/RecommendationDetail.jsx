@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { Card, CardActionArea, CardMedia, CardContent, Typography } from '@material-ui/core'
+import { Card, CardActionArea, CardMedia } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
 import Avatars from './Avatars'
@@ -19,20 +19,14 @@ const RecommendationDetail = (props) => {
             className={classes.media}
             image={props.image}
             title={props.title}>
-            <div className={classes.testIcons}>
-              {props.movie.movieTests.map(x => {
-                if (x.result) return <Avatars key={x.testType} test={x} />
-                else return null
-              })
-              }
-            </div>
           </CardMedia>
-          <CardContent>
-            <Typography variant="body1" component="h3">
-              {props.title}
-            </Typography>
-
-          </CardContent>
+          <div className={classes.testIcons}>
+            {props.movieTests.map(x => {
+              if (x.result) return <Avatars key={x.testType} test={x} />
+              else return null
+            })
+            }
+          </div>
         </CardActionArea>
       </Card >
     </Link>
@@ -40,6 +34,7 @@ const RecommendationDetail = (props) => {
 }
 
 RecommendationDetail.propTypes = {
+  movieTests: PropTypes.array,
   movie: PropTypes.object,
   image: PropTypes.string,
   title: PropTypes.string,

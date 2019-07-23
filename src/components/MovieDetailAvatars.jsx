@@ -33,7 +33,7 @@ function MovieDetailAvatars ({ test }) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Typography>Bechdel Test</Typography>
+            <Typography className={classes.movieTestText}>Bechdel Test</Typography>
           </Popover>
         </div>
       )
@@ -52,7 +52,7 @@ function MovieDetailAvatars ({ test }) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Typography>Rees Davies Test</Typography>
+            <Typography className={classes.movieTestText}>Rees Davies Test</Typography>
           </Popover>
         </div>
       )
@@ -71,7 +71,7 @@ function MovieDetailAvatars ({ test }) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Typography>Ko Test</Typography>
+            <Typography className={classes.movieTestText}>Ko Test</Typography>
           </Popover>
         </div>
       )
@@ -90,7 +90,7 @@ function MovieDetailAvatars ({ test }) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Typography>Landau Test</Typography>
+            <Typography className={classes.movieTestText}>Landau Test</Typography>
           </Popover>
         </div>
       )
@@ -109,7 +109,7 @@ function MovieDetailAvatars ({ test }) {
             onClose={handlePopoverClose}
             disableRestoreFocus
           >
-            <Typography>Feldman Test</Typography>
+            <Typography className={classes.movieTestText}>Feldman Test</Typography>
           </Popover>
         </div>
       )
