@@ -10,7 +10,7 @@ import { RecommendationsStyles } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
 import RecommendationDetail from './RecommendationDetail'
 
-const RecommendationsNew = ({ movies, info, dispatch }, ...props) => {
+const Recommendations = ({ movies, info, dispatch }, ...props) => {
   const classes = RecommendationsStyles(props)
   const [redirect, setRedirect] = useState()
   const handleOnDragStart = e => e.preventDefault()
@@ -90,10 +90,10 @@ function mapStateToProps ({ movies, info }) {
   }
 }
 
-RecommendationsNew.propTypes = {
+Recommendations.propTypes = {
   dispatch: PropTypes.func,
   movies: PropTypes.array,
   info: PropTypes.object
 }
 
-export default connect(mapStateToProps)(RecommendationsNew)
+export default connect(mapStateToProps)(Recommendations)
