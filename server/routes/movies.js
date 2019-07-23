@@ -20,10 +20,6 @@ router.post('/comment', (req, res) => {
     .catch(err => res.status(500).send(err.message))
 })
 
-router.get('/comments/:id', (req, res) => {
-  db.getComments(Number(req.params.id))
-})
-
 router.get('/comments/:movieId', (req, res) => {
   db.getComments(Number(req.params.movieId))
     .then(comments => res.status(200).json(comments))
