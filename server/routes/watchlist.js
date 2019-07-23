@@ -25,7 +25,6 @@ router.post('/', decodeToken, (req, res) => {
 })
 
 router.delete('/', decodeToken, (req, res) => {
-  console.log(req.body)
   db.delMovieFromWatchList(req.body.movieId)
     .then(() => res.status(200).send('ok'))
     .catch(err => {

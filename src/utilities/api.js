@@ -11,7 +11,6 @@ export const addMovieToSeenList = movieId => {
 }
 
 export const removeMovieFromWatchList = movieId => {
-  console.log(movieId)
   return request.del('/movie-api/watchlist').send({ movieId }).set(getAuthorizationHeader())
 }
 

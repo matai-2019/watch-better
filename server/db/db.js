@@ -60,7 +60,6 @@ const insertMovieToWatchList = (userId, movieId, db = connection) => {
 }
 
 const delMovieFromWatchList = (watchListId, db = connection) => {
-  console.log(watchListId)
   return db('watchlist')
     .del()
     .where('id', watchListId)
