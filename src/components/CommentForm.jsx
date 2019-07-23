@@ -18,7 +18,7 @@ const CommentForm = ({ movieId }) => {
   const [rating, setRating] = useState(null)
 
   const handleSubmit = () => {
-    //call the function to write to database
+    // call the function to write to database
     const userInput = {
       rating,
       comment,

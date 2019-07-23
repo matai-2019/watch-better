@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Paper, Typography } from '@material-ui/core'
+import { Card, Typography } from '@material-ui/core'
+
+import { CommentsStyles } from '../style/muiStyles'
 
 const Comment = (props) => {
+  const classes = CommentsStyles()
   return (
     <>
       <br />
-      <Paper>
+      <Card classes={classes.comment}>
         <Typography variant="p">
           {props.user_rating}
         </Typography>
@@ -20,7 +23,7 @@ const Comment = (props) => {
         <Typography variant="p">
           {props.created}
         </Typography>
-      </Paper>
+      </Card>
     </>
   )
 }
