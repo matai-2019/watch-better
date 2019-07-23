@@ -48,4 +48,13 @@ describe('Route tests', () => {
         expect(res.status).toBe(200)
       })
   })
+
+  it("DELETE('/comment/:id') responds with status 200", () => {
+    return request(server)
+      .delete('/movie-api/comment/1')
+      .end((err, res) => {
+        expect(err).toBeNull()
+        expect(res.status).toBe(200)
+      })
+  })
 })
