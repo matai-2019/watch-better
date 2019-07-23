@@ -16,24 +16,23 @@ import {
   SORT_ALPHABETICAL_ASCENDING
 } from '../actions/sort'
 import Filter from './Filter'
+import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
+import { isAuthenticated } from '../auth'
 
-const MovieList = ({ dispatch, movies, info, sortType }) => {
+const MovieList = ({ dispatch, movies }) => {
   useEffect(() => {
     dispatch(getMovies())
+    isAuthenticated() && dispatch(getWatchList())
+    isAuthenticated() && dispatch(getSeenList())
   }, [dispatch])
-
-  const sorted = movies.sort(function (a, b) {
-    if (a.title < b.title) { return -1 }
-    if (a.title > b.title) { return 1 }
-    return 0
-  })
 
   return (
     <>
       <Sorter />
       <Filter />
       {movies &&
-        sorted.map(movie => {
+        movies.map(movie => {
           return <MovieListItem key={movie.id} movie={movie} />
         })}
     </>
@@ -42,9 +41,7 @@ const MovieList = ({ dispatch, movies, info, sortType }) => {
 
 MovieList.propTypes = {
   movies: PropTypes.array,
-  dispatch: PropTypes.func,
-  info: PropTypes.object,
-  sortType: PropTypes.string
+  dispatch: PropTypes.func
 }
 
 const mapStateToProps = ({ movies, info, sortType }) => {

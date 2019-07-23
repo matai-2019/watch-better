@@ -117,5 +117,5 @@ export default function Login (props) {
 }
 
 Login.propTypes = {
-  history: PropTypes.array
+  history: PropTypes.object
 }

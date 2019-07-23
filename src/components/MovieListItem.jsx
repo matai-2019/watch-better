@@ -16,8 +16,11 @@ import {
 import Rating from '@material-ui/lab/Rating'
 
 import Avatars from './Avatars'
-import { addToWatchlist, removeFromWatchlist } from '../actions/watchlist'
-import { seen, unseen } from '../actions/seenList'
+import { isAuthenticated } from '../auth'
+import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
+import { setErrorMessage } from '../actions/errorMessage'
+import { addMovieToWatchList, removeMovieFromWatchList, addMovieToSeenList, removeMovieFromSeenList } from '../utilities/api'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -26,127 +29,155 @@ const StyledRating = withStyles({
   }
 })(Rating)
 
-const MovieListItem = (props) => {
+const MovieListItem = props => {
   const classes = MovieListItemStyles(props)
-  const { watchlist, movie, dispatch } = props
+  const { watchlist, movie, dispatch, seenList } = props
+  const watchListEntry = watchlist.filter(item => {
+    return item.movieId === movie.id
+  })[0]
 
-  const watchStatus = () => {
-    const element = watchlist.find(item => {
-      return item.id === movie.id
-    })
-
-    if (element) {
-      return true
-    } else {
-      return false
-    }
-  }
-
-  const seenStatus = () => {
-    const element = props.seenList.find(item => {
-      return item.id === props.movie.id
-    })
-    if (element) {
-      return true
-    } else {
-      return false
-    }
-  }
+  const seenListEntry = seenList.filter(item => {
+    return item.movieId === movie.id
+  })[0]
 
   const [redirect, setRedirect] = useState()
-  const [watchColor, setWatchColor] = useState(watchStatus)
-  const [isAdded, setIsAdded] = useState(watchStatus)
-  const [isSeen, setIsSeen] = useState(seenStatus)
-  const [seenColor, setSeenColor] = useState(seenStatus)
 
   const handleClick = () => {
     setRedirect(movie.id)
   }
 
-  const handleSeen = () => {
-    const icon = isSeen
-    const color = seenColor
-
-    if (isSeen) {
-      setSeenColor(!color)
-      setIsSeen(!icon)
-      props.dispatch(unseen(props.movie.id))
+  const handleWatch = () => {
+    if (!watchListEntry) {
+      addMovieToWatchList(movie.id)
+        .then(() => {
+          dispatch(getWatchList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     } else {
-      setSeenColor(!color)
-      setIsSeen(!icon)
-      props.dispatch(seen(props.movie.id))
+      removeMovieFromWatchList(watchListEntry.id)
+        .then(() => {
+          dispatch(getWatchList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     }
   }
 
-  const handleWatch = () => {
-    const icon = isAdded
-    const color = watchColor
-    if (isAdded) {
-      setWatchColor(!color)
-      setIsAdded(!icon)
-      dispatch(removeFromWatchlist(movie.id))
+  const handleSeen = () => {
+    if (!seenListEntry) {
+      addMovieToSeenList(movie.id)
+        .then(() => {
+          dispatch(getSeenList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     } else {
-      setWatchColor(!color)
-      setIsAdded(!icon)
-      dispatch(addToWatchlist(movie))
+      removeMovieFromSeenList(seenListEntry.id)
+        .then(() => {
+          dispatch(getSeenList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     }
-
-    setWatchColor(!color)
-    setIsAdded(!icon)
   }
 
   const renderRedirect = () => {
-    if (redirect) { return <Redirect push to={`/movie/${redirect}`} /> }
+    if (redirect) {
+      return <Redirect push to={`/movie/${redirect}`} />
+    }
   }
 
   return (
     <>
-    {renderRedirect()}
-    <Container className={classes.list}>
-      <div className={classes.root}>
-        <Paper className={classes.paper}>
-          <Grid container spacing={2}>
-            <Grid item>
-              <ButtonBase className={classes.image}>
-                <img className={classes.img} alt="complex" src={`https://image.tmdb.org/t/p/w200${movie.image}`} />
-              </ButtonBase>
-            </Grid>
-            <Grid item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={2}>
-                <Grid item xs>
-                  <Typography gutterBottom className={classes.text} onClick={handleClick}>
-                    {movie.title}
-                  </Typography>
-                  <Box>
-                    <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1}/>
+      {renderRedirect()}
+      <Container className={classes.list}>
+        <div className={classes.root}>
+          <Paper className={classes.paper}>
+            <Grid container spacing={2}>
+              <Grid item>
+                <ButtonBase className={classes.image}>
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                  />
+                </ButtonBase>
+              </Grid>
+              <Grid item xs={12} sm container>
+                <Grid item xs container direction="column" spacing={2}>
+                  <Grid item xs>
+                    <Typography
+                      gutterBottom
+                      className={classes.text}
+                      onClick={handleClick}
+                    >
+                      {movie.title}
+                    </Typography>
+                    <Box>
+                      <StyledRating
+                        name="half-rating"
+                        value={movie.rating / 2}
+                        readOnly
+                        precision={0.1}
+                      />
+                    </Box>
+                  </Grid>
+                  <Grid item>
+                    <Button
+                      size="small"
+                      className={classes.button}
+                      onClick={handleClick}
+                    >
+                      SEE MORE
+                    </Button>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Box display="flex" justifyContent="flex-end" m={0} p={0}>
+                    {movie.movieTests.map(x => {
+                      if (x.result) return <Avatars key={x.testType} test={x} />
+                      else return null
+                    })}
                   </Box>
+                  {isAuthenticated() && <div className={classes.topMargin}>
+                    <Button
+                      size="small"
+                      className={classes.seenButton}
+                      style={{
+                        backgroundColor: seenListEntry ? '#A9DA71' : '#DADADA'
+                      }}
+                      onClick={handleSeen}
+                    >
+                      <i className={classes.icon}>
+                        {seenListEntry ? 'visibility' : 'visibility_off'}
+                      </i>
+                      &nbsp;SEEN
+                    </Button>
+                    <Button
+                      size="small"
+                      className={classes.watchButton}
+                      style={{
+                        backgroundColor: watchListEntry ? '#A9DA71' : '#DADADA'
+                      }}
+                      onClick={handleWatch}
+                    >
+                      <i className={classes.icon}>
+                        {watchListEntry ? 'check_box' : 'add_to_queue'}
+                      </i>
+                      &nbsp;WATCHLIST
+                    </Button>
+                  </div>}
                 </Grid>
-                <Grid item>
-                  <Button size="small" className={classes.button} onClick={handleClick}>SEE MORE</Button>
-                </Grid>
-              </Grid>
-              <Grid>
-                <Box display="flex" justifyContent="flex-end" m={0} p={0}>
-                  {movie.movieTests.map(x => {
-                    if (x.result) return <Avatars key={x.testType} test={x} />
-                    else return null
-                  })
-                  }
-                </Box>
-                <div className={classes.topMargin}>
-                  <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
-                    <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>&nbsp;SEEN
-                  </Button>
-                  <Button size="small" className={classes.watchButton} style={{ backgroundColor: watchColor ? '#A9DA71' : '#DADADA' }} onClick={handleWatch}>
-                    <i className={classes.icon}>{ isAdded ? 'check_box' : 'add_to_queue'}</i>&nbsp;WATCHLIST
-                  </Button>
-                </div>
               </Grid>
             </Grid>
-          </Grid>
-        </Paper>
-      </div>
-    </Container>
+          </Paper>
+        </div>
+      </Container>
     </>
   )
 }

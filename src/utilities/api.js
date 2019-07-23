@@ -1,10 +1,25 @@
-const request = require('superagent')
+import request from 'superagent'
 
-const addCommentAPI = (comment) => {
-  return request.post('/movie-api/comment')
-    .send(comment)
+import { getAuthorizationHeader } from '../auth'
+
+export const addMovieToWatchList = movieId => {
+  return request.post('/movie-api/watchlist').send({ movieId }).set(getAuthorizationHeader())
 }
 
-module.exports = {
-  addCommentAPI
+export const addMovieToSeenList = movieId => {
+  return request.post('/movie-api/seenlist').send({ movieId }).set(getAuthorizationHeader())
+}
+
+export const removeMovieFromWatchList = movieId => {
+  return request.del('/movie-api/watchlist').send({ movieId }).set(getAuthorizationHeader())
+}
+
+export const removeMovieFromSeenList = movieId => {
+  return request.put('/movie-api/seenlist').send({
+    movieId }).set(getAuthorizationHeader())
+}
+
+export const addCommentAPI = (comment) => {
+  return request.post('/movie-api/comment')
+    .send(comment)
 }
