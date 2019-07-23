@@ -18,7 +18,6 @@ function newAnswer (arr, action) {
     const newArr = arr.map(el => {
       if (el.id === action.questions.id) {
         el.answer = action.questions.answer
-        console.log(el)
         return el
       } else return el
     })

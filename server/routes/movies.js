@@ -8,7 +8,6 @@ const { findMovieFromAPI, getMoviesFromAPI } = require('./routeHelpers')
 const db = require('../db/db')
 
 router.post('/comment', decodeToken, (req, res) => {
-  console.log('hit the route!')
   const id = req.user.id
   const usersComment = {
     movie_id: req.body.movieId,
