@@ -257,7 +257,6 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)',
     position: 'absolute'
   },
-
   Typography: {
     fontFamily: 'Roboto',
     textAlign: 'center',
@@ -430,7 +429,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 0, 4, 0)
   },
   title: {
-    display: 'inline',
+    display: 'line',
     fontSize: '2.5rem'
   },
   year: {
@@ -542,13 +541,43 @@ export const FilterStyles = makeStyles(theme => ({
   }
 }))
 
-export const QuizStyle = makeStyles(theme => ({
+export const QuizStyles = makeStyles(theme => ({
   question: {
-    fontSize: '1.5em',
-    color: 'black'
+    fontSize: '2em',
+    color: 'white'
   },
   content: {
-    padding: '2em'
+    marginTop: '2em',
+    paddingTop: '3em',
+    width: '70%',
+    backgroundColor: 'white'
+  },
+  result: {
+    color: 'white',
+    marginTop: '8em',
+    marginLeft: '20%',
+    marginBottom: '5em',
+    height: '65vh'
+  },
+  icon: {
+    height: '1.5em',
+    margin: '1em'
+  },
+  button: {
+    padding: '5em'
+  }
+}))
+
+export const QuizQuestionStyles = makeStyles(theme => ({
+  question: {
+    fontSize: '1em',
+    color: '#333'
+  },
+  intro: {
+    color: 'white'
+  },
+  button: {
+    margin: '2em'
   }
 }))
 
