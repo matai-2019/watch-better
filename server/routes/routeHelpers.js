@@ -33,8 +33,13 @@ const addCommentAPI = (comment) => {
     .send(comment)
 }
 
+const getCommentAPI = (movieId) => {
+  return request.get(`/movie-api/comments/${movieId}`)
+}
+
 module.exports = {
   findMovieFromAPI,
   getMoviesFromAPI,
-  addCommentAPI
+  addCommentAPI,
+  getCommentAPI
 }

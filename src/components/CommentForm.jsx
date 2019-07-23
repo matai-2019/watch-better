@@ -5,7 +5,7 @@ import { Rating } from '@material-ui/lab'
 import { Paper, TextField, Box, Typography, Button, withStyles } from '@material-ui/core'
 
 import { CommentFormStyles } from '../style/muiStyles'
-import { addCommentAPI } from '../../server/routes/routeHelpers'
+import { addCommentAPI } from '../utilities/api'
 import { isAuthenticated } from '../auth'
 
 const StyledRating = withStyles({
