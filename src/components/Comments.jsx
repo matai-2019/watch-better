@@ -13,7 +13,7 @@ const Comments = ({ movieId }) => {
   const classes = CommentsStyles()
 
   const [comments, setComments] = useState([])
-  const [dummy, setDummy] = useState('')
+  const [dummy, setDummy] = useState(1)
 
   useEffect(() => {
     request.get(`/movie-api/comments/${movieId}`)
