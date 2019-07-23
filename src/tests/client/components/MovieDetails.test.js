@@ -14,7 +14,7 @@ import testStore from './stores/MovieDetailsTestStore'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieDetails component tests', () => {
-  it('<MovieDetails /> contains 12 Typography tags', () => {
+  it('<MovieDetails /> contains 14 Typography tags', () => {
     const mockStore = configureStore([thunk])(testStore)
     const wrapper = mount(
       <Provider store={mockStore}>
@@ -24,6 +24,6 @@ describe('MovieDetails component tests', () => {
       </Provider>
     )
     const actual = wrapper.find(Typography)
-    expect(actual).toHaveLength(12)
+    expect(actual).toHaveLength(14)
   })
 })
