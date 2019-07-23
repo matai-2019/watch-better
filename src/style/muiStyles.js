@@ -338,7 +338,7 @@ export const NavBarStyles = makeStyles(theme => ({
   }
 }))
 
-export const MovieDetailAvatarStyles = makeStyles(theme => ({
+export const AvatarsHoverStyles = makeStyles(theme => ({
   popover: {
     pointerEvents: 'none'
   },
@@ -364,7 +364,7 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     color: '#333',
     backgroundColor: '#FFDF59',
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2.5,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -453,7 +453,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     color: '#333',
     backgroundColor: '#FFDF59',
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     width: 30,
     height: 30,
     fontSize: 15,
