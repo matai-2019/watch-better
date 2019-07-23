@@ -7,6 +7,7 @@ import MovieDetailAvatars from './MovieDetailAvatars'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
+import CommentForm from './CommentForm'
 import Cast from './Cast'
 
 const StyledRating = withStyles({
@@ -90,9 +91,9 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
               </Typography>
             </div>
             <div>
-              <Typography variant="body2" style={{ marginTop: 30 }} gutterBottom>
+              <Box style={{ marginTop: 30 }} >
                 <StyledRating name="half-rating" value={movieDetails.rating / 2} readOnly precision={0.1}/>
-              </Typography>
+              </Box>
             </div>
           </Grid>
         </Grid>

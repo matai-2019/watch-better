@@ -10,13 +10,13 @@ export default function Cast ({ cast }) {
   return (
     <Container>
       <Typography variant="h6" component="h2" className={classes.title}>
-        Top billed cast
+        Top Billed Cast
       </Typography>
       <Grid container justify="center">
         {cast &&
           cast.slice(0, 6)
             .map(castMember => (
-              <Grid item key={castMember.name} xs="12" sm="2">
+              <Grid item key={castMember.name} xs={12} sm={2}>
                 <CastMember key={castMember.name} castMember={castMember} />
               </Grid>
             ))

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { WatchlistStyles } from '../style/muiStyles'
 import PropTypes from 'prop-types'
@@ -14,6 +15,7 @@ import {
 
 import WatchlistItem from './WatchlistItem'
 import { removeFromWatchlist } from '../actions/watchlist'
+import { isAuthenticated } from '../auth'
 
 const ElevationScroll = props => {
   const { children, window } = props
@@ -46,7 +48,8 @@ const Watchlist = (props) => {
   }
 
   return (
-    <>
+    isAuthenticated()
+      ? <>
       <CssBaseline />
       <ElevationScroll {...props}>
         <AppBar className={classes.app}>
@@ -71,6 +74,8 @@ const Watchlist = (props) => {
         </div>
       </Container>
     </>
+
+      : <Redirect to="/login" />
   )
 }
 
@@ -83,6 +88,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(Watchlist)
 
 Watchlist.propTypes = {
-  watchlist: PropTypes.object,
+  watchlist: PropTypes.array,
   dispatch: PropTypes.func
 }

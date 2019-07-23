@@ -13,12 +13,12 @@ const renderInput = inputProps => {
 
   return (
     <TextField
+      className={classes.label}
       InputProps={{
         inputRef: ref,
         classes: {
           root: classes.inputRoot,
-          input: classes.inputInput,
-          label: classes.label
+          input: classes.inputInput
         },
         ...InputProps
       }}

@@ -87,9 +87,7 @@ const WatchlistItem = (props) => {
                       </Typography>
                     </Box>
                     <Box>
-                      <Typography variant="body2" gutterBottom>
-                        <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
-                      </Typography>
+                      <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
                     </Box>
                   </Box>
                 </Grid>

@@ -257,7 +257,6 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)',
     position: 'absolute'
   },
-
   Typography: {
     fontFamily: 'Roboto',
     textAlign: 'center',
@@ -355,8 +354,9 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     maxWidth: '50%',
     borderRadius: '0.3vw'
   },
-  text: {
-    fontSize: '28px'
+  movieTestText: {
+    fontSize: '1.10rem',
+    fontWeight: '500'
   },
   avatar: {
     color: '#333',
@@ -429,7 +429,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     padding: theme.spacing(3, 0, 4, 0)
   },
   title: {
-    display: 'inline',
+    display: 'line',
     fontSize: '2.5rem'
   },
   year: {
@@ -460,26 +460,51 @@ export const MovieDetailsStyles = makeStyles(theme => ({
 }))
 
 export const RecommendationsStyles = makeStyles({
+  carousel: {
+    display: 'flex',
+    justifyContent: 'center',
+    backgroundColor: '#333333'
+  },
   card: {
-    width: 200,
-    height: 370,
-    margin: theme.spacing(2)
+    flexGrow: 1,
+    borderRadius: 0,
+    backgroundColor: 'black',
+    height: '725px'
+  },
+  ourTopPicks: {
+    marginBottom: '-60px',
+    display: 'inline-flex',
+    padding: '0'
   },
   media: {
-    height: 290,
-    alignContent: 'center',
-    display: 'flex'
+    height: '725px',
+    alignItems: 'center',
+    display: 'flex',
+    transition: 'all 1s',
+    '&:hover': {
+      transform: 'scale(1.06)',
+      opacity: 0.6
+    }
+  },
+  title: {
+    color: 'white',
+    fontSize: '25px',
+    fontWeight: 600
   },
   testIcons: {
-    marginTop: '250px',
-    marginLeft: '10px',
-    display: 'inline-flex',
-    height: 290
+    display: 'Flex',
+    marginTop: '-90px',
+    marginLeft: '40%'
   },
   button: {
-    border: 'solid 2px #333',
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    border: 'solid 2.5px #FFDF59',
+    marginTop: '-1360px',
+    bottom: '500%',
+    width: '270px',
+    height: '55px',
+    marginLeft: '41%',
+    backgroundColor: '#FFDF5930',
+    color: '#FFDF59',
     '&:hover': {
       backgroundColor: '#FFDF59',
       border: 'solid 2px #333',
@@ -516,13 +541,43 @@ export const FilterStyles = makeStyles(theme => ({
   }
 }))
 
-export const QuizStyle = makeStyles(theme => ({
+export const QuizStyles = makeStyles(theme => ({
   question: {
-    fontSize: '1.5em',
-    color: 'black'
+    fontSize: '2em',
+    color: 'white'
   },
   content: {
-    padding: '2em'
+    marginTop: '2em',
+    paddingTop: '3em',
+    width: '70%',
+    backgroundColor: 'white'
+  },
+  result: {
+    color: 'white',
+    marginTop: '8em',
+    marginLeft: '20%',
+    marginBottom: '5em',
+    height: '65vh'
+  },
+  icon: {
+    height: '1.5em',
+    margin: '1em'
+  },
+  button: {
+    padding: '5em'
+  }
+}))
+
+export const QuizQuestionStyles = makeStyles(theme => ({
+  question: {
+    fontSize: '1em',
+    color: '#333'
+  },
+  intro: {
+    color: 'white'
+  },
+  button: {
+    margin: '2em'
   }
 }))
 
@@ -571,6 +626,72 @@ export const CastMemberStyles = makeStyles({
 
 export const CastStyles = makeStyles(theme => ({
   title: {
-    marginTop: theme.spacing()
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(1.6),
+    color: '#FFDF59',
+    fontSize: '1.25rem',
+    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+    fontWeight: '500',
+    lineHeight: '1.6',
+    letterSpacing: '0.0075em'
+  }
+}))
+
+export const RegisterStyles = makeStyles(theme => ({
+  paper: {
+    marginTop: theme.spacing(20),
+    marginBottom: theme.spacing(5),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(3)
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2)
+  },
+  lock: {
+    color: theme.palette.primary.main
+  },
+  textfield: {
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#FFDF59'
+      },
+      '&:hover fieldset': {
+        borderColor: '#FFDF59'
+      }
+    }
+  },
+  textfieldColor: {
+    color: '#FFDF59'
+  },
+  link: {
+    color: '#FFDF59',
+    textDecoration: 'none'
+  }
+}))
+
+export const CommentFormStyles = makeStyles(theme => ({
+  text: {
+    color: theme.palette.primary
+  },
+  paper: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em'
+  },
+  comment: {
+    width: '90%',
+    margin: '1em'
+  },
+  filter: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em',
+    backgroundColor: 'gray',
+    opacity: '.8'
   }
 }))
