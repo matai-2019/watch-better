@@ -47,8 +47,15 @@ const getMovieById = (id, db = connection) => {
     })
 }
 
+const getComments = (movieId, db = connection) => {
+  return db('comments')
+    .where('movie_id', movieId)
+    .select('comment', 'user_rating', 'created')
+}
+
 module.exports = {
   close,
   getMovieById,
-  getAllMovies
+  getAllMovies,
+  getComments
 }
