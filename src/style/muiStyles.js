@@ -693,11 +693,15 @@ export const CommentsStyles = makeStyles(theme => ({
   commentsContainer: {
     display: 'flex',
     padding: '3em',
-    height: '400px'
+    height: 400
+  },
+  commentsList: {
+    maxHeight: 300,
+    overflow: 'auto'
   },
   comment: {
     flexGrow: 2,
-    maxWidth: '500px',
+    maxWidth: 500,
     float: 'right'
   }
 }))

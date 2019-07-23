@@ -29,7 +29,7 @@ const Comments = ({ movieId }) => {
     <Paper classes={classes.commentsContainer}>
       <Container>
         <Grid container justify="center" >
-          <Grid item xs={6}>
+          <Grid item xs={6} className={classes.commentsList}>
             {
               comments && comments.map(comment => {
                 return (<Comment key={comment.id} comment={comment} />)
