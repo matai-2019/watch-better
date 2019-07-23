@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
-  Avatar,
   Button,
   TextField,
   Grid,
@@ -161,4 +161,8 @@ export default function Register (props) {
       </div>
     </Container>
   )
+}
+
+Register.propTypes = {
+  history: PropTypes.array
 }

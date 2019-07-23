@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import {
-  Avatar,
   Button,
   TextField,
-  FormControlLabel,
-  Checkbox,
   Grid,
   Typography,
   Container
@@ -13,7 +11,7 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { RegisterStyles } from '../style/muiStyles'
-import { isAuthenticated, signIn, logOff } from '../auth'
+import { isAuthenticated, signIn } from '../auth'
 
 export default function Login (props) {
   const classes = RegisterStyles()
@@ -116,4 +114,8 @@ export default function Login (props) {
       </div>
     </Container>
   )
+}
+
+Login.propTypes = {
+  history: PropTypes.array
 }
