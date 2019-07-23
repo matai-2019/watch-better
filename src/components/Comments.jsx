@@ -31,7 +31,7 @@ const Comments = ({ movieId }) => {
       <Container >
         {
           comments && comments.map(comment => {
-            return (<Comment key={comment.id} comment={comment} />)
+            return (<Comment key={comment.id} comment={comment} thing={setDummy}/>)
           })
         }
       </Container>

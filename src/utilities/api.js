@@ -23,3 +23,8 @@ export const addCommentAPI = (comment) => {
     .send(comment)
     .set(getAuthorizationHeader())
 }
+
+export const deleteComment = (commentId) => {
+  return request.del(`/movie-api/comment/${commentId}`)
+    .set(getAuthorizationHeader())
+}

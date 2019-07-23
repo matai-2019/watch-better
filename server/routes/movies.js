@@ -26,8 +26,9 @@ router.get('/comments/:movieId', (req, res) => {
     .catch(err => res.status(500).send(err.message))
 })
 
-router.delete('/comment/:id', (req, res) => {
-  db.delComment(Number(req.params.id))
+router.delete('/comment/:commentId', decodeToken, (req, res) => {
+  const id = req.user.id
+  db.delComment(Number(req.params.commentId), id)
     .then(msg => res.status(200).send(`Deleted ${msg} comment`))
     .catch(err => res.status(500).send(err.message))
 })

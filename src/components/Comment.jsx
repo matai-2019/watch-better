@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Typography } from '@material-ui/core'
+import { Card, Typography, Button } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
 import { CommentsStyles } from '../style/muiStyles'
+import { deleteComment } from '../utilities/api'
+import { isAuthenticated } from '../auth'
 
-const Comment = ({ comment: { userRating, firstName, comment, created } }) => {
+const Comment = ({ thing, comment: { id, userRating, firstName, comment, created } }) => {
   const classes = CommentsStyles()
+
+  const handleDelete = () => {
+    return deleteComment(id)
+      .then(data => {
+        thing(data)
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
+  }
   return (
     <>
       <br />
@@ -22,13 +34,17 @@ const Comment = ({ comment: { userRating, firstName, comment, created } }) => {
         <Typography variant="p">
           {created}
         </Typography>
+        {
+          isAuthenticated() && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>
+        }
       </Card>
     </>
   )
 }
 
 Comment.propTypes = {
-  comment: PropTypes.object
+  comment: PropTypes.object,
+  thing: PropTypes.func
 }
 
 export default Comment

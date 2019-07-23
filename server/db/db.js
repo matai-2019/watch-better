@@ -95,8 +95,9 @@ const addComment = (comment, db = connection) => {
     .insert(comment)
 }
 
-const delComment = (commentId, db = connection) => {
+const delComment = (commentId, userId, db = connection) => {
   return db('comments')
+    .where('user_id', userId)
     .where('id', commentId)
     .del()
 }
