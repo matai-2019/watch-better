@@ -59,7 +59,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
           autoPlayInterval={3300}
           duration={500}
           autoPlayDirection="ltr"
-          autoPlay={false}
+          autoPlay={true}
           fadeOutAnimation={false}
           mouseDragEnabled={true}
           dotsDisabled={true}
