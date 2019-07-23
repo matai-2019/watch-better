@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
 import {
-  Avatar,
   Button,
   TextField,
-  FormControlLabel,
-  Checkbox,
   Grid,
   Typography,
   Container
@@ -13,7 +11,7 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { RegisterStyles } from '../style/muiStyles'
-import { isAuthenticated, signIn, logOff } from '../auth'
+import { isAuthenticated, signIn } from '../auth'
 
 export default function Login (props) {
   const classes = RegisterStyles()
@@ -30,28 +28,28 @@ export default function Login (props) {
     })
   }
 
-  const handleClick = (e) => {
+  const handleClick = e => {
     e.preventDefault()
-    signIn({
-      email: form.email,
-      password: form.password
-    }, {
-      baseUrl: process.env.REACT_APP_BASE_API_URL // see .env and webpack.config.js
+    signIn(
+      {
+        email: form.email,
+        password: form.password
+      },
+      {
+        baseUrl: process.env.REACT_APP_BASE_API_URL // see .env and webpack.config.js
+      }
+    ).then(token => {
+      if (isAuthenticated()) {
+        props.history.push('/')
+      }
     })
-      .then((token) => {
-        if (isAuthenticated()) {
-          props.history.push('/')
-        }
-      })
   }
 
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          {isAuthenticated() && <LockOutlinedIcon />}
-        </Avatar>
-        <Typography component="h1" variant="h5">
+        <LockOutlinedIcon className={classes.lock}/>
+        <Typography component="h1" color="primary" variant="h5">
           Sign in
         </Typography>
         <form className={classes.form} noValidate>
@@ -67,6 +65,13 @@ export default function Login (props) {
             autoFocus
             value={form.email}
             onChange={handleChange}
+            InputProps={{
+              className: classes.textfieldColor
+            }}
+            InputLabelProps={{
+              className: classes.textfieldColor
+            }}
+            className={classes.textfield}
           />
           <TextField
             variant="outlined"
@@ -80,10 +85,13 @@ export default function Login (props) {
             autoComplete="current-password"
             value={form.password}
             onChange={handleChange}
-          />
-          <FormControlLabel
-            control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            InputProps={{
+              className: classes.textfieldColor
+            }}
+            InputLabelProps={{
+              className: classes.textfieldColor
+            }}
+            className={classes.textfield}
           />
           <Button
             type="submit"
@@ -96,20 +104,18 @@ export default function Login (props) {
             Sign In
           </Button>
           <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
             <Grid item>
-              <Link to="/register">
+              <Link className={classes.link} to="/register">
                 {"Don't have an account? Sign Up"}
               </Link>
-              <Button onClick={logOff}> LogOff</Button>
             </Grid>
           </Grid>
         </form>
       </div>
     </Container>
   )
+}
+
+Login.propTypes = {
+  history: PropTypes.array
 }

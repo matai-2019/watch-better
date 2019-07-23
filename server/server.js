@@ -10,6 +10,7 @@ server.use(pino)
 
 server.use(express.static('public'))
 server.use('/movie-api/', router)
+
 server.use('/', authRoutes)
 
 module.exports = server

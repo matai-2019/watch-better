@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import {
-  Avatar,
   Button,
   TextField,
   Grid,
@@ -11,7 +11,6 @@ import {
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { register, isAuthenticated } from '../auth'
-
 import { RegisterStyles } from '../style/muiStyles'
 
 export default function Register (props) {
@@ -52,11 +51,9 @@ export default function Register (props) {
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Sign up
+        <LockOutlinedIcon className={classes.lock}/>
+        <Typography color="primary" component="h1" variant="h5">
+          Sign Up
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -67,11 +64,18 @@ export default function Register (props) {
                 variant="outlined"
                 required
                 fullWidth
+                InputProps={{
+                  className: classes.textfieldColor
+                }}
+                InputLabelProps={{
+                  className: classes.textfieldColor
+                }}
                 id="firstName"
                 label="First Name"
                 autoFocus
                 onChange={handleChange}
                 value={form.firstName}
+                className={classes.textfield}
               />
             </Grid>
             <Grid item xs={12} sm={6}>
@@ -81,10 +85,17 @@ export default function Register (props) {
                 fullWidth
                 id="lastName"
                 label="Last Name"
+                InputProps={{
+                  className: classes.textfieldColor
+                }}
+                InputLabelProps={{
+                  className: classes.textfieldColor
+                }}
                 name="lastName"
                 autoComplete="lname"
                 onChange={handleChange}
                 value={form.lastName}
+                className={classes.textfield}
               />
             </Grid>
             <Grid item xs={12}>
@@ -94,10 +105,17 @@ export default function Register (props) {
                 fullWidth
                 id="email"
                 label="Email Address"
+                InputProps={{
+                  className: classes.textfieldColor
+                }}
+                InputLabelProps={{
+                  className: classes.textfieldColor
+                }}
                 name="email"
                 autoComplete="email"
                 onChange={handleChange}
                 value={form.email}
+                className={classes.textfield}
               />
             </Grid>
             <Grid item xs={12}>
@@ -107,11 +125,18 @@ export default function Register (props) {
                 fullWidth
                 name="password"
                 label="Password"
+                InputProps={{
+                  className: classes.textfieldColor
+                }}
+                InputLabelProps={{
+                  className: classes.textfieldColor
+                }}
                 type="password"
                 id="password"
                 autoComplete="current-password"
                 onChange={handleChange}
                 value={form.password}
+                className={classes.textfield}
               />
             </Grid>
           </Grid>
@@ -127,7 +152,7 @@ export default function Register (props) {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/login">
+              <Link className={classes.link} to="/login">
                 Already have an account? Sign in
               </Link>
             </Grid>
@@ -136,4 +161,8 @@ export default function Register (props) {
       </div>
     </Container>
   )
+}
+
+Register.propTypes = {
+  history: PropTypes.array
 }

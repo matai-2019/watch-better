@@ -653,14 +653,11 @@ export const CastStyles = makeStyles(theme => ({
 
 export const RegisterStyles = makeStyles(theme => ({
   paper: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(20),
+    marginBottom: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center'
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
   },
   form: {
     width: '100%', // Fix IE 11 issue.
@@ -668,5 +665,47 @@ export const RegisterStyles = makeStyles(theme => ({
   },
   submit: {
     margin: theme.spacing(3, 0, 2)
+  },
+  lock: {
+    color: theme.palette.primary.main
+  },
+  textfield: {
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#FFDF59'
+      },
+      '&:hover fieldset': {
+        borderColor: '#FFDF59'
+      }
+    }
+  },
+  textfieldColor: {
+    color: '#FFDF59'
+  },
+  link: {
+    color: '#FFDF59',
+    textDecoration: 'none'
+  }
+}))
+
+export const CommentFormStyles = makeStyles(theme => ({
+  text: {
+    color: theme.palette.primary
+  },
+  paper: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em'
+  },
+  comment: {
+    width: '90%',
+    margin: '1em'
+  },
+  filter: {
+    width: '35%',
+    margin: '2em',
+    padding: '1em',
+    backgroundColor: 'gray',
+    opacity: '.8'
   }
 }))
