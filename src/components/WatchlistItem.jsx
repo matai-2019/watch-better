@@ -15,6 +15,7 @@ import {
 import Rating from '@material-ui/lab/Rating'
 
 import { removeFromWatchlist } from '../actions/watchlist'
+import { seen, unseen } from '../actions/seenList'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -27,9 +28,20 @@ const StyledRating = withStyles({
 const WatchlistItem = (props) => {
   const classes = WatchlistItemStyles(props)
 
+  const seenStatus = () => {
+    const element = props.seenList.find(item => {
+      return item.id === props.movie.id
+    })
+    if (element) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const [redirect, setRedirect] = useState()
-  const [isSeen, setIsSeen] = useState(false)
-  const [seenColor, setSeenColor] = useState(false)
+  const [isSeen, setIsSeen] = useState(seenStatus)
+  const [seenColor, setSeenColor] = useState(seenStatus)
 
   const handleClick = () => {
     setRedirect(props.movie.id)
@@ -38,12 +50,15 @@ const WatchlistItem = (props) => {
   const handleSeen = () => {
     const icon = isSeen
     const color = seenColor
+
     if (isSeen) {
-      setIsSeen(!icon)
       setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(unseen(props.movie.id))
     } else {
-      setIsSeen(!icon)
       setSeenColor(!color)
+      setIsSeen(!icon)
+      props.dispatch(seen(props.movie.id))
     }
   }
 
@@ -79,7 +94,7 @@ const WatchlistItem = (props) => {
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
+              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }} onClick={handleSeen}>
                 <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>
               </Button>
               <Button size="small" className={classes.removeButton} onClick={handleRemove}>
@@ -96,7 +111,14 @@ const WatchlistItem = (props) => {
 
 WatchlistItem.propTypes = {
   movie: PropTypes.object,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  seenList: PropTypes.object
 }
 
-export default connect()(WatchlistItem)
+const mapStateToProps = ({ seenList }) => {
+  return {
+    seenList
+  }
+}
+
+export default connect(mapStateToProps)(WatchlistItem)
