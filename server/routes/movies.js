@@ -7,6 +7,12 @@ const { findMovieFromAPI, getMoviesFromAPI } = require('./routeHelpers')
 
 const db = require('../db/db')
 
+router.get('/comments/:id', (req, res) => {
+  db.getComments(Number(req.params.id))
+    .then(comments => res.status(200).json(comments))
+    .catch(err => res.status(500).send(err.message))
+})
+
 router.get('/:id', (req, res) => {
   const { id } = req.params
   db.getMovieById(id).then(movieLocal => {
