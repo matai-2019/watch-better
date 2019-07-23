@@ -8,6 +8,7 @@ import SearchIcon from '@material-ui/icons/Search'
 
 import { NavBarStyles } from '../style/muiStyles'
 import Search from './Search'
+import { isAuthenticated, logOff } from '../auth'
 
 const StyledBadge = withStyles(() => ({
   badge: { top: '20%', right: '-7%' }
@@ -25,11 +26,11 @@ function NavBar (props) {
               CURATION THROUGH A LENS OF DIVERSITY
             </Typography>
           </Link>
-          <div className={classes.divide}>
+          {isAuthenticated() && <div className={classes.divide}>
             <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
               <Button className={classes.watchButton}><Link to="/movies/watchlist" className={classes.link}>Watchlist</Link></Button>
             </StyledBadge>
-          </div>
+          </div>}
           <Button className={classes.navButton}><Link to="/quiz" className={classes.link}>Test A Movie</Link></Button>
           <div className={classes.search}>
             <Grid container spacing={1} alignItems="flex-end">
@@ -41,6 +42,7 @@ function NavBar (props) {
               </Grid>
             </Grid>
           </div>
+          {isAuthenticated() ? <Link to="/" onClick={logOff} ><img src="/icons/logout.svg" alt=""/></Link> : <Link to="/login"><img src="/icons/login.svg" alt=""/></Link>}
         </Toolbar>
       </AppBar>
     </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
@@ -17,7 +18,6 @@ import MovieDetails from './MovieDetails'
 import MovieList from './MovieList'
 import Watchlist from './Watchlist'
 import ErrorMessage from './ErrorMessage'
-import WaitIndicator from './WaitIndicator'
 
 const App = ({error, pending}) => {
   return (
@@ -27,7 +27,6 @@ const App = ({error, pending}) => {
         <Route path='/' component={NavBar} />
         <Route path="/" exact component={Recommendations} />
         {error && <ErrorMessage />}
-        {/* {pending && <WaitIndicator />} */}
         <Switch>
           <Route path="/" exact component={MovieTestDetails} />
           <Route path="/movie/:id" component={MovieDetails} />
@@ -52,3 +51,8 @@ const mapStateToProps = ({ info: { error, pending } }) => {
 }
 
 export default connect(mapStateToProps)(App)
+
+App.propTypes = {
+  error: PropTypes.bool,
+  pending: PropTypes.bool
+}

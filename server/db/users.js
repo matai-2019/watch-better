@@ -21,7 +21,6 @@ function createUser ({ firstName, lastName, email, password }, db = connection) 
 }
 
 function userExists (email, db = connection) {
-  console.log(email)
   return db('users')
     .count('id as n')
     .where('email', email)
