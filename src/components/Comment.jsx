@@ -5,9 +5,20 @@ import { Paper, Typography } from '@material-ui/core'
 const Comment = (props) => {
   return (
     <>
+      <br />
       <Paper>
+        <Typography variant="p">
+          {props.user_rating}
+        </Typography>
         <Typography variant="h6">
-          {props.user_id}
+          {props.name}
+        </Typography>
+        <Typography variant="p">
+          {props.comment}
+        </Typography>
+        <br />
+        <Typography variant="p">
+          {props.created}
         </Typography>
       </Paper>
     </>
@@ -17,6 +28,7 @@ const Comment = (props) => {
 Comment.propTypes = {
   user_id: PropTypes.number,
   movie_id: PropTypes.number,
+  name: PropTypes.string,
   key: PropTypes.number,
   comment: PropTypes.string,
   user_rating: PropTypes.number,

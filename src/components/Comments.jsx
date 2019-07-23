@@ -15,16 +15,18 @@ class Comments extends React.Component {
     {
       id: 1,
       movie_id: 2,
+      name: 'Jared Tasker',
       user_id: 2,
-      comment: 'This movie sucks',
+      comment: 'HOW sexy is Chris Hemsworth?!?!? omg omg omg',
       user_rating: 2,
       created: '2019-07-23 00:31:46'
     },
     {
       id: 2,
       movie_id: 2,
+      name: 'Raaya Pathare',
       user_id: 3,
-      comment: 'This movie sucks',
+      comment: 'This movie rules',
       user_rating: 2,
       created: '2019-07-23 00:52:46'
     }
@@ -33,10 +35,11 @@ class Comments extends React.Component {
   render () {
     return (
       <Container fixed>
-        {data.map(comment => {
+        {this.data.map(comment => {
           return <Comment 
           key={comment.id} 
-          movie_id={comment.movie_id} 
+          movie_id={comment.movie_id}
+          name={comment.name}
           user_id={comment.user_id} 
           comment={comment.comment}
           user_rating={comment.user_rating}
@@ -47,4 +50,4 @@ class Comments extends React.Component {
   }
 }
 
-export default connect(mapStateToProps)(Comments)
+export default connect()(Comments)
