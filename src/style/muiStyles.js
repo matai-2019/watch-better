@@ -471,8 +471,8 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '720px',
-    marginTop: 64
+    height: '720px'
+    // marginTop: 64
   },
   ourTopPicks: {
     marginBottom: '-60px',
@@ -506,12 +506,15 @@ export const RecommendationsStyles = makeStyles({
     bottom: '0',
     padding: '1'
   },
+  buttonWrapper: {
+    width: '270px',
+    margin: '0 auto',
+    marginBottom: '-90px',
+    transform: 'translate(-0px, -700px)'
+  },
   button: {
     alignItems: 'center',
     border: 'solid 2.5px #FFDF59',
-    marginTop: '-1375px',
-    marginLeft: '41%',
-    bottom: '500%',
     width: '270px',
     height: '55px',
     backgroundColor: '#FFDF5930',
