@@ -52,7 +52,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
     color: '#222',
     backgroundColor: '#FFDF59',
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     padding: 2,
     width: 30,
     height: 30,
@@ -490,8 +490,8 @@ export const RecommendationsStyles = makeStyles({
     }
   },
   testIcons: {
-    marginLeft: '.5%',
-    marginBottom: '.5%',
+    marginLeft: '2%',
+    marginBottom: '2%',
     position: 'fixed',
     bottom: 0,
     padding: 1
