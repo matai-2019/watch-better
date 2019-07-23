@@ -49,10 +49,11 @@ export const MovieListItemStyles = makeStyles(theme => ({
     cursor: 'pointer'
   },
   avatar: {
-    color: '#333',
+    color: '#222',
     backgroundColor: '#FFDF59',
     border: '2px solid #333',
     margin: 1.2,
+    padding: 2,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -463,13 +464,15 @@ export const RecommendationsStyles = makeStyles({
   carousel: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: '#333333'
+    backgroundColor: '#333333',
+    alignItems: 'center'
   },
   card: {
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '725px'
+    height: '725px',
+    marginTop: 64
   },
   ourTopPicks: {
     marginBottom: '-60px',
@@ -492,17 +495,20 @@ export const RecommendationsStyles = makeStyles({
     fontWeight: 600
   },
   testIcons: {
-    display: 'Flex',
-    marginTop: '-90px',
-    marginLeft: '40%'
+    marginLeft: '.3%',
+    marginBottom: '.3%',
+    position: 'fixed',
+    bottom: '0',
+    padding: '1'
   },
   button: {
+    alignItems: 'center',
     border: 'solid 2.5px #FFDF59',
-    marginTop: '-1360px',
+    marginTop: '-1375px',
+    marginLeft: '41%',
     bottom: '500%',
     width: '270px',
     height: '55px',
-    marginLeft: '41%',
     backgroundColor: '#FFDF5930',
     color: '#FFDF59',
     '&:hover': {
