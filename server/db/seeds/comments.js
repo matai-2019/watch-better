@@ -1,8 +1,6 @@
 exports.seed = function (knex, Promise) {
-  // Deletes ALL existing entries
   return knex('comments').del()
     .then(function () {
-      // Inserts seed entries
       return knex('comments').insert([
         { id: 1, movie_id: 2, user_id: 1, comment: 'This movie is awesome!', user_rating: 4 },
         { id: 2, movie_id: 2, user_id: 2, comment: 'This movie is alright.', user_rating: 3 },
