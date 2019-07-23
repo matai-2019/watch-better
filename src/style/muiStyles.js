@@ -497,17 +497,18 @@ export const RecommendationsStyles = makeStyles({
     padding: 1
   },
   buttonWrapper: {
-    width: '270px',
+    width: '200px',
     margin: '0 auto',
     marginBottom: '-90px',
     transform: 'translate(-0px, -700px)'
   },
   button: {
     alignItems: 'center',
+    fontSize: '1rem',
     border: 'solid 2.5px #FFDF59',
-    width: '270px',
+    width: '200px',
     height: '55px',
-    backgroundColor: '#FFDF5930',
+    backgroundColor: '#2d2c289e',
     color: '#FFDF59',
     '&:hover': {
       backgroundColor: '#FFDF59',
