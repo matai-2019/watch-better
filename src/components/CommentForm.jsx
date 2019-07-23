@@ -5,7 +5,7 @@ import { Rating } from '@material-ui/lab'
 import { Paper, TextField, Box, Typography, Button, withStyles } from '@material-ui/core'
 
 import { CommentFormStyles } from '../style/muiStyles'
-import { addComment } from '../utilities/api'
+import { addCommentAPI } from '../../server/routes/routeHelpers'
 import { isAuthenticated } from '../auth'
 
 const StyledRating = withStyles({
@@ -26,7 +26,7 @@ const CommentForm = ({ movieId }) => {
       comment,
       movieId
     }
-    return addComment(userInput)
+    return addCommentAPI(userInput)
       .then(() => {
         setComment('')
         setRating(null)
