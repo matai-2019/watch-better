@@ -489,17 +489,6 @@ export const RecommendationsStyles = makeStyles({
       opacity: 0.6
     }
   },
-  title: {
-    marginTop: '12px',
-    color: '#FFDF59',
-    backgroundColor: 'rgba(0, 0, 0, 0.54)',
-    textAlign: 'center',
-    fontSize: '1.5rem',
-    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: 600,
-    lineHeight: 1.6,
-    letterSpacing: '0.0075em'
-  },
   testIcons: {
     marginLeft: '.5%',
     marginBottom: '.5%',
