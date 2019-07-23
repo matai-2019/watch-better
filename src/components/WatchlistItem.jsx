@@ -31,17 +31,6 @@ const WatchlistItem = (props) => {
   const classes = WatchlistItemStyles(props)
   const { seenList, movie, dispatch } = props
 
-  const seenStatus = () => {
-    const element = props.seenList.find(item => {
-      return item.id === props.movie.id
-    })
-    if (element) {
-      return true
-    } else {
-      return false
-    }
-  }
-
   const [redirect, setRedirect] = useState()
 
   const seenListEntry = seenList.filter(item => {
