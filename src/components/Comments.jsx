@@ -13,6 +13,7 @@ const Comments = ({ movieId }) => {
   const classes = CommentsStyles()
 
   const [comments, setComments] = useState([])
+  const [dummy, setDummy] = useState('')
 
   useEffect(() => {
     request.get(`/movie-api/comments/${movieId}`)
@@ -22,11 +23,11 @@ const Comments = ({ movieId }) => {
       .catch(err => {
         console.log(err.message)
       })
-  }, [])
+  }, [dummy])
 
   return (
     <Paper classes={classes.commentsContainer}>
-      <CommentForm userid={comments.userId}/>
+      <CommentForm userid={comments.userId} thing={setDummy}/>
       <Container >
         {
           comments && comments.map(comment => {

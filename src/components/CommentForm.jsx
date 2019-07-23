@@ -14,7 +14,7 @@ const StyledRating = withStyles({
   }
 })(Rating)
 
-const CommentForm = ({ movieId }) => {
+const CommentForm = ({ thing, movieId }) => {
   const classes = CommentFormStyles()
 
   const [comment, setComment] = useState('')
@@ -30,8 +30,9 @@ const CommentForm = ({ movieId }) => {
       .then(() => {
         setComment('')
         setRating(null)
+        thing('hello!')
       })
-      .catch(err => { 
+      .catch(err => {
         console.error(err)
       //  dispatch error message when connected to the store (dispatch(error?(err.message))
       })
@@ -91,5 +92,6 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(CommentForm)
 
 CommentForm.propTypes = {
-  movieId: PropTypes.number
+  movieId: PropTypes.number,
+  thing: PropTypes.func
 }
