@@ -29,7 +29,7 @@ const Comments = () => {
       name: 'Raaya Pathare',
       user_id: 3,
       comment: 'This movie rules',
-      user_rating: 5,
+      user_rating: 4,
       created: '2019-07-23 00:52:46'
     },
     {

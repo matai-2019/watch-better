@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Card, Typography } from '@material-ui/core'
+import Rating from '@material-ui/lab/Rating'
 
 import { CommentsStyles } from '../style/muiStyles'
 
@@ -10,9 +11,7 @@ const Comment = (props) => {
     <>
       <br />
       <Card classes={classes.comment}>
-        <Typography variant="p">
-          {props.user_rating}
-        </Typography>
+        <Rating value={props.user_rating} readOnly />
         <Typography variant="h6">
           {props.name}
         </Typography>
