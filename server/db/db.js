@@ -81,7 +81,8 @@ const delMovieFromSeenList = (seenListId, db = connection) => {
   return db('seenlist')
     .del()
     .where('id', seenListId)
-    
+}
+
 const getComments = (movieId, db = connection) => {
   return db('comments')
     .where('movie_id', movieId)
