@@ -48,7 +48,8 @@ export const getWatchList = () => {
     return request
       .get(`/movie-api/watchlist`)
       .set(getAuthorizationHeader())
-      .then(watchList => {
+      .then(res => {
+        const watchList = res.body
         dispatch(getWatchListSuccess(watchList))
       })
       .catch(error => {

@@ -48,7 +48,8 @@ export const getSeenList = () => {
     return request
       .get(`/movie-api/seenlist`)
       .set(getAuthorizationHeader())
-      .then(seenList => {
+      .then(res => {
+        const seenList = res.body
         dispatch(getSeenListSuccess(seenList))
       })
       .catch(error => {

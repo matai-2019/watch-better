@@ -17,16 +17,17 @@ router.get('/', decodeToken, (req, res) => {
 
 router.post('/', decodeToken, (req, res) => {
   const userId = req.user.id
-  db.insertMovieToWatchList(userId, req.body.id)
-    .then(() => res.status(200))
+  db.insertMovieToWatchList(userId, req.body.movieId)
+    .then(() => res.status(200).send('ok'))
     .catch(err => {
       res.status(500).send(err.message)
     })
 })
 
 router.delete('/', decodeToken, (req, res) => {
-  db.delMovieFromWatchList(req.body.id)
-    .then(() => res.status(200))
+  console.log(req.body)
+  db.delMovieFromWatchList(req.body.movieId)
+    .then(() => res.status(200).send('ok'))
     .catch(err => {
       res.status(500).send(err.message)
     })

@@ -51,8 +51,8 @@ const getWatchListByUserId = (userId, db = connection) => {
   return db('watchlist')
     .join('users', 'users.id', 'watchlist.user_id')
     .join('movies', 'movies.id', 'watchlist.movie_id')
-    .select('watchlist.id', 'movie.title', 'movie.rating')
-    .where('user_id', userId)
+    .select('watchlist.id', 'movies.id as movieId', 'movies.title', 'movies.rating')
+    .where('users.id', userId)
 }
 
 const insertMovieToWatchList = (userId, movieId, db = connection) => {
@@ -60,6 +60,7 @@ const insertMovieToWatchList = (userId, movieId, db = connection) => {
 }
 
 const delMovieFromWatchList = (watchListId, db = connection) => {
+  console.log(watchListId)
   return db('watchlist')
     .del()
     .where('id', watchListId)
