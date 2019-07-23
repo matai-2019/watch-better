@@ -6,6 +6,7 @@ import info from './info'
 import sortType from './sort'
 import selectedTests from './filter'
 import watchlist from './watchlist'
+import quizAnswer from './quizAnswer'
 import seenList from './seenList'
 
 export default combineReducers({
@@ -15,5 +16,6 @@ export default combineReducers({
   sortType,
   selectedTests,
   watchlist,
+  quizAnswer,
   seenList
 })
