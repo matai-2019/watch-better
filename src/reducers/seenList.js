@@ -1,31 +1,12 @@
-import { SEEN, UNSEEN } from '../actions/seenList'
+import { GET_SEENLIST_SUCCESS } from '../actions/seenList'
 
-const seenList = (state = [], action) => {
+const seenlist = (state = [], action) => {
   switch (action.type) {
-    case SEEN:
-      return getNewSeenList(state, action.id)
-    case UNSEEN:
-      return state.filter(item => item.id !== action.id)
+    case GET_SEENLIST_SUCCESS:
+      return action.seenList
     default:
       return state
   }
 }
 
-function getNewSeenList (list, id) {
-  let exists = false
-  const newList = list.map(item => {
-    if (item.id === id) {
-      exists = true
-    }
-    return item
-  })
-
-  if (exists) {
-    return newList
-  } else {
-    newList.push({ id })
-    return newList
-  }
-}
-
-export default seenList
+export default seenlist

@@ -249,7 +249,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
   loadingCamera: {
-    fill: 'purple',
+    fill: 'white',
     fillOpacity: 0.95,
     stroke: 'none',
     top: '50%',
@@ -261,7 +261,7 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     fontFamily: 'Roboto',
     textAlign: 'center',
     fontWeight: 'lighter 300',
-    color: 'purple',
+    color: 'white',
     top: '120%',
     left: '60%',
     transform: 'translate(-50%, -50%)',

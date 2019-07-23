@@ -9,6 +9,9 @@ import { Button } from '@material-ui/core/'
 import { RecommendationsStyles } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
 import RecommendationDetail from './RecommendationDetail'
+import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
+import { isAuthenticated } from '../auth'
 
 const Recommendations = ({ movies, info, dispatch }, ...props) => {
   const classes = RecommendationsStyles(props)
@@ -17,6 +20,8 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
 
   useEffect(() => {
     dispatch(getMovies())
+    isAuthenticated() && dispatch(getWatchList())
+    isAuthenticated() && dispatch(getSeenList())
   }, [dispatch])
 
   const handleClick = id => () => {
