@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import Comment from './Comment'
 import CommentForm from './CommentForm'
 import { CommentsStyles } from '../style/muiStyles'
-// import { getCommentAPI } from '../utilities/api'
 
 const request = require('superagent')
 
