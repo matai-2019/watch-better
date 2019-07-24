@@ -28,7 +28,7 @@ const MovieList = ({ dispatch, movies, selectedTests }, ...props) => {
     dispatch(getMovies(selectedTests))
     isAuthenticated() && dispatch(getWatchList())
     isAuthenticated() && dispatch(getSeenList())
-  }, [dispatch])
+  }, [dispatch, selectedTests])
 
   return (
     <Container className={classes.container}>
