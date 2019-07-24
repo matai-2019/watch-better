@@ -259,7 +259,7 @@ export const FooterStyles = makeStyles(theme => ({
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
-    maxHeight: '500px',
+    maxHeight: 500,
     padding: theme.spacing(6, 6, 6, 6),
     outlineColor: '#FFDF59',
     top: '50%',
@@ -269,21 +269,21 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     color: 'white'
   },
   innerIcon: {
-    width: '75px',
-    height: '75px',
+    width: 75,
+    height: 75,
     border: 'solid 2px',
     borderColor: '#FFDF59',
     borderRadius: '50%',
-    padding: '10px',
+    padding: 10,
     marginLeft: '45%',
     marginBottom: theme.spacing(2),
     display: 'inline-flex'
   },
   modalTitle: {
     fontWeight: '200',
-    fontSize: '40px',
+    fontSize: 40,
     textAlign: 'center',
-    marginBottom: '7px'
+    marginBottom: 7
   },
   modalFounded: {
     fontWeight: '800',
@@ -299,7 +299,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   },
   cardContainer: {
     marginTop: theme.spacing(8),
-    marginBottom: '4px',
+    marginBottom: 4,
     color: 'white',
     backgroundColor: theme.palette.background.main,
     display: 'flex',
@@ -309,13 +309,13 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   icon: {
     height: 60,
     width: 60,
-    padding: '5px',
+    padding: 5,
     transition: 'all 0.2s',
     '&:hover': {
       transform: 'scale(1.2)',
       backgroundColor: '#AF8E00',
       borderRadius: '50%',
-      padding: '7px'
+      padding: 7
     },
     header: {
       padding: 0,
@@ -364,9 +364,7 @@ export const NavBarStyles = makeStyles(theme => ({
   search: {
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
-    marginLeft: 0,
-    marginRight: '42px',
-    marginBottom: 15,
+    margin: '0 42 15 0',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
       marginLeft: theme.spacing(3),
@@ -424,7 +422,7 @@ export const NavBarStyles = makeStyles(theme => ({
     marginRight: '2vw'
   },
   loginButton: {
-    marginRight: '15px',
+    marginRight: 15,
     transition: 'all 0.35s',
     '&:hover': {
       transform: 'scale(1.2)'
@@ -436,7 +434,7 @@ export const NavBarStyles = makeStyles(theme => ({
     '&:hover': {
       backgroundColor: '#555'
     },
-    marginRight: '20px'
+    marginRight: 20
   }
 }))
 
@@ -466,7 +464,7 @@ export const AvatarsHoverStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: '2.5px 2.5px 2.5px 0px',
+    margin: '2.5px 2.5px 2.5px 0',
     width: 30,
     height: 30,
     fontSize: 15,
@@ -607,7 +605,7 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '80vh'
+    height: '95vh'
   },
   ourTopPicks: {
     marginBottom: -60,
@@ -615,7 +613,7 @@ export const RecommendationsStyles = makeStyles({
     padding: 0
   },
   media: {
-    height: '80vh',
+    height: '95vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
@@ -624,43 +622,12 @@ export const RecommendationsStyles = makeStyles({
       opacity: 0.6
     }
   },
-  title: {
-    marginTop: '12px',
-    color: theme.palette.primary.main,
-    backgroundColor: 'rgba(0, 0, 0, 0.54)',
-    textAlign: 'center',
-    fontSize: '1.5rem',
-    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: 600,
-    lineHeight: 1.6,
-    letterSpacing: '0.0075em'
-  },
   testIcons: {
     marginLeft: '2%',
     marginBottom: '2%',
     position: 'fixed',
     bottom: 0,
     padding: 1
-  },
-  buttonWrapper: {
-    width: 220,
-    margin: '0 auto',
-    marginBottom: -90,
-    transform: 'translate(-0vh, -97vh)'
-  },
-  button: {
-    alignItems: 'center',
-    fontSize: '1rem',
-    border: 'solid 2.5px #FFDF59',
-    width: '270px',
-    height: '55px',
-    backgroundColor: '#302E29A8',
-    color: theme.palette.primary.main,
-    '&:hover': {
-      backgroundColor: theme.palette.primary.main,
-      border: 'solid 2px #333',
-      color: theme.palette.background.main
-    }
   }
 })
 
@@ -687,17 +654,17 @@ export const QuizStyles = makeStyles(theme => ({
     color: 'white'
   },
   inputField: {
-    marginBottom: '45px',
-    marginLeft: '32px',
+    marginBottom: 45,
+    marginLeft: 32,
     display: 'flex'
   },
   input: {
-    width: '240px',
-    marginRight: '20px'
+    width: 240,
+    marginRight: 20
   },
   inputButton: {
-    width: '90px',
-    height: '55px'
+    width: 90,
+    height: 55
   },
   content: {
     marginTop: '2em',
@@ -715,7 +682,7 @@ export const QuizStyles = makeStyles(theme => ({
   },
   resultTitle: {
     fontWeight: '400',
-    marginBottom: '40px'
+    marginBottom: 40
   },
   resultInfo: {
     display: 'flex',
@@ -723,16 +690,16 @@ export const QuizStyles = makeStyles(theme => ({
   },
   resultStuff: {
     justifyContent: 'center',
-    margin: '30px'
+    margin: 30
   },
   icon: {
     margin: '1em',
-    height: '70px',
-    width: '70px'
+    height: 70,
+    width: 70
   },
   button: {
-    width: '90px',
-    height: '55px'
+    width: 90,
+    height: 55
   }
 }))
 
@@ -745,10 +712,10 @@ export const QuizQuestionStyles = makeStyles(theme => ({
     color: 'white'
   },
   button: {
-    width: '90px',
-    height: '55px',
-    marginTop: '15px',
-    marginBottom: '40px'
+    width: 90,
+    height: 55,
+    marginTop: 15,
+    marginBottom: 40
   }
 }))
 
@@ -767,7 +734,7 @@ export const SearchStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     left: 0,
     right: 0,
-    width: '278px'
+    width: 278
   },
   inputRoot: {
     flexWrap: 'wrap'
