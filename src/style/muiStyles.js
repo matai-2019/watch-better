@@ -717,6 +717,8 @@ export const CommentFormStyles = makeStyles(theme => ({
     color: theme.palette.primary
   },
   paper: {
+    display: 'block',
+    position: 'relative',
     height: 300,
     margin: theme.spacing(2),
     padding: theme.spacing(2)
@@ -727,11 +729,17 @@ export const CommentFormStyles = makeStyles(theme => ({
 }))
 
 export const CommentFormGuestStyles = makeStyles(theme => ({
-  formMessage: {
-    color: theme.palette.primary
+  container: {
+    background: theme.palette.background.main,
+    height: '100%',
+    width: '100%',
+    top: 0,
+    left: 0,
+    position: 'absolute',
+    padding: 0
   },
-  filter: {
-    backgroundColor: 'gray',
-    opacity: 0.8
+  formMessage: {
+    color: theme.palette.primary.main,
+    marginTop: 100
   }
 }))

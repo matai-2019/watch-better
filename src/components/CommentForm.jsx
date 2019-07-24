@@ -39,13 +39,15 @@ const CommentForm = ({ thing, movieId }) => {
       })
   }
 
-  const auth = () => isAuthenticated() ? classes.paper : `${guest.filter} ${classes.paper}`
-
   return (
-    <Paper className={auth()}>
-      {!isAuthenticated() && <Typography variant="h5" component="p" className={guest.formMessage}>Log in to leave a comment</Typography>}
+    <Paper className={classes.paper}>
+      {!isAuthenticated() && (<Paper className={guest.container}>
+        <Typography className={guest.formMessage} variant="h5" align="center" >
+          Log in to leave a comment
+        </Typography>
+      </Paper>)}
       <Typography className={classes.text} component="legend" variant="h6">
-        Your rating
+      Your rating
       </Typography>
       <StyledRating
         name="user rating"
@@ -69,7 +71,7 @@ const CommentForm = ({ thing, movieId }) => {
         multiline
       />
       <Button onClick={handleSubmit} variant="contained" color="primary" disabled={!isAuthenticated()}>
-        Submit
+      Submit
       </Button>
     </Paper>
   )
