@@ -71,7 +71,7 @@ const Register = ({ dispatch, history }, ...props) => {
                   actions.setSubmitting(false)
                   dispatch(
                     setErrorMessage({
-                      message: 'Please enter a valid username and password'
+                      message: 'That email address is already registered. Please sign in or register with another email address.'
                     })
                   )
                 } else {
