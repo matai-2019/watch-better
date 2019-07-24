@@ -115,7 +115,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match, watchlist, seenLis
                   </Typography>
                 </div>
               </Box>
-              <Box display="flex" p={1}>
+              {isAuthenticated() && <Box display="flex" p={1}>
                 <Button
                   className={classes.seenButton}
                   style={{
@@ -138,7 +138,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match, watchlist, seenLis
                     {watchListEntry ? 'check_box' : 'add_to_queue'}
                   </i>&nbsp;WATCHLIST
                 </Button>
-              </Box>
+              </Box> }
             </Box>
             <Box display="flex" flexDirection="row">
               {movieDetails.movieTests && movieDetails.movieTests.map(x => {
