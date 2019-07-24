@@ -618,7 +618,8 @@ export const SearchStyles = makeStyles(theme => ({
     zIndex: 1,
     marginTop: theme.spacing(1),
     left: 0,
-    right: 0
+    right: 0,
+    width: '278px'
   },
   inputRoot: {
     flexWrap: 'wrap'
