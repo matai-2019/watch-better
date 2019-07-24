@@ -31,6 +31,20 @@ export const SorterStyle = makeStyles(theme => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
+  },
+  label: {
+    color: theme.palette.primary.main
+  },
+  select: {
+    '&:before': {
+      borderColor: theme.palette.primary.main
+    },
+    '&:after': {
+      borderColor: theme.palette.primary.main
+    }
+  },
+  icon: {
+    fill: theme.palette.primary.main
   }
 }))
 
@@ -678,6 +692,20 @@ export const FilterStyles = makeStyles(theme => ({
     minWidth: 200,
     display: 'flex',
     wrap: 'nowrap'
+  },
+  label: {
+    color: theme.palette.primary.main
+  },
+  select: {
+    '&:before': {
+      borderColor: theme.palette.primary.main
+    },
+    '&:after': {
+      borderColor: theme.palette.primary.main
+    }
+  },
+  icon: {
+    fill: theme.palette.primary.main
   }
 }))
 

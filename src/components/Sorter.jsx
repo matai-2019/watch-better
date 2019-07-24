@@ -29,11 +29,17 @@ const Sorter = ({ dispatch }) => {
 
   return (
     <FormControl className={classes.formControl}>
-      <InputLabel htmlFor="sort">Sort Movies</InputLabel>
+      <InputLabel className={classes.label} htmlFor="sort">Sort Movies</InputLabel>
       <Select
         onChange={handleChange}
+        className={classes.select}
         value={menuValue}
         input={<Input name="sort" id="sort" />}
+        inputProps={{
+          classes: {
+            icon: classes.icon
+          }
+        }}
       >
         <MenuItem value={SORT_ALPHABETICAL_ASCENDING}>Sort A-Z</MenuItem>
         <MenuItem value={SORT_RATING_HIGH_LOW}>Rating High to Low</MenuItem>
