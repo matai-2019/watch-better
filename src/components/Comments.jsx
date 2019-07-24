@@ -23,7 +23,7 @@ const Comments = ({ movieId }) => {
       .catch(err => {
         console.log(err.message)
       })
-  }, [dummy])
+  }, [dummy, movieId])
 
   return (
     <Paper classes={classes.commentsContainer}>
