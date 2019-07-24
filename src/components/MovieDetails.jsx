@@ -169,7 +169,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match, watchlist, seenLis
     </div>
   </div>
   <Cast cast={movieDetails.cast}/>
-  <Comments movieId={movieDetails.id} />
+  <Comments movieId={movieDetails.id} title={movieDetails.title} />
   </>
 }
 
