@@ -631,7 +631,7 @@ export const SearchStyles = makeStyles(theme => ({
 export const CastMemberStyles = makeStyles({
   card: {
     width: 185,
-    height: 370,
+    height: 325,
     margin: theme.spacing(2)
   },
   media: {
