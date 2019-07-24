@@ -672,6 +672,19 @@ export const QuizStyles = makeStyles(theme => ({
     fontSize: '2em',
     color: 'white'
   },
+  inputField: {
+    marginBottom: '45px',
+    marginLeft: '32px',
+    display: 'flex'
+  },
+  input: {
+    width: '240px',
+    marginRight: '20px'
+  },
+  inputButton: {
+    width: '90px',
+    height: '55px'
+  },
   content: {
     marginTop: '2em',
     paddingTop: '3em',
@@ -681,16 +694,34 @@ export const QuizStyles = makeStyles(theme => ({
   result: {
     color: 'white',
     marginTop: '8em',
-    marginLeft: '20%',
-    marginBottom: '5em',
-    height: '65vh'
+    marginBottom: '3em',
+    height: '65vh',
+    textAlign: 'center',
+    alignItems: 'center'
+  },
+  resultTitle: {
+    fontWeight: '400',
+    marginBottom: '40px'
+  },
+  resultInfo: {
+    display: 'flex',
+    alignItems: 'center',
+    marginLeft: '100px',
+    marginRight: '100px',
+    marginBottom: '60px'
+  },
+  resultStuff: {
+    justifyContent: 'center',
+    margin: '30px'
   },
   icon: {
-    height: '1.5em',
-    margin: '1em'
+    margin: '1em',
+    height: '70px',
+    width: '70px'
   },
   button: {
-    padding: '5em'
+    width: '90px',
+    height: '55px'
   }
 }))
 
@@ -703,7 +734,10 @@ export const QuizQuestionStyles = makeStyles(theme => ({
     color: 'white'
   },
   button: {
-    margin: '2em'
+    width: '90px',
+    height: '55px',
+    marginTop: '15px',
+    marginBottom: '40px'
   }
 }))
 
