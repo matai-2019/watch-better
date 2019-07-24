@@ -298,7 +298,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     padding: '20px 0 10px 0'
   },
   cardContainer: {
-    marginTop: theme.spacing(6),
+    marginTop: theme.spacing(8),
     marginBottom: '4px',
     color: 'white',
     backgroundColor: theme.palette.background.main,
@@ -423,6 +423,14 @@ export const NavBarStyles = makeStyles(theme => ({
     '&:hover': {
       transform: 'scale(1.2)'
     }
+  },
+  navButton2: {
+    color: theme.palette.primary.main,
+    flexGrow: 2,
+    '&:hover': {
+      backgroundColor: '#555'
+    },
+    marginRight: '20px'
   }
 }))
 

@@ -33,11 +33,11 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
   }
 
   const responsiveness = {
-    3000: {
+    1919: {
       items: 4
     },
     1024: {
-      items: 4
+      items: 3
     },
     1023: {
       items: 2
@@ -89,9 +89,6 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
                 year={movie.releaseDate} />
             ))}
         </AliceCarousel>
-        <div className={classes.buttonWrapper}>
-          <Button className={classes.button} variant="outlined" color="primary" onClick={handleSeeAll}>SEE ALL MOVIES</Button>
-        </div>
       </div>
     )
   )

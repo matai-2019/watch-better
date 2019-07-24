@@ -27,6 +27,7 @@ function NavBar (props) {
             <Typography className={classes.tagline}>
               THE DIVERSE MOVIE DATABASE
             </Typography>
+            <Link to="/movies/list" className={classes.link}><Button className={classes.navButton2}>See All Movies</Button></Link>
             {isAuthenticated() && <Link to="/movies/watchlist" className={classes.link}>
               <div className={classes.divide}>
                 <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
