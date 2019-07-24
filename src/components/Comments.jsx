@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Container, Paper } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import request from 'superagent'
+
 import Comment from './Comment'
 import CommentForm from './CommentForm'
 import { CommentsStyles } from '../style/muiStyles'
-// import { getCommentAPI } from '../utilities/api'
-
-const request = require('superagent')
 
 const Comments = ({ movieId }) => {
   const classes = CommentsStyles()

@@ -1,14 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 import { Card, Typography, Button } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
 import { CommentsStyles } from '../style/muiStyles'
-import { deleteComment } from '../utilities/api'
+import { deleteComment, getUserId } from '../utilities/api'
 import { isAuthenticated } from '../auth'
 
-const Comment = ({ thing, comment: { id, userRating, firstName, comment, created } }) => {
+const Comment = ({ thing, loggedUser, comment: { id, userRating, firstName, comment, created, userID } }) => {
   const classes = CommentsStyles()
+
+  const [userId, setUserId] = useState(null)
+
+  useEffect(() => {
+    getUserId(loggedUser)
+      .then(data => {
+        setUserId(data[0].id)
+      })
+      .catch(err => {
+        console.log(err.message)
+      })
+  }, [loggedUser])
 
   const handleDelete = () => {
     return deleteComment(id)
@@ -34,17 +47,23 @@ const Comment = ({ thing, comment: { id, userRating, firstName, comment, created
         <Typography variant="p">
           {created}
         </Typography>
-        {
-          isAuthenticated() && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>
-        }
+        {userId === userID && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>}
       </Card>
     </>
   )
 }
 
-Comment.propTypes = {
-  comment: PropTypes.object,
-  thing: PropTypes.func
+const mapStateToProps = state => {
+  return {
+    loggedUser: state.loggedUser
+  }
 }
 
-export default Comment
+export default connect(mapStateToProps)(Comment)
+
+Comment.propTypes = {
+  comment: PropTypes.object,
+  thing: PropTypes.func,
+  user: PropTypes.number,
+  loggedUser: PropTypes.string
+}

@@ -72,4 +72,11 @@ router.get('/search/:query', (req, res) => {
     })
 })
 
+router.get('/userid/:email', (req, res) => {
+  const { email } = req.params
+  db.getUserId(email)
+    .then(user => res.send(user))
+    .catch(err => res.status(500).send(err.message))
+})
+
 module.exports = router

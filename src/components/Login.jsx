@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import {
   Button,
@@ -12,8 +13,9 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 
 import { RegisterStyles } from '../style/muiStyles'
 import { isAuthenticated, signIn } from '../auth'
+import { getLoggedUser } from '../actions/loggedUser'
 
-export default function Login (props) {
+function Login (props) {
   const classes = RegisterStyles()
 
   const [form, setForm] = useState({
@@ -30,6 +32,7 @@ export default function Login (props) {
 
   const handleClick = e => {
     e.preventDefault()
+    props.dispatch(getLoggedUser(form.email))
     signIn(
       {
         email: form.email,
@@ -116,6 +119,9 @@ export default function Login (props) {
   )
 }
 
+export default connect()(Login)
+
 Login.propTypes = {
-  history: PropTypes.object
+  history: PropTypes.object,
+  dispatch: PropTypes.func
 }

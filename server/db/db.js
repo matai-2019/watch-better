@@ -87,7 +87,7 @@ const getComments = (movieId, db = connection) => {
   return db('comments')
     .where('movie_id', movieId)
     .join('users', 'users.id', 'comments.user_id')
-    .select('comment', 'user_rating as userRating', 'created', 'users.firstname as firstName', 'comments.id as id')
+    .select('comment', 'user_rating as userRating', 'created', 'users.firstname as firstName', 'comments.id as id', 'users.id as userID')
 }
 
 const addComment = (comment, db = connection) => {
@@ -102,6 +102,12 @@ const delComment = (commentId, userId, db = connection) => {
     .del()
 }
 
+const getUserId = (email, db = connection) => {
+  return db('users')
+    .where('email', email)
+    .select('id')
+}
+
 module.exports = {
   close,
   getMovieById,
@@ -114,5 +120,6 @@ module.exports = {
   insertMovieToSeenListByUserId,
   getComments,
   addComment,
-  delComment
+  delComment,
+  getUserId
 }

@@ -20,11 +20,16 @@ export const removeMovieFromSeenList = movieId => {
 
 export const addCommentAPI = (comment) => {
   return request.post('/movie-api/comment')
-    .send(comment)
-    .set(getAuthorizationHeader())
+    .send(comment).set(getAuthorizationHeader())
 }
 
 export const deleteComment = (commentId) => {
-  return request.del(`/movie-api/comment/${commentId}`)
-    .set(getAuthorizationHeader())
+  return request.del(`/movie-api/comment/${commentId}`).set(getAuthorizationHeader())
+}
+
+export const getUserId = (email) => {
+  return request.get(`/movie-api/userid/${email}`)
+    .then((res) => {
+      return JSON.parse(res.text)
+    })
 }
