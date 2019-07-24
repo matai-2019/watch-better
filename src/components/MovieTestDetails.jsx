@@ -41,9 +41,13 @@ const MovieTestDetails = props => {
             onClose={handleClose(i)}
           >
             <Paper className={classes.paper}>
-              <Typography variant="h5" component="h2" gutterBottom>{test.name}</Typography>
+              <img className={classes.innerIcon} src={test.icon} alt='test-passes' />
+              <Typography className={classes.modalTitle}variant="h5" component="h2" gutterBottom>{test.name}</Typography>
+              <Typography className={classes.modalFounded} variant="body1" component="h2" gutterBottom>
+                • &nbsp;&nbsp;&nbsp;{test.founder}&nbsp;&nbsp;&nbsp; •
+              </Typography>
               <br />
-              <Typography component="p">{test.description}</Typography>
+              <Typography className={classes.modalText}component="p">{test.description}</Typography>
             </Paper>
           </Modal>
         </Box>

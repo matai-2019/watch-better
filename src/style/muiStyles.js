@@ -209,14 +209,38 @@ export const FooterStyles = makeStyles(theme => ({
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
-    width: 450,
-    padding: theme.spacing(6, 6, 6),
+    maxHeight: '500px',
+    padding: theme.spacing(6, 6, 6, 6),
     outlineColor: '#FFDF59',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: 'white',
-    color: 'black'
+    backgroundColor: '#333',
+    color: 'white'
+  },
+  innerIcon: {
+    width: '75px',
+    height: '75px',
+    border: 'solid 2px',
+    borderColor: '#FFDF59',
+    borderRadius: '50%',
+    padding: '10px',
+    marginLeft: '45%',
+    marginBottom: theme.spacing(2),
+    display: 'inline-flex'
+  },
+  modalTitle: {
+    fontWeight: '200',
+    fontSize: '40px',
+    textAlign: 'center',
+    marginBottom: '7px'
+  },
+  modalFounded: {
+    fontWeight: '800',
+    textAlign: 'center'
+  },
+  modalText: {
+    fontWeight: '200'
   },
   card: {
     width: 200,
@@ -233,9 +257,6 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  iconContainer: {
-    borderRadius: '50%'
   },
   icon: {
     height: 60,
