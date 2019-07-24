@@ -197,7 +197,7 @@ const Search = ({ movies, dispatch }, ...props) => {
 }
 
 Search.propTypes = {
-  movies: PropTypes.object.isRequired,
+  movies: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired
 }
 

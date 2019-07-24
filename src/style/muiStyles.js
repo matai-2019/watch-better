@@ -325,6 +325,12 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 }))
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
+  fullPage: {
+    backgroundColor: 'grey',
+    margin: 0,
+    height: '100%',
+    width: '100%'
+  },
   loadingCamera: {
     fill: 'white',
     fillOpacity: 0.95,
@@ -844,15 +850,32 @@ export const RegisterStyles = makeStyles(theme => ({
 }))
 
 export const CommentsStyles = makeStyles(theme => ({
-  commentsContainer: {
-    display: 'flex',
-    padding: '3em',
-    height: 400
+  commentsList: {
+    height: 330,
+    overflow: 'auto'
   },
-  comment: {
-    flexGrow: 2,
-    maxWidth: 500,
-    float: 'right'
+  noCommentsTitle: {
+    color: '#888',
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(2)
+  },
+  noCommentsDesc: {
+    color: '#888',
+    padding: theme.spacing(0, 2)
+  }
+}))
+
+export const CommentStyles = makeStyles(theme => ({
+  container: {
+    margin: theme.spacing(0, 3),
+    padding: theme.spacing(2, 2, 1, 2)
+  },
+  rating: {
+    paddingTop: 3,
+    marginLeft: theme.spacing()
+  },
+  dateTime: {
+    color: '#bbb'
   }
 }))
 
@@ -861,21 +884,29 @@ export const CommentFormStyles = makeStyles(theme => ({
     color: theme.palette.primary
   },
   paper: {
-    width: '30%',
-    margin: 20,
-    padding: '1em',
-    flexGrow: 1,
-    float: 'left'
+    display: 'block',
+    position: 'relative',
+    height: 300,
+    margin: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   comment: {
-    width: '90%',
-    margin: '1em'
+    width: '100%'
+  }
+}))
+
+export const CommentFormGuestStyles = makeStyles(theme => ({
+  container: {
+    background: '#666',
+    height: '100%',
+    width: '100%',
+    top: 0,
+    left: 0,
+    position: 'absolute',
+    padding: 0
   },
-  filter: {
-    width: '30%',
-    margin: 20,
-    padding: '1em',
-    backgroundColor: 'gray',
-    opacity: 0.8
+  formMessage: {
+    color: theme.palette.primary.main,
+    marginTop: 100
   }
 }))

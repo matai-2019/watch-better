@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { Box, Paper, Typography, Button } from '@material-ui/core'
 import { connect } from 'react-redux'
-import { Card, Typography, Button } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
-import { CommentsStyles } from '../style/muiStyles'
+import { CommentStyles } from '../style/muiStyles'
 import { deleteComment, getUserId } from '../utilities/api'
 
 const Comment = ({ thing, loggedUser, comment: { id, userRating, firstName, comment, created, userID } }) => {
-  const classes = CommentsStyles()
+  const classes = CommentStyles()
 
   const [userId, setUserId] = useState(null)
 
@@ -34,20 +34,22 @@ const Comment = ({ thing, loggedUser, comment: { id, userRating, firstName, comm
   return (
     <>
       <br />
-      <Card classes={classes.comment}>
-        <Rating value={userRating} readOnly />
-        <Typography variant="h6">
-          {firstName}
-        </Typography>
-        <Typography variant="p">
+      <Paper className={classes.container} >
+        <Box display='inline-flex'>
+          <Typography variant="h6">
+            {firstName}
+          </Typography>
+          <Rating className={classes.rating} value={userRating} readOnly />
+        </Box>
+        <Typography >
           {comment}
         </Typography>
         <br />
-        <Typography variant="p">
+        <Typography className={classes.dateTime} variant="caption" >
           {created}
         </Typography>
         {userId === userID && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>}
-      </Card>
+      </Paper>
     </>
   )
 }

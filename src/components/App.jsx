@@ -25,21 +25,20 @@ const App = ({ error, pending }) => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <Route path='/' component={NavBar} />
+        <Route path="/" component={NavBar} />
         <Route path="/" exact component={MovieTestDetails} />
         {error && <ErrorMessage />}
-        {pending && <WaitIndicator/>}
         <Switch>
           <Route path="/" exact component={Recommendations} />
           <Route path="/movie/:id" component={MovieDetails} />
           <Route path="/movies/list" component={MovieList} />
           <Route path="/movies/watchlist" component={Watchlist} />
-          <Route path='/quiz' component={Quiz} />
-          <Route path='/register' component={Register} />
-          <Route path='/login' component={Login} />
+          <Route path="/quiz" component={Quiz} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
           <Route component={NotFound} />
         </Switch>
-        <Route path='/' component={Footer} />
+        {pending ? <WaitIndicator/> : <Route path='/' component={Footer} />}
       </Router>
     </ThemeProvider>
   )

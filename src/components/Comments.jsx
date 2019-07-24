@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Container, Paper } from '@material-ui/core'
+import { Typography, Container, Paper, Grid } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import request from 'superagent'
 
@@ -8,7 +8,7 @@ import Comment from './Comment'
 import CommentForm from './CommentForm'
 import { CommentsStyles } from '../style/muiStyles'
 
-const Comments = ({ movieId }) => {
+const Comments = ({ movieId, title }) => {
   const classes = CommentsStyles()
 
   const [comments, setComments] = useState([])
@@ -25,14 +25,28 @@ const Comments = ({ movieId }) => {
   }, [dummy, movieId])
 
   return (
-    <Paper classes={classes.commentsContainer}>
-      <CommentForm userid={comments.userId} thing={setDummy}/>
-      <Container >
-        {
-          comments && comments.map(comment => {
-            return (<Comment key={comment.id} comment={comment} thing={setDummy}/>)
-          })
-        }
+    <Paper classes={classes.commentsContainer} square>
+      <Container>
+        <Grid container justify="center" >
+          <Grid item xs={6} className={classes.commentsList}>
+            {
+              comments && comments.length > 0 ? comments.map(comment => <Comment key={comment.id} comment={comment} thing={setDummy}/>)
+                : (
+                  <>
+                  <Typography variant="h6" className={classes.noCommentsTitle}>
+                    No Comments yet
+                  </Typography>
+                  <Typography className={classes.noCommentsDesc}>
+                    {`Be the first make a comment for ${title} and rate this movie`}
+                  </Typography>
+                  </>
+                )
+            }
+          </Grid>
+          <Grid item xs={6}>
+            <CommentForm userid={comments.userId} thing={setDummy}/>
+          </Grid>
+        </Grid>
       </Container>
     </Paper>)
 }
@@ -40,5 +54,6 @@ const Comments = ({ movieId }) => {
 export default connect()(Comments)
 
 Comments.propTypes = {
-  movieId: PropTypes.number
+  movieId: PropTypes.number,
+  title: PropTypes.string
 }

@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Rating } from '@material-ui/lab'
-import { Paper, TextField, Box, Typography, Button, withStyles } from '@material-ui/core'
+import { Paper, TextField, Typography, Button, withStyles } from '@material-ui/core'
 
-import { CommentFormStyles } from '../style/muiStyles'
+import { CommentFormStyles, CommentFormGuestStyles } from '../style/muiStyles'
 import { addCommentAPI } from '../utilities/api'
 import { isAuthenticated } from '../auth'
 
@@ -16,6 +16,7 @@ const StyledRating = withStyles({
 
 const CommentForm = ({ thing, movieId }) => {
   const classes = CommentFormStyles()
+  const guest = CommentFormGuestStyles()
 
   const [comment, setComment] = useState('')
   const [rating, setRating] = useState(null)
@@ -38,47 +39,40 @@ const CommentForm = ({ thing, movieId }) => {
       })
   }
 
-  const auth = () => {
-    if (isAuthenticated()) {
-      const filter = classes.paper
-      return filter
-    } else {
-      const filter = classes.filter
-      return filter
-    }
-  }
-
   return (
-    <Paper className={auth()}>
-      {isAuthenticated() ? null : <Typography variant="h5" component="p" className={classes.text}>Log in to leave a comment</Typography>}
-      <br/>
-      <Box component="fieldset" borderColor="transparent">
-        <Typography className={classes.text} component="legend">Rate the movie:</Typography>
-        <StyledRating
-          name="user rating"
-          value={rating}
-          disabled={!isAuthenticated()}
-          onChange={(e, newValue) => {
-            setRating(newValue)
-          }}
-        />
-      </Box>
+    <Paper className={classes.paper}>
+      {!isAuthenticated() && (<Paper className={guest.container}>
+        <Typography className={guest.formMessage} variant="h5" align="center" >
+          Log in to leave a comment
+        </Typography>
+      </Paper>)}
+      <Typography className={classes.text} component="legend" variant="h6">
+      Your rating
+      </Typography>
+      <StyledRating
+        name="user rating"
+        value={rating}
+        disabled={!isAuthenticated()}
+        onChange={(e, newValue) => {
+          setRating(newValue)
+        }}
+      />
       <TextField
+        className={classes.comment}
         id="comment"
         label="Leave a comment"
-        multiline
-        rowsMax="10"
         value={comment}
-        onChange={(e) => {
-          setComment(e.target.value)
-        }}
-        className={classes.comment}
-        margin="normal"
+        onChange={(e) => setComment(e.target.value)}
         variant="outlined"
         disabled={!isAuthenticated()}
+        rows={6}
+        rowsMax={6}
+        margin="normal"
+        multiline
       />
-      <br/>
-      <Button onClick={handleSubmit} variant="contained" color="primary" disabled={!isAuthenticated()}>Submit</Button>
+      <Button onClick={handleSubmit} variant="contained" color="primary" disabled={!isAuthenticated()}>
+      Submit
+      </Button>
     </Paper>
   )
 }
