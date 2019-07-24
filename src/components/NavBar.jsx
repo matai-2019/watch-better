@@ -25,7 +25,7 @@ function NavBar (props) {
               WB
             </Typography>
             <Typography className={classes.tagline}>
-              DIVERSE MOVIE DATABASE
+              THE DIVERSE MOVIE DATABASE
             </Typography>
             {isAuthenticated() && <Link to="/movies/watchlist" className={classes.link}>
               <div className={classes.divide}>
