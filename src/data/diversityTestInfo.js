@@ -29,9 +29,9 @@ export default [
   },
   {
     id: 5,
-    name: 'The Feldman Test',
+    name: 'The Feldman Score',
     icon: '/icons/feldman.svg',
     description:
-      'The Feldman test looks past the top-billed actors and study the industry’s systemic casting issues by examining supporting casts and the background players who populate the world that the stars inhabit. A movie passes with a score of five or higher: 2 points for a female writer or director, 1 point for a female composer or director of photography, 1 point for three female producers or three female department heads, 1 point for a crew that’s 50 percent women, 2 points if there’s a female protagonist who determines story outcome, 2 points if no female characters were victimized, stereotyped or sexualized and 1 point if a sex scene shows foreplay before consummation, or if the female characters initiate or reciprocate sexual advances.'
+      'The Feldman score looks past the top-billed actors and study the industry’s systemic casting issues by examining supporting casts and the background players who populate the world that the stars inhabit. A movie passes with a score of five or higher: 2 points for a female writer or director, 1 point for a female composer or director of photography, 1 point for three female producers or three female department heads, 1 point for a crew that’s 50 percent women, 2 points if there’s a female protagonist who determines story outcome, 2 points if no female characters were victimized, stereotyped or sexualized and 1 point if a sex scene shows foreplay before consummation, or if the female characters initiate or reciprocate sexual advances.'
   }
 ]

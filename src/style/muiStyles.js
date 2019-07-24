@@ -226,21 +226,27 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     padding: theme.spacing(2.5)
   },
   cardContainer: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(6),
+    marginBottom: '4px',
     color: 'white',
     backgroundColor: '#333',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
   },
+  iconContainer: {
+    borderRadius: '50%'
+  },
   icon: {
-    height: 40,
-    width: 40,
+    height: 60,
+    width: 60,
+    padding: '5px',
+    transition: 'all 0.2s',
     '&:hover': {
-      height: 50,
-      width: 50,
+      transform: 'scale(1.2)',
       backgroundColor: '#AF8E00',
-      borderRadius: '50%'
+      borderRadius: '50%',
+      padding: '7px'
     },
     header: {
       padding: 0,

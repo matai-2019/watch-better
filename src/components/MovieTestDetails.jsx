@@ -28,12 +28,12 @@ const MovieTestDetails = props => {
     <div className={classes.cardContainer}>
       {testInfo.map((test, i) => (
         <Box boxShadow={0} key={test.id} className={classes.card}>
-          <div>
-            <img onClick={handleOpen(i)} className={classes.icon} src={test.icon} alt='test-passes'/>
+          <div className={classes.iconContainer}>
+            <img onClick={handleOpen(i)} className={classes.icon} src={test.icon} alt='test-passes' />
+            <Typography variant="body1" component="h2" gutterBottom>
+              {test.name}
+            </Typography>
           </div>
-          <Typography variant="body1" component="h2" gutterBottom>
-            {test.name}
-          </Typography>
           <Modal
             aria-labelledby={test.name}
             aria-describedby={`Description of the ${test.name} test`}
