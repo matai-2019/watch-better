@@ -10,6 +10,10 @@ import {
   GET_MOVIES_ERROR
 } from '../actions/movies'
 
+import {
+  QUIZ_ANSWER
+} from '../actions/quizAnswer'
+
 import { CLEAR_ERROR_MESSAGE, SET_ERROR_MESSAGE } from '../actions/errorMessage'
 
 export default function infoReducer (
@@ -25,6 +29,7 @@ export default function infoReducer (
       }
     case GET_MOVIE_DETAILS_SUCCESS:
     case GET_MOVIES_SUCCESS:
+    case QUIZ_ANSWER:
       return {
         ...state,
         pending: false
