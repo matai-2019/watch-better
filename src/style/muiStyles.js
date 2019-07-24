@@ -329,9 +329,10 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     transform: 'translate(-50%, -50%)',
     position: 'absolute'
   },
-  Typography: {
+  loadingText: {
     fontFamily: 'Roboto',
     textAlign: 'center',
+    fontSize: 20,
     fontWeight: 'lighter 300',
     color: 'white',
     top: '120%',
@@ -446,7 +447,7 @@ export const AvatarsHoverStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 2.5,
+    margin: '2.5px 2.5px 2.5px 0px',
     width: 30,
     height: 30,
     fontSize: 15,
@@ -530,16 +531,6 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   },
   overviewText: {
     fontWeight: 300
-  },
-  avatar: {
-    color: theme.palette.background.main,
-    backgroundColor: theme.palette.primary.main,
-    border: '2px solid #333',
-    margin: 2,
-    width: 30,
-    height: 30,
-    fontSize: 15,
-    paddingTop: 2
   },
   seenButton: {
     border: 'solid 2px #333',
