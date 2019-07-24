@@ -82,14 +82,14 @@ export const MovieListItemStyles = makeStyles(theme => ({
     borderRadius: '0.3vw'
   },
   text: {
-    fontSize: '28px',
+    fontSize: 28,
     cursor: 'pointer'
   },
   avatar: {
     color: '#222',
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     padding: 2,
     width: 30,
     height: 30,
@@ -174,7 +174,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     boxShadow: '0 0 0 0'
   },
   text: {
-    fontSize: '28px',
+    fontSize: 28,
     cursor: 'pointer',
     color: theme.palette.background.main
   },
@@ -225,8 +225,7 @@ export const FooterStyles = makeStyles(theme => ({
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: 5
+    alignItems: 'center'
   },
   socialButtons: {
     marginBottom: 7,
@@ -234,7 +233,7 @@ export const FooterStyles = makeStyles(theme => ({
   },
   edaText: {
     padding: 1,
-    fontSize: '12px',
+    fontSize: 12,
     fontWeight: 300
   },
   footerText: {
@@ -290,10 +289,8 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   },
   card: {
     width: 200,
-    height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2),
-    padding: theme.spacing(2.5)
+    padding: '20px 0 10px 0'
   },
   cardContainer: {
     marginTop: theme.spacing(6),
@@ -367,7 +364,7 @@ export const NavBarStyles = makeStyles(theme => ({
   logo: {
     flexGrow: 2,
     display: 'none',
-    fontSize: '35px',
+    fontSize: 35,
     fontWeight: 800,
     color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
@@ -381,7 +378,7 @@ export const NavBarStyles = makeStyles(theme => ({
   tagline: {
     flexGrow: 25,
     display: 'none',
-    fontSize: '15px',
+    fontSize: 15,
     color: 'white',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
@@ -423,7 +420,7 @@ export const NavBarStyles = makeStyles(theme => ({
   }
 }))
 
-export const MovieDetailAvatarStyles = makeStyles(theme => ({
+export const AvatarsHoverStyles = makeStyles(theme => ({
   popover: {
     pointerEvents: 'none'
   },
@@ -449,7 +446,7 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2.5,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -538,7 +535,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -557,15 +554,15 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '720px'
+    height: '100vh'
   },
   ourTopPicks: {
-    marginBottom: '-60px',
+    marginBottom: -60,
     display: 'inline-flex',
     padding: 0
   },
   media: {
-    height: '725px',
+    height: '100vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
@@ -586,20 +583,21 @@ export const RecommendationsStyles = makeStyles({
     letterSpacing: '0.0075em'
   },
   testIcons: {
-    marginLeft: '.5%',
-    marginBottom: '.5%',
+    marginLeft: '2%',
+    marginBottom: '2%',
     position: 'fixed',
     bottom: 0,
     padding: 1
   },
   buttonWrapper: {
-    width: '270px',
+    width: 220,
     margin: '0 auto',
-    marginBottom: '-90px',
-    transform: 'translate(-0px, -700px)'
+    marginBottom: -90,
+    transform: 'translate(-0vh, -98vh)'
   },
   button: {
     alignItems: 'center',
+    fontSize: '1rem',
     border: 'solid 2.5px #FFDF59',
     width: '270px',
     height: '55px',
@@ -706,7 +704,7 @@ export const SearchStyles = makeStyles(theme => ({
 export const CastMemberStyles = makeStyles({
   card: {
     width: 185,
-    height: 370,
+    height: 325,
     margin: theme.spacing(2)
   },
   media: {
@@ -768,11 +766,11 @@ export const CommentsStyles = makeStyles(theme => ({
   commentsContainer: {
     display: 'flex',
     padding: '3em',
-    height: '400px'
+    height: 400
   },
   comment: {
     flexGrow: 2,
-    maxWidth: '500px',
+    maxWidth: 500,
     float: 'right'
   }
 }))
@@ -783,7 +781,7 @@ export const CommentFormStyles = makeStyles(theme => ({
   },
   paper: {
     width: '30%',
-    margin: '20px',
+    margin: 20,
     padding: '1em',
     flexGrow: 1,
     float: 'left'
@@ -794,7 +792,7 @@ export const CommentFormStyles = makeStyles(theme => ({
   },
   filter: {
     width: '30%',
-    margin: '20px',
+    margin: 20,
     padding: '1em',
     backgroundColor: 'gray',
     opacity: 0.8

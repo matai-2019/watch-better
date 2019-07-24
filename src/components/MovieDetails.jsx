@@ -3,7 +3,7 @@ import { Grid, Typography, Container, Box, withStyles } from '@material-ui/core'
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
 import PropTypes from 'prop-types'
-import MovieDetailAvatars from './MovieDetailAvatars'
+import AvatarsHover from './AvatarsHover'
 
 import { MovieDetailsStyles } from '../style/muiStyles'
 import { getMovieDetails } from '../actions/movieDetails'
@@ -74,7 +74,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
             </div>
             <Box display="flex" flexDirection="row">
               {movieDetails.movieTests && movieDetails.movieTests.map(x => {
-                if (x.result) return <MovieDetailAvatars key={x.testType} test={x} />
+                if (x.result) return <AvatarsHover key={x.testType} test={x} />
                 else return null
               })
               }
