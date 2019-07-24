@@ -34,10 +34,10 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
 
   const responsiveness = {
     3000: {
-      items: 3
+      items: 4
     },
     1024: {
-      items: 3
+      items: 4
     },
     1023: {
       items: 2

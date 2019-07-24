@@ -593,7 +593,7 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '100vh'
+    height: '80vh'
   },
   ourTopPicks: {
     marginBottom: -60,
@@ -601,7 +601,7 @@ export const RecommendationsStyles = makeStyles({
     padding: 0
   },
   media: {
-    height: '100vh',
+    height: '80vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
