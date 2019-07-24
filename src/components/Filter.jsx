@@ -38,7 +38,7 @@ const Filter = ({ dispatch, selectedTests }, ...props) => {
     <Grid item xs={12} sm={6} md={4}>
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor="test-select" className={classes.white}>
-        Diversity Test
+        Diversity Tests
         </InputLabel>
         <Select
           multiple

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
-import { WatchlistItemStyles } from '../style/muiStyles'
+import { WatchlistItemStyles, theme } from '../style/muiStyles'
 import {
   Container,
   Typography,
@@ -22,7 +22,6 @@ import { removeMovieFromWatchList, addMovieToSeenList, removeMovieFromSeenList }
 const StyledRating = withStyles({
   iconFilled: {
     color: '#333',
-    marginLeft: 2.5,
     marginRight: 2.5
   }
 })(Rating)
@@ -92,10 +91,10 @@ const WatchlistItem = (props) => {
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
+              <Button className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : theme.palette.primary.main }} onClick={handleSeen}>
                 <i className={classes.icon}>{ seenListEntry ? 'visibility' : 'visibility_off'}</i>
               </Button>
-              <Button size="small" className={classes.removeButton} onClick={handleRemove}>
+              <Button className={classes.removeButton} onClick={handleRemove}>
                 <i className={classes.icon}>delete_forever</i>
               </Button>
             </Grid>
