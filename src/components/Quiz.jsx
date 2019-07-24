@@ -45,7 +45,7 @@ const Quiz = (props) => {
   }
 
   const ko = () => {
-    if (props.questions[3].answer === 'yes' && props.questions[4].answer === 'yes' && props.questions[5].answer === 'yes') return 'Passed the Ko Test' 
+    if (props.questions[3].answer === 'yes' && props.questions[4].answer === 'yes' && props.questions[5].answer === 'yes') return 'Passed the Ko Test'
     else return 'Failed the Ko Test'
   }
 
@@ -63,17 +63,17 @@ const Quiz = (props) => {
   if (displayAnswer) {
     return (
       <>
-      <MovieTestDetails />
+        <MovieTestDetails />
         <Box className={classes.result}>
           <Typography variant="h2">
             {`${title.toUpperCase()} HAS:`}
           </Typography>
           <List>
-            <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
-            <ListItem>{reesDavies().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
-            <ListItem>{ko().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
-            <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
-            <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon"/> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon"/> }<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
+            <ListItem>{bechdel().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}<Typography variant="body1" gutterBottom>{bechdel()}</Typography></ListItem>
+            <ListItem>{reesDavies().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}<Typography variant="body1" gutterBottom>{reesDavies()}</Typography></ListItem>
+            <ListItem>{ko().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}<Typography variant="body1" gutterBottom>{ko()}</Typography></ListItem>
+            <ListItem>{landau().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}<Typography variant="body1" gutterBottom>{landau()}</Typography></ListItem>
+            <ListItem>{feldman().includes('Passed') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}<Typography variant="body1" gutterBottom>{feldman()}</Typography></ListItem>
           </List>
           <Button onClick={resetResults} variant="contained" color="primary">Try again</Button>
         </Box>
@@ -84,20 +84,24 @@ const Quiz = (props) => {
       <>
         <MovieTestDetails />
         <Container className={classes.content}>
-          <TextField required={true}
-            id="standard-search"
-            label="Movie Title"
-            type="search"
-            margin="normal"
-            onChange={handleTitle}
-          />
-          <br/>
-          <Button onClick={handleActive} variant="contained" color="primary">Start</Button>
-          <br />
-          <br />
-          {data.map(el => <QuizQuestion title={title} isActive={disable} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test}/>)}
+          <div className={classes.inputField}>
+            <TextField
+              required={true}
+              id="custom-css-outlined-input"
+              variant="outlined"
+              label="Movie Title"
+              type="search"
+              className={classes.input}
+              onChange={handleTitle}
+            />
+            <br />
+            <br />
+            <Button className={classes.inputButton} onClick={handleActive} variant="contained" color="primary">Start</Button>
+            <br />
+          </div>
+          {data.map(el => <QuizQuestion title={title} isActive={disable} handleResult={handleResult} key={el.id} question={el.question} id={el.id} test={el.test} />)}
         </Container>
-        </>
+      </>
     )
   }
 }
