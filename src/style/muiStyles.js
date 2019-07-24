@@ -132,19 +132,69 @@ export const MovieListItemStyles = makeStyles(theme => ({
 }))
 
 export const WatchlistStyles = makeStyles(theme => ({
-  app: {
-    height: '8vw',
-    justifyContent: 'center',
-    marginTop: '4.4vw'
+  container: {
+    backgroundColor: theme.palette.lightbg.main,
+    borderRadius: 3,
+    border: '7px solid #F3C814',
+    marginTop: '10vw',
+    paddingBottom: '3vw'
   },
-  top: {
-    marginTop: '10vw'
-  },
-  watchlist: {
-    fontSize: 40,
+  title: {
+    fontSize: '4vw',
+    fontWeight: 200,
+    margin: '2vw',
+    marginRight: '35vw',
     color: theme.palette.background.main
+  },
+  button: {
+    border: 'solid 2px #333',
+    color: theme.palette.background.main,
+    backgroundColor: theme.palette.primary.main,
+    fontSize: '1.5vw',
+    fontWeight: 120,
+    width: '15vw',
+    height: '4vw',
+    marginTop: '1.3vw',
+    marginRight: '6vw',
+    marginBottom: 0
+  },
+  actions: {
+    height: 140
   }
 }))
+
+// export const MovieListStyles = makeStyles(theme => ({
+//   actions: {
+//     backgroundColor: theme.palette.lightbg.main,
+//     marginRight: '5vw',
+//     padding: 20
+//   },
+//   sort: {
+//     backgroundColor: theme.palette.lightbg.main,
+//     borderRadius: 4
+//   },
+//   container: {
+//     backgroundColor: theme.palette.lightbg.main,
+//     padding: 0,
+//     paddingBottom: 50,
+//     marginBottom: 0,
+//     marginTop: 130,
+//     borderRadius: 3,
+//     border: '7px solid #F3C814'
+//   },
+//   title: {
+//     fontSize: '5vw',
+//     fontWeight: 200,
+//     margin: 0,
+//     color: theme.palette.background.main
+//   },
+//   header: {
+//     height: 100,
+//     padding: 0,
+//     marginRight: '17vw',
+//     marginTop: 10
+//   }
+// }))
 
 export const WatchlistItemStyles = makeStyles(theme => ({
   root: {
