@@ -187,8 +187,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     backgroundColor: theme.palette.lightbg.main,
     border: '2px solid #333',
-    boxShadow: '0 0 0 0',
-    width: '57vw'
+    boxShadow: '0 0 0 0'
   },
   text: {
     fontSize: 28,
@@ -196,7 +195,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     color: theme.palette.background.main
   },
   list: {
-    margin: '1vw',
+    marginTop: '1vw',
     width: '80vw'
   },
   icon: {
