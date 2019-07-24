@@ -470,6 +470,49 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     height: 30,
     fontSize: 15,
     paddingTop: 2
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    height: 40,
+    marginTop: 30,
+    marginLeft: 40
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    height: 40,
+    marginTop: 30,
+    marginLeft: 10
+  },
+  buttonIcon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr',
+    height: 20
+  },
+  left: {
+    paddingLeft: 0
+  },
+  cardContainer: {
+    marginTop: 64,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 50%',
+    backgroundColor: '#333'
+  },
+  customFilter: {
+    backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 1) 0%, rgba(68.6%, 55.7%, 0%, 0.8) 100%)',
+    paddingTop: 50,
+    paddingBottom: 50
   }
 }))
 
