@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { MovieDetailAvatarStyles } from '../style/muiStyles'
+import { AvatarsHoverStyles } from '../style/muiStyles'
 
 import { Avatar, Grid, Popover, Typography } from '@material-ui/core'
 
-function MovieDetailAvatars ({ test }) {
-  const classes = MovieDetailAvatarStyles()
+function AvatarsHover ({ test }) {
+  const classes = AvatarsHoverStyles()
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
 
@@ -118,9 +118,9 @@ function MovieDetailAvatars ({ test }) {
   }
 }
 
-export default MovieDetailAvatars
+export default AvatarsHover
 
-MovieDetailAvatars.propTypes = {
+AvatarsHover.propTypes = {
   test: PropTypes.object,
   testType: PropTypes.string
 }

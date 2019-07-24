@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { Card, CardActionArea, CardMedia } from '@material-ui/core'
 
 import { RecommendationsStyles } from '../style/muiStyles'
-import Avatars from './Avatars'
+import AvatarsHover from './AvatarsHover'
 
 const RecommendationDetail = (props) => {
   const classes = RecommendationsStyles(props)
@@ -22,7 +22,7 @@ const RecommendationDetail = (props) => {
           </CardMedia>
           <div className={classes.testIcons}>
             {props.movieTests.map(x => {
-              if (x.result) return <Avatars key={x.testType} test={x} />
+              if (x.result) return <AvatarsHover key={x.testType} test={x} />
               else return null
             })
             }
