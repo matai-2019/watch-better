@@ -175,12 +175,11 @@ export const HeaderStyles = makeStyles(theme => ({
 export const FooterStyles = makeStyles(theme => ({
   footerContent: {
     backgroundColor: '#333',
-    padding: theme.spacing(6, 0, 4),
+    padding: theme.spacing(6, 0, 2),
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: 5
+    alignItems: 'center'
   },
   socialButtons: {
     marginBottom: 7,
@@ -220,10 +219,8 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   },
   card: {
     width: 200,
-    height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2),
-    padding: theme.spacing(2.5)
+    padding: '20px 0 10px 0'
   },
   cardContainer: {
     marginTop: theme.spacing(8),
@@ -472,7 +469,7 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '720px'
+    height: '625px'
   },
   ourTopPicks: {
     marginBottom: '-60px',
@@ -480,7 +477,7 @@ export const RecommendationsStyles = makeStyles({
     padding: 0
   },
   media: {
-    height: '725px',
+    height: '625px',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
@@ -500,7 +497,7 @@ export const RecommendationsStyles = makeStyles({
     width: '200px',
     margin: '0 auto',
     marginBottom: '-90px',
-    transform: 'translate(-0px, -700px)'
+    transform: 'translate(-0px, -610px)'
   },
   button: {
     alignItems: 'center',
