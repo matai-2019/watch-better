@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Redirect } from 'react-router-dom'
-import { MovieListItemStyles } from '../style/muiStyles'
+import { MovieListItemStyles, theme } from '../style/muiStyles'
 import {
   Container,
   Typography,
@@ -24,7 +24,7 @@ import { addMovieToWatchList, removeMovieFromWatchList, addMovieToSeenList, remo
 
 const StyledRating = withStyles({
   iconFilled: {
-    color: '#333',
+    color: theme.palette.background.main,
     marginRight: 2.5
   }
 })(Rating)
