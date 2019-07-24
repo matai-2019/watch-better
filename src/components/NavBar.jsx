@@ -27,12 +27,14 @@ function NavBar (props) {
             <Typography className={classes.tagline}>
               DIVERSE MOVIE DATABASE
             </Typography>
-            {isAuthenticated() && <div className={classes.divide}>
-              <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
-                <Button className={classes.watchButton}><Link to="/movies/watchlist" className={classes.link}>Watchlist</Link></Button>
-              </StyledBadge>
-            </div>}
-            <Button className={classes.navButton}><Link to="/quiz" className={classes.link}>Test A Movie</Link></Button>
+            {isAuthenticated() && <Link to="/movies/watchlist" className={classes.link}>
+              <div className={classes.divide}>
+                <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
+                  <Button className={classes.watchButton}>Watchlist</Button>
+                </StyledBadge>
+              </div>
+            </Link>}
+            <Link to="/quiz" className={classes.link}><Button className={classes.navButton}>Test A Movie</Button></Link>
             <div className={classes.search}>
               <Grid container spacing={1} alignItems="flex-end">
                 <Grid item>
@@ -43,9 +45,16 @@ function NavBar (props) {
                 </Grid>
               </Grid>
             </div>
-            <div className={classes.loginButton}>
-              {isAuthenticated() ? <Link to="/" onClick={logOff} ><img src="/icons/logout.svg" alt="" /></Link> : <Link to="/login"><img src="/icons/login.svg" alt="" /></Link>}
+            {isAuthenticated() ? <div className={classes.loginButton}>
+              <Link to="/" onClick={logOff} >
+                <img src="/icons/logout.svg" alt="" />
+              </Link>
             </div>
+              : <div className={classes.loginButton}>
+                <Link to="/login">
+                  <img src="/icons/login.svg" alt="" />
+                </Link>
+              </div>}
           </Toolbar>
         </AppBar>
       </div>
