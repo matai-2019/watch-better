@@ -13,7 +13,7 @@ import { theme } from '../../../style/muiStyles'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-test('<MovielistItem /> always displays 1 Button', () => {
+test('<MovielistItem /> shows zero buttons if not signed in', () => {
   const mockStore = configureStore([thunk])({
     watchlist: [{ id: 1, title: 'Bad Moms' }],
     seenList: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }]
@@ -59,5 +59,5 @@ test('<MovielistItem /> always displays 1 Button', () => {
     </Router>
   )
   const actual = wrapper.find(Button)
-  expect(actual).toHaveLength(1)
+  expect(actual).toHaveLength(0)
 })
