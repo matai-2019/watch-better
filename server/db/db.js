@@ -47,11 +47,47 @@ const getMovieById = (id, db = connection) => {
     })
 }
 
+const getWatchListByUserId = (userId, db = connection) => {
+  return db('watchlist')
+    .join('users', 'users.id', 'watchlist.user_id')
+    .join('movies', 'movies.id', 'watchlist.movie_id')
+    .select('watchlist.id', 'movies.id as movieId', 'movies.title', 'movies.rating')
+    .where('users.id', userId)
+}
+
+const insertMovieToWatchList = (userId, movieId, db = connection) => {
+  return db('watchlist').insert({ user_id: userId, movie_id: movieId })
+}
+
+const delMovieFromWatchList = (watchListId, db = connection) => {
+  return db('watchlist')
+    .del()
+    .where('id', watchListId)
+}
+
+const getSeenListByUserId = (userId, db = connection) => {
+  return db('seenlist')
+    .join('users', 'users.id', 'seenlist.user_id')
+    .join('movies', 'movies.id', 'seenlist.movie_id')
+    .select('seenlist.id', 'movies.id as movieId')
+    .where('user_id', userId)
+}
+
+const insertMovieToSeenListByUserId = (userId, movieId, db = connection) => {
+  return db('seenlist').insert({ user_id: userId, movie_id: movieId })
+}
+
+const delMovieFromSeenList = (seenListId, db = connection) => {
+  return db('seenlist')
+    .del()
+    .where('id', seenListId)
+}
+
 const getComments = (movieId, db = connection) => {
   return db('comments')
     .where('movie_id', movieId)
     .join('users', 'users.id', 'comments.user_id')
-    .select('comment', 'user_rating', 'created', 'users.firstname', 'users.lastname')
+    .select('comment', 'user_rating as userRating', 'created', 'users.firstname as firstName', 'comments.id as id')
 }
 
 const addComment = (comment, db = connection) => {
@@ -69,6 +105,12 @@ module.exports = {
   close,
   getMovieById,
   getAllMovies,
+  getWatchListByUserId,
+  insertMovieToWatchList,
+  delMovieFromWatchList,
+  getSeenListByUserId,
+  delMovieFromSeenList,
+  insertMovieToSeenListByUserId,
   getComments,
   addComment,
   delComment

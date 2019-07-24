@@ -33,7 +33,7 @@ export const SorterStyle = makeStyles(theme => ({
 
 export const MovieListItemStyles = makeStyles(theme => ({
   root: {
-    flexGrow: '1'
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
@@ -49,10 +49,11 @@ export const MovieListItemStyles = makeStyles(theme => ({
     cursor: 'pointer'
   },
   avatar: {
-    color: '#333',
+    color: '#222',
     backgroundColor: '#FFDF59',
     border: '2px solid #333',
     margin: 1.2,
+    padding: 2,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -120,7 +121,7 @@ export const WatchlistStyles = makeStyles(theme => ({
 
 export const WatchlistItemStyles = makeStyles(theme => ({
   root: {
-    flexGrow: '1'
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
@@ -178,16 +179,17 @@ export const FooterStyles = makeStyles(theme => ({
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 5
   },
   socialButtons: {
     marginBottom: 7,
     color: '#FFDF59'
   },
   edaText: {
-    padding: '1',
+    padding: 1,
     fontSize: '12px',
-    fontWeight: '300'
+    fontWeight: 300
   },
   footerText: {
     marginTop: 10
@@ -249,7 +251,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
   loadingCamera: {
-    fill: 'purple',
+    fill: 'white',
     fillOpacity: 0.95,
     stroke: 'none',
     top: '50%',
@@ -261,12 +263,12 @@ export const WaitIndicatorStyles = makeStyles(theme => ({
     fontFamily: 'Roboto',
     textAlign: 'center',
     fontWeight: 'lighter 300',
-    color: 'purple',
+    color: 'white',
     top: '120%',
     left: '60%',
     transform: 'translate(-50%, -50%)',
     position: 'absolute',
-    lineHeight: '2'
+    lineHeight: 2
   }
 }))
 
@@ -281,6 +283,7 @@ export const NavBarStyles = makeStyles(theme => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     marginLeft: 0,
+    marginRight: '42px',
     marginBottom: 15,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -292,10 +295,14 @@ export const NavBarStyles = makeStyles(theme => ({
     flexGrow: 2,
     display: 'none',
     fontSize: '35px',
-    fontWeight: '800',
+    fontWeight: 800,
     color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
+    },
+    transition: 'all 1s',
+    '&:hover': {
+      transform: 'scale(1.13)'
     }
   },
   tagline: {
@@ -333,6 +340,13 @@ export const NavBarStyles = makeStyles(theme => ({
   },
   divide: {
     marginRight: '2vw'
+  },
+  loginButton: {
+    marginRight: '15px',
+    transition: 'all 0.35s',
+    '&:hover': {
+      transform: 'scale(1.2)'
+    }
   }
 }))
 
@@ -341,7 +355,7 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     pointerEvents: 'none'
   },
   root: {
-    flexGrow: '1'
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
@@ -356,7 +370,7 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
   },
   movieTestText: {
     fontSize: '1.10rem',
-    fontWeight: '500'
+    fontWeight: 500
   },
   avatar: {
     color: '#333',
@@ -438,14 +452,14 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     color: '#ccc'
   },
   genres: {
-    fontWeight: '300',
+    fontWeight: 300,
     padding: theme.spacing(1, 0)
   },
   overview: {
     paddingTop: theme.spacing()
   },
   overviewText: {
-    fontWeight: '300'
+    fontWeight: 300
   },
   avatar: {
     color: '#333',
@@ -463,18 +477,19 @@ export const RecommendationsStyles = makeStyles({
   carousel: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: '#333333'
+    backgroundColor: '#333333',
+    alignItems: 'center'
   },
   card: {
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '725px'
+    height: '720px'
   },
   ourTopPicks: {
     marginBottom: '-60px',
     display: 'inline-flex',
-    padding: '0'
+    padding: 0
   },
   media: {
     height: '725px',
@@ -487,22 +502,34 @@ export const RecommendationsStyles = makeStyles({
     }
   },
   title: {
-    color: 'white',
-    fontSize: '25px',
-    fontWeight: 600
+    marginTop: '12px',
+    color: '#FFDF59',
+    backgroundColor: 'rgba(0, 0, 0, 0.54)',
+    textAlign: 'center',
+    fontSize: '1.5rem',
+    fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+    fontWeight: 600,
+    lineHeight: 1.6,
+    letterSpacing: '0.0075em'
   },
   testIcons: {
-    display: 'Flex',
-    marginTop: '-90px',
-    marginLeft: '40%'
+    marginLeft: '.5%',
+    marginBottom: '.5%',
+    position: 'fixed',
+    bottom: 0,
+    padding: 1
+  },
+  buttonWrapper: {
+    width: '270px',
+    margin: '0 auto',
+    marginBottom: '-90px',
+    transform: 'translate(-0px, -700px)'
   },
   button: {
+    alignItems: 'center',
     border: 'solid 2.5px #FFDF59',
-    marginTop: '-1360px',
-    bottom: '500%',
     width: '270px',
     height: '55px',
-    marginLeft: '41%',
     backgroundColor: '#FFDF5930',
     color: '#FFDF59',
     '&:hover': {
@@ -595,7 +622,8 @@ export const SearchStyles = makeStyles(theme => ({
     zIndex: 1,
     marginTop: theme.spacing(1),
     left: 0,
-    right: 0
+    right: 0,
+    width: '278px'
   },
   inputRoot: {
     flexWrap: 'wrap'
@@ -631,8 +659,8 @@ export const CastStyles = makeStyles(theme => ({
     color: '#FFDF59',
     fontSize: '1.25rem',
     fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
-    fontWeight: '500',
-    lineHeight: '1.6',
+    fontWeight: 500,
+    lineHeight: 1.6,
     letterSpacing: '0.0075em'
   }
 }))
@@ -674,24 +702,39 @@ export const RegisterStyles = makeStyles(theme => ({
   }
 }))
 
+export const CommentsStyles = makeStyles(theme => ({
+  commentsContainer: {
+    display: 'flex',
+    padding: '3em',
+    height: '400px'
+  },
+  comment: {
+    flexGrow: 2,
+    maxWidth: '500px',
+    float: 'right'
+  }
+}))
+
 export const CommentFormStyles = makeStyles(theme => ({
   text: {
     color: theme.palette.primary
   },
   paper: {
-    width: '35%',
-    margin: '2em',
-    padding: '1em'
+    width: '30%',
+    margin: '20px',
+    padding: '1em',
+    flexGrow: 1,
+    float: 'left'
   },
   comment: {
     width: '90%',
     margin: '1em'
   },
   filter: {
-    width: '35%',
-    margin: '2em',
+    width: '30%',
+    margin: '20px',
     padding: '1em',
     backgroundColor: 'gray',
-    opacity: '.8'
+    opacity: 0.8
   }
 }))

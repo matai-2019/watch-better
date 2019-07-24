@@ -10,9 +10,9 @@ import Watchlist from './Watchlist'
 export default function Home () {
   return (
     <>
-      <Route path="/" component={MovieTestDetails} />
       <Route path="/" exact component={Recommendations} />
       <Switch>
+        <Route path="/" component={MovieTestDetails} />
         <Route path="/movie/:id" component={MovieDetails} />
         <Route path="/movies/list" component={MovieList} />
         <Route path="/movies/watchlist" component={Watchlist} />

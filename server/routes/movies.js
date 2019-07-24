@@ -1,16 +1,16 @@
 const express = require('express')
 const router = express.Router()
-// const { decodeToken } = require('../auth')
-// add decodeToken as the middle parameter inside route
+const { decodeToken } = require('../auth')
 
 const { findMovieFromAPI, getMoviesFromAPI } = require('./routeHelpers')
 
 const db = require('../db/db')
 
-router.post('/comment', (req, res) => {
+router.post('/comment', decodeToken, (req, res) => {
+  const id = req.user.id
   const usersComment = {
     movie_id: req.body.movieId,
-    user_id: 2, // change that once we are getting user id from somewhere (store?)
+    user_id: id,
     comment: req.body.comment,
     user_rating: req.body.rating
   }

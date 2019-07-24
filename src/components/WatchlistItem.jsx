@@ -14,8 +14,10 @@ import {
 } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
-import { removeFromWatchlist } from '../actions/watchlist'
-import { seen, unseen } from '../actions/seenList'
+import { getWatchList } from '../actions/watchlist'
+import { getSeenList } from '../actions/seenList'
+import { setErrorMessage } from '../actions/errorMessage'
+import { removeMovieFromWatchList, addMovieToSeenList, removeMovieFromSeenList } from '../utilities/api'
 
 const StyledRating = withStyles({
   iconFilled: {
@@ -27,43 +29,41 @@ const StyledRating = withStyles({
 
 const WatchlistItem = (props) => {
   const classes = WatchlistItemStyles(props)
-
-  const seenStatus = () => {
-    const element = props.seenList.find(item => {
-      return item.id === props.movie.id
-    })
-    if (element) {
-      return true
-    } else {
-      return false
-    }
-  }
+  const { seenList, movie, dispatch } = props
 
   const [redirect, setRedirect] = useState()
-  const [isSeen, setIsSeen] = useState(seenStatus)
-  const [seenColor, setSeenColor] = useState(seenStatus)
 
+  const seenListEntry = seenList.filter(item => {
+    return item.movieId === movie.movieId
+  })[0]
   const handleClick = () => {
-    setRedirect(props.movie.id)
+    setRedirect(movie.movieId)
   }
 
   const handleSeen = () => {
-    const icon = isSeen
-    const color = seenColor
-
-    if (isSeen) {
-      setSeenColor(!color)
-      setIsSeen(!icon)
-      props.dispatch(unseen(props.movie.id))
+    if (!seenListEntry) {
+      addMovieToSeenList(movie.movieId)
+        .then(() => {
+          dispatch(getSeenList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     } else {
-      setSeenColor(!color)
-      setIsSeen(!icon)
-      props.dispatch(seen(props.movie.id))
+      removeMovieFromSeenList(seenListEntry.id)
+        .then(() => {
+          dispatch(getSeenList())
+        })
+        .catch(err => {
+          dispatch(setErrorMessage(err))
+        })
     }
   }
 
   const handleRemove = () => {
-    props.dispatch(removeFromWatchlist(props.movie.id))
+    removeMovieFromWatchList(movie.id).then(() => {
+      dispatch(getWatchList())
+    })
   }
 
   const renderRedirect = () => {
@@ -83,17 +83,17 @@ const WatchlistItem = (props) => {
                   <Box display="flex" justifyContent="flex-start" m={0} p={0}>
                     <Box>
                       <Typography gutterBottom className={classes.text} onClick={handleClick}>
-                        {props.movie.title}
+                        {movie.title}
                       </Typography>
                     </Box>
                     <Box>
-                      <StyledRating name="half-rating" value={props.movie.rating / 2} readOnly precision={0.1}/>
+                      <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1}/>
                     </Box>
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenColor ? '#A9DA71' : '#DADADA' }} onClick={handleSeen}>
-                <i className={classes.icon}>{ isSeen ? 'visibility' : 'visibility_off'}</i>
+              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : '#DADADA' }}onClick={handleSeen}>
+                <i className={classes.icon}>{ seenListEntry ? 'visibility' : 'visibility_off'}</i>
               </Button>
               <Button size="small" className={classes.removeButton} onClick={handleRemove}>
                 <i className={classes.icon}>delete_forever</i>
@@ -110,7 +110,7 @@ const WatchlistItem = (props) => {
 WatchlistItem.propTypes = {
   movie: PropTypes.object,
   dispatch: PropTypes.func,
-  seenList: PropTypes.object
+  seenList: PropTypes.array
 }
 
 const mapStateToProps = ({ seenList }) => {
