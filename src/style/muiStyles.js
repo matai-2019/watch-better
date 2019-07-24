@@ -299,6 +299,10 @@ export const NavBarStyles = makeStyles(theme => ({
     color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
+    },
+    transition: 'all 1s',
+    '&:hover': {
+      transform: 'scale(1.13)'
     }
   },
   tagline: {
