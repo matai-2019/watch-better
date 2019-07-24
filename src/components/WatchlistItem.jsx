@@ -91,10 +91,10 @@ const WatchlistItem = (props) => {
                   </Box>
                 </Grid>
               </Grid>
-              <Button size="small" className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : theme.palette.primary.main }}onClick={handleSeen}>
+              <Button className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : theme.palette.primary.main }} onClick={handleSeen}>
                 <i className={classes.icon}>{ seenListEntry ? 'visibility' : 'visibility_off'}</i>
               </Button>
-              <Button size="small" className={classes.removeButton} onClick={handleRemove}>
+              <Button className={classes.removeButton} onClick={handleRemove}>
                 <i className={classes.icon}>delete_forever</i>
               </Button>
             </Grid>

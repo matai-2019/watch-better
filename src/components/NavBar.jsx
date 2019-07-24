@@ -17,37 +17,48 @@ const StyledBadge = withStyles(() => ({
 function NavBar (props) {
   const classes = NavBarStyles(props)
   return (
-    <div className={classes.root}>
-      <AppBar position="fixed">
-        <Toolbar className={classes.toolbar}>
-          <Link to="/" className={`${classes.link} ${classes.logo}`}>WB</Link>
-          <Link to="/" className={`${classes.link} ${classes.tagline}`}>
+    <Link to="/" className={classes.link}>
+      <div className={classes.root}>
+        <AppBar position="fixed">
+          <Toolbar className={classes.toolbar}>
+            <Typography className={classes.logo}>
+              WB
+            </Typography>
             <Typography className={classes.tagline}>
               THE DIVERSE MOVIE DATABASE
             </Typography>
-          </Link>
-          {isAuthenticated() && <div className={classes.divide}>
-            <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
-              <Button className={classes.watchButton}><Link to="/movies/watchlist" className={classes.link}>Watchlist</Link></Button>
-            </StyledBadge>
-          </div>}
-          <Button className={classes.navButton}><Link to="/quiz" className={classes.link}>Test A Movie</Link></Button>
-          <div className={classes.search}>
-            <Grid container spacing={1} alignItems="flex-end">
-              <Grid item>
-                <SearchIcon className={classes.searchIcon} />
+            {isAuthenticated() && <Link to="/movies/watchlist" className={classes.link}>
+              <div className={classes.divide}>
+                <StyledBadge color="primary" badgeContent={props.watchlist.length} className={classes.margin}>
+                  <Button className={classes.watchButton}>Watchlist</Button>
+                </StyledBadge>
+              </div>
+            </Link>}
+            <Link to="/quiz" className={classes.link}><Button className={classes.navButton}>Test A Movie</Button></Link>
+            <div className={classes.search}>
+              <Grid container spacing={1} alignItems="flex-end">
+                <Grid item>
+                  <SearchIcon className={classes.searchIcon} />
+                </Grid>
+                <Grid item>
+                  <Search className={classes.search} />
+                </Grid>
               </Grid>
-              <Grid item>
-                <Search className={classes.search} />
-              </Grid>
-            </Grid>
-          </div>
-          <div className={classes.loginButton}>
-            {isAuthenticated() ? <Link to="/" onClick={logOff} ><img src="/icons/logout.svg" alt="" /></Link> : <Link to="/login"><img src="/icons/login.svg" alt="" /></Link>}
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+            </div>
+            {isAuthenticated() ? <div className={classes.loginButton}>
+              <Link to="/" onClick={logOff} >
+                <img src="/icons/logout.svg" alt="" />
+              </Link>
+            </div>
+              : <div className={classes.loginButton}>
+                <Link to="/login">
+                  <img src="/icons/login.svg" alt="" />
+                </Link>
+              </div>}
+          </Toolbar>
+        </AppBar>
+      </div>
+    </Link>
   )
 }
 

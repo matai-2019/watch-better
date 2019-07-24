@@ -28,12 +28,12 @@ const MovieTestDetails = props => {
     <div className={classes.cardContainer}>
       {testInfo.map((test, i) => (
         <Box boxShadow={0} key={test.id} className={classes.card}>
-          <div>
-            <img onClick={handleOpen(i)} className={classes.icon} src={test.icon} alt='test-passes'/>
+          <div className={classes.iconContainer}>
+            <img onClick={handleOpen(i)} className={classes.icon} src={test.icon} alt='test-passes' />
+            <Typography variant="body1" component="h2" gutterBottom>
+              {test.name}
+            </Typography>
           </div>
-          <Typography variant="body1" component="h2" gutterBottom>
-            {test.name}
-          </Typography>
           <Modal
             aria-labelledby={test.name}
             aria-describedby={`Description of the ${test.name} test`}
@@ -41,8 +41,13 @@ const MovieTestDetails = props => {
             onClose={handleClose(i)}
           >
             <Paper className={classes.paper}>
-              <Typography variant="h5" component="h2" gutterBottom>{test.name}</Typography>
-              <Typography component="p">{test.description}</Typography>
+              <img className={classes.innerIcon} src={test.icon} alt='test-passes' />
+              <Typography className={classes.modalTitle}variant="h5" component="h2" gutterBottom>{test.name}</Typography>
+              <Typography className={classes.modalFounded} variant="body1" component="h2" gutterBottom>
+                • &nbsp;&nbsp;&nbsp;{test.founder}&nbsp;&nbsp;&nbsp; •
+              </Typography>
+              <br />
+              <Typography className={classes.modalText}component="p">{test.description}</Typography>
             </Paper>
           </Modal>
         </Box>
