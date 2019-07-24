@@ -690,11 +690,18 @@ export const RegisterStyles = makeStyles(theme => ({
 }))
 
 export const CommentsStyles = makeStyles(theme => ({
-  commentsContainer: {
-  },
   commentsList: {
     height: 330,
     overflow: 'auto'
+  },
+  noCommentsTitle: {
+    color: '#888',
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(2)
+  },
+  noCommentsDesc: {
+    color: '#888',
+    padding: theme.spacing(0, 2)
   }
 }))
 
@@ -730,7 +737,7 @@ export const CommentFormStyles = makeStyles(theme => ({
 
 export const CommentFormGuestStyles = makeStyles(theme => ({
   container: {
-    background: theme.palette.background.main,
+    background: '#666',
     height: '100%',
     width: '100%',
     top: 0,

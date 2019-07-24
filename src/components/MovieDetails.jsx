@@ -101,7 +101,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match }) {
     </div>
   </div>
   <Cast cast={movieDetails.cast}/>
-  <Comments movieId={movieDetails.id} />
+  <Comments movieId={movieDetails.id} title={movieDetails.title} />
   </>
 }
 
