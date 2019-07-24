@@ -494,7 +494,7 @@ export const RecommendationsStyles = makeStyles({
     padding: 1
   },
   buttonWrapper: {
-    width: '200px',
+    width: '220px',
     margin: '0 auto',
     marginBottom: '-90px',
     transform: 'translate(-0px, -610px)'
@@ -503,7 +503,7 @@ export const RecommendationsStyles = makeStyles({
     alignItems: 'center',
     fontSize: '1rem',
     border: 'solid 2.5px #FFDF59',
-    width: '200px',
+    width: '220px',
     height: '55px',
     backgroundColor: '#2d2c289e',
     color: '#FFDF59',
