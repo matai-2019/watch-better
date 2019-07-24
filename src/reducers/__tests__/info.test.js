@@ -39,7 +39,7 @@ describe('infoReducer with getMovieDetails actions', () => {
 })
 
 describe('infoReducer with getMovies actions', () => {
-  it('returns pending | pending: true', () => {
+  it.skip('returns pending | pending: true', () => {
     const testState = { pending: true }
     const intialState = { pending: false }
     const action = { type: GET_MOVIES_PENDING, action: {} }

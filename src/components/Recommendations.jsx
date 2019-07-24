@@ -4,7 +4,6 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
-import { Button } from '@material-ui/core/'
 
 import { RecommendationsStyles } from '../style/muiStyles'
 import { getMovies } from '../actions/movies'
