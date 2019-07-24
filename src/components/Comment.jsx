@@ -1,28 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Card, Typography } from '@material-ui/core'
+import { Box, Paper, Typography } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
-import { CommentsStyles } from '../style/muiStyles'
+import { CommentStyles } from '../style/muiStyles'
 
 const Comment = ({ comment: { userRating, firstName, comment, created } }) => {
-  const classes = CommentsStyles()
+  const classes = CommentStyles()
   return (
     <>
       <br />
-      <Card className={classes.comment}>
-        <Rating value={userRating} readOnly />
-        <Typography variant="h6">
-          {firstName}
-        </Typography>
+      <Paper className={classes.container} >
+        <Box display='inline-flex'>
+          <Typography variant="h6">
+            {firstName}
+          </Typography>
+          <Rating className={classes.rating} value={userRating} readOnly />
+        </Box>
         <Typography >
           {comment}
         </Typography>
         <br />
-        <Typography >
+        <Typography className={classes.dateTime} variant="caption" >
           {created}
         </Typography>
-      </Card>
+      </Paper>
     </>
   )
 }

@@ -701,6 +701,20 @@ export const CommentsStyles = makeStyles(theme => ({
   }
 }))
 
+export const CommentStyles = makeStyles(theme => ({
+  container: {
+    margin: theme.spacing(0, 3, 1),
+    padding: theme.spacing(2, 2, 1, 2)
+  },
+  rating: {
+    paddingTop: 3,
+    marginLeft: theme.spacing()
+  },
+  dateTime: {
+    color: '#bbb'
+  }
+}))
+
 export const CommentFormStyles = makeStyles(theme => ({
   text: {
     color: theme.palette.primary
