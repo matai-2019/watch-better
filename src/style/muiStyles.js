@@ -723,6 +723,12 @@ export const CommentFormStyles = makeStyles(theme => ({
   },
   comment: {
     width: '100%'
+  }
+}))
+
+export const CommentFormGuestStyles = makeStyles(theme => ({
+  formMessage: {
+    color: theme.palette.primary
   },
   filter: {
     backgroundColor: 'gray',

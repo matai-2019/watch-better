@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { Rating } from '@material-ui/lab'
 import { Paper, TextField, Typography, Button, withStyles } from '@material-ui/core'
 
-import { CommentFormStyles } from '../style/muiStyles'
+import { CommentFormStyles, CommentFormGuestStyles } from '../style/muiStyles'
 import { addCommentAPI } from '../utilities/api'
 import { isAuthenticated } from '../auth'
 
@@ -16,6 +16,7 @@ const StyledRating = withStyles({
 
 const CommentForm = ({ thing, movieId }) => {
   const classes = CommentFormStyles()
+  const guest = CommentFormGuestStyles()
 
   const [comment, setComment] = useState('')
   const [rating, setRating] = useState(null)
@@ -38,11 +39,11 @@ const CommentForm = ({ thing, movieId }) => {
       })
   }
 
-  const auth = () => isAuthenticated() ? classes.paper : `${classes.filter} ${classes.paper}`
+  const auth = () => isAuthenticated() ? classes.paper : `${guest.filter} ${classes.paper}`
 
   return (
     <Paper className={auth()}>
-      {!isAuthenticated() && <Typography variant="h5" component="p" className={classes.text}>Log in to leave a comment</Typography>}
+      {!isAuthenticated() && <Typography variant="h5" component="p" className={guest.formMessage}>Log in to leave a comment</Typography>}
       <Typography className={classes.text} component="legend" variant="h6">
         Your rating
       </Typography>
