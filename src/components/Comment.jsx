@@ -10,16 +10,16 @@ const Comment = ({ comment: { userRating, firstName, comment, created } }) => {
   return (
     <>
       <br />
-      <Card classes={classes.comment}>
+      <Card className={classes.comment}>
         <Rating value={userRating} readOnly />
         <Typography variant="h6">
           {firstName}
         </Typography>
-        <Typography variant="p">
+        <Typography >
           {comment}
         </Typography>
         <br />
-        <Typography variant="p">
+        <Typography >
           {created}
         </Typography>
       </Card>

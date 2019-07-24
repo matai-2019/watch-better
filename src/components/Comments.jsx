@@ -26,7 +26,7 @@ const Comments = ({ movieId }) => {
   }, [dummy])
 
   return (
-    <Paper classes={classes.commentsContainer}>
+    <Paper classes={classes.commentsContainer} square>
       <Container>
         <Grid container justify="center" >
           <Grid item xs={6} className={classes.commentsList}>
