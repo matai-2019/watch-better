@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { Box, Paper, Typography, Button } from '@material-ui/core'
 import { connect } from 'react-redux'
-// import { Card, Typography } from '@material-ui/core'
 import Rating from '@material-ui/lab/Rating'
 
 import { CommentStyles } from '../style/muiStyles'
