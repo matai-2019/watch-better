@@ -310,6 +310,7 @@ export const NavBarStyles = makeStyles(theme => ({
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     marginLeft: 0,
+    marginRight: '42px',
     marginBottom: 15,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -325,6 +326,10 @@ export const NavBarStyles = makeStyles(theme => ({
     color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
+    },
+    transition: 'all 1s',
+    '&:hover': {
+      transform: 'scale(1.13)'
     }
   },
   tagline: {
@@ -362,6 +367,13 @@ export const NavBarStyles = makeStyles(theme => ({
   },
   divide: {
     marginRight: '2vw'
+  },
+  loginButton: {
+    marginRight: '15px',
+    transition: 'all 0.35s',
+    '&:hover': {
+      transform: 'scale(1.2)'
+    }
   }
 }))
 
@@ -637,7 +649,8 @@ export const SearchStyles = makeStyles(theme => ({
     zIndex: 1,
     marginTop: theme.spacing(1),
     left: 0,
-    right: 0
+    right: 0,
+    width: '278px'
   },
   inputRoot: {
     flexWrap: 'wrap'
