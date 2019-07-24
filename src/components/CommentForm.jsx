@@ -38,15 +38,7 @@ const CommentForm = ({ thing, movieId }) => {
       })
   }
 
-  const auth = () => {
-    if (isAuthenticated()) {
-      const filter = classes.paper
-      return filter
-    } else {
-      const filter = classes.filter
-      return filter
-    }
-  }
+  const auth = () => isAuthenticated() ? classes.paper : `${classes.filter} ${classes.paper}`
 
   return (
     <Paper className={auth()}>
