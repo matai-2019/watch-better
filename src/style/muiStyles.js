@@ -31,34 +31,50 @@ export const SorterStyle = makeStyles(theme => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2)
+  },
+  label: {
+    color: theme.palette.primary.main
+  },
+  select: {
+    '&:before': {
+      borderColor: theme.palette.primary.main
+    },
+    '&:after': {
+      borderColor: theme.palette.primary.main
+    }
+  },
+  icon: {
+    fill: theme.palette.primary.main
   }
 }))
 
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
-    backgroundColor: theme.palette.lightbg.main,
+    backgroundColor: '#333',
     marginRight: 90,
     padding: 20,
     height: 120
   },
   sort: {
-    backgroundColor: theme.palette.lightbg.main,
+    color: theme.palette.primary.main,
+    backgroundColor: '#333',
     borderRadius: 4
   },
   container: {
-    backgroundColor: theme.palette.lightbg.main,
+    backgroundColor: '#333',
     padding: 0,
     paddingBottom: 50,
-    marginBottom: 0,
+    marginBottom: 130,
     marginTop: 130,
     borderRadius: 3,
-    border: '5px solid #F3C814'
+    border: '1px solid',
+    borderColor: theme.palette.primary.main
   },
   title: {
     fontSize: 65,
     fontWeight: 170,
     margin: 0,
-    color: theme.palette.background.main
+    color: theme.palette.primary.main
   },
   header: {
     height: 100,
@@ -74,10 +90,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.lightbg.main,
-    border: '3px solid #333',
-    width: '60vw',
-    marginLeft: 30
+    backgroundColor: theme.palette.lightbg.main
   },
   img: {
     display: 'block',
@@ -174,8 +187,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     backgroundColor: theme.palette.lightbg.main,
     border: '2px solid #333',
-    boxShadow: '0 0 0 0',
-    width: '57vw'
+    boxShadow: '0 0 0 0'
   },
   text: {
     fontSize: 28,
@@ -183,7 +195,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     color: theme.palette.background.main
   },
   list: {
-    margin: '1vw',
+    marginTop: '1vw',
     width: '80vw'
   },
   icon: {
@@ -645,6 +657,20 @@ export const FilterStyles = makeStyles(theme => ({
     minWidth: 200,
     display: 'flex',
     wrap: 'nowrap'
+  },
+  label: {
+    color: theme.palette.primary.main
+  },
+  select: {
+    '&:before': {
+      borderColor: theme.palette.primary.main
+    },
+    '&:after': {
+      borderColor: theme.palette.primary.main
+    }
+  },
+  icon: {
+    fill: theme.palette.primary.main
   }
 }))
 
@@ -782,7 +808,8 @@ export const RegisterStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    minHeight: 500
   },
   form: {
     width: '100%', // Fix IE 11 issue.

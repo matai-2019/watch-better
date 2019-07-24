@@ -37,7 +37,7 @@ const Comments = ({ movieId, title }) => {
                     No Comments yet
                   </Typography>
                   <Typography className={classes.noCommentsDesc}>
-                    {`Be the first make a comment for ${title} and rate this movie`}
+                    {`Be the first to rate and comment on ${title}`}
                   </Typography>
                   </>
                 )
