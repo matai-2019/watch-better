@@ -693,7 +693,7 @@ export const CommentsStyles = makeStyles(theme => ({
   commentsContainer: {
   },
   commentsList: {
-    maxHeight: 300,
+    height: 300,
     overflow: 'auto'
   },
   comment: {
@@ -706,20 +706,15 @@ export const CommentFormStyles = makeStyles(theme => ({
     color: theme.palette.primary
   },
   paper: {
-    width: '30%',
-    margin: '20px',
-    padding: '1em',
-    flexGrow: 1,
-    float: 'left'
+    height: 268,
+    margin: theme.spacing(2),
+    padding: theme.spacing(2)
   },
   comment: {
     width: '90%',
     margin: '1em'
   },
   filter: {
-    width: '30%',
-    margin: '20px',
-    padding: '1em',
     backgroundColor: 'gray',
     opacity: 0.8
   }
