@@ -6,7 +6,6 @@ import {
 
 import {
   GET_MOVIES_SUCCESS,
-  GET_MOVIES_PENDING,
   GET_MOVIES_ERROR
 } from '../actions/movies'
 
@@ -20,7 +19,6 @@ export default function infoReducer (
 ) {
   switch (action.type) {
     case GET_MOVIE_DETAILS_PENDING:
-    case GET_MOVIES_PENDING:
       return {
         ...state,
         pending: true

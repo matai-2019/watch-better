@@ -320,6 +320,12 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
 }))
 
 export const WaitIndicatorStyles = makeStyles(theme => ({
+  fullPage: {
+    backgroundColor: 'grey',
+    margin: 0,
+    height: '100%',
+    width: '100%'
+  },
   loadingCamera: {
     fill: 'white',
     fillOpacity: 0.95,
