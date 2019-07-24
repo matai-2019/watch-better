@@ -35,14 +35,16 @@ function NavBar (props) {
           <div className={classes.search}>
             <Grid container spacing={1} alignItems="flex-end">
               <Grid item>
-                <SearchIcon className={classes.searchIcon}/>
+                <SearchIcon className={classes.searchIcon} />
               </Grid>
               <Grid item>
-                <Search className={classes.search}/>
+                <Search className={classes.search} />
               </Grid>
             </Grid>
           </div>
-          {isAuthenticated() ? <Link to="/" onClick={logOff} ><img src="/icons/logout.svg" alt=""/></Link> : <Link to="/login"><img src="/icons/login.svg" alt=""/></Link>}
+          <div className={classes.loginButton}>
+            {isAuthenticated() ? <Link to="/" onClick={logOff} ><img src="/icons/logout.svg" alt="" /></Link> : <Link to="/login"><img src="/icons/login.svg" alt="" /></Link>}
+          </div>
         </Toolbar>
       </AppBar>
     </div>
