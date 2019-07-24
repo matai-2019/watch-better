@@ -815,7 +815,8 @@ export const RegisterStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(5),
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    minHeight: 500
   },
   form: {
     width: '100%', // Fix IE 11 issue.
