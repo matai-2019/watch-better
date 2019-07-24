@@ -149,9 +149,9 @@ export const MovieListItemStyles = makeStyles(theme => ({
 
 export const WatchlistStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: theme.palette.lightbg.main,
+    backgroundColor: '#333',
     borderRadius: 3,
-    border: '5px solid #F3C814',
+    border: '1px solid #FFDF59',
     marginTop: 150,
     paddingBottom: 60
   },
@@ -160,12 +160,12 @@ export const WatchlistStyles = makeStyles(theme => ({
     fontWeight: 200,
     margin: 23,
     marginRight: 440,
-    color: theme.palette.background.main
+    color: theme.palette.primary.main
   },
   button: {
-    border: 'solid 2px #333',
-    color: theme.palette.background.main,
-    backgroundColor: theme.palette.primary.main,
+    border: 'solid 1px #FFDF59',
+    color: theme.palette.primary.main,
+    backgroundColor: '#333',
     fontSize: '1.5vw',
     fontWeight: 120,
     width: 220,
