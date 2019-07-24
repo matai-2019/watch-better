@@ -32,12 +32,21 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
     setRedirect('see')
   }
 
-  const responsive = {
+  const responsiveness = {
+    3000: {
+      items: 3
+    },
     1024: {
       items: 3
     },
+    1023: {
+      items: 2
+    },
     464: {
       items: 2
+    },
+    463: {
+      items: 1
     },
     0: {
       items: 1
@@ -57,7 +66,7 @@ const Recommendations = ({ movies, info, dispatch }, ...props) => {
       <div classes={classes.carousel}>
         {redirect && renderRedirect()}
         <AliceCarousel
-          responsive={responsive}
+          responsive={responsiveness}
           autoPlayInterval={3300}
           duration={500}
           autoPlayDirection="ltr"
