@@ -1,78 +1,56 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { WatchlistStyles } from '../style/muiStyles'
 import PropTypes from 'prop-types'
-import {
-  AppBar,
-  Typography,
-  CssBaseline,
-  useScrollTrigger,
-  Box,
-  Container,
-  Toolbar
-} from '@material-ui/core'
+import { Container, Box, Button } from '@material-ui/core'
 
 import WatchlistItem from './WatchlistItem'
 import { getWatchList } from '../actions/watchlist'
 import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
 
-const ElevationScroll = props => {
-  const { children, window } = props
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-    target: window ? window() : undefined
-  })
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0
-  })
-}
-
-ElevationScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  window: PropTypes.func
-}
-
 const Watchlist = (props) => {
   const { watchlist, dispatch } = props
   const classes = WatchlistStyles(props)
+  const [redirect, setRedirect] = useState()
 
   useEffect(() => {
     dispatch(getWatchList())
     dispatch(getSeenList())
   }, [dispatch])
 
+  const handleSeeAll = () => {
+    setRedirect('see')
+  }
+
+  const renderRedirect = () => {
+    if (redirect === 'see') {
+      return <Redirect push to={'/movies/list'} />
+    }
+  }
+
   return (
     isAuthenticated()
-      ? <>
-      <CssBaseline />
-      <ElevationScroll {...props}>
-        <AppBar className={classes.app}>
-          <Toolbar>
-            <Typography className={classes.watchlist} variant="h6">WATCHLIST</Typography>
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
-      <Toolbar />
-      <Container>
-        <div className={classes.top}>
-          <Box my={2}>
-            {watchlist && [...new Array(1)]
-              .map(
-                () => watchlist.map((movie, id) => {
-                  return (
-                    <WatchlistItem key={id} movie={movie}/>
-                  )
-                })
-              )}
+      ? <Container className={classes.container}>
+        {renderRedirect()}
+        <Box display="flex" flexDirection="row-reverse" p={1} m={1} className={classes.actions}>
+          <Box p={1} m={2}>
+            <Button className={classes.button} variant="outlined" color="primary" onClick={handleSeeAll}>
+            ADD MOVIES
+            </Button>
           </Box>
+          <Box p={1}>
+            <h3 className={classes.title}>Watchlist</h3>
+          </Box>
+        </Box>
+        <div>
+          {watchlist && watchlist.map((movie, id) => {
+            return <WatchlistItem key={id} movie={movie}/>
+          })
+          }
         </div>
       </Container>
-    </>
-
       : <Redirect to="/login" />
   )
 }

@@ -18,7 +18,7 @@ const WaitIndicator = (props) => {
           <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="3.6s" begin={0} from="0 51.4 17.7" to="360 51.4 17.7" repeatCount="indefinite" />
         </path>
       </svg>
-      <Typography variant="h4" className={classes.Typography}>Loading…</Typography>
+      <Typography variant="h4" className={classes.loadingText}>Loading…</Typography>
     </div>
   )
 }

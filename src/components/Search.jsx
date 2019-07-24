@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import deburr from 'lodash/deburr'
 import Downshift from 'downshift'
@@ -7,6 +7,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 import { SearchStyles } from '../style/muiStyles'
+import { getMovies } from '../actions/movies'
 
 const renderInput = inputProps => {
   const { InputProps, classes, ref, ...other } = inputProps
@@ -91,19 +92,55 @@ function getSuggestions (value, movies, { showEmpty = false } = {}) {
     })
 }
 
-const Search = ({ movies }, ...props) => {
+const Search = ({ movies, dispatch }, ...props) => {
   const classes = SearchStyles(props)
   const [redirect, setRedirect] = useState({ value: {}, isActive: false })
+  const [state, setState] = useState({
+    selectedItem: '',
+    inputValue: '',
+    isOpen: false
+  })
+
+  useEffect(() => {
+    dispatch(getMovies())
+  }, [dispatch])
 
   const handleChange = item => {
     if (item) {
       const selectedMovie = movies.find(movie => movie.title === item)
       setRedirect({ value: selectedMovie.id, isActive: true })
+      clearSelection()
     }
   }
 
+  const stateChangeHandler = changes => {
+    let {
+      selectedItem = state.selectedItem,
+      isOpen = state.isOpen,
+      inputValue = state.inputValue,
+      type
+    } = changes
+    isOpen = type === Downshift.stateChangeTypes.mouseUp ? state.isOpen : isOpen
+
+    setState({
+      selectedItem,
+      isOpen,
+      inputValue
+    })
+  }
+
+  const clearSelection = () => {
+    setState({ inputValue: '', selectedItem: '' })
+  }
+
   return (
-    <Downshift onChange={handleChange} id="downshift-options">
+    <Downshift
+      onStateChange={stateChangeHandler}
+      onChange={handleChange}
+      selectedItem={state.selectedColor}
+      inputValue={state.inputValue}
+      id="downshift-options"
+    >
       {({
         getInputProps,
         getItemProps,
@@ -157,6 +194,11 @@ const Search = ({ movies }, ...props) => {
       }}
     </Downshift>
   )
+}
+
+Search.propTypes = {
+  movies: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({ movies }) => {

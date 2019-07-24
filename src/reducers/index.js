@@ -8,6 +8,7 @@ import selectedTests from './filter'
 import watchlist from './watchlist'
 import quizAnswer from './quizAnswer'
 import seenList from './seenList'
+import loggedUser from './loggedUser'
 
 export default combineReducers({
   movies,
@@ -17,5 +18,6 @@ export default combineReducers({
   selectedTests,
   watchlist,
   quizAnswer,
-  seenList
+  seenList,
+  loggedUser
 })
