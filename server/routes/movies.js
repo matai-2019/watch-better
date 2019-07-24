@@ -72,7 +72,7 @@ router.get('/search/:query', (req, res) => {
     })
 })
 
-router.get('/userid/:email', (req, res) => {
+router.get('/comments/user/:email', (req, res) => {
   const { email } = req.params
   db.getUserId(email)
     .then(user => res.send(user))

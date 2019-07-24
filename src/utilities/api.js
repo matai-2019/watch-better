@@ -28,7 +28,7 @@ export const deleteComment = (commentId) => {
 }
 
 export const getUserId = (email) => {
-  return request.get(`/movie-api/userid/${email}`)
+  return request.get(`/movie-api/comments/user/${email}`)
     .then((res) => {
       return JSON.parse(res.text)
     })
