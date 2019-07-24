@@ -31,7 +31,7 @@ const CommentForm = ({ thing, movieId }) => {
       .then(() => {
         setComment('')
         setRating(null)
-        thing('hello!')
+        thing(comment)
       })
       .catch(err => {
         console.error(err)

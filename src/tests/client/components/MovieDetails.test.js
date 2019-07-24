@@ -15,7 +15,11 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe('MovieDetails component tests', () => {
   it('<MovieDetails /> contains 16 Typography tags', () => {
-    const mockStore = configureStore([thunk])(testStore)
+    const mockStore = configureStore([thunk])({
+      watchlist: [{ id: 1, title: 'Bad Moms' }],
+      seenList: [{ id: 1, title: 'Bad Moms' }, { id: 2, title: 'Hidden Figures' }],
+      ...testStore
+    })
     const wrapper = mount(
       <Provider store={mockStore}>
         <ThemeProvider theme={theme}>

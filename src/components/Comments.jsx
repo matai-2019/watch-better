@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Typography, Container, Paper, Grid } from '@material-ui/core'
 import PropTypes from 'prop-types'
+import request from 'superagent'
+
 import Comment from './Comment'
 import CommentForm from './CommentForm'
 import { CommentsStyles } from '../style/muiStyles'
-
-const request = require('superagent')
 
 const Comments = ({ movieId, title }) => {
   const classes = CommentsStyles()
 
   const [comments, setComments] = useState([])
-  const [dummy, setDummy] = useState('')
+  const [dummy, setDummy] = useState(1)
 
   useEffect(() => {
     request.get(`/movie-api/comments/${movieId}`)
@@ -22,7 +22,7 @@ const Comments = ({ movieId, title }) => {
       .catch(err => {
         console.log(err.message)
       })
-  }, [dummy])
+  }, [dummy, movieId])
 
   return (
     <Paper classes={classes.commentsContainer} square>
@@ -30,7 +30,7 @@ const Comments = ({ movieId, title }) => {
         <Grid container justify="center" >
           <Grid item xs={6} className={classes.commentsList}>
             {
-              comments && comments.length > 0 ? comments.map(comment => <Comment key={comment.id} comment={comment} />)
+              comments && comments.length > 0 ? comments.map(comment => <Comment key={comment.id} comment={comment} thing={setDummy}/>)
                 : (
                   <>
                   <Typography variant="h6" className={classes.noCommentsTitle}>
