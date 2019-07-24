@@ -6,7 +6,6 @@ import Rating from '@material-ui/lab/Rating'
 
 import { CommentsStyles } from '../style/muiStyles'
 import { deleteComment, getUserId } from '../utilities/api'
-import { isAuthenticated } from '../auth'
 
 const Comment = ({ thing, loggedUser, comment: { id, userRating, firstName, comment, created, userID } }) => {
   const classes = CommentsStyles()
