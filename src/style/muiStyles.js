@@ -163,46 +163,15 @@ export const WatchlistStyles = makeStyles(theme => ({
   }
 }))
 
-// export const MovieListStyles = makeStyles(theme => ({
-//   actions: {
-//     backgroundColor: theme.palette.lightbg.main,
-//     marginRight: '5vw',
-//     padding: 20
-//   },
-//   sort: {
-//     backgroundColor: theme.palette.lightbg.main,
-//     borderRadius: 4
-//   },
-//   container: {
-//     backgroundColor: theme.palette.lightbg.main,
-//     padding: 0,
-//     paddingBottom: 50,
-//     marginBottom: 0,
-//     marginTop: 130,
-//     borderRadius: 3,
-//     border: '7px solid #F3C814'
-//   },
-//   title: {
-//     fontSize: '5vw',
-//     fontWeight: 200,
-//     margin: 0,
-//     color: theme.palette.background.main
-//   },
-//   header: {
-//     height: 100,
-//     padding: 0,
-//     marginRight: '17vw',
-//     marginTop: 10
-//   }
-// }))
-
 export const WatchlistItemStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.lightbg.main,
+    border: '2px solid #333',
+    boxShadow: '0 0 0 0'
   },
   text: {
     fontSize: '28px',
