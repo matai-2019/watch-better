@@ -100,11 +100,12 @@ const MovieListItem = props => {
           <Paper className={classes.paper}>
             <Grid container spacing={2}>
               <Grid item>
-                <ButtonBase className={classes.image}>
+                <ButtonBase>
                   <img
                     className={classes.img}
                     alt="complex"
                     src={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                    onClick={handleClick}
                   />
                 </ButtonBase>
               </Grid>
@@ -118,23 +119,12 @@ const MovieListItem = props => {
                     >
                       {movie.title}
                     </Typography>
-                    <Box>
-                      <StyledRating
-                        name="half-rating"
-                        value={movie.rating / 2}
-                        readOnly
-                        precision={0.1}
-                      />
-                    </Box>
-                  </Grid>
-                  <Grid item>
-                    <Button
-                      size="small"
-                      className={classes.button}
-                      onClick={handleClick}
-                    >
-                      SEE MORE
-                    </Button>
+                    <StyledRating
+                      name="half-rating"
+                      value={movie.rating / 2}
+                      readOnly
+                      precision={0.1}
+                    />
                   </Grid>
                 </Grid>
                 <Grid>
@@ -149,7 +139,7 @@ const MovieListItem = props => {
                       size="small"
                       className={classes.seenButton}
                       style={{
-                        backgroundColor: seenListEntry ? '#A9DA71' : '#DADADA'
+                        backgroundColor: seenListEntry ? '#A9DA71' : '#FFDF59'
                       }}
                       onClick={handleSeen}
                     >
@@ -162,7 +152,7 @@ const MovieListItem = props => {
                       size="small"
                       className={classes.watchButton}
                       style={{
-                        backgroundColor: watchListEntry ? '#A9DA71' : '#DADADA'
+                        backgroundColor: watchListEntry ? '#A9DA71' : '#FFDF59'
                       }}
                       onClick={handleWatch}
                     >

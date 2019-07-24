@@ -11,6 +11,9 @@ export const theme = createMuiTheme({
     },
     background: {
       main: '#2a2e36'
+    },
+    lightbg: {
+      main: '#e0e0e0'
     }
   },
   spacing: 8,
@@ -31,13 +34,47 @@ export const SorterStyle = makeStyles(theme => ({
   }
 }))
 
+export const MovieListStyles = makeStyles(theme => ({
+  actions: {
+    backgroundColor: theme.palette.lightbg.main,
+    marginRight: '5vw',
+    padding: 20
+  },
+  sort: {
+    backgroundColor: theme.palette.lightbg.main,
+    borderRadius: 4
+  },
+  container: {
+    backgroundColor: theme.palette.lightbg.main,
+    padding: 0,
+    paddingBottom: 50,
+    marginBottom: 0,
+    marginTop: 130,
+    borderRadius: 3,
+    border: '7px solid #F3C814'
+  },
+  title: {
+    fontSize: '5vw',
+    fontWeight: 200,
+    margin: 0,
+    color: theme.palette.background.main
+  },
+  header: {
+    height: 100,
+    padding: 0,
+    marginRight: '17vw',
+    marginTop: 10
+  }
+}))
+
 export const MovieListItemStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: '#FFDF59'
+    backgroundColor: theme.palette.lightbg.main,
+    border: '5px solid #333'
   },
   img: {
     display: 'block',
@@ -50,7 +87,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   avatar: {
     color: '#222',
-    backgroundColor: '#FFDF59',
+    backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
     margin: 1.2,
     padding: 2,
@@ -62,16 +99,6 @@ export const MovieListItemStyles = makeStyles(theme => ({
   list: {
     width: '80vw',
     marginTop: '2vw'
-  },
-  button: {
-    border: 'solid 2px #333',
-    color: '#333',
-    backgroundColor: '#DADADA',
-    '&:hover': {
-      backgroundColor: '#00000014',
-      border: 'solid 2px #333',
-      color: '#333'
-    }
   },
   icon: {
     fontFamily: 'Material Icons',
@@ -89,18 +116,18 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   seenButton: {
     border: 'solid 2px #333',
-    color: '#333',
-    height: 30
+    color: theme.palette.background.main,
+    height: 35
   },
   watchButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: theme.palette.background.main,
     marginLeft: 5,
     marginRight: 0,
-    height: 30
+    height: 35
   },
   topMargin: {
-    marginTop: '7vw'
+    marginTop: 70
   }
 }))
 
@@ -115,7 +142,7 @@ export const WatchlistStyles = makeStyles(theme => ({
   },
   watchlist: {
     fontSize: 40,
-    color: '#333'
+    color: theme.palette.background.main
   }
 }))
 
@@ -125,12 +152,12 @@ export const WatchlistItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: '#FFDF59'
+    backgroundColor: theme.palette.primary.main
   },
   text: {
     fontSize: '28px',
     cursor: 'pointer',
-    color: '#333'
+    color: theme.palette.background.main
   },
   list: {
     margin: '1vw',
@@ -153,12 +180,12 @@ export const WatchlistItemStyles = makeStyles(theme => ({
   },
   seenButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: theme.palette.background.main,
     height: 30
   },
   removeButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: theme.palette.background.main,
     marginLeft: 5,
     marginRight: 0,
     height: 30,
@@ -174,7 +201,7 @@ export const HeaderStyles = makeStyles(theme => ({
 
 export const FooterStyles = makeStyles(theme => ({
   footerContent: {
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     padding: theme.spacing(6, 0, 4),
     color: 'white',
     display: 'flex',
@@ -184,7 +211,7 @@ export const FooterStyles = makeStyles(theme => ({
   },
   socialButtons: {
     marginBottom: 7,
-    color: '#FFDF59'
+    color: theme.palette.primary.main
   },
   edaText: {
     padding: 1,
@@ -215,7 +242,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     color: 'white'
   },
   card: {
@@ -228,7 +255,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   cardContainer: {
     marginTop: theme.spacing(8),
     color: 'white',
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center'
@@ -277,7 +304,7 @@ export const NavBarStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   toolbar: {
-    backgroundColor: '#333'
+    backgroundColor: theme.palette.background.main
   },
   search: {
     position: 'relative',
@@ -310,20 +337,20 @@ export const NavBarStyles = makeStyles(theme => ({
     }
   },
   searchIcon: {
-    color: '#FFDF59'
+    color: theme.palette.primary.main
   },
   multilineColor: {
     color: 'white'
   },
   navButton: {
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     flexGrow: 2,
     '&:hover': {
       backgroundColor: '#555'
     }
   },
   watchButton: {
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     flexGrow: 2,
     '&:hover': {
       backgroundColor: '#555'
@@ -331,7 +358,7 @@ export const NavBarStyles = makeStyles(theme => ({
   },
   link: {
     textDecoration: 'none',
-    color: '#FFDF59'
+    color: theme.palette.primary.main
   },
   divide: {
     marginRight: '2vw'
@@ -347,8 +374,8 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    color: '#FFDF59',
-    backgroundColor: '#333',
+    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.background.main,
     fontFamily: 'Roboto'
   },
   img: {
@@ -361,8 +388,8 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     fontWeight: 500
   },
   avatar: {
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    color: theme.palette.background.main,
+    backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
     margin: 1.2,
     width: 30,
@@ -380,12 +407,12 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
   },
   button: {
     border: 'solid 2px #333',
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    color: theme.palette.background.main,
+    backgroundColor: theme.palette.primary.main,
     '&:hover': {
-      backgroundColor: '#FFDF59',
+      backgroundColor: theme.palette.primary.main,
       border: 'solid 2px #333',
-      color: '#333'
+      color: theme.palette.background.main
     }
   },
   icon: {
@@ -403,12 +430,12 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
   },
   seenButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: theme.palette.background.main,
     marginLeft: '15vw'
   },
   watchButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: theme.palette.background.main,
     marginLeft: 5,
     marginRight: 0
   }
@@ -450,8 +477,8 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     fontWeight: 300
   },
   avatar: {
-    color: '#333',
-    backgroundColor: '#FFDF59',
+    color: theme.palette.background.main,
+    backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
     margin: 1.2,
     width: 30,
@@ -491,7 +518,7 @@ export const RecommendationsStyles = makeStyles({
   },
   title: {
     marginTop: '12px',
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     backgroundColor: 'rgba(0, 0, 0, 0.54)',
     textAlign: 'center',
     fontSize: '1.5rem',
@@ -519,11 +546,11 @@ export const RecommendationsStyles = makeStyles({
     width: '270px',
     height: '55px',
     backgroundColor: '#FFDF5930',
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     '&:hover': {
-      backgroundColor: '#FFDF59',
+      backgroundColor: theme.palette.primary.main,
       border: 'solid 2px #333',
-      color: '#333'
+      color: theme.palette.background.main
     }
   }
 })
@@ -586,7 +613,7 @@ export const QuizStyles = makeStyles(theme => ({
 export const QuizQuestionStyles = makeStyles(theme => ({
   question: {
     fontSize: '1em',
-    color: '#333'
+    color: theme.palette.background.main
   },
   intro: {
     color: 'white'
@@ -643,7 +670,7 @@ export const CastStyles = makeStyles(theme => ({
   title: {
     marginTop: theme.spacing(2),
     marginLeft: theme.spacing(1.6),
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     fontSize: '1.25rem',
     fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
     fontWeight: 500,
@@ -673,18 +700,18 @@ export const RegisterStyles = makeStyles(theme => ({
   textfield: {
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
-        borderColor: '#FFDF59'
+        borderColor: theme.palette.primary.main
       },
       '&:hover fieldset': {
-        borderColor: '#FFDF59'
+        borderColor: theme.palette.primary.main
       }
     }
   },
   textfieldColor: {
-    color: '#FFDF59'
+    color: theme.palette.primary.main
   },
   link: {
-    color: '#FFDF59',
+    color: theme.palette.primary.main,
     textDecoration: 'none'
   }
 }))

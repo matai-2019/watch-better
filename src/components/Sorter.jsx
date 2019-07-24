@@ -15,7 +15,7 @@ const Sorter = ({ dispatch }) => {
 
   return (
     <FormControl className={classes.formControl}>
-      <InputLabel htmlFor="sort">Sort Movies By</InputLabel>
+      <InputLabel htmlFor="sort">Sort Movies</InputLabel>
       <Select
         onChange={handleChange}
         inputProps={{
