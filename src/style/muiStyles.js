@@ -38,7 +38,8 @@ export const MovieListStyles = makeStyles(theme => ({
   actions: {
     backgroundColor: theme.palette.lightbg.main,
     marginRight: 90,
-    padding: 20
+    padding: 20,
+    height: 120
   },
   sort: {
     backgroundColor: theme.palette.lightbg.main,
@@ -51,7 +52,7 @@ export const MovieListStyles = makeStyles(theme => ({
     marginBottom: 0,
     marginTop: 130,
     borderRadius: 3,
-    border: '7px solid #F3C814'
+    border: '5px solid #F3C814'
   },
   title: {
     fontSize: 65,
@@ -62,7 +63,7 @@ export const MovieListStyles = makeStyles(theme => ({
   header: {
     height: 100,
     padding: 0,
-    marginRight: 250,
+    marginRight: 300,
     marginTop: 5
   }
 }))
@@ -74,7 +75,9 @@ export const MovieListItemStyles = makeStyles(theme => ({
   paper: {
     padding: theme.spacing(2),
     backgroundColor: theme.palette.lightbg.main,
-    border: '5px solid #333'
+    border: '3px solid #333',
+    width: '60vw',
+    marginLeft: 30
   },
   img: {
     display: 'block',
@@ -135,7 +138,7 @@ export const WatchlistStyles = makeStyles(theme => ({
   container: {
     backgroundColor: theme.palette.lightbg.main,
     borderRadius: 3,
-    border: '7px solid #F3C814',
+    border: '5px solid #F3C814',
     marginTop: 150,
     paddingBottom: 60
   },
@@ -171,7 +174,8 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     backgroundColor: theme.palette.lightbg.main,
     border: '2px solid #333',
-    boxShadow: '0 0 0 0'
+    boxShadow: '0 0 0 0',
+    width: '57vw'
   },
   text: {
     fontSize: 28,
@@ -635,7 +639,7 @@ export const RecommendationsStyles = makeStyles({
     border: 'solid 2.5px #FFDF59',
     width: '270px',
     height: '55px',
-    backgroundColor: '#FFDF5930',
+    backgroundColor: '#302E29A8',
     color: theme.palette.primary.main,
     '&:hover': {
       backgroundColor: theme.palette.primary.main,
