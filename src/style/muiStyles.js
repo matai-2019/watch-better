@@ -719,10 +719,7 @@ export const QuizStyles = makeStyles(theme => ({
   },
   resultInfo: {
     display: 'flex',
-    alignItems: 'center',
-    marginLeft: '100px',
-    marginRight: '100px',
-    marginBottom: '60px'
+    justifyContent: 'center'
   },
   resultStuff: {
     justifyContent: 'center',

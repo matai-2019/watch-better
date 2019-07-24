@@ -67,7 +67,7 @@ const Quiz = (props) => {
           <Typography variant="h2" className={classes.resultTitle}>
             {`Results for ${title}:`}
           </Typography>
-          <div className={classes.resultInfo}>
+          <Box className={classes.resultInfo} >
             <div className={classes.resultStuff}>
               {bechdel().includes('PASSED') ? <img className={classes.icon} src="/icons/correct.svg" alt="passed icon" /> : <img className={classes.icon} src="/icons/prohibition.svg" alt="did not pass icon" />}
               <Typography className={classes.resultText} variant="body1" gutterBottom>{bechdel()}
@@ -92,7 +92,7 @@ const Quiz = (props) => {
               <Typography className={classes.resultText} variant="body1" gutterBottom>{feldman()}
               </Typography>
             </div>
-          </div>
+          </Box>
           <Button onClick={resetResults} variant="contained" color="primary">Test Another Film</Button>
         </Box>
       </>
@@ -101,7 +101,7 @@ const Quiz = (props) => {
     return (
       <>
         <MovieTestDetails />
-        <Container className={classes.content}>
+        <Container className={classes.content} >
           <div className={classes.inputField}>
             <TextField
               required={true}
