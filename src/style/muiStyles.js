@@ -36,29 +36,31 @@ export const SorterStyle = makeStyles(theme => ({
 
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
-    backgroundColor: theme.palette.lightbg.main,
+    backgroundColor: '#333',
     marginRight: 90,
     padding: 20,
     height: 120
   },
   sort: {
-    backgroundColor: theme.palette.lightbg.main,
+    color: theme.palette.primary.main,
+    backgroundColor: '#333',
     borderRadius: 4
   },
   container: {
-    backgroundColor: theme.palette.lightbg.main,
+    backgroundColor: '#333',
     padding: 0,
     paddingBottom: 50,
-    marginBottom: 0,
+    marginBottom: 130,
     marginTop: 130,
     borderRadius: 3,
-    border: '5px solid #F3C814'
+    border: '1px solid',
+    borderColor: theme.palette.primary.main
   },
   title: {
     fontSize: 65,
     fontWeight: 170,
     margin: 0,
-    color: theme.palette.background.main
+    color: theme.palette.primary.main
   },
   header: {
     height: 100,
@@ -74,10 +76,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.lightbg.main,
-    border: '3px solid #333',
-    width: '60vw',
-    marginLeft: 30
+    backgroundColor: theme.palette.lightbg.main
   },
   img: {
     display: 'block',
