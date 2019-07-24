@@ -255,14 +255,38 @@ export const FooterStyles = makeStyles(theme => ({
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
-    width: 400,
-    padding: theme.spacing(1, 4, 4),
-    outline: 'none',
+    maxHeight: '500px',
+    padding: theme.spacing(6, 6, 6, 6),
+    outlineColor: '#FFDF59',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     backgroundColor: theme.palette.background.main,
     color: 'white'
+  },
+  innerIcon: {
+    width: '75px',
+    height: '75px',
+    border: 'solid 2px',
+    borderColor: '#FFDF59',
+    borderRadius: '50%',
+    padding: '10px',
+    marginLeft: '45%',
+    marginBottom: theme.spacing(2),
+    display: 'inline-flex'
+  },
+  modalTitle: {
+    fontWeight: '200',
+    fontSize: '40px',
+    textAlign: 'center',
+    marginBottom: '7px'
+  },
+  modalFounded: {
+    fontWeight: '800',
+    textAlign: 'center'
+  },
+  modalText: {
+    fontWeight: '200'
   },
   card: {
     width: 200,
@@ -272,7 +296,8 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     padding: theme.spacing(2.5)
   },
   cardContainer: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(6),
+    marginBottom: '4px',
     color: 'white',
     backgroundColor: theme.palette.background.main,
     display: 'flex',
@@ -280,13 +305,15 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   icon: {
-    height: 40,
-    width: 40,
+    height: 60,
+    width: 60,
+    padding: '5px',
+    transition: 'all 0.2s',
     '&:hover': {
-      height: 50,
-      width: 50,
+      transform: 'scale(1.2)',
       backgroundColor: '#AF8E00',
-      borderRadius: '50%'
+      borderRadius: '50%',
+      padding: '7px'
     },
     header: {
       padding: 0,
