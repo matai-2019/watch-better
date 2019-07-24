@@ -209,14 +209,14 @@ export const FooterStyles = makeStyles(theme => ({
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
-    width: 400,
-    padding: theme.spacing(1, 4, 4),
-    outline: 'none',
+    width: 450,
+    padding: theme.spacing(6, 6, 6),
+    outlineColor: '#FFDF59',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    backgroundColor: '#333',
-    color: 'white'
+    backgroundColor: 'white',
+    color: 'black'
   },
   card: {
     width: 200,
