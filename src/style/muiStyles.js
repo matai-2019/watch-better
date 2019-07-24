@@ -37,7 +37,7 @@ export const SorterStyle = makeStyles(theme => ({
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
     backgroundColor: theme.palette.lightbg.main,
-    marginRight: '5vw',
+    marginRight: 90,
     padding: 20
   },
   sort: {
@@ -54,16 +54,16 @@ export const MovieListStyles = makeStyles(theme => ({
     border: '7px solid #F3C814'
   },
   title: {
-    fontSize: '5vw',
-    fontWeight: 200,
+    fontSize: 65,
+    fontWeight: 170,
     margin: 0,
     color: theme.palette.background.main
   },
   header: {
     height: 100,
     padding: 0,
-    marginRight: '17vw',
-    marginTop: 10
+    marginRight: 250,
+    marginTop: 5
   }
 }))
 
@@ -136,14 +136,14 @@ export const WatchlistStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.lightbg.main,
     borderRadius: 3,
     border: '7px solid #F3C814',
-    marginTop: '10vw',
-    paddingBottom: '3vw'
+    marginTop: 150,
+    paddingBottom: 60
   },
   title: {
-    fontSize: '4vw',
+    fontSize: 60,
     fontWeight: 200,
-    margin: '2vw',
-    marginRight: '35vw',
+    margin: 23,
+    marginRight: 440,
     color: theme.palette.background.main
   },
   button: {
@@ -152,10 +152,10 @@ export const WatchlistStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     fontSize: '1.5vw',
     fontWeight: 120,
-    width: '15vw',
-    height: '4vw',
-    marginTop: '1.3vw',
-    marginRight: '6vw',
+    width: 220,
+    height: 50,
+    marginTop: 27,
+    marginRight: 120,
     marginBottom: 0
   },
   actions: {
