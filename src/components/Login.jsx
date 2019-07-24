@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import * as Yup from 'yup'
-import { connect } from 'react-redux'
 import { Formik, Form } from 'formik'
 import {
   Button,
@@ -18,6 +18,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { RegisterStyles } from '../style/muiStyles'
 import { isAuthenticated, signIn } from '../auth'
 import { setErrorMessage } from '../actions/errorMessage'
+import { getLoggedUser } from '../actions/loggedUser'
 
 const Login = ({ dispatch, history }, ...props) => {
   const classes = RegisterStyles()
@@ -51,6 +52,7 @@ const Login = ({ dispatch, history }, ...props) => {
               }
             )
               .then(token => {
+                dispatch(getLoggedUser(values.email))
                 actions.setSubmitting(false)
                 if (isAuthenticated()) {
                   history.push('/')

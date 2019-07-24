@@ -11,6 +11,8 @@ import {
 } from '../actions/movies'
 
 import { CLEAR_ERROR_MESSAGE, SET_ERROR_MESSAGE } from '../actions/errorMessage'
+import { GET_WATCHLIST_SUCCESS } from '../actions/watchlist'
+import { GET_SEENLIST_SUCCESS } from '../actions/seenList'
 
 export default function infoReducer (
   state = { pending: true, error: null },
@@ -25,6 +27,8 @@ export default function infoReducer (
       }
     case GET_MOVIE_DETAILS_SUCCESS:
     case GET_MOVIES_SUCCESS:
+    case GET_WATCHLIST_SUCCESS:
+    case GET_SEENLIST_SUCCESS:
       return {
         ...state,
         pending: false

@@ -22,10 +22,10 @@ import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
 import { MovieListStyles } from '../style/muiStyles'
 
-const MovieList = ({ dispatch, movies }, ...props) => {
+const MovieList = ({ dispatch, movies, selectedTests }, ...props) => {
   const classes = MovieListStyles(props)
   useEffect(() => {
-    dispatch(getMovies())
+    dispatch(getMovies(selectedTests))
     isAuthenticated() && dispatch(getWatchList())
     isAuthenticated() && dispatch(getSeenList())
   }, [dispatch])
@@ -53,35 +53,40 @@ const MovieList = ({ dispatch, movies }, ...props) => {
 
 MovieList.propTypes = {
   movies: PropTypes.array,
-  dispatch: PropTypes.func
+  dispatch: PropTypes.func,
+  selectedTests: PropTypes.array
 }
 
-const mapStateToProps = ({ movies, info, sortType }) => {
+const mapStateToProps = ({ movies, info, sortType, selectedTests }) => {
   switch (sortType) {
     case SORT_ALPHABETICAL_ASCENDING:
       return {
         movies: sortAlphabeticalAscending(movies),
         info,
-        sortType
+        sortType,
+        selectedTests
       }
     case SORT_RATING_HIGH_LOW:
       return {
         movies: sortHighToLow(movies),
         info,
-        sortType
+        sortType,
+        selectedTests
       }
     case SORT_RATING_LOW_HIGH:
       return {
         movies: sortLowToHigh(movies),
         info,
-        sortType
+        sortType,
+        selectedTests
       }
 
     default:
       return {
         movies,
         info,
-        sortType
+        sortType,
+        selectedTests
       }
   }
 }

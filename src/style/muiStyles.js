@@ -37,7 +37,7 @@ export const SorterStyle = makeStyles(theme => ({
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
     backgroundColor: theme.palette.lightbg.main,
-    marginRight: '5vw',
+    marginRight: 90,
     padding: 20
   },
   sort: {
@@ -54,16 +54,16 @@ export const MovieListStyles = makeStyles(theme => ({
     border: '7px solid #F3C814'
   },
   title: {
-    fontSize: '5vw',
-    fontWeight: 200,
+    fontSize: 65,
+    fontWeight: 170,
     margin: 0,
     color: theme.palette.background.main
   },
   header: {
     height: 100,
     padding: 0,
-    marginRight: '17vw',
-    marginTop: 10
+    marginRight: 250,
+    marginTop: 5
   }
 }))
 
@@ -82,14 +82,14 @@ export const MovieListItemStyles = makeStyles(theme => ({
     borderRadius: '0.3vw'
   },
   text: {
-    fontSize: '28px',
+    fontSize: 28,
     cursor: 'pointer'
   },
   avatar: {
     color: '#222',
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     padding: 2,
     width: 30,
     height: 30,
@@ -136,14 +136,14 @@ export const WatchlistStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.lightbg.main,
     borderRadius: 3,
     border: '7px solid #F3C814',
-    marginTop: '10vw',
-    paddingBottom: '3vw'
+    marginTop: 150,
+    paddingBottom: 60
   },
   title: {
-    fontSize: '4vw',
+    fontSize: 60,
     fontWeight: 200,
-    margin: '2vw',
-    marginRight: '35vw',
+    margin: 23,
+    marginRight: 440,
     color: theme.palette.background.main
   },
   button: {
@@ -152,10 +152,10 @@ export const WatchlistStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     fontSize: '1.5vw',
     fontWeight: 120,
-    width: '15vw',
-    height: '4vw',
-    marginTop: '1.3vw',
-    marginRight: '6vw',
+    width: 220,
+    height: 50,
+    marginTop: 27,
+    marginRight: 120,
     marginBottom: 0
   },
   actions: {
@@ -174,7 +174,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     boxShadow: '0 0 0 0'
   },
   text: {
-    fontSize: '28px',
+    fontSize: 28,
     cursor: 'pointer',
     color: theme.palette.background.main
   },
@@ -225,8 +225,7 @@ export const FooterStyles = makeStyles(theme => ({
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
-    marginBottom: 5
+    alignItems: 'center'
   },
   socialButtons: {
     marginBottom: 7,
@@ -234,7 +233,7 @@ export const FooterStyles = makeStyles(theme => ({
   },
   edaText: {
     padding: 1,
-    fontSize: '12px',
+    fontSize: 12,
     fontWeight: 300
   },
   footerText: {
@@ -255,24 +254,47 @@ export const FooterStyles = makeStyles(theme => ({
 export const MovieTestDetailsStyles = makeStyles(theme => ({
   paper: {
     position: 'absolute',
-    width: 400,
-    padding: theme.spacing(1, 4, 4),
-    outline: 'none',
+    maxHeight: '500px',
+    padding: theme.spacing(6, 6, 6, 6),
+    outlineColor: '#FFDF59',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     backgroundColor: theme.palette.background.main,
     color: 'white'
   },
+  innerIcon: {
+    width: '75px',
+    height: '75px',
+    border: 'solid 2px',
+    borderColor: '#FFDF59',
+    borderRadius: '50%',
+    padding: '10px',
+    marginLeft: '45%',
+    marginBottom: theme.spacing(2),
+    display: 'inline-flex'
+  },
+  modalTitle: {
+    fontWeight: '200',
+    fontSize: '40px',
+    textAlign: 'center',
+    marginBottom: '7px'
+  },
+  modalFounded: {
+    fontWeight: '800',
+    textAlign: 'center'
+  },
+  modalText: {
+    fontWeight: '200'
+  },
   card: {
     width: 200,
-    height: 100,
     textAlign: 'center',
-    margin: theme.spacing(2),
-    padding: theme.spacing(2.5)
+    padding: '20px 0 10px 0'
   },
   cardContainer: {
-    marginTop: theme.spacing(8),
+    marginTop: theme.spacing(6),
+    marginBottom: '4px',
     color: 'white',
     backgroundColor: theme.palette.background.main,
     display: 'flex',
@@ -280,13 +302,15 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
     justifyContent: 'center'
   },
   icon: {
-    height: 40,
-    width: 40,
+    height: 60,
+    width: 60,
+    padding: '5px',
+    transition: 'all 0.2s',
     '&:hover': {
-      height: 50,
-      width: 50,
+      transform: 'scale(1.2)',
       backgroundColor: '#AF8E00',
-      borderRadius: '50%'
+      borderRadius: '50%',
+      padding: '7px'
     },
     header: {
       padding: 0,
@@ -340,7 +364,7 @@ export const NavBarStyles = makeStyles(theme => ({
   logo: {
     flexGrow: 2,
     display: 'none',
-    fontSize: '35px',
+    fontSize: 35,
     fontWeight: 800,
     color: '#F5C400',
     [theme.breakpoints.up('sm')]: {
@@ -354,7 +378,7 @@ export const NavBarStyles = makeStyles(theme => ({
   tagline: {
     flexGrow: 25,
     display: 'none',
-    fontSize: '15px',
+    fontSize: 15,
     color: 'white',
     [theme.breakpoints.up('sm')]: {
       display: 'block'
@@ -396,7 +420,7 @@ export const NavBarStyles = makeStyles(theme => ({
   }
 }))
 
-export const MovieDetailAvatarStyles = makeStyles(theme => ({
+export const AvatarsHoverStyles = makeStyles(theme => ({
   popover: {
     pointerEvents: 'none'
   },
@@ -422,7 +446,7 @@ export const MovieDetailAvatarStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2.5,
     width: 30,
     height: 30,
     fontSize: 15,
@@ -511,11 +535,54 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     color: theme.palette.background.main,
     backgroundColor: theme.palette.primary.main,
     border: '2px solid #333',
-    margin: 1.2,
+    margin: 2,
     width: 30,
     height: 30,
     fontSize: 15,
     paddingTop: 2
+  },
+  seenButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    height: 40,
+    marginTop: 30,
+    marginLeft: 40
+  },
+  watchButton: {
+    border: 'solid 2px #333',
+    color: '#333',
+    height: 40,
+    marginTop: 30,
+    marginLeft: 10
+  },
+  buttonIcon: {
+    fontFamily: 'Material Icons',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    fontSize: 24,
+    display: 'inlineBlock',
+    lineHeight: 0.8,
+    textTransform: 'none',
+    letterSpacing: 'normal',
+    wordWrap: 'normal',
+    whiteSpace: 'nowrap',
+    direction: 'ltr',
+    height: 20
+  },
+  left: {
+    paddingLeft: 0
+  },
+  cardContainer: {
+    marginTop: 64,
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '50% 50%',
+    backgroundColor: '#333'
+  },
+  customFilter: {
+    backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 1) 0%, rgba(68.6%, 55.7%, 0%, 0.8) 100%)',
+    paddingTop: 50,
+    paddingBottom: 50
   }
 }))
 
@@ -530,15 +597,15 @@ export const RecommendationsStyles = makeStyles({
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '720px'
+    height: '100vh'
   },
   ourTopPicks: {
-    marginBottom: '-60px',
+    marginBottom: -60,
     display: 'inline-flex',
     padding: 0
   },
   media: {
-    height: '725px',
+    height: '100vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
@@ -559,20 +626,21 @@ export const RecommendationsStyles = makeStyles({
     letterSpacing: '0.0075em'
   },
   testIcons: {
-    marginLeft: '.5%',
-    marginBottom: '.5%',
+    marginLeft: '2%',
+    marginBottom: '2%',
     position: 'fixed',
     bottom: 0,
     padding: 1
   },
   buttonWrapper: {
-    width: '270px',
+    width: 220,
     margin: '0 auto',
-    marginBottom: '-90px',
-    transform: 'translate(-0px, -700px)'
+    marginBottom: -90,
+    transform: 'translate(-0vh, -98vh)'
   },
   button: {
     alignItems: 'center',
+    fontSize: '1rem',
     border: 'solid 2.5px #FFDF59',
     width: '270px',
     height: '55px',
@@ -679,7 +747,7 @@ export const SearchStyles = makeStyles(theme => ({
 export const CastMemberStyles = makeStyles({
   card: {
     width: 185,
-    height: 370,
+    height: 325,
     margin: theme.spacing(2)
   },
   media: {
@@ -741,11 +809,11 @@ export const CommentsStyles = makeStyles(theme => ({
   commentsContainer: {
     display: 'flex',
     padding: '3em',
-    height: '400px'
+    height: 400
   },
   comment: {
     flexGrow: 2,
-    maxWidth: '500px',
+    maxWidth: 500,
     float: 'right'
   }
 }))
@@ -756,7 +824,7 @@ export const CommentFormStyles = makeStyles(theme => ({
   },
   paper: {
     width: '30%',
-    margin: '20px',
+    margin: 20,
     padding: '1em',
     flexGrow: 1,
     float: 'left'
@@ -767,7 +835,7 @@ export const CommentFormStyles = makeStyles(theme => ({
   },
   filter: {
     width: '30%',
-    margin: '20px',
+    margin: 20,
     padding: '1em',
     backgroundColor: 'gray',
     opacity: 0.8
