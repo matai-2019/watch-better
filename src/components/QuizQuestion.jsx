@@ -35,7 +35,7 @@ const QuizQuestion = ({ question, id, test, handleResult, dispatch, isActive }, 
       </Box>
       <hr/>
       <br/>
-      {id === '17' && <Button className={classes.button} variant="contained" color="primary" onClick={handleResult}>Submit</Button> }
+      {id === '17' && <Button disabled={isActive} className={classes.button} variant="contained" color="primary" onClick={handleResult}>Submit</Button> }
     </Container>
   )
 }
