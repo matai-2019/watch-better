@@ -372,7 +372,7 @@ export const NavBarStyles = makeStyles(theme => ({
     },
     transition: 'all 1s',
     '&:hover': {
-      transform: 'scale(1.13)'
+      transform: 'scale(1.05)'
     }
   },
   tagline: {
