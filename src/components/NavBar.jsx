@@ -23,7 +23,7 @@ function NavBar (props) {
           <Link to="/" className={`${classes.link} ${classes.logo}`}>WB</Link>
           <Link to="/" className={`${classes.link} ${classes.tagline}`}>
             <Typography className={classes.tagline}>
-              CURATION THROUGH A LENS OF DIVERSITY
+              DIVERSITY MOVIE DATABASE
             </Typography>
           </Link>
           {isAuthenticated() && <div className={classes.divide}>
