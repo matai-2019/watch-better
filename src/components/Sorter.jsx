@@ -4,7 +4,7 @@ import {
   FormControl,
   InputLabel,
   MenuItem,
-  OutlinedInput
+  Input
 } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
@@ -29,11 +29,11 @@ const Sorter = ({ dispatch }) => {
 
   return (
     <FormControl className={classes.formControl}>
-      <InputLabel htmlFor="sort">Sort Movies By</InputLabel>
+      <InputLabel htmlFor="sort">Sort Movies</InputLabel>
       <Select
         onChange={handleChange}
         value={menuValue}
-        input={<OutlinedInput name="sort" id="sort" />}
+        input={<Input name="sort" id="sort" />}
       >
         <MenuItem value={SORT_ALPHABETICAL_ASCENDING}>Sort A-Z</MenuItem>
         <MenuItem value={SORT_RATING_HIGH_LOW}>Rating High to Low</MenuItem>
