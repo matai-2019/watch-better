@@ -238,7 +238,8 @@ export const FooterStyles = makeStyles(theme => ({
   edaText: {
     padding: 1,
     fontSize: 12,
-    fontWeight: 300
+    fontWeight: 300,
+    textAlign: 'center'
   },
   footerText: {
     marginTop: 10
@@ -631,7 +632,7 @@ export const RecommendationsStyles = makeStyles({
     width: 220,
     margin: '0 auto',
     marginBottom: -90,
-    transform: 'translate(-0vh, -98vh)'
+    transform: 'translate(-0vh, -97vh)'
   },
   button: {
     alignItems: 'center',
