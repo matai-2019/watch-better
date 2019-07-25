@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Box, Paper, Typography, Button } from '@material-ui/core'
+import { Box, Paper, Typography, Button, Grid } from '@material-ui/core'
 import { connect } from 'react-redux'
 import Rating from '@material-ui/lab/Rating'
 
@@ -45,10 +45,16 @@ const Comment = ({ thing, loggedUser, comment: { id, userRating, firstName, comm
           {comment}
         </Typography>
         <br />
-        <Typography className={classes.dateTime} variant="caption" >
-          {created}
-        </Typography>
-        {userId === userID && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>}
+        <Grid container>
+          <Grid item xs={6}>
+            {userId === userID && <Button onClick={handleDelete} variant="contained" color="primary" >Delete comment</Button>}
+          </Grid>
+          <Grid item xs={6}>
+            <Typography className={classes.dateTime} component="p" variant="caption" align="right">
+              {created}
+            </Typography>
+          </Grid>
+        </Grid>
       </Paper>
     </>
   )
