@@ -55,7 +55,7 @@ function NavBar (props) {
             </Link>
           </div>
             : <div className={classes.loginButton}>
-              <Link to="/login">
+              <Link to="/register">
                 <img src="/icons/login.svg" alt="" />
               </Link>
             </div>}
