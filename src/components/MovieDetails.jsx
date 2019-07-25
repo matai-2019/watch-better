@@ -91,7 +91,7 @@ function MovieDetails ({ dispatch, movieDetails, info, match, watchlist, seenLis
     }
   }
 
-  return (match.params.id == movieDetails.id) &&
+  return (Number(match.params.id) === movieDetails.id) &&
   <>
   <div className={classes.cardContainer} style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${movieDetails.backdrop})` }}>
     <div className={classes.customFilter}>
