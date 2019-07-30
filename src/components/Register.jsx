@@ -106,7 +106,6 @@ const Register = ({ dispatch, history }, ...props) => {
                       }}
                       id="firstName"
                       label="First Name"
-                      autoFocus
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.firstName}
