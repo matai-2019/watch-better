@@ -4,7 +4,7 @@ exports.up = function (knex, Promise) {
     table.increments('id').primary()
     table.string('test_type')
     table.boolean('result')
-    table.integer('movie_id').references('movies.id')
+    table.foreign('movie_id').references('movies.id')
   })
 }
 
