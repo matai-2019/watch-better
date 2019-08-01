@@ -31,6 +31,13 @@ module.exports = {
 
   production: {
     client: 'postgresql',
-    DATABASE_URL: 'postgres://zuoqueoddatkpo:c71635b48af2c98c820f5fe75f705524e9246c39c8d046da6d5a9fb9d68dfc50@ec2-174-129-209-212.compute-1.amazonaws.com:5432/d9lnnge7ckk4f2'
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations'
+    }
   }
 }
