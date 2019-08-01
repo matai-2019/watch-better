@@ -6,6 +6,8 @@ exports.up = (knex, Promise) => {
     table.string('comment')
     table.integer('user_rating')
     table.datetime('created').defaultTo(knex.fn.now())
+    table.foreign('movie_id').references('movies.id')
+    table.foreign('user_id').references('users.id')
   })
 }
 
