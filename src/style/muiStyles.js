@@ -151,13 +151,11 @@ export const WatchlistStyles = makeStyles(theme => ({
   container: {
     backgroundColor: '#333',
     borderRadius: 3,
-    border: '1px solid #FFDF59',
-    marginTop: 150,
     paddingBottom: 60
   },
   title: {
-    fontSize: 60,
-    fontWeight: 200,
+    fontSize: 65,
+    fontWeight: 300,
     margin: 23,
     marginRight: 440,
     color: theme.palette.primary.main
@@ -185,9 +183,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.lightbg.main,
-    border: '2px solid #333',
-    boxShadow: '0 0 0 0'
+    backgroundColor: 'white'
   },
   text: {
     fontSize: 28,
@@ -195,8 +191,13 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     color: theme.palette.background.main
   },
   list: {
-    marginTop: '1vw',
-    width: '80vw'
+    marginTop: '1vw'
+  },
+  img: {
+    height: '140px',
+    width: '90px',
+    borderRadius: '0.3vw',
+    marginRight: '30px'
   },
   icon: {
     fontFamily: 'Material Icons',
@@ -216,14 +217,16 @@ export const WatchlistItemStyles = makeStyles(theme => ({
   seenButton: {
     border: 'solid 2px #333',
     color: theme.palette.background.main,
-    height: 30
+    height: 35
   },
   removeButton: {
     border: 'solid 2px #333',
     color: theme.palette.background.main,
     marginLeft: 5,
     marginRight: 0,
-    height: 30,
+    height: 35,
+    padding: 2,
+    paddingTop: 2,
     backgroundColor: '#FF6C6C'
   }
 }))

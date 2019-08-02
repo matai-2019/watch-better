@@ -51,7 +51,7 @@ const getWatchListByUserId = (userId, db = connection) => {
   return db('watchlist')
     .join('users', 'users.id', 'watchlist.user_id')
     .join('movies', 'movies.id', 'watchlist.movie_id')
-    .select('watchlist.id', 'movies.id as movieId', 'movies.title', 'movies.rating')
+    .select('watchlist.id', 'movies.id as movieId', 'movies.title', 'movies.rating', 'movies.image')
     .where('users.id', userId)
 }
 

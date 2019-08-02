@@ -21,7 +21,7 @@ import { removeMovieFromWatchList, addMovieToSeenList, removeMovieFromSeenList }
 
 const StyledRating = withStyles({
   iconFilled: {
-    color: '#333',
+    color: '#EBBC00',
     marginRight: 2.5
   }
 })(Rating)
@@ -68,40 +68,46 @@ const WatchlistItem = (props) => {
   const renderRedirect = () => {
     if (redirect) { return <Redirect push to={`/movie/${redirect}`} /> }
   }
+  console.log(movie)
 
   return (
     <>
-    {renderRedirect()}
-    <Container className={classes.list}>
-      <div className={classes.root}>
-        <Paper className={classes.paper}>
-          <Grid container spacing={2}>
-            <Grid item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={2}>
-                <Grid item xs>
-                  <Box display="flex" justifyContent="flex-start" m={0} p={0}>
-                    <Box>
-                      <Typography gutterBottom className={classes.text} onClick={handleClick}>
-                        {movie.title}
-                      </Typography>
+      {renderRedirect()}
+      <Container className={classes.list}>
+        <div className={classes.root}>
+          <Paper className={classes.paper}>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm container>
+                <img
+                  className={classes.img}
+                  alt="complex"
+                  src={`https://image.tmdb.org/t/p/w200${movie.image}`}
+                />
+                <Grid item xs container direction="column" spacing={2}>
+                  <Grid item xs>
+                    <Box display="flex" flexDirection="column" m={0} p={0}>
+                      <Box>
+                        <Typography gutterBottom className={classes.text} onClick={handleClick}>
+                          {movie.title}
+                        </Typography>
+                      </Box>
+                      <Box>
+                        <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1} />
+                      </Box>
                     </Box>
-                    <Box>
-                      <StyledRating name="half-rating" value={movie.rating / 2} readOnly precision={0.1}/>
-                    </Box>
-                  </Box>
+                  </Grid>
                 </Grid>
+                <Button className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : theme.palette.primary.main }} onClick={handleSeen}>
+                  <i className={classes.icon}>{seenListEntry ? 'visibility' : 'visibility_off'}</i>
+                </Button>
+                <Button className={classes.removeButton} onClick={handleRemove}>
+                  <i className={classes.icon}>delete_forever</i>
+                </Button>
               </Grid>
-              <Button className={classes.seenButton} style={{ backgroundColor: seenListEntry ? '#A9DA71' : theme.palette.primary.main }} onClick={handleSeen}>
-                <i className={classes.icon}>{ seenListEntry ? 'visibility' : 'visibility_off'}</i>
-              </Button>
-              <Button className={classes.removeButton} onClick={handleRemove}>
-                <i className={classes.icon}>delete_forever</i>
-              </Button>
             </Grid>
-          </Grid>
-        </Paper>
-      </div>
-    </Container>
+          </Paper>
+        </div>
+      </Container>
     </>
   )
 }
