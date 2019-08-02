@@ -21,6 +21,7 @@ import { getWatchList } from '../actions/watchlist'
 import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
 import { MovieListStyles } from '../style/muiStyles'
+import MovieTestDetails from './MovieTestDetails'
 
 const MovieList = ({ dispatch, movies, selectedTests }, ...props) => {
   const classes = MovieListStyles(props)
@@ -31,16 +32,16 @@ const MovieList = ({ dispatch, movies, selectedTests }, ...props) => {
   }, [dispatch, selectedTests])
 
   return (
+    <>
+    <MovieTestDetails />
     <Container className={classes.container}>
-      <Box display="flex" flexDirection="row-reverse" p={1} m={1} className={classes.actions}>
+      <Box display="inline-flex" flexDirection="row-reverse" p={1} m={1} className={classes.actions}>
         <Box p={1} m={2} className={classes.sort}>
           <Sorter />
-        </Box>
-        <Box p={1} m={2} className={classes.sort}>
           <Filter />
         </Box>
         <Box p={1} className={classes.header}>
-          <h3 className={classes.title}>Movies</h3>
+          <h3 className={classes.title}>All Movies</h3>
         </Box>
       </Box>
       {movies &&
@@ -48,6 +49,7 @@ const MovieList = ({ dispatch, movies, selectedTests }, ...props) => {
           return <MovieListItem key={movie.id} movie={movie} />
         })}
     </Container>
+    </>
   )
 }
 

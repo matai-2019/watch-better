@@ -51,36 +51,34 @@ export const SorterStyle = makeStyles(theme => ({
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
     backgroundColor: '#333',
-    marginRight: 90,
-    padding: 20,
-    height: 120
+    height: 120,
+    marginLeft: 30
   },
   sort: {
     color: theme.palette.primary.main,
     backgroundColor: '#333',
-    borderRadius: 4
+    borderRadius: 4,
+    display: 'flex'
   },
   container: {
     backgroundColor: '#333',
     padding: 0,
     paddingBottom: 50,
     marginBottom: 130,
-    marginTop: 130,
+    marginTop: 15,
     borderRadius: 3,
-    border: '1px solid',
-    borderColor: theme.palette.primary.main
+    width: '80vw'
   },
   title: {
     fontSize: 65,
-    fontWeight: 170,
-    margin: 0,
-    color: theme.palette.primary.main
+    fontWeight: 400,
+    color: theme.palette.primary.main,
+    marginTop: 14
   },
   header: {
-    height: 100,
     padding: 0,
-    marginRight: 300,
-    marginTop: 5
+    width: '350px',
+    marginRight: '400px'
   }
 }))
 
@@ -90,11 +88,11 @@ export const MovieListItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.lightbg.main
+    backgroundColor: 'white',
+    height: '150px'
   },
   img: {
-    display: 'block',
-    maxWidth: '50%',
+    maxWidth: '40%',
     borderRadius: '0.3vw'
   },
   text: {
@@ -104,17 +102,17 @@ export const MovieListItemStyles = makeStyles(theme => ({
   avatar: {
     color: '#222',
     backgroundColor: theme.palette.primary.main,
-    border: '2px solid #333',
+    border: '1px solid #333',
     margin: 2,
     padding: 2,
+    paddingTop: 3,
     width: 30,
     height: 30,
-    fontSize: 15,
-    paddingTop: 2
+    fontSize: 15
   },
   list: {
     width: '80vw',
-    marginTop: '2vw'
+    marginTop: '1vw'
   },
   icon: {
     fontFamily: 'Material Icons',
@@ -131,19 +129,25 @@ export const MovieListItemStyles = makeStyles(theme => ({
     height: 20
   },
   seenButton: {
-    border: 'solid 2px #333',
+    border: 'solid 1px #333',
     color: theme.palette.background.main,
-    height: 35
+    height: 35,
+    '&:hover': {
+      transform: 'scale(1.1)'
+    }
   },
   watchButton: {
-    border: 'solid 2px #333',
+    border: 'solid 1px #333',
     color: theme.palette.background.main,
-    marginLeft: 5,
+    marginLeft: 15,
     marginRight: 0,
-    height: 35
+    height: 35,
+    '&:hover': {
+      transform: 'scale(1.1)'
+    }
   },
   topMargin: {
-    marginTop: 70
+    marginTop: 50
   }
 }))
 
