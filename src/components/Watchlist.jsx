@@ -37,14 +37,14 @@ const Watchlist = (props) => {
         <MovieTestDetails />
         <Container className={classes.container}>
           {renderRedirect()}
-          <Box display="flex" flexDirection="row-reverse" p={1} m={1} className={classes.actions}>
+          <Box display="flex" flexDirection="row" p={1} m={1} className={classes.actions}>
+            <Box p={1}>
+              <h3 className={classes.title}>Your Watchlist:</h3>
+            </Box>
             <Box p={1} m={2}>
               <Button className={classes.button} variant="outlined" color="primary" onClick={handleSeeAll}>
                 ADD MOVIES
               </Button>
-            </Box>
-            <Box p={1}>
-              <h3 className={classes.title}>Watchlist</h3>
             </Box>
           </Box>
           <div>
