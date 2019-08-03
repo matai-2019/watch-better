@@ -11,7 +11,7 @@ exports.seed = knex => {
     .then(() => knex('comments').del())
     .then(() => knex('watchlist').del())
     .then(() => knex('seenlist').del())
-    .then(() => knex('movie').insert(moviesData))
+    .then(() => knex('movies').insert(moviesData))
     .then(() => knex('movie_tests').insert(movieTestsData))
     .then(() => knex('users').insert(usersData))
     .then(() => knex('comments').insert(commentsData))
