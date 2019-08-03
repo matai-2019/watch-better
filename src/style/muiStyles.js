@@ -828,6 +828,10 @@ export const RegisterStyles = makeStyles(theme => ({
       },
       '&:hover fieldset': {
         borderColor: theme.palette.primary.main
+      },
+      '& :-webkit-autofill': {
+        '-webkit-text-fill-color': theme.palette.primary.main,
+        '-webkit-box-shadow': '0 0 0px 1000px #333 inset'
       }
     }
   },
