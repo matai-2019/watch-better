@@ -411,7 +411,8 @@ export const NavBarStyles = makeStyles(theme => ({
     }
   },
   searchIcon: {
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
+    margin: '4px 4px 20px'
   },
   multilineColor: {
     color: 'white'
@@ -438,7 +439,8 @@ export const NavBarStyles = makeStyles(theme => ({
     marginRight: '2vw'
   },
   loginButton: {
-    marginRight: 15,
+    marginLeft: 15,
+    padding: '6px 8px',
     transition: 'all 0.35s',
     '&:hover': {
       transform: 'scale(1.2)'
@@ -756,7 +758,8 @@ export const SearchStyles = makeStyles(theme => ({
   },
   container: {
     flexGrow: 1,
-    position: 'relative'
+    position: 'relative',
+    margin: '4px 4px 20px'
   },
   paper: {
     position: 'absolute',
