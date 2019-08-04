@@ -9,6 +9,7 @@ import WatchlistItem from './WatchlistItem'
 import { getWatchList } from '../actions/watchlist'
 import { getSeenList } from '../actions/seenList'
 import { isAuthenticated } from '../auth'
+import MovieTestDetails from './MovieTestDetails'
 
 const Watchlist = (props) => {
   const { watchlist, dispatch } = props
@@ -32,25 +33,28 @@ const Watchlist = (props) => {
 
   return (
     isAuthenticated()
-      ? <Container className={classes.container}>
-        {renderRedirect()}
-        <Box display="flex" flexDirection="row-reverse" p={1} m={1} className={classes.actions}>
-          <Box p={1} m={2}>
-            <Button className={classes.button} variant="outlined" color="primary" onClick={handleSeeAll}>
-            ADD MOVIES
-            </Button>
+      ? <div>
+        <MovieTestDetails />
+        <Container className={classes.container}>
+          {renderRedirect()}
+          <Box display="flex" flexDirection="row" p={1} m={1} className={classes.actions}>
+            <Box p={1}>
+              <h3 className={classes.title}>Your Watchlist:</h3>
+            </Box>
+            <Box p={1} m={2}>
+              <Button className={classes.button} variant="outlined" color="primary" onClick={handleSeeAll}>
+                ADD MOVIES
+              </Button>
+            </Box>
           </Box>
-          <Box p={1}>
-            <h3 className={classes.title}>Watchlist</h3>
-          </Box>
-        </Box>
-        <div>
-          {watchlist && watchlist.map((movie, id) => {
-            return <WatchlistItem key={id} movie={movie}/>
-          })
-          }
-        </div>
-      </Container>
+          <div>
+            {watchlist && watchlist.map((movie, id) => {
+              return <WatchlistItem key={id} movie={movie} />
+            })
+            }
+          </div>
+        </Container>
+      </div>
       : <Redirect to="/login" />
   )
 }

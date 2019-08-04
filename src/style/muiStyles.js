@@ -155,31 +155,33 @@ export const WatchlistStyles = makeStyles(theme => ({
   container: {
     backgroundColor: '#333',
     borderRadius: 3,
-    border: '1px solid #FFDF59',
-    marginTop: 150,
     paddingBottom: 60
   },
   title: {
-    fontSize: 60,
-    fontWeight: 200,
-    margin: 23,
-    marginRight: 440,
+    fontSize: 65,
+    fontWeight: 400,
+    marginTop: 30,
+    marginLeft: 10,
+    width: 500,
     color: theme.palette.primary.main
   },
   button: {
     border: 'solid 1px #FFDF59',
     color: theme.palette.primary.main,
-    backgroundColor: '#333',
     fontSize: '1.5vw',
-    fontWeight: 120,
+    fontWeight: 400,
     width: 220,
     height: 50,
-    marginTop: 27,
-    marginRight: 120,
-    marginBottom: 0
+    marginTop: 36,
+    '&:hover': {
+      backgroundColor: '#FFDF59',
+      color: '#333'
+    }
   },
   actions: {
-    height: 140
+    height: 140,
+    display: 'flex',
+    justifyContent: 'space-between'
   }
 }))
 
@@ -189,9 +191,7 @@ export const WatchlistItemStyles = makeStyles(theme => ({
   },
   paper: {
     padding: theme.spacing(2),
-    backgroundColor: theme.palette.lightbg.main,
-    border: '2px solid #333',
-    boxShadow: '0 0 0 0'
+    backgroundColor: 'white'
   },
   text: {
     fontSize: 28,
@@ -199,8 +199,13 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     color: theme.palette.background.main
   },
   list: {
-    marginTop: '1vw',
-    width: '80vw'
+    marginTop: '1vw'
+  },
+  img: {
+    height: '140px',
+    width: '90px',
+    borderRadius: '0.3vw',
+    marginRight: '30px'
   },
   icon: {
     fontFamily: 'Material Icons',
@@ -218,17 +223,25 @@ export const WatchlistItemStyles = makeStyles(theme => ({
     height: 20
   },
   seenButton: {
-    border: 'solid 2px #333',
+    border: 'solid 1px #333',
     color: theme.palette.background.main,
-    height: 30
+    height: 35,
+    '&:hover': {
+      transform: 'scale(1.2)'
+    }
   },
   removeButton: {
-    border: 'solid 2px #333',
+    border: 'solid 1px #333',
     color: theme.palette.background.main,
-    marginLeft: 5,
+    marginLeft: 15,
     marginRight: 0,
-    height: 30,
-    backgroundColor: '#FF6C6C'
+    height: 35,
+    padding: 2,
+    paddingTop: 2,
+    backgroundColor: '#FF6C6C',
+    '&:hover': {
+      transform: 'scale(1.2)'
+    }
   }
 }))
 
