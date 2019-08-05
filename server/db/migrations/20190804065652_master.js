@@ -15,7 +15,7 @@ exports.up = knex => {
         table.string('test_type')
         table.boolean('result')
         table.integer('movie_id')
-        table.foreign('movie_id').references('movies.id')
+        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
@@ -37,8 +37,8 @@ exports.up = knex => {
         table.string('comment')
         table.integer('user_rating')
         table.datetime('created').defaultTo(knex.fn.now())
-        table.foreign('movie_id').references('movies.id')
-        table.foreign('user_id').references('users.id')
+        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.foreign('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
@@ -47,8 +47,8 @@ exports.up = knex => {
         table.increments('id').primary()
         table.integer('movie_id')
         table.integer('user_id')
-        table.foreign('movie_id').references('movies.id')
-        table.foreign('user_id').references('users.id')
+        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.foreign('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
