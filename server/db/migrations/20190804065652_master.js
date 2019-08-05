@@ -14,8 +14,7 @@ exports.up = knex => {
         table.increments('id').primary()
         table.string('test_type')
         table.boolean('result')
-        table.integer('movie_id')
-        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.integer('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
@@ -32,23 +31,19 @@ exports.up = knex => {
       // comments table
       return knex.schema.createTable('comments', table => {
         table.increments('id').primary()
-        table.integer('movie_id')
-        table.integer('user_id')
+        table.integer('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.integer('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
         table.string('comment')
         table.integer('user_rating')
         table.datetime('created').defaultTo(knex.fn.now())
-        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
-        table.foreign('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
       // watchlist table
       return knex.schema.createTable('watchlist', table => {
         table.increments('id').primary()
-        table.integer('movie_id')
-        table.integer('user_id')
-        table.foreign('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
-        table.foreign('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.integer('movie_id').references('movies.id').onUpdate('CASCADE').onDelete('CASCADE')
+        table.integer('user_id').references('users.id').onUpdate('CASCADE').onDelete('CASCADE')
       })
     })
     .then(() => {
