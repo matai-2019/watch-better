@@ -254,7 +254,7 @@ export const HeaderStyles = makeStyles(theme => ({
 export const FooterStyles = makeStyles(theme => ({
   footerContent: {
     backgroundColor: theme.palette.background.main,
-    padding: theme.spacing(6, 0, 4),
+    padding: theme.spacing(4, 0, 4),
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
@@ -324,7 +324,7 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   card: {
     width: 200,
     textAlign: 'center',
-    padding: '20px 0 10px 0'
+    padding: '25px 0 10px 0'
   },
   cardContainer: {
     marginTop: theme.spacing(8),
@@ -629,21 +629,18 @@ export const RecommendationsStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: theme.palette.background.main,
-    alignItems: 'center'
+    alignItems: 'center',
+    position: 'fixed',
+    bottom: 0
   },
   card: {
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '95vh'
-  },
-  ourTopPicks: {
-    marginBottom: -60,
-    display: 'inline-flex',
-    padding: 0
+    height: '80vh'
   },
   media: {
-    height: '95vh',
+    height: '80vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
