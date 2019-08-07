@@ -14,7 +14,7 @@ server.use(express.static(path.join(__dirname, '../public')))
 server.use('/movie-api/watchlist', watchlist)
 server.use('/movie-api/seenlist', seenlist)
 server.use('/movie-api/', router)
-server.use('/', authRoutes)
+server.use('/movie-api/', authRoutes)
 
 server.get('*', (req,res) =>{
   res.sendFile(path.join(__dirname, '../public/index.html'));
