@@ -50,8 +50,8 @@ const Register = ({ dispatch, history }, ...props) => {
           onSubmit={(values, actions) => {
             register(
               {
-                firstName: values.firstName,
-                lastName: values.lastName,
+                firstname: values.firstName,
+                lastname: values.lastName,
                 email: values.email,
                 password: values.password
               },
