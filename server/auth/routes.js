@@ -13,31 +13,23 @@ module.exports = {
 }
 
 // TODO: Refactor this function
-function applyAuthRoutes(router, functions) {
+function applyAuthRoutes (router, functions) {
   const issueToken = token.getIssuer(functions.getUserByName)
 
   router.use(express.json())
   router.post(registerUrl, register, issueToken)
   router.post(signInUrl, signIn, issueToken)
 
-  function register(req, res, next) {
-    functions
-      .userExists(req.body.email)
+  function register (req, res, next) {
+    functions.userExists(req.body.email)
       .then(exists => {
         if (exists) {
           return res.status(400).send({
             errorType: EMAIL_UNAVAILABLE
           })
         }
-        functions
-          .createUser(req.body)
+        functions.createUser(req.body)
           .then(() => next())
-          .catch(err => {
-            res.status(500).send({
-              errorType: DATABASE_ERROR,
-              message: err.message
-            })
-          })
       })
       .catch(() => {
         res.status(500).send({
@@ -46,9 +38,8 @@ function applyAuthRoutes(router, functions) {
       })
   }
 
-  function signIn(req, res, next) {
-    functions
-      .getUserByName(req.body.email)
+  function signIn (req, res, next) {
+    functions.getUserByName(req.body.email)
       .then(user => {
         if (user) return user
         throw new Error(INVALID_CREDENTIALS)
