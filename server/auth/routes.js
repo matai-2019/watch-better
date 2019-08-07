@@ -32,9 +32,10 @@ function applyAuthRoutes(router, functions) {
         functions
           .createUser(req.body)
           .then(() => next())
-          .catch(() => {
+          .catch(err => {
             res.status(500).send({
-              errorType: DATABASE_ERROR
+              errorType: DATABASE_ERROR,
+              message: err.message
             })
           })
       })
