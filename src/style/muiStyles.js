@@ -50,18 +50,18 @@ export const SorterStyle = makeStyles(theme => ({
 
 export const MovieListStyles = makeStyles(theme => ({
   actions: {
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     height: 120,
     marginLeft: 30
   },
   sort: {
     color: theme.palette.primary.main,
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     borderRadius: 4,
     display: 'flex'
   },
   container: {
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     padding: 0,
     paddingBottom: 50,
     marginBottom: 130,
@@ -153,7 +153,7 @@ export const MovieListItemStyles = makeStyles(theme => ({
 
 export const WatchlistStyles = makeStyles(theme => ({
   container: {
-    backgroundColor: '#333',
+    backgroundColor: theme.palette.background.main,
     borderRadius: 3,
     paddingBottom: 60
   },
@@ -175,7 +175,7 @@ export const WatchlistStyles = makeStyles(theme => ({
     marginTop: 36,
     '&:hover': {
       backgroundColor: '#FFDF59',
-      color: '#333'
+      color: theme.palette.background.main
     }
   },
   actions: {
@@ -254,7 +254,7 @@ export const HeaderStyles = makeStyles(theme => ({
 export const FooterStyles = makeStyles(theme => ({
   footerContent: {
     backgroundColor: theme.palette.background.main,
-    padding: theme.spacing(6, 0, 4),
+    padding: theme.spacing(4, 0, 4),
     color: 'white',
     display: 'flex',
     flexDirection: 'column',
@@ -324,11 +324,10 @@ export const MovieTestDetailsStyles = makeStyles(theme => ({
   card: {
     width: 200,
     textAlign: 'center',
-    padding: '20px 0 10px 0'
+    padding: '25px 0 10px 0'
   },
   cardContainer: {
     marginTop: theme.spacing(8),
-    marginBottom: 4,
     color: 'white',
     backgroundColor: theme.palette.background.main,
     display: 'flex',
@@ -582,14 +581,14 @@ export const MovieDetailsStyles = makeStyles(theme => ({
   },
   seenButton: {
     border: 'solid 2px #333',
-    color: '#333',
+    color: '#2a2e36',
     height: 40,
     marginTop: 30,
     marginLeft: 40
   },
   watchButton: {
-    border: 'solid 2px #333',
-    color: '#333',
+    border: 'solid 2px #2a2e36',
+    color: '#2a2e36',
     height: 40,
     marginTop: 30,
     marginLeft: 10
@@ -616,7 +615,7 @@ export const MovieDetailsStyles = makeStyles(theme => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: '50% 50%',
-    backgroundColor: '#333'
+    backgroundColor: '#2a2e36'
   },
   customFilter: {
     backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(10.59%, 5.49%, 1.96%, 1) 0%, rgba(68.6%, 55.7%, 0%, 0.8) 100%)',
@@ -629,22 +628,19 @@ export const RecommendationsStyles = makeStyles({
   carousel: {
     display: 'flex',
     justifyContent: 'center',
-    backgroundColor: '#333333',
-    alignItems: 'center'
+    backgroundColor: theme.palette.background.main,
+    alignItems: 'center',
+    position: 'fixed',
+    bottom: 0
   },
   card: {
     flexGrow: 1,
     borderRadius: 0,
     backgroundColor: 'black',
-    height: '95vh'
-  },
-  ourTopPicks: {
-    marginBottom: -60,
-    display: 'inline-flex',
-    padding: 0
+    height: '80vh'
   },
   media: {
-    height: '95vh',
+    height: '80vh',
     alignItems: 'center',
     display: 'flex',
     transition: 'all 1s',
