@@ -12,8 +12,8 @@ function createUser ({ firstName, lastName, email, password }, db = connection) 
     .then(() => generateHash(password))
     .then(passwordHash => {
       return db('users').insert({
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
         hash: passwordHash
       })
