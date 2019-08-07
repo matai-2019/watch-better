@@ -1,7 +1,7 @@
 const connection = require('./connection')
 const { generateHash } = require('../auth')
 
-function createUser ({ firstName, lastName, email, password }, db = connection) {
+function createUser ({ firstname, lastname, email, password }, db = connection) {
 
   return userExists(email, db)
     .then(exists => {
