@@ -24,8 +24,8 @@ const Register = ({ dispatch, history }, ...props) => {
   const classes = RegisterStyles()
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required('A first name is required for signup'),
-    lastName: Yup.string().required('A last name is required for signup'),
+    firstname: Yup.string().required('A first name is required for signup'),
+    lastname: Yup.string().required('A last name is required for signup'),
     email: Yup.string()
       .email('Please enter a valid email')
       .required('An email address is required for signup'),
@@ -50,8 +50,8 @@ const Register = ({ dispatch, history }, ...props) => {
           onSubmit={(values, actions) => {
             register(
               {
-                firstName: values.firstName,
-                lastName: values.lastName,
+                firstname: values.firstname,
+                lastname: values.lastname,
                 email: values.email,
                 password: values.password
               },
@@ -94,7 +94,7 @@ const Register = ({ dispatch, history }, ...props) => {
                   <Grid item xs={12} sm={6}>
                     <TextField
                       autoComplete="fname"
-                      name="firstName"
+                      name="firstname"
                       variant="outlined"
                       required
                       fullWidth
@@ -104,15 +104,15 @@ const Register = ({ dispatch, history }, ...props) => {
                       InputLabelProps={{
                         className: classes.textfieldColor
                       }}
-                      id="firstName"
+                      id="firstname"
                       label="First Name"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.firstName}
+                      value={values.firstname}
                       className={classes.textfield}
                     />
-                    {errors.firstName && touched.firstName && (
-                      <FormHelperText>{errors.firstName}</FormHelperText>
+                    {errors.firstname && touched.firstname && (
+                      <FormHelperText>{errors.firstname}</FormHelperText>
                     )}
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -120,7 +120,7 @@ const Register = ({ dispatch, history }, ...props) => {
                       variant="outlined"
                       required
                       fullWidth
-                      id="lastName"
+                      id="lastname"
                       label="Last Name"
                       InputProps={{
                         className: classes.textfieldColor
@@ -128,15 +128,15 @@ const Register = ({ dispatch, history }, ...props) => {
                       InputLabelProps={{
                         className: classes.textfieldColor
                       }}
-                      name="lastName"
+                      name="lastname"
                       autoComplete="lname"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.lastName}
+                      value={values.lastname}
                       className={classes.textfield}
                     />
-                    {errors.lastName && touched.lastName && (
-                      <FormHelperText>{errors.lastName}</FormHelperText>
+                    {errors.lastname && touched.lastname && (
+                      <FormHelperText>{errors.lastname}</FormHelperText>
                     )}
                   </Grid>
                   <Grid item xs={12}>
