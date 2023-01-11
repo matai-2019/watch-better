@@ -21,7 +21,7 @@
     "express-jwt": "^5.3.1",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "knex": "^0.17.6",
+    "knex": "^2.4.0",
     "libsodium-wrappers-sumo": "^0.7.4",
     "lodash": "^4.17.13",
     "node-env-run": "^3.0.2",
